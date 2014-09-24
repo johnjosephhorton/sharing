@@ -33,7 +33,7 @@
 %\title{The Introduction of Rental Markets in Consumer Goods} 
 %\title{Buy, Buy and Rent Out, or Rent? \\ Consumer Theory in the Presence of Peer-to-Peer Rental}
 %\title{Peer-to-Peer Rental Markets}  
-\title{The Simple Economics of the So-Called Sharing Economy} 
+\title{Peer-to-Peer Rental Markets: \\ The Economics of the ``Sharing'' Economy} 
 
 \date{\today}
 
@@ -69,6 +69,125 @@ Will overall product demand go up or down? \newline
 
 
 % “We’re going to have to invent new economics to capture the impact of the sharing economy,” says Arun Sundararajan, a professor at the Stern School of Business at NYU who studies this phenomenon. The largest question for academics is whether this all creates new value or just replaces existing businesses.
+
+\section{Key Research Questions} 
+
+\begin{table} 
+\caption{Research Questions for the Sharing Economy} 
+\begin{tabular}{ll} 
+Is the sharing economy efficient? Is it just regulatory arbitrage? \\  
+What happens to government revenue? \\ 
+Can a P2P rental market emerge when everyone already owns? When no one owns? \\ 
+How does a reduction in transaction costs affect all of the findings? \\ 
+What consumer goods are most amenable to P2P sharing? \\ 
+Does the emergence of sharing cause product market demand to rise or fall? \\ 
+Does sharing increase efficiency? When are the gains the largest? \\ 
+What does sharing do to product market demand curve for the good?\\  
+In the presence of sharing, what is the distribution ownership? \\ 
+What fraction of goods might be shared? \\
+What does sharing do to the elasticity of demand?\\  
+What happens when capital ownership is paired with owner-supplied labor? \\ 
+Does sharing allow any markets that would not otherwise exist to now exist? \\ 
+What are the comparative statics of changes in individual valuations of a good and the gap between those valuations?\\ 
+How does the model change when there are different numbers of the different types? \\
+\end{tabular} 
+\end{table} 
+
+\subsection{Model} 
+Our goal is to develop something analogous to a consumer theory. 
+However, the goal is not to explain the how much of some good is purchased, but rather to explain how intensively some good is used conditional upon purchase. 
+In other words, we will not describe how much of a budget is dedicated to purchasing a vacation home, but rather what fraction of time is spent in that home. 
+
+Consider a collection of consumer's that have to decide how much of their time to allocate to the use of some purchased good. 
+Let their money-metric utility function be
+\begin{equation}
+u(x) = 2 \alpha x - x^2  
+\end{equation} 
+where $x$ is the fraction of time they spend using the good and $\alpha \in (0,1)$ is a parameter for how much utility they derive from the good. 
+This utility function has the attractive property of generating tractable demand and indirect utility functions: 
+\begin{equation}
+x^* = \alpha  
+\end{equation} 
+and 
+\begin{equation}
+v(\alpha) = u(x^*) = \alpha^2.  
+\end{equation} 
+The good in question costs $p$ to own, and so a forward-looking consumer will buy if $\alpha^2 > p$. 
+For all $\alpha^2 > p \wedge \alpha < 1$, the consumer will have ``excess'' capacity, namely of $1 - x^*$.
+
+\subsubsection{Three consumption possibilities with two consumer types} 
+Consider a marketplace with two consumer types: $\alpha_H$ and $\alpha_L$ with $\alpha_H > \alpha_L$. 
+For a given price $p$, there are three possibilities: 
+\begin{itemize}
+\item Everyone buys: $\alpha_L^2 > p$. 
+\item High-types buy but low-types do not: $\alpha_H^2 > p > \alpha_L^2$. 
+\item No one buys: $\alpha_H^2 < p$. 
+\end{itemize} 
+
+\begin{figure}
+\centering 
+\caption{Three consumer market possibilities in the absence of P2P rental with two consumer types}
+\begin{minipage}{0.8 \textwidth} 
+\includegraphics{./images/three_parts.pdf} 
+\end{minipage}  
+\end{figure} 
+
+\subsection{Short-run P2P rental equilibrium} 
+I define ``short-run'' meaning that no one can revise their ownership decisions. 
+In the equilibrium where the high-types buy but the low-types do not, we can consider the emergence of a P2P rental market. 
+In this market, the high-types sell their excess capacity to the low-types at a \emph{rate} of $r$. 
+We must first consider what is the market-clearing rental rate. 
+Before the possibility of rental, the high-types were simply consuming $\alpha_H$, giving $1-\alpha_H$ to rent out.
+However, the high-types have the possibility of economizing their consumption in light of the new opportunity cost of consumption---namely foregone rental income. 
+The new owner optimization problem is 
+\begin{equation}
+\max_x \quad 2\alpha_H x - x^2 + (1-x)r - p,   
+\end{equation} 
+giving $x_H^* = \alpha_H - r/2$. 
+whereas for the low-types, the optimization problem is 
+\begin{equation}
+\max_x \quad 2 \alpha_L x - x^2 - xr,  
+\end{equation} 
+giving $x_L^* = \alpha_L - r/2$. 
+For the rental market to clear at a rental rate of $r^*$, then $1 - x_H(r) = x_L(r)$  
+which implies that 
+\begin{equation} \label{eq:strr} 
+\alpha_H + \alpha_L - 1 = r^*.  
+\end{equation} 
+A natural question is whether this short-run equilibrium gives way to a long-run equilibrium in which ownership choices are revised. 
+
+\subsection{Long-run P2P rental equilibrium} 
+The first-order condition for the consumer's usage maximization problem was the same regardless of ownership: $2 \alpha - 2x = r_{LR}$ 
+The return to owning is 
+\begin{equation}
+v_{OWN} = 2\alpha_H x^* - x^*^2 + (1-x^*)r_{LR} - p   
+\end{equation} 
+whereas the return to renting is 
+\begin{equation}
+v_{RENT} = 2\alpha_H x^* - x^*^2 - x^*r_{LR}  
+\end{equation} 
+and since $x^*$ is the same in both cases, for a consumer to be indifferent,  
+\begin{equation}
+r_{LR} = p.  
+\end{equation}  
+To see whether the emerging of P2P rentals will increase or decrease total ownership, we need to consider whether the short-run rental rate defined by Equation~\ref{eq:strr} is greater than or less than the purchase price. 
+If the short-run rental rate is
+\begin{equation}
+ r_{SR} > p \implies \mbox{More ownership} 
+\end{equation}  
+whereas
+\begin{equation}
+ r_{SR} < p \implies \mbox{Less ownership}.  
+\end{equation}  
+
+
+
+
+
+
+ 
+
+
 
 \section{Introduction}
 Entrepreneurs are creating computer-mediated peer-to-peer rental markets for goods such as cars, clothing, tools, bicycles, camera equipment, apartments, offices, parking spaces and so on.
@@ -218,6 +337,90 @@ There would also be no demand---if all owners want to use a good nearly 100\% of
 Rental markets only exist for durable goods. 
 For a P2P rental market to function, goods have to depreciate regardless of usage level. 
 This makes it useful to use them up more quickly, through more intensive use. 
+
+\section{Product market without rental} 
+Consider a product market with consumer type $\theta_i$, where $\theta_i > 0$. 
+Each consumer has a utility of \emph{usage} of that good $\theta_i u(x)$ where $x \in [0,1]$ is the fraciton of available time spent using that good and $theta_i$ is that consumer's type.
+We assume that $u'(x) > 0$ and $u''(x) < 0$. 
+The cost of using a good is linear in $c$. 
+An individual that purchases a good makes a decision about how intensively to use it: 
+\begin{align}
+\max_x \theta_i u(x) - c x.  
+\end{align} 
+If the solution to optimization problem is $x^*$, then a consumer will buy the product at a price $p$ if 
+\begin{align}
+\theta_i u(x^*) - c x^* - p \ge 0.  
+\end{algin} 
+Intuitively, those consumers that will use the product more conditional upon purchase are more likely to purchase. 
+If $\underline{\theta}(p)$ is the lowest $\theta$ consumer that still purchases the product, then the market demand curve will be 
+\begin{align}
+D(p) = n \left(1 - F(\underline{\theta(p)})\right)
+\end{align} 
+where $F$ is the cdf of consumer types. 
+
+\subsection{Two consumer types with and without rental markets} 
+Consider the case where there are just two consumer types: $\theta_H$ and $\theta_L$, with $\theta_H > \theta_L > 0$. If $p$ is low-enough, then both types purchase. 
+If $p$ is high-enough, neither type purchases. 
+For a range of prices betweent these extremes, the high-types purchase the good and the low-types go without. 
+
+Now we consider what happens when individual purchasers can rent their excess capacity---$1-x$---to non-purchasers via peer-to-peer rental markets. 
+To begin, no one can revise their original purchase decision, but they can revise their personal usage.  
+The purchasers rent to the non-purchasers at a rental rate $r$. 
+
+Let us assume that $\tau$ of the consumers are high-types and $1-\tau$ are low-types. 
+
+\paragraph{Rentals in the high-types are the only purchasers market} 
+
+Now consider the possibility that purchasing consumers can rent out whatever capacity they do not use at a rental rate $r$. 
+For example, a non-purchaser renting for $x$ units of time will pay $rx$. 
+For a purchaser, the full cost of usage is now $c + r$, since usage has both the direct cost and the opportunity cost of foregone rental. 
+The the non-purcahser, the cost of usage is the same, since they have to pay $r + c$ as well.  
+There is a fixed cost $\gamma$ of renting paid by purchasers of the good.  
+For this reason, at an equilibrium rental rate 
+\begin{align}
+\theta_H u'(x_H^*(c,r)) = \theta_L u'(x_L^*(c,r)) = c + r. 
+\end{align} 
+Furthermore, for the market to clear, 
+\begin{align}
+1 - x_H^*(c, r)  = \left(\frac{1-\tau}{\tau}\right)  x_L^*(c, r). 
+\end{align} 
+Also, $\left(1-x_H^*(x,r)\right)r > \gamma$. 
+
+\begin{prop}
+In the equilibrium of the peer-to-peer rental market, the high-types still consumer more of the good than the low-types.  
+\end{prop} 
+\begin{proof} 
+Because $\theta_H > \theta_L$, $u'(x^*_H) < u'(x^*_L)$ and by the concavity of $u$, $x^*_H > x^*_L$. 
+\end{proof} 
+
+\subsection{Comparative statics of the rental rate} 
+\begin{prop}
+If the marginal cost of usage goes up ($c$ increases), rental rates fall, as will ownership.   
+\end{prop} 
+\begin{proof}
+For both kinds of consumers, an increase in $c$ reduces equilibrium consumption by a simple sign argument and the assumption that $u''(\cdot) < 0$:  
+\begin{equation}
+\theta u''(x^*)\frac{\partial x^*}{\partial c} = 1.  
+\end{equation} 
+A decrease in $x_H^*$ raises $1-x_H^*$, meaning there is more excess capacity on the market available for rent, but on the demand side, $x_L^*$ falling means less demand. 
+The result is a lower-rental rate, which causes more renting as purchasers can revise their purchasing decisions.
+\end{proof} 
+
+\subsection{Revising the ownership decision} 
+Utility for high-type purchasers renting out their excess capacity is  
+\begin{align}
+\theta_H u(x^*_H) - cx^*_H + (1 - x^*_H)r  - p - \gamma 
+\end{align} 
+whereas if they had counter-factually rented, their utility would have been 
+\begin{align}
+\theta_H u(x^*_H) - c x^*_H  - r x^*_H  
+\end{align} 
+A consumer would have preferred purchasing to renting if 
+\begin{align}
+ \theta_H u(x^*_H) - cx^*_H + r(1 - x^*_H)  - p  >  \theta_H u(x^*_H) - c x^*_H  - r x^*_H 
+\end{align} 
+which simplifies to $r > p + \gamma$. 
+
 
 \section{Product market without rental} 
 Consumers have a unit of time available and choose some fraction of their time, $x$ in $[0,1]$, to use the good. 

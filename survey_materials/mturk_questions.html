@@ -1,0 +1,149 @@
+/home/john/Dropbox/topics/search_and_matching/kwow
+
+
+<h2>The good is a ${good}</h2>
+<p>Note: all questions are the same across HITs; only the good
+  changes. You can do all of the HITs</p>
+
+ <style type="text/css">
+    #likert { text-align:center; }
+    #likert td { width: 70px; }
+ </style>
+
+<!-- Ownership question --> 
+<b><p>Does your household own a ${good}?<p></b>
+<p>
+<input name="own" type="radio" value="yes" />Yes</br>
+<input name="own" type="radio" value="no" />No</br>
+</p>
+
+
+<!--Lending --> 
+<b><p>Have you ever lent your ${good} to someone else?<p></b>
+<p>
+<input name="lent" type="radio" value="yes" />Yes</br>
+<input name="lent" type="radio" value="no" />No</br>
+<input name="lent" type="radio" value="na" />NA - we do not own one.</br>
+</p>
+
+<b><p>Have you ever borrowed a ${good} from someone else?<p></b>
+<p>
+<input name="borrowed" type="radio" value="yes" />Yes</br>
+<input name="borrowed" type="radio" value="no" />No</br>
+<input name="borrowed" type="radio" value="na" />NA - we own one.</br>
+</p>
+
+<b><p>Have you ever rented a ${good}?<p></b>
+<p>
+<input name="rent" type="radio" value="yes" />Yes</br>
+<input name="rent" type="radio" value="no" />No</br>
+<input name="rent" type="radio" value="na" />NA - we own one.</br>
+</p>
+
+<!-- Usage --> 
+<b><p>Regardless of whether your household owns a ${good}, if you did
+  own one, how much do you estimate it would be used by members of your household on average?</p></b> 
+<select name="usage"  size="1">
+  <option value="">Select one...</option>
+  <option value="0">We would not use this at all</option>
+  <option value="1" >1 minute a week (about 1 hour a year) </option>
+  <option value="2" >5 minutes a week (about 4 hours a year)</option>
+  <option value="3" >1/2 an hour a week</option>
+  <option value="4" >1 hour a week</option>
+  <option value="5" >1/2 an hour a day</option>
+  <option value="6" >1 hour a day</option>
+  <option value="7" >2 hours a day</option>
+  <option value="8" >4 hours a day</option>
+  <option value="9" >8 hours a day</option>
+  <option value="10" >16 hours a day</option>
+  <option value="11" >24 hours a day (I would continuously be using
+  this good)</option>
+</select>
+
+<!--Usage pattern---granularity--> 
+
+  <table id="likert">
+     <tr>
+         <td><input id="granularity" type="radio" name="Granularity" value="1" /></td>
+         <td><input type="radio" name="Granularity" value="2" /></td>
+         <td><input type="radio" name="Granularity" value="3" /></td>
+         <td><input type="radio" name="Granularity" value="4" /></td>
+         <td><input id="granularityEnd" type="radio" name="Granularity" value="5" /></td>
+     </tr>
+     <tr>
+         <td>Used in one big block of time</td>
+         <td></td>
+         <td>Used in a mixture of large and small blocks of time</td>
+         <td></td>
+         <td>Used in many small blocks of time</td>
+     </tr>
+  </table>
+
+
+<!-- Granularity --> 
+<b><p>
+Regardless of whether you actually own a ${good}, how do you imagine
+it would be used if it was owned by your household (on a scale of 1 to
+5): 
+</p>
+</b>
+<select name="granularity"  size="1">
+  <option value="">Select one...</option>
+  <option value="1">1 - Used in one big block of time </option>
+  <option value="2" >2  </option>
+  <option value="3" >3 -Used in a mixture of large and small blocks
+  of time</option>
+  <option value="4" >4 </option>
+  <option value="5" >5 - Used in many small blocks of time</option>
+</select>
+
+
+
+<!--Usage pattern---predictibility--> 
+
+<b><p>
+Regardless of whether you actually own a ${good}, how predictable
+would your usage of it be if you did own it: 
+</p>
+</b>
+<select name="predictability"  size="1">
+  <option value="">Select one...</option>
+  <option value="1">1 - Very predictable---I can plan usage many weeks in advance</option>
+  <option value="2" >2  </option>
+  <option value="3" >3 -Somewhat predictable 
+  of time</option>
+  <option value="4" >4 </option>
+  <option value="5" >5 - Very unpredictable---I would never know exactly when I
+         would need to use it until right beforehand. </option>
+</select>
+
+
+<!--- Why no own --> 
+<p><b>If you do not own a ${good}, what is the primary reason?</p></b> 
+<p>
+<input name="no_own_reason" type="radio" value="na" />NA - we own one.</br>
+<input name="no_own_reason" type="radio" value="little_use" />We wouldn't use it enough to justify the purchase price</br>
+<input name="no_own_reason" type="radio" value="expensive" />We would use it, but we simply do not have the money.</br>
+<input name="no_own_reason" type="radio" value="space" />I don't have
+the space for this item</br>
+</p>
+
+
+<b><p>What is your total household income?</b>
+<select name="own_income">
+  <option value="">Select one...</option>
+  <option value="0" >Less than $10,000</option>
+  <option value="1" >$10,000-$19,999</option>
+  <option value="2" >$20,000-$29,999</option>
+  <option value="3" >$30,000-$39,999</option>
+  <option value="4" >$40,000-$49,999</option>
+  <option value="5" >$50,000-$59,999</option>
+  <option value="6" >$60,000-$69,999</option>
+  <option value="7" >$70,000-$79,999</option>
+  <option value="8" >$80,000-$89,999</option>
+  <option value="9" >$90,000-$99,999</option>
+  <option value="10" >$100,000-$149,000</option>
+  <option value="11" >More than $150,000</option>
+</select>
+</p> 
+
