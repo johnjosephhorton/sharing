@@ -20,11 +20,11 @@ set.seed(12345)
 
 # Libraries
 require(tidyr)
+library(plyr)
 require(dplyr)
 require(ggplot2)
 require(stringr)
 library(data.table)
-library(ggplot2)
 library(lme4)
 library(stargazer)
 library(scales)
@@ -107,6 +107,18 @@ day.frac <- c(0,
 df$usage <- with(df, factor(answer.usage, levels = usage.levels, labels = usage.labels))
 df$x <- as.numeric(as.character(with(df, factor(answer.usage, levels = usage.levels, labels = day.frac))))
 
+df <- within(df, {
+  own = answer.own == "yes"
+  borrowed = answer.borrowed == "yes"
+  lent = answer.lent == "yes"
+  usage.index = scale(as.numeric(answer.usage))
+  income.index = scale(as.numeric(answer.own_income))
+  predict.index = scale(as.numeric(answer.predictability))
+  granular.index = scale(as.numeric(answer.granularity))
+  rent = answer.rent == "yes"
+})
+
+
 # Basic analysis
 
 
@@ -116,6 +128,12 @@ df$x <- as.numeric(as.character(with(df, factor(answer.usage, levels = usage.lev
 
 df.by.good <- data.table(df)[, list(frac.own = mean(answer.own == "yes", na.rm = TRUE)), by = input.good]
 df.by.good$input.good <- with(df.by.good, reorder(input.good, frac.own, mean))
+
+# dplyr way
+# df.by.good <- df %>% 
+#   group_by(input.good) %>% 
+#   summarise(frac.own = mean(answer.own == "yes", na.rm = T)) %>%
+#   mutate(input.good = reorder(input.good, frac.own, mean))
 
 g.own <- ggplot(data = df.by.good,
                 aes(x = input.good, y = frac.own)) +
@@ -208,17 +226,7 @@ writeImage(g.own.inc, "ownership_fractions_inc", width = 8, height = 8, path = "
 # Ownership analysis
 #-------------------
 
-df <- within(df, {
-    own = answer.own == "yes"
-    borrowed = answer.borrowed == "yes"
-    lent = answer.lent == "yes"
-    usage.index = scale(as.numeric(answer.usage))
-    income.index = scale(as.numeric(answer.own_income))
-    predict.index = scale(as.numeric(answer.predictability))
-    granular.index = scale(as.numeric(answer.granularity))
-    rent = answer.rent == "yes"
-})
-               
+           
 m.1 <- lm(own ~ usage.index, data = df)
 
 ggplot(data = df, aes(x = usage.index, as.numeric(own))) +
@@ -246,7 +254,6 @@ if (interactive()){
 
 writeImage(g.usage.by.own, "usage_by_own", width = 7, height = 7, path = "../writeup/plots/")
 
-library(plyr)
 
 df$input.good <- revalue(df$input.good, c("high-end digitial camera"="high-end\ndigitial camera",
                                           "kitchen timer (or egg timer)" = "kitchen timer\n(or egg timer)",
@@ -350,29 +357,29 @@ m <- lm(I(answer.lent == "yes") ~ as.numeric(answer.predictability), data = subs
 
 
 
-# Number of owners of 'input.good'
-df %>% 
-  select(input.good, answer.own) %>% 
-  group_by(input.good, answer.own) %>% 
-  summarise(count = n()) %>%
-  spread(answer.own, count, fill = 0) %>%
-  mutate(total = no + yes + `NA`)
-
-# Reasons for not owning 'input.good'
-df %>% 
-  select(input.good, answer.no_own_reason) %>% 
-  group_by(input.good, answer.no_own_reason) %>% 
-  summarise(count = n()) %>%
-  spread(answer.no_own_reason, count, fill = 0) %>%
-  mutate(total = expensive + little_use + space + `NA`)
-
-# Are owners of 'input.good' ever borrowed or rent it?
-df %>%
-  select(input.good, answer.own, answer.borrowed, answer.rent) %>% 
-  unite(answer.rent_or_borrowed, answer.borrowed, answer.rent, remove = T) %>%
-  mutate(answer.rent_or_borrowed = str_detect(answer.rent_or_borrowed, "yes")) %>%
-  group_by(input.good, answer.own, answer.rent_or_borrowed) %>%
-  summarise(count = n()) %>%
-  spread(answer.rent_or_borrowed, count, fill = 0) %>%
-  mutate(total = `TRUE` + `FALSE`)
+# # Number of owners of 'input.good'
+# df %>% 
+#   select(input.good, answer.own) %>% 
+#   group_by(input.good, answer.own) %>% 
+#   summarise(count = n()) %>%
+#   spread(answer.own, count, fill = 0) %>%
+#   mutate(total = no + yes + `NA`)
+# 
+# # Reasons for not owning 'input.good'
+# df %>% 
+#   select(input.good, answer.no_own_reason) %>% 
+#   group_by(input.good, answer.no_own_reason) %>% 
+#   summarise(count = n()) %>%
+#   spread(answer.no_own_reason, count, fill = 0) %>%
+#   mutate(total = expensive + little_use + space + `NA`)
+# 
+# # Are owners of 'input.good' ever borrowed or rent it?
+# df %>%
+#   select(input.good, answer.own, answer.borrowed, answer.rent) %>% 
+#   unite(answer.rent_or_borrowed, answer.borrowed, answer.rent, remove = T) %>%
+#   mutate(answer.rent_or_borrowed = str_detect(answer.rent_or_borrowed, "yes")) %>%
+#   group_by(input.good, answer.own, answer.rent_or_borrowed) %>%
+#   summarise(count = n()) %>%
+#   spread(answer.rent_or_borrowed, count, fill = 0) %>%
+#   mutate(total = `TRUE` + `FALSE`)
 
