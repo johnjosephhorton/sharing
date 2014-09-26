@@ -27,27 +27,83 @@
 
 \newtheorem{prop}{Proposition}
 
-
-%\title{Peer-to-Peer Computer-Mediated Rental Markets: \\ A Model of Collaborative Consumption}
-%\title{Consumers Renting Their Goods to Other Consumers}
-%\title{The Introduction of Rental Markets in Consumer Goods} 
-%\title{Buy, Buy and Rent Out, or Rent? \\ Consumer Theory in the Presence of Peer-to-Peer Rental}
-%\title{Peer-to-Peer Rental Markets}  
-\title{Peer-to-Peer Rental Markets: \\ The Economics of the ``Sharing'' Economy} 
+\title{Peer-to-Peer Rental Markets: \\ Some Simple Economics of the ``Sharing Economy''} 
 
 \date{\today}
 
 \author{John J. Horton \\ Leonard N. Stern School of Business \\ New York University\footnote{ Author contact information, datasets and code are currently or will be available at \href{http://www.john-joseph-horton.com/}{http://www.john-joseph-horton.com/}. } }
 \maketitle
 
+% \begin{table} 
+% \caption{Research Questions for the Sharing Economy} 
+% \begin{tabular}{ll} 
+% Is the sharing economy efficient? Is it just regulatory arbitrage? \\  
+% What happens to government revenue? \\ 
+% Can a P2P rental market emerge when everyone already owns? When no one owns? \\ 
+% How does a reduction in transaction costs affect all of the findings? \\ 
+% What consumer goods are most amenable to P2P sharing? \\ 
+% Does the emergence of sharing cause product market demand to rise or fall? \\ 
+% Does sharing increase efficiency? When are the gains the largest? \\ 
+% What does sharing do to product market demand curve for the good?\\  
+% In the presence of sharing, what is the distribution ownership? \\ 
+% What fraction of goods might be shared? \\
+% What does sharing do to the elasticity of demand?\\  
+% What happens when capital ownership is paired with owner-supplied labor? \\ 
+% Does sharing allow any markets that would not otherwise exist to now exist? \\ 
+% What are the comparative statics of changes in individual valuations of a good and the gap between those valuations?\\ 
+% How does the model change when there are different numbers of the different types? \\
+% Are firms at a disadvantage? \\
+% \end{tabular} 
+% \end{table} 
+
+% \begin{table}
+% \caption{Sharing Economy Research questions}
+% \centering
+% {\footnotesize 
+% \begin{tabular}{llp{8cm}} 
+% \toprule
+% Topic & Research Question & Model prediction \\ 
+% \hline 
+% {\bf Product market} \\ 
+% & What goods are amenable to P2P rental? & TK \\ 
+% & Effect of P2P rentals on the product market price in the long-run & TK \\
+% & Long-run elasticity of demand & TK \\ 
+% & Why did the firm sell rather than rent? & TK \\    
+% {\bf Welfare} \\ 
+% & Prior-owners not renting out & TK \\ 
+% & Prior-owners now renting out & TK \\ 
+% & Prior non-owners now renting & TK \\
+% & Efficiency & TK \\ 
+% {\bf Rental rates} \\
+% & What is the short-run rental rate? & TK \\
+% & What is the long-run rental rate?  & TK \\ 
+% {\bf Participation} \\ 
+% & Who rents out in the long- and short-run? \\ 
+% {\bf Comparative statics---Transaction Costs} \\ 
+% & long-run rental rate & TK \\ 
+% & long-run product market price & TK \\ 
+% & Ownership shares & TK \\ 
+% \bottomrule
+% \end{tabular}  
+% }
+% \end{table}
+
+
 \begin{abstract}
-\noindent  I consider a model where the owners of goods can use those capital goods themselves and, at some cost, rent them in a marketplace. 
-What goods are likely to be shared. 
-What are the welfare consequences. 
-Will overall product demand go up or down? \newline
+\noindent  
+Recently a number of computer-mediated peer-to-peer (P2P) rental markets in durable consumer goods have emerged. 
+In this paper, I present a simple model where consumers that differ in their planned usage (and hence ownership decision) about goods creates the potential for P2P trades. 
+I compare a short-run where existing owners can rent to non-owners and a long-run where all consumers can revise their ownership decisions. 
+The model makes several predictions. 
+First, to support a P2P rental market, product market prices have to be low enough that some people buy, but not so low that everyone buys: 
+the existence of non-owners that still value that good is what generates the demand. 
+Market clearing in the short-run comes from owners and renters economizing on use---though a glut is possible if spare owner capacity exceeds non-owner demand even when the rental rate is zero. 
+Market clearing in the long-run comes as consumers revise their initial ownership decisions in light of the possibility of sharing.  
+In long-run, consumers are indifferent between renting and owning---they consume the same amount of the good at the same cost. 
+Most commentators have implicitly assumed that P2P rental markets will reduce total ownership, but a sharing economy ``Jevon's paradox'' is possible in which the emergence of P2P rentals stimulate greater ownership---namely if the short-run rental rate is greater than the product market price, consumers will be drawn into ownership.   
+I also consider the comparative statics from technological innovations that reduce transaction costs and explore what goods are particularly amenable to rental. \newline 
 \noindent JEL J01, J24, J3
 \end{abstract} 
-
 
 % http://www.forbes.com/pictures/ehfk45edlgh/0122_sharing-williams-snapgoods_650x455-jpg/
 % http://www.zdnet.com/the-sharing-economy-that-doesnt-exist-7000030137/
@@ -70,144 +126,17 @@ Will overall product demand go up or down? \newline
 
 % “We’re going to have to invent new economics to capture the impact of the sharing economy,” says Arun Sundararajan, a professor at the Stern School of Business at NYU who studies this phenomenon. The largest question for academics is whether this all creates new value or just replaces existing businesses.
 
-\section{Key Research Questions} 
-
-\begin{table} 
-\caption{Research Questions for the Sharing Economy} 
-\begin{tabular}{ll} 
-Is the sharing economy efficient? Is it just regulatory arbitrage? \\  
-What happens to government revenue? \\ 
-Can a P2P rental market emerge when everyone already owns? When no one owns? \\ 
-How does a reduction in transaction costs affect all of the findings? \\ 
-What consumer goods are most amenable to P2P sharing? \\ 
-Does the emergence of sharing cause product market demand to rise or fall? \\ 
-Does sharing increase efficiency? When are the gains the largest? \\ 
-What does sharing do to product market demand curve for the good?\\  
-In the presence of sharing, what is the distribution ownership? \\ 
-What fraction of goods might be shared? \\
-What does sharing do to the elasticity of demand?\\  
-What happens when capital ownership is paired with owner-supplied labor? \\ 
-Does sharing allow any markets that would not otherwise exist to now exist? \\ 
-What are the comparative statics of changes in individual valuations of a good and the gap between those valuations?\\ 
-How does the model change when there are different numbers of the different types? \\
-\end{tabular} 
-\end{table} 
-
-\subsection{Model} 
-Our goal is to develop something analogous to a consumer theory. 
-However, the goal is not to explain the how much of some good is purchased, but rather to explain how intensively some good is used conditional upon purchase. 
-In other words, we will not describe how much of a budget is dedicated to purchasing a vacation home, but rather what fraction of time is spent in that home. 
-
-Consider a collection of consumer's that have to decide how much of their time to allocate to the use of some purchased good. 
-Let their money-metric utility function be
-\begin{equation}
-u(x) = 2 \alpha x - x^2  
-\end{equation} 
-where $x$ is the fraction of time they spend using the good and $\alpha \in (0,1)$ is a parameter for how much utility they derive from the good. 
-This utility function has the attractive property of generating tractable demand and indirect utility functions: 
-\begin{equation}
-x^* = \alpha  
-\end{equation} 
-and 
-\begin{equation}
-v(\alpha) = u(x^*) = \alpha^2.  
-\end{equation} 
-The good in question costs $p$ to own, and so a forward-looking consumer will buy if $\alpha^2 > p$. 
-For all $\alpha^2 > p \wedge \alpha < 1$, the consumer will have ``excess'' capacity, namely of $1 - x^*$.
-
-\subsubsection{Three consumption possibilities with two consumer types} 
-Consider a marketplace with two consumer types: $\alpha_H$ and $\alpha_L$ with $\alpha_H > \alpha_L$. 
-For a given price $p$, there are three possibilities: 
-\begin{itemize}
-\item Everyone buys: $\alpha_L^2 > p$. 
-\item High-types buy but low-types do not: $\alpha_H^2 > p > \alpha_L^2$. 
-\item No one buys: $\alpha_H^2 < p$. 
-\end{itemize} 
-
-\begin{figure}
-\centering 
-\caption{Three consumer market possibilities in the absence of P2P rental with two consumer types}
-\begin{minipage}{0.8 \textwidth} 
-\includegraphics{./images/three_parts.pdf} 
-\end{minipage}  
-\end{figure} 
-
-\subsection{Short-run P2P rental equilibrium} 
-I define ``short-run'' meaning that no one can revise their ownership decisions. 
-In the equilibrium where the high-types buy but the low-types do not, we can consider the emergence of a P2P rental market. 
-In this market, the high-types sell their excess capacity to the low-types at a \emph{rate} of $r$. 
-We must first consider what is the market-clearing rental rate. 
-Before the possibility of rental, the high-types were simply consuming $\alpha_H$, giving $1-\alpha_H$ to rent out.
-However, the high-types have the possibility of economizing their consumption in light of the new opportunity cost of consumption---namely foregone rental income. 
-The new owner optimization problem is 
-\begin{equation}
-\max_x \quad 2\alpha_H x - x^2 + (1-x)r - p,   
-\end{equation} 
-giving $x_H^* = \alpha_H - r/2$. 
-whereas for the low-types, the optimization problem is 
-\begin{equation}
-\max_x \quad 2 \alpha_L x - x^2 - xr,  
-\end{equation} 
-giving $x_L^* = \alpha_L - r/2$. 
-For the rental market to clear at a rental rate of $r^*$, then $1 - x_H(r) = x_L(r)$  
-which implies that 
-\begin{equation} \label{eq:strr} 
-\alpha_H + \alpha_L - 1 = r^*.  
-\end{equation} 
-A natural question is whether this short-run equilibrium gives way to a long-run equilibrium in which ownership choices are revised. 
-
-\subsection{Long-run P2P rental equilibrium} 
-The first-order condition for the consumer's usage maximization problem was the same regardless of ownership: $2 \alpha - 2x = r_{LR}$ 
-The return to owning is 
-\begin{equation}
-v_{OWN} = 2\alpha_H x^* - x^*^2 + (1-x^*)r_{LR} - p   
-\end{equation} 
-whereas the return to renting is 
-\begin{equation}
-v_{RENT} = 2\alpha_H x^* - x^*^2 - x^*r_{LR}  
-\end{equation} 
-and since $x^*$ is the same in both cases, for a consumer to be indifferent,  
-\begin{equation}
-r_{LR} = p.  
-\end{equation}  
-To see whether the emerging of P2P rentals will increase or decrease total ownership, we need to consider whether the short-run rental rate defined by Equation~\ref{eq:strr} is greater than or less than the purchase price. 
-If the short-run rental rate is
-\begin{equation}
- r_{SR} > p \implies \mbox{More ownership} 
-\end{equation}  
-whereas
-\begin{equation}
- r_{SR} < p \implies \mbox{Less ownership}.  
-\end{equation}  
-
-
-
-
-
-
- 
-
-
-
 \section{Introduction}
-Entrepreneurs are creating computer-mediated peer-to-peer rental markets for goods such as cars, clothing, tools, bicycles, camera equipment, apartments, offices, parking spaces and so on.
-These marketplaces lower the transaction costs and informational problems that presumably made these kinds of peer-to-peer transactions previously uneconomical.
-Perhaps the most prominent example is Airbnb, which allows individuals to rent out spare bedrooms, apartments or even entire homes: Airbnb was recently valued at TK and now has more stock of rooms than the TK hotel chain. 
+Peer-to-peer (P2P) rental markets have recently sprung up for a variety of durable goods:
+examples include cars, lodging, clothing, tools, bicycles, cameras, offices, parking spaces and so on.
+These new marketplaces are invariably computer-mediated, with the facilitating platform taking steps to reduce the transactions costs that presumably make these kinds of exchanges heretofore unprofitable to run. 
+Perhaps the most prominent example of P2P rental markets is Airbnb, which allows individuals to rent out spare bedrooms, apartments or even entire homes.
  
-This phenomena---sometimes called ``collaborative consumption'' and the broader development the ``sharing economy'' has attracted much business and policy interest.  
-Proponents argue it lets owners put otherwise idle goods into use and expand access for people who could not or would not buy. 
+These emerging P2P rental markets are viewed by some as a the first signs of a seachange in consumerism: 
+this so-called ``sharing economy'' might expand access to goods, increase efficiency by increasing utiliziation, reduce ownership and provide more ways for individuals to earn an income. 
+Aside from the business interest (these sharing economy companies have received at least TK billion in VC investment), these companies have also attracted (mostly negative) policy interest. 
 Critics charge that their primary competitive advantage of these peer-to-peer lenders is regulatory arbitrage: 
-not subject to the same regulations as conventional firms, P2P rentals are artificially (and inefficiently) cheap. 
-
-Both proponents and critics are making implicit, albeit informal arguments about the economic nature of these markets.  
-The purpose of this paper is to introduce a model of P2P rental of goods and explore its implications.  
-Although rental markets have long-existed, the widespread renting by consumers to other consumers is something fundamentally new that requires an explanation.  
-It also seeks to more formally characterize what makes a good ``rentable.'' 
-First we consider an existing product market where consumers must decide whether or not to buy a good.
-Consumers differ in their utility from using the good and those with relatively high expected use buy while those that do not go without.
-Each consumer, regardless of the purchase price, has some optimal use fraction between 0 and 1, with 1 being use 100\% of the time (e.g., a heart pacemaker). 
-We compare this purchase-only market to a pure rental market where the rental rate is the same as the purchase price. 
-
+sellers in these markets---not subject to the same regulations as conventional firms---can price their goods artificially (and inefficiently) cheap. 
 
 %% Car-sharing services like RelayRides, Uber, Sidecar and Lyft have repeatedly encountered regulatory resistance from nearly every city they have begun operations in, with that opposition often spearheaded by existing Taxi companies.   
 %% Airbnb was---until recently---in a protracted fight with the New York Attorney General's office regarding hosts potential violation of New York City's illegal hotel laws.  
@@ -220,6 +149,15 @@ We compare this purchase-only market to a pure rental market where the rental ra
 % - If product market demand less elastic, if the products have market power product market prices should rise.  
 % - To owners to fully internalize benefits?    
 
+The purpose of this paper is to explore these arguments through the lens of a simple model of a durable goods product market before and after the introduction of P2P rentals. 
+In the model consumers decide whether to buy a good based on how much utility it would bring them. 
+Utility in turn depends on how much the good would be used if purchased.
+I assume that all goods offer declining marginal utility from usage and that eventually utility would go below zero. 
+If the utility from the optimal level of usage is greater than the purchase price, the consumer buys the good. 
+Even in the absence of any direct marginal usage cost, individuals will generally not use a good 100\% of the time. 
+For example, a hobbyist guitar owner might play 5 hours a week, but few would play 50 voluntarily and 100 hours a week would for almost everyone be hellish.
+This aspect of ownership---a usage rate often (far) below 100\%---combined with a sufficient number of non-owning consumers that still value the good---is what creates the economic rationale for P2P rental markets.      
+
 The general characteristic of goods that are ``rentable'' are those that are used infrequently but are expensive: 
 cars and hotels in distant cities, tuxedos, certain tools, etc.
 However, these goods were usually offered by a company who owned the stock with the explicit purpose of renting.  
@@ -227,67 +165,27 @@ And although individuals are owned by at least some consumers who would have exc
 Simply finding an appropriate trading partner would be difficult, to say nothing of coming to terms, writing a contract, monitoring compliance, handling disputes, making payment and so on. 
 Further, those individuals that owned a good despite the existence of a rental market were likely those with relatively little excess capacity to rent out. 
 
-A natural question is why these P2P markets are arising now? 
-The short answer is that advances in information and communications technology are making them possible---particularly the mass adoption of the Internet and smart phones.  
-Computer-mediated platforms can match supply and demand, nudge parties towards agreements, provide a regulatory and monitoring framework and take numerous steps to minimize adverse selection and moral hazard, such as maintaining a reputation system. 
-As many of these services are offered algorithmically, the marginal cost of intermediation is close to zero, and by definition, capital costs are zero.  
-The first effect of this development is to create rental markets where none existed before. 
 
 \begin{table}
 \caption{Sharing economy companies and the category of goods of services used}
 \centering
-\begin{tabular}{llc} 
+\begin{tabular}{ll} 
 \toprule
-Good or Service & Company & Labor Component? \\ 
-\hline Rooms           & Airbnb & No \\ 
-Vacation homes  & VRBO   & No \\ 
-Cars            & UberX, Lyft, RelayRides, Sidecar, Getaround & Yes \\   
-Parking         & Park Circa, ParkatmyHouse, Parking Panda & No \\
-Bicycles        & Liquid & No \\   
-WiFi Router     & Fon & No \\ 
-Boat            & Boatbound & No \\
-Camera equipment& LensRentals & No \\  
-Handman tools   & TaskRabbit  & Yes \\
-Household goods & SnapGoods   & No \\ 
-Kennel          & DogVacay   & Yes \\ 
-Clothes         & GirlMeetsDress & No \\
-\bottomrule
-\end{tabular}  
-\end{table}
-
-
-\begin{table}
-\caption{Research questions}
-\centering
-{\footnotesize 
-\begin{tabular}{llp{8cm}} 
-\toprule
-Topic & Research Question & Model prediction \\ 
+Good or Service & Company \\ 
 \hline 
-{\bf Product market} \\ 
-& What goods are amenable to sharing? & TK \\ 
-& Effect of sharing on the product market price in the long-run & TK \\
-& Long-run elasticity of demand & TK \\ 
-& Why did the firm sell rather than rent? & TK \\    
-{\bf Welfare} \\ 
-& Prior-owners not renting out & TK \\ 
-& Prior-owners now renting out & TK \\ 
-& Prior non-owners now renting & TK \\
-& Efficiency & TK \\ 
-{\bf Rental rates} \\
-& What is the short-run rental rate? & TK \\
-& What is the long-run rental rate?  & TK \\ 
-{\bf Participation} \\ 
-& Who rents out in the long- and short-run? \\ 
-{\bf Comparative statics---Transaction Costs} \\ 
-& long-run rental rate & TK \\ 
-& long-run product market price & TK \\ 
-& Ownership shares & TK \\ 
+Short-term lodging   & Airbnb, VRBO, Couchsurfing  \\ 
+Cars            & UberX, Lyft, RelayRides, Sidecar, Getaround  \\   
+Parking         & Park Circa, ParkatmyHouse, Parking Panda \\
+Bicycles        & Liquid \\   
+WiFi Router     & Fon \\ 
+Boat            & Boatbound \\
+Camera equipment& LensRentals  \\  
+Household goods & SnapGoods   \\ 
+Kennel          & DogVacay    \\ 
+Clothes         & GirlMeetsDress \\
 \bottomrule
 \end{tabular}  
-}
 \end{table}
-
 
 There are several economic questions that this creation of peer-to-peer rentals raise. 
 Does the product market demand for the durable good go up or down when P2P rental markets emerge?  
@@ -298,437 +196,333 @@ How does initial pattern of good ownership and how does it change?
 What goods are particularly amenable to sharing and why?  
 
 To answer these questions, I develop a simple model that starts with a collection of would-be consumers for a good that make a purchasing decision before the possibility of rental.
-Before the possibility of rental, some consumers buy a good and others do not, based on how intensively they plan to use the good after purchase and the indirect utility this provides.  
-I then introduce the possibility that owners can rent to non-owners, creating a ``short run'' sharing economy. 
-Next, I assume that all parties can adjust their buying and renting decisions, creating a ``long run'' which affects prices in the product market. 
-
-I assume that this difference reflects differences in preferences, but not in a direct way, with some explicitly valuing the good more than others. 
-Instead, I assume that consumers differ in their marginal utility from \emph{intensive} margin use of the good.
-This can be thought of as what fraction of their time they spend using that good.  
-Given these differences, conditional upon purchase, some consumers use the good very intensively (those with a high marginal utility from use) and some consumers would not use the good intensively. 
 Consumers consider the indirect utility from their chosen level of intensive-margin consumption and compare it to the purchase price. 
-Those whose indirect utility is greater buy the good, while those that do not go without.  
-This creates a collection of owners, each of whom picks some level of usage. 
-
+Those whose indirect utility is increased buy the good, while those that do not go without.  
 I assume that a technological shock creates the possibility of owners renting out their excess capacity to non-owners. 
-There is a fixed cost to renting, which we might think of as the transaction cost plus the ``reset'' costs to counter any depreciation from more intensive use. 
-With the possibility of renting, owners have to make two decisions: whether to rent at all given the rental rate and, when faced with a specific rental rate, how much to economize their own usage, which frees up supply to rent. 
-Interestingly, those that rent and those that own and rent out face the same usage decision, the marginal cost of usage now includes the rental rate (for those that rent) and the foregone rental income (for those that own and rent out). 
-
-For the short-run rental market to clear, the amount of supply from owners has to equal demand. 
-This determines a rental rate, which is only indirectly related to the purchase price. 
-In the long run, everyone is free to re-visit their ownership decision. 
+This creates a ``short-run'' P2P rental market in which equilibrium is defined by a rental rate that clears the market among existing owners and non-owners. 
+I consider a ``long-run'' where owners and renters can revise their purchase decisions.  
 If the short-run rental rate is below the purchase price plus the costs of renting, then ownership is less attractive, which will reduce \emph{purchase} demand for product, lowering prices. 
 However, if the rental rate is above the purchase price plus the cost of renting, ownership becomes more attractive, increasing demand and raising purchase prices in the product market. 
 
-Technological improvements that lower the costs of renting tend to bring more owner-provided supply of goods into the rental market, lowering rental rates. 
-This in turn reduces the appeal of ownership, lowering prices in the product market. 
-From the consumer perspective, reduced product market prices are Pareto improving regardless of whether the consumer rents, owns and rents out or owns but does not rent. 
+The revision in the ownership decision in the long-run potentially affects product market demand. 
+I consider how these product price changes impact welfare and compare them to product market price changes in the absence of P2P rentals. 
+
+One issue that is initially ignored are transaction costs, reset costs and depreciation. 
+I modify the basic framework to include these costs and consider how it changes the results. 
+One of the main findings is that when transactions costs are sufficiently high, the P2P rental market cannot exist. 
+This finding suggests that the technological changes---namely the maturation and increasing penetration of the Internet and web-based technologies---were the technological shock that made these P2P rental markets feasible. 
+
+After the theoretical analysis, I present some results from a survey designed to explore some of the assumptions and predictions of the model. 
 
 Goods with high purchase prices but low and predictable intensive margin usage are ideal for P2P rental markets: 
 the purchase price is high enough that there are lots of would-be consumers with high willingness to pay and enough owners with excess capacity that the market-clearing rental rate is not prohibitively high. 
 When produce market prices are low, there is no excess demand so nearly everyone buys the product, so even if the good is used infrequently, no rental market can exist.  
-For example, there is no rental market in kitchen timers or egg timers: although they are used very infrequently and quite durable, there is neither supply (no one owning finds it worth the trouble) nor demand (if one wants one, they go to the product market). 
+For example, there is no rental market in egg timers---although they are used infrequently and quite durable, there is neither supply (no one owning finds it worth the trouble to rent them out) nor demand (if one wants one, they go to the product market). 
 Other goods are expensive but there is no excess capacity, as they are used more or less continuously. 
-For example, there is no P2P rental market in heart pacemakers. 
-There would also be no demand---if all owners want to use a good nearly 100\% of the time, then presumably so do would-be renters, and if that is true, they are not renters but rather owners, subject to budget constraints.   
+For example, there is and can be no P2P rental market in dentures. 
+Other goods are used infrequently and are expensive but make poor sharing candidates because demand is so unpredictable. 
+For example, a back-up gas-powered electrical generator is used infrequently but would be difficult to rent in a P2P market, as demand is likely to be correlated in space and time. 
 
-\section{Nature of depreciation} 
-Rental markets only exist for durable goods. 
-For a P2P rental market to function, goods have to depreciate regardless of usage level. 
-This makes it useful to use them up more quickly, through more intensive use. 
-
-\section{Product market without rental} 
-Consider a product market with consumer type $\theta_i$, where $\theta_i > 0$. 
-Each consumer has a utility of \emph{usage} of that good $\theta_i u(x)$ where $x \in [0,1]$ is the fraciton of available time spent using that good and $theta_i$ is that consumer's type.
-We assume that $u'(x) > 0$ and $u''(x) < 0$. 
-The cost of using a good is linear in $c$. 
-An individual that purchases a good makes a decision about how intensively to use it: 
-\begin{align}
-\max_x \theta_i u(x) - c x.  
-\end{align} 
-If the solution to optimization problem is $x^*$, then a consumer will buy the product at a price $p$ if 
-\begin{align}
-\theta_i u(x^*) - c x^* - p \ge 0.  
-\end{algin} 
-Intuitively, those consumers that will use the product more conditional upon purchase are more likely to purchase. 
-If $\underline{\theta}(p)$ is the lowest $\theta$ consumer that still purchases the product, then the market demand curve will be 
-\begin{align}
-D(p) = n \left(1 - F(\underline{\theta(p)})\right)
-\end{align} 
-where $F$ is the cdf of consumer types. 
-
-\subsection{Two consumer types with and without rental markets} 
-Consider the case where there are just two consumer types: $\theta_H$ and $\theta_L$, with $\theta_H > \theta_L > 0$. If $p$ is low-enough, then both types purchase. 
-If $p$ is high-enough, neither type purchases. 
-For a range of prices betweent these extremes, the high-types purchase the good and the low-types go without. 
-
-Now we consider what happens when individual purchasers can rent their excess capacity---$1-x$---to non-purchasers via peer-to-peer rental markets. 
-To begin, no one can revise their original purchase decision, but they can revise their personal usage.  
-The purchasers rent to the non-purchasers at a rental rate $r$. 
-
-Let us assume that $\tau$ of the consumers are high-types and $1-\tau$ are low-types. 
-
-\paragraph{Rentals in the high-types are the only purchasers market} 
-
-Now consider the possibility that purchasing consumers can rent out whatever capacity they do not use at a rental rate $r$. 
-For example, a non-purchaser renting for $x$ units of time will pay $rx$. 
-For a purchaser, the full cost of usage is now $c + r$, since usage has both the direct cost and the opportunity cost of foregone rental. 
-The the non-purcahser, the cost of usage is the same, since they have to pay $r + c$ as well.  
-There is a fixed cost $\gamma$ of renting paid by purchasers of the good.  
-For this reason, at an equilibrium rental rate 
-\begin{align}
-\theta_H u'(x_H^*(c,r)) = \theta_L u'(x_L^*(c,r)) = c + r. 
-\end{align} 
-Furthermore, for the market to clear, 
-\begin{align}
-1 - x_H^*(c, r)  = \left(\frac{1-\tau}{\tau}\right)  x_L^*(c, r). 
-\end{align} 
-Also, $\left(1-x_H^*(x,r)\right)r > \gamma$. 
-
-\begin{prop}
-In the equilibrium of the peer-to-peer rental market, the high-types still consumer more of the good than the low-types.  
-\end{prop} 
-\begin{proof} 
-Because $\theta_H > \theta_L$, $u'(x^*_H) < u'(x^*_L)$ and by the concavity of $u$, $x^*_H > x^*_L$. 
-\end{proof} 
-
-\subsection{Comparative statics of the rental rate} 
-\begin{prop}
-If the marginal cost of usage goes up ($c$ increases), rental rates fall, as will ownership.   
-\end{prop} 
-\begin{proof}
-For both kinds of consumers, an increase in $c$ reduces equilibrium consumption by a simple sign argument and the assumption that $u''(\cdot) < 0$:  
+\section{Consumer's decision about how intensively to use a good} 
+Consider a consumer that has to decide how much of their time to allocate to the use of some purchased durable good. 
+Their money-denominated utility function is
 \begin{equation}
-\theta u''(x^*)\frac{\partial x^*}{\partial c} = 1.  
+u(x) = 2 \alpha x - x^2  
 \end{equation} 
-A decrease in $x_H^*$ raises $1-x_H^*$, meaning there is more excess capacity on the market available for rent, but on the demand side, $x_L^*$ falling means less demand. 
-The result is a lower-rental rate, which causes more renting as purchasers can revise their purchasing decisions.
-\end{proof} 
-
-\subsection{Revising the ownership decision} 
-Utility for high-type purchasers renting out their excess capacity is  
-\begin{align}
-\theta_H u(x^*_H) - cx^*_H + (1 - x^*_H)r  - p - \gamma 
-\end{align} 
-whereas if they had counter-factually rented, their utility would have been 
-\begin{align}
-\theta_H u(x^*_H) - c x^*_H  - r x^*_H  
-\end{align} 
-A consumer would have preferred purchasing to renting if 
-\begin{align}
- \theta_H u(x^*_H) - cx^*_H + r(1 - x^*_H)  - p  >  \theta_H u(x^*_H) - c x^*_H  - r x^*_H 
-\end{align} 
-which simplifies to $r > p + \gamma$. 
-
-
-\section{Product market without rental} 
-Consumers have a unit of time available and choose some fraction of their time, $x$ in $[0,1]$, to use the good. 
-Consumers differ in their utility from usage: they get utility $\theta u(x)$ where $\theta \in [\underline{\theta}, \bar{\theta}]$, with $\theta \sim F$.  
-Users pay a cost from usage of $cx$, where $c > 0$. 
-I assume that $u'(x) > 0$ and $u''(x) < 0$ and $u(0) = 0$.
-At a price $p$, a consumer buys the good if 
+where $x \in [0,1]$ is the fraction of time they spend using the good, $\alpha \in (0,1)$ is a parameter for how much utility they derive from the good. 
+Individual intensive margin ``demand'' is  
 \begin{equation}
-\theta u(x^*) - cx^* \ge p  
+x^* = \alpha  
 \end{equation} 
-where $x^*$ maximizes the consumer's utility, conditional upon purchasing. 
-Market demand for the product is 
+and indirect utility is 
 \begin{equation}
-D(p) = \int_{\theta_B}^{\bar{\theta}} f(\theta) \, d\theta  = 1 - F(\theta_B)
+v(\alpha) = u(x^*) = \alpha^2.  
 \end{equation} 
-where $\theta_B$ is the $\theta$ of the consumer indifferent between buying and not buying. 
-For the marginal buyer, $v(\theta_B) = 0$, where $v(\cdot)$ is the indirect utility function.  
-
-\subsection{Elasticity of demand}
-We can characterize the elasticity of demand based in part on the shape of $u()$ at $\theta_B$. 
-The price elasticity of demand for the product is 
+The good costs $p$ to own, and so a forward-looking consumer will buy if 
 \begin{equation} 
-E_D = \frac{D'(p)}{D(p)} = - \left(\frac{f(\theta_B)}{1-F(\theta_B)} \right) \frac{\partial \theta_B}{\partial p}. 
+\alpha^2 > p. 
 \end{equation} 
-Using the first order condition and applying the envelope theorem, we have 
+Note that for all $\alpha^2 > p \wedge \alpha < 1$, the consumer will have an amount of time $1 - x^*$ when they are not using the good.
+
+\subsection{Three consumption possibilities with two consumer types} 
+Consider a marketplace with two consumer types that are equally common: $\alpha_H$ and $\alpha_L$ with $\alpha_H > \alpha_L$. 
+For a given price $p$, there are three market possibilities: 
+everyone buys: $\alpha_L^2 > p$; high-types buy but low-types do not: $\alpha_H^2 > p > \alpha_L^2$; and no one buys when $\alpha_H^2 < p$. 
+This gives a market demand curve of 
 \begin{equation}
-\frac{\partial \theta_B}{\partial p} = \frac{1}{u(x^*)} = \frac{\theta}{p + cx^*}. 
+   D(p) = \left\{
+     \begin{array}{ll}
+       0 & : p > \alpha_H^2\\
+       1 & : \alpha_H^2 \ge p > \alpha_L^2  \\
+       2 & : p \le \alpha_L^2  \\
+     \end{array}
+   \right.
 \end{equation} 
-This implies that products with a lower $u(x^*(\theta_B))$ have more elastic demand.  
-Consider Figure~\ref{fig:extensive_margin}, which shows the indirect utility function versus $\theta$ for two products. 
-Note that both products have the same demand at price $p$ (same $\theta_B$). 
-However, in the figure, the steeper slope comes from the product with the higher $u(x)$. 
-Note that $\frac{\partial v}{\partial \theta} = u(x^*)$. 
-
-\subsection{Comparative statics} 
-
-\begin{prop}
-An increase in $c$, the opportunity cost of time, lowers demand for the good.  
-\end{prop} 
-\begin{equation}
-\frac{\partial x^*}{\partial c} = \frac{1}{\theta u''(x^*)} \le 0. 
-\end{equation} 
-
+Figure~\ref{fig:three_types} illustrates the possibilities by plotting regions on the the space of $\alpha_H \in [0,1] \times \alpha_L \in [0,1]$ when $p = 0.5$.  
+The upper-right triangle is the region where both consumer-types buy and the lower-left triangle where neither buy: 
+the cross-hatched rectangle shows the area where high-types buy but low-types do not. 
+In the cross-hatched rectangle where high-types buy and low-types do not, there is a possibility of mutually beneficial trade:
+the low-types here have $\alpha_L > 0$ and hence value the good and the high-types have $x^* < 1$, which gives them some excess capacity to rent out. 
 
 \begin{figure}
-\caption{Individual utility and demand on the extensive margin \label{fig:extensive_margin}} 
 \centering 
-\begin{minipage}{\textwidth} 
-\includegraphics[width = 0.80 \linewidth]{./diagrams/extensive_margin_demand_elasticity.pdf}
-{\footnotesize
-\newline \emph{Notes:} This figure shows how different utility functions create different elasticities of demand on the extensive margin.  
-}
+\caption{Three consumer market possibilities in the absence of P2P rental with two consumer types}
+\label{fig:three_types} 
+\begin{minipage}{0.8 \textwidth} 
+\includegraphics{./images/three_parts.pdf} 
 \end{minipage}  
 \end{figure} 
 
-\section{Pure rental market} 
-Initially, we assume that there is no friction. 
-In this market, the quantify of the good consumed is just 
+\subsection{Short-run P2P rental equilibrium} 
+We now suppose that through some technological advance, it becomes possible for the high-types to costlessly sell their entire excess capacity to the low-types. 
+We will define the resulting P2P rental market as being in a short-run equilibrium, in that---at first---no consumer can revise their ownership decision. 
+Before the possibility of rental, the high-types were simply consuming $\alpha_H$, giving $1-\alpha_H$ to rent out.
+If they owned the good, the low-types would consume $\alpha_L$. 
+However, with the new possibility of rental, each consumer's decision problem has changed. 
+The new owner optimization problem---when the rental rate is $r$---is 
 \begin{equation}
-D(r) = \int_{\underline{\theta}}^{\bar{\theta}} x(\theta, c + r) d\theta,  
+\max_x \quad 2\alpha_H x - x^2 + (1-x)r - p,   
 \end{equation} 
-where $r$ is the rental rate. 
-The chance in demand from a small increase in the rental rate is 
-\begin{eqnarray*}
-\frac{\partial D(r)}{\partial r} &=& \int_{\underline{\theta}}^{\bar{\theta}} \frac{\partial x(\theta, c + r)}{\partial r} d\theta  \\
-                                 &=& \int_{\underline{\theta}}^{\bar{\theta}} \frac{1}{\theta u''(x)} d\theta  \\
-                                 &=& \int_{\underline{\theta}}^{\bar{\theta}} \frac{1}{c+r}\frac{u'(x)}{\theta u''(x)} d\theta  \\
-                                 &=& \frac{1}{c+r} \int_{\underline{\theta}}^{\bar{\theta}} \theta \frac{\partial x}{\partial \theta} d\theta  \\
+whereas the renter optimization problem is 
+\begin{equation}
+\max_x \quad 2 \alpha_L x - x^2 - xr.  
+\end{equation} 
+Both decision problems yield the same usage decision: 
+\begin{equation}
+x^*_i = \left\{
+     \begin{array}{ll}
+       \alpha_i - r/2 & : 2\alpha_i > r \\
+       0 & : \mbox{else}  \\
+     \end{array}
+   \right.
+\end{equation} 
+For the rental market to clear 
+\begin{equation} 
+1 - x^*_H(r) = x^*_L(r)
+\end{equation}   
+which implies that 
+\begin{equation} \label{eq:strr} 
+r = \alpha_H + \alpha_L - 1.  
+\end{equation} 
+Because only positive rental rates are possible, a glut can exist if $\alpha_H + \alpha_L < 1$: a negative rental rate would be needed to ``clear'' the market.
+In contrast, when $\alpha_H + \alpha_L > 1$, both owners and renters need to economize on their usage of the good until the market clears.   
+Figure~\ref{fig:market_clearing} illustrates market clearing: 
+In the absence of the P2P rental market, each user consumes $\alpha$ according to their type. 
+At first, the high-types user $x^*$, indicated with a light, 45 degree line . 
+For short-run market clearing, the high-types economize on usage (heavy line) until $1-x_H^*(r) = x_L^*(r)$. 
 
-\end{eqnarray*} 
-and then, using integration by parts 
-\begin{eqnarray}
-\frac{\partial D(r)}{\partial r} &=& \frac{1}{c+r}\left[\bar{\theta}x(\bar{\theta}) - \int_{\underline{\theta}}^{\bar{\theta}} x(\theta) \right] \\ 
-                                 &=& \frac{1}{c+r}\left[\bar{\theta}x(\bar{\theta}) - D(r) \right]
+\begin{prop}
+If all consumers were allocated the good, if their cumulative usage would exceed the full utilization capacity of the actual stock of purchased goods, then a positive rental rate is needed to clear the market. 
+\end{prop} 
+
+\begin{figure}
+\caption{Market clearing with two consumer types in a P2P rental market} 
+\centering
+\label{fig:market_clearing} 
+\begin{minipage}{0.90 \linewidth}
+\includegraphics{./diagrams/market_clearing.pdf}
+\end{minipage} 
+\end{figure}
+
+\begin{prop}
+If the marginal utility of either type goes up ($\alpha_H$ or $\alpha_L$ increase), short-run rental rates increase. 
+\end{prop} 
+
+\subsection{Consumer welfare in the short-run} 
+For a renter, indirect utility under the short-run P2P rental equilibrium is
+\begin{eqnarray} 
+v_R(\alpha_L, r) &=& \frac{1}{4}\left(r - 2\alpha_L \right)^2  \\
+                 &=& \frac{1}{4} \left[ (1-\alpha_H) + \alpha_L \right]^2
 \end{eqnarray} 
+which is always positive. 
+Note further that the renter's increase in utility from the P2P-rental market is proportional to the square of their own (hypothetical) consumption and the high-types \emph{non}-consumption in the absence of the rental market. 
+In other words, for renters, the most value is unlocked when they had high latent demand unmet demand for the good and when there was a great deal of ``wasted'' excess capacity from the high-types. 
+Not further than the most value is created for sellers when $\alpha_H = \alpha_L + \epsilon$ (since $\alpha_H > \alpha_L$) i.e., valuations are nearly identical, though this condition also makes it unlikely for a P2P rental market to emerge from an existing high-types buy/low-types do not because it requires $p$ take a very specific value, namely $p \in (\alpha_L, \alpha_L + \epsilon]$. 
 
-How does a chance in $r$, the rental rate, affect demand? 
-
-
-\section{A rental market with friction} 
-When consumers faced a buy/no buy decision, all users with $\theta < \theta_B$ but with $\theta u'(0) > c$ wanted to consume some of the good but were unwilling to pay $p$ for it. 
-Now we consider a frictionless rental market where $r = p$, meaning that the cost of fractional use ($x < 1$) is pro-rated proportionally to the product market price. 
-Figure~\ref{fig:buy_versus_rent} shows the utility of buyers and renters versus $\theta$. 
-
-At each value of $\theta$, conditional upon purchasing, a buyer uses the good more than a renter. 
-The reason is that an owner's marginal opportunity cost is only $c$, whereas for a renter it is $c + r$. 
-Since the slope of $\frac{\partial U}{\partial \theta} = u(x)$, and $u'(x) > 0$, the buyer curve as a higher consumption utility for all $\theta$ (though not a higher value function). 
-Also, since $u(x)$ is increasing, both curves are convex (TK---not really shown). 
-
-The first consumer that wants to rent has $\underline{\theta}_R = \frac{r + c}{u'(0)}$, whereas the first consumer that wants to buy has $\underline{\theta}_B = \frac{c}{u'(0)}$.
+For the owner of a good, their pre-rental market indirect utility was $\alpha_H^2$. 
+The increase in utility from the emergence of the P2P rental market, $\Delta v_O = v_O(\alpha_H, r) - \alpha_H^2$ is  
+\begin{eqnarray} 
+\Delta v_O &=& \left( \frac{3}{4} (1-\alpha_H) + \frac{1}{4} \alpha_L \right) (-1 + \alpha_H + \alpha_L)  \\
+                 &=& \left( \frac{3}{4} (1-\alpha_H) + \frac{1}{4} \alpha_L \right) r   \\
+                 &>& (1-\alpha_H)r 
+\end{eqnarray} 
+As we would expect, any increase in utility depends upon having a positive rental rate. 
+We also know that this is only the case if $1- \alpha_H < \alpha_L$ and so $\Delta v_O > (1-\alpha_H)r$. 
+In other words, the increase in utility for the owner is always greater than simply selling the $1-\alpha_H$ at $r$. 
+The economic intuition is that when there is an excess of demand, the owner can optimally economize their own consumption to increase their utility beyond just not adjusting own-consumption and selling the excess.  
 
 \begin{prop}
-  The first ``renter'' at $\underline{\theta}_R$  will choose $x^* = 0$. 
+An increase in $\alpha_H$ has an ambiguous effect on the increase in welfare from P2P rental. 
 \end{prop} 
 \begin{proof}
-For the first renter, $\theta u(x) - (c + r)x^* = 0$, and from the FOC, $\theta u'(x) = c + r$, which implies 
-that $x^* u'(x^*) = u(x^*)$, but since $u(\cdot)$ is concave by assumption, $x^* = 0$.  
+TK---weak. 
+If $\alpha_L < 3/4$ and $\alpha_H > 1 - \frac{\alpha_L}{3}$, which implies that $\alpha_H > 3/4$, an even higher $\alpha_H$ implies a smaller increase in utility from the emergence of the P2P rental market. 
+In other words, if there is relatively little latent demand (low $\alpha_L$) and a high consumption utility for the high-types (high $\alpha_H$), an increase in $\alpha_H$ reduces the gain: 
+the utility from consumption is a wash and less can be sold, even though the rental rate is a bit higher.
+Alternatively, if $\alpha_L > 3/4$, a further increase in $\alpha_L$ does raise the rental rate more, but it also makes providing more supply costlier.  
 \end{proof} 
 
-All buyers with $x^* < 1$ will strictly prefer to rent (and the buyer with $x = 1$ is indifferent). 
-The reason is that for any consumer can consume the same amount as but at a lower cost, since $x^*r < p$. 
-Consumers can do better under renting by economizing on their consumption of $x$ to reflect the new marginal cost of consumption, $c + r$. 
-In this hypothetical friction-free rental market, consumer ownership disappears and all consumers rent. 
-  
-\begin{figure}
-\caption{Indirect utilities of renting versus buying\label{fig:buy_versus_rent}} 
-\centering 
-\begin{minipage}{0.80 \textwidth} 
-\includegraphics[width = \linewidth]{./diagrams/buy_versus_rent.pdf}
-\end{minipage}  
-\end{figure} 
-
-Now we consider what happens when their is an additional cost to renting such that $r > p$.
-This will create a $\hat{\theta}$ that divides consumers into buyers and renters. 
-Those with $\theta > \hat{\theta}$---the heavy intensive-margin users---buy, whereas the more casual users rent. 
-If $\theta_B < \hat{\theta}$, the rental market will not exist. 
-
-\subsection{Missing rental markets}
-Many goods have ``missing'' rental markets despite generating usage far below $x = 1$ because the rental rate $r$ required to cover the added transaction costs of renting would be too high to create a viable rental market. 
-
-Suppose it costs the firm $\gamma$ to full rent-out an owned product and suppose rental goods have to be purchased in the product market. 
-No arbitrage would mean that $p + \gamma = r$. 
-
+\begin{prop}
+An increase in $\alpha_L$ increases the owner's surplus from the emergence the P2P rental market. 
+\end{prop} 
+\begin{proof}
+Unsurprisingly, an increase in $\alpha_L$ simply increases demand for the owner's excess capacity and so the increase in utility is proportional to the owner's capacity, $1-\alpha_H$ and the latent demand from the low-type, $\alpha_L$.  
+\begin{equation}
+\frac{\partial \Delta v_O}{\partial \alpha_L} = \frac{1}{2} \left[(1-\alpha_H) + \alpha_L \right] > 0.  
+\end{equation} 
+\end{proof} 
 
 \begin{prop}
-Higher prices in the product market make the maximum transaction cost that would still permit a rental market to be lower. 
+An owner's utility is increasing in the $\alpha$ and increasing in the rental rate, $r$. 
+\end{prop}
+
+\begin{prop}
+Regardless of the rental rate, an owner has a higher utility with the existent of the P2P rental market assuming there is no change in the product market price for the good. 
+\end{prop}
+
+\subsection{Long-run P2P rental equilibrium} 
+In the long-run equilibrium, all parties can revise their ownership decisions. 
+The return to owning is 
+\begin{equation}
+v_{O} = 2\alpha_i x^* - x^{*2} + (1-x^*)r_{LR} - p   
+\end{equation} 
+whereas the return to renting is 
+\begin{equation}
+v_{R} = 2\alpha_i x^* - x^{*2} - x^*r_{LR}.  
+\end{equation} 
+\begin{prop}
+In the long-run P2P rental equilibrium, the rental rate equals the product market purchase price and ownership does not depend on usage patterns.  
+\end{prop}
+\begin{proof} 
+The first order condition in both scenarios is $2 \alpha_i - 2 x_i - r_{LR} = 0$ and so $x^* = \alpha_i - r/2$. 
+Using this solution to compute the indirect utility, we get 
+$v_O = \alpha ^2-p+\frac{r^2}{4}-\alpha  r+r$ and $v_R = \frac{1}{4} (r-2 \alpha )^2$. 
+Setting $v_O = v_R$, the $\alpha$ term drops out and we are left with $p = r$. 
+\end{proof} 
+
+\begin{prop}
+The fraction of consumers owning in the long-run is the average usage rate in the population.  
 \end{prop} 
 \begin{proof} 
-When the marginal renter is also the marginal buyer, 
-\begin{eqnarray*}
-\theta_R &=& \theta_B \\
-\frac{c + p + \gamma}{u'(0)} &=& \frac{p + cx^*}{u(x^*)} 
-\end{eqnarray*} 
-
+Let $\gamma$ be the fraction of consumers that purchase the good in equilibrium. 
+For the market to clear, 
 \begin{equation}
-\gamma^* = (p + cx) \frac{u'(0)}{u'(x)} - (p + c) 
+\gamma \left[ (1-x_H(p)) + (1-x_L(p))\right] = (1-\gamma)\left(x_H(p) + x_L(p) \right) 
 \end{equation} 
-Since $x^* < 1$, $u'(0) > u(x)$ for $x$, because $u$ is concave. 
-This means that 
+which simplifies to 
 \begin{equation}
-\frac{\partial \gamma^*}{\partial p} = \frac{u'(0)}{u'(x)} - 1 > 0
+\gamma = \frac{x_H(p) + x_L(p)}{2}.  
 \end{equation} 
-which says that the higher the product market price, the higher the transaction costs $\gamma$ must be for their to be a missing rental market. 
 \end{proof} 
+The new long-run product market demand curve is thus
+\begin{equation}
+D(p) = \alpha_H + \alpha_L - p.  
+\end{equation} 
 
-When opportunity costs are greater, people want to consumer less of each particular good, making renting relatively more attractive, meaning that a rental market can still exist with higher transaction costs. 
+Before the short-run equilibrium arose, when high-types bought and low-types did not, demand was $1$. 
+$\alpha_H^2 > p$ and $\alpha_L^2 < p$. 
+
+\subsection{Sharing economy ownership ``paradox''} 
+Jevon's paradox was based on the empirical observation that increased demand tended to, in the long-run, decrease prices. 
+There is the possibility of analogous ``paradox'' can occur with the sharing economy, in that the existence of a competitive P2P rental market can stimulate \emph{ownership}.   
+For economic intuition, consider the couple that decides to purchase a second home with the expectation that they can partially recoup their outlay via Airbnb or VRBO. 
+
+To see whether the emerging of P2P rentals will increase or decrease total ownership, we need to consider whether the short-run rental rate defined by Equation~\ref{eq:strr} is greater than or less than the purchase price. 
 
 \begin{prop}
-Higher opportunity cost, $c$, make the maximum transaction cost that would still permit a rental market to be lower. 
+If the market-clearing short-run rental rate is above the purchase price, ownership will increase, otherwise decrease. 
+\end{prop} 
+
+\begin{prop}
+An increase in the product market price reduces owner welfare with and without the P2P rental market, but the reduction in welfare is smaller in magnitude in the P2P rental case than in the non-rental case (where the reduction is 1 for 1). 
+\end{prop}
+ 
+\begin{prop} \label{prop:paradox} 
+Sufficiently high usage valuations and a sufficiently low product market purchase price can cause total ownership to increase with the introduction of P2P rental markets.  
 \end{prop} 
 \begin{proof}
-\begin{equation}
-\frac{\partial \gamma^*}{\partial c} = \frac{x u'(0)}{u'(x)} - 1 > 0 
-\end{equation} 
-Again the concavity of $u(\cdot)$ insures that $\gamma$ rises as $c$ increases. 
+In terms of the model, an increase in ownership occurs when the short-run rental rate is greater than the purchase price, or $r_{SR} > p$. 
+This occurs when $r_{SR} = -1 + \alpha_H + \alpha_L > p$. 
+We can re-write the paradox condition as  
+\begin{equation} 
+\alpha_H > 1 + p - \alpha_L  
+\end{equation}
+which is more likely to be satisfied with higher valuation parameters and lower purchase prices.   
 \end{proof} 
 
+The economic intuition for Proposition~\ref{prop:paradox}  is straightforward: 
+with high values of $\alpha_H$ and $\alpha_L$, there is a higher level of demand (from the low-types) and less supply (from the high-types), which makes ownership more attractive. 
+A higher purchase price makes the paradox less likely for the simple reason that a purchase is more expensive. 
+Note that the paradox cannot occur regardless of the purchase price is $\alpha_H + \alpha_L < 1$, which means that the high-types must---in the absence of the P2P rental market---use the good more than 1/2 the time. 
+This is partly due to our modeling convention of their being equal numbers of both types---if low-types were far more numerous, then the equivalent paradox condition could be more easily met: 
+consider that there are far more people that take vacations than their are people considering owning a second home.  
 
-
-\section{Emergence of a peer-to-peer rental market} 
-Suppose that existing owners of a good with $x^* < 1$ may rent out the $1-x$ portion of the good to non-owners. 
-Let us assume that the cost of renting is a fixed cost $\gamma$ and that the rental rate is $r$. 
-For renters, the opportunity cost of usage is now $(c + r)x$, whereas for owners that rent out, it is $cx - (1 - x)r$, since for the owner, usage now reduces the capacity that can be rented out.  
-Interestingly, both optimization problems yield the same first order condition of $\theta u'(x) = c + r$. 
-
-Those with relatively little excess capacity---namely those with $(1 - x(\theta, r))r < \gamma$ do not want to rent out. 
-Let $\bar{\theta}_B$ be last owner that wants to rent out their excess capacity. 
-The supply of the good in the P2P rental market is
-\begin{equation}
-S(r) = F(\bar{\theta}_B) - F(\underline{\theta}_B) - \int_{\underline{\theta}_B}^{\bar{\theta}_B} x(\theta, r)f(\theta) \, d\theta.
-\end{equation} 
-The elasticity of supply with respect to the rental rate depends on the capacity of the marginal owner and how elastic each individual is with respect to their own usage of the good. 
-\begin{equation}
-\frac{\partial S}{\partial r} = \int_{\underline{\theta}_B}^{\bar{\theta}_B} \frac{\partial x}{\partial r}\, dF\theta + (1 - x(\bar{\theta}_B, r)) \frac{\partial \bar{\theta}_B}{\partial r} 
-\end{equation} 
-
-\begin{figure}
-\caption{Short-run market clearing with a sharing economy \label{fig:sharing_economy}} 
-\centering 
-\begin{minipage}{0.75 \textwidth} 
-\includegraphics[width = \linewidth]{./diagrams/sharing.pdf}
-{\footnotesize
-\newline \emph{Notes:} This figure shows short-run market clearing in the sharing economy. 
-}
-\end{minipage}  
-\end{figure} 
-
-\subsection{Existence and uniqueness of a rental market} 
-
-\begin{equation}
-D(r) = \int_{\frac{c+r}{u'{0}}}^{\underline{\theta}_B} x(\theta, c +
-r)\, d\theta  
-\end{equation} 
-
-\begin{equation}
-D'(r) = \int_{\frac{c+r}{u'{0}}}^{\underline{\theta}_B} \frac{\partial x(\theta, c +
-r)}{\partial r}\, d\theta - \frac{x\left(\frac{c+r}{u'(0)}, c + r\right)}{u'(0)} 
-\end{equation} 
-and since $\frac{\partial x(\theta, c+r)}{\partial r} =
-\frac{1}{\theta u''(x(\theta, c + r))} < 0$ (differentiate the first
-order condition), 
-\begin{equation}
-D'(r) = \int_{\frac{c+r}{u'{0}}}^{\underline{\theta}_B}
-\frac{1}{\theta u''(x(\theta, c + r))}\, d\theta -
-\frac{x\left(\frac{c+r}{u'(0)}, c + r\right)}{u'(0)}  < 0. 
-\end{equation} 
-A similar argument for the supply-side shows that $S'(r) > 0$. 
-
-
-\paragraph{How elastic is individual demand with respect to the rental rate?} 
-A consumer's intensive margin adjustment with respect to a change in the rental rate is 
-\begin{equation} 
-\frac{\partial x(\theta, r)}{\partial r} = \frac{1}{\theta u''(x(\theta, r))}
-\end{equation} 
-
-\paragraph{Who rents?} 
-
-An owner that chooses to rent at the rate $r$ has 
-
-\begin{equation}
-\theta u(x(\theta, c + r)) - c x(\theta, c + r) + (1-x(\theta, c+r))r
-- p - \gamma =  
-\theta u(x(\theta, c)) - c x(\theta, c) - p  
-\end{equation} 
-
-\begin{equation}
-\theta u(x(\theta, c + r)) - c x(\theta, c + r) + (1-x(\theta, c+r))r - \gamma =  \theta u(x(\theta, c)) - c x(\theta, c)   
-\end{equation} 
-
-
-At the optimum, it is still the case: 
-\begin{equation}
-\theta u'(x(\theta, c + r)) = c + r
-\end{equation} 
-
-\begin{equation}
-\theta u'(x(\theta, c)) = c
-\end{equation} 
-
-\begin{equation}
-\theta u(x(\theta, c + r)) - (c + r) x(\theta, c + r) + r - \gamma =  \theta u(x(\theta, c)) - c x(\theta, c)   
-\end{equation} 
-
-\begin{equation}
-\left[ \theta u(x(\theta, c + r)) - \theta u(x(\theta, c) \right] - \left( \theta u'(x(\theta, c + r)) x(\theta, c + r) - \theta u'(x(\theta, c)) x(\theta, c) \right) = \gamma  - r     
-\end{equation} 
-
-
-\begin{equation}
+\subsection{Consumer welfare under changes in the product market price} 
+If the conditions specified in Proposition~\ref{prop:paradox} are satisfied, then demand in the product market increases. 
+This higher product market price could undo some of the welfare gains from P2P rentals. 
+Let $p_0$ be the original purchase price and $p_1 = p_0 + \delta p$ be the new product market-clearing price. 
+In the long-run equilibrium, this is also the rental rate. 
  
-\end{equation} 
 
-\paragraph{Short-run equilibrium rental rate.} 
-I define the ``short-run'' as the stock of owned goods being fixed and owned by those that would have purchased them in the absence of a sharing economy. 
-Let $\underline{\theta}_R(r)$ be the first consumer that rents when the rental rate is $r$. 
-The demand will be 
-\begin{equation} 
-D_R(r) = \int_{\underline{\theta}_R}^{\theta_B} x(\theta, r) \,dF\theta.
-\end{equation} 
-The supply of the good for rent is 
+If the short-run rental rate is greater than the purchase price and ownership increases, pre-P2P owners could be made worse-off: if supply in the product market is sufficiently inelastic, then increase product market prices could offset owner gains from sharing, though TK these would partially be passed through in higher rental rates. 
 \begin{equation}
-S_R(r) = \int_{\underline{\theta}_B}^{\bar{\theta}_B} 1 - x(\theta, r) \,dF\theta. 
+\alpha_H^2 - p_0 > v(\alpha_H, r) - p_1 
 \end{equation} 
-Note that $\underline{\theta}_R = \frac{c + r}{u'(0)}$. 
-For $\bar{\theta}_B$, renting has to be worth it, meaning that $1 - x(\theta_B, r) = \frac{\gamma}{r}$.
-Note that as $r$ increases, there are two ``sources'' of supply. 
-One is decreased is that higher-intensity buyers find renting more attractive (i.e., more likely to clear the $\gamma$ hurdle).
-In other words, more owners are brought into the market. 
-The second source of supply is economized usage by owners, who now face a higher marginal cost.
-With higher $r$, demand is also reduced by two sources: economized usage, i.e., lower $x(\theta, r)$ and fewer consumers renting anything at all. 
 
-TK---when can you differentiate with respect to an endogeneous variable? 
-Of course, renters also economize in the face of higher $r$. 
-All buyers and renters have the same first order condition, $\theta u(x) = c + r$, and so 
-\begin{equation} 
-\frac{\partial x}{\partial r} = \frac{1}{\theta u''(x)}
-\end{equation}  
+\subsection{Changed product market demand curve} 
+Previously, there were ``kinks'' in the product market demand curve at $\alpha_H^2$ and $\alpha_L^2$. 
+In the long-run P2P rental equilibrium, product demand now varies continuously, with $D(p) = x_H(p) + x_L(p) = \alpha_H + \alpha_L - p$. 
+Point elasticity of demand is now 
+\begin{equation}
+\epsilon = \frac{-1}{\alpha_H + \alpha_L - p} 
+\end{equation} 
 
-Figure~\ref{fig:sharing_economy} illustrates short-run market clearing. 
-At a rental rate of $r$, all owners in $[\underline{\theta}_B, \bar{\theta}_B]$ will rent. 
-The supply is illustrated as the yellow and green regions. 
-The green region is the unused capacity when the opportunity cost of use was only $c$, i.e., before rental was possible. 
-The yellow region is the capacity ``freed up'' by the owner now facing a marginal opportunity cost of $c + r$.
-The dashed line at $1 - \gamma/r$ determines $\bar{\theta}_B$, which is the last owner with enough capacity (after economizing on the intensive margin) such that renting is profitable.  
+\subsection{Sharing and market existence} 
+Prior to sharing, a sufficiently high product market price prevented a market from forming:
+if $p > \alpha_H^2$, no consumer purchases the good. 
+With P2P rental, does the lowest price at which some of the good is sold change?  
+Proposition~\ref{prop:existence} shows that it does. 
+Intuitively, if a would-be owner can monetize their unused portion, then purchasing becomes more attractive. 
 
-\subsubsection{Long-run rental rate and product market demand} 
-In the long-run, individuals can change their ownership decision. 
-As both owners and renters face the same marginal opportunity cost, $c + r$, heterogeneity in consumption is a function solely of $\theta$, not of the buy/rent choice. 
-As such, a consumer is deciding whether to obtain the good through rental, at a cost of $rx(\theta, r)$, 
-or through purchase, at a cost of $p + \gamma + (1 - x(\theta,r))r$. 
-The difference in cost from the two approaches is 
-\begin{eqnarray*}
-\Delta C &=& p + \gamma + (1 - x(\theta, r))r - \left(rx(\theta, r)\right) \\
-         &=& p + \gamma - r, 
-\end{eqnarray*} 
-and so cost does not depend on $\theta$. 
-As such, in equilibrium, buyer/renters are indifferent and so $p + \gamma = r$. 
-The rental rate is simply the purchase price plus the fixed cost of renting. 
-Note that any non-consumer that purchases a good solely to rent it out has zero profits. 
+\begin{prop} \label{prop:existence} 
+A higher product market price is supportable with the existence of the P2P rental regime that without.  
+\end{prop}
+\begin{proof} 
+If $p > \alpha_H^2$, no one buys the product and the market fails to exist.
+The highest possible price that can support a market is $\bar{p}_{NS} = \alpha_H^2$.  
+In the long-run P2P market, $D(p) = \alpha_H + \alpha_L - p$, and so $\bar{p}_{S} = \alpha_H + \alpha_L$. 
+Since $\alpha_H > \alpha_H^2$ and $\alpha_L > 0$, $\bar{p}_S > \bar{p}_{NS}$.  
+\end{proof} 
 
-Note that in the short-run, $r$ did not depend directly on $p$, but in the long-run they are intimately linked. 
+\subsection{Can for-profit capital-owning firms compete?} 
+In the long-run P2P rental market equilibrium, there are no profits from owning to simply rent-out. 
+However, owners and non-owners alike get a surplus. 
+This suggests that firms that derive no consumption value from the good can not compete: 
+because the consumer has excess capacity after satisfying their own consumption, they can ``profitably'' sell 
+their excess capacity at any price and still have positive utility. 
+A firm owning simply to rent would make zero profit. 
+
+\subsection{Taste for diversity} 
+In some formulations of the consumer problem, consumers consume some positive amount of every good offered.
+For example, a Cobb-Douglas utility function has no corner solutions---every good is consumed at least a little bit.
+This is obviously a large departure from empirical reality if we draw find-grained distinctions between ``goods.'' 
+For example, Amazon.com currently lists 6,238 results for "blender" in the Home \& Kitchen category: 
+presumably most households own far fewer than this, with most owning 1 or 0.
+The reason for this pattern in the language of this model is clear: 
+a consumer's $\alpha$ for Blender 2 \emph{conditional} upon owning Blender 1 is quite low and so another blender is not purchased.   
+There are numerous goods that have highly negative cross price elasticities but that would not in a world of perfectly competitive rental markets in all goods.  
+Very few people rent the same car they drive or vacation in their home towns. 
+     
+\section{Transaction costs and depreciation}
+
+Note that in the short-run, $r$ did not depend directly on $p$, but in the long-run they are linked. 
 Let $r_{SR}$ be the short-run rental rate and let $r_{LR}$ be the long-run rental rate. 
 Let $p_{SR}$ and $p_{LR}$ be the short- and long-run product prices, respectively.  
 
 If $r_{SR} > p_{SR} + \gamma$, there were excess profits available to being an owner. 
 As such, in the long-run, demand in the product market will go up, raising $p_{LR}$ and lowering $r_{SR}$. 
 In this case, the emergence of the sharing economy causes a Jevon's paradox of increased usage. 
-Produce surplus rises, but the effect on consumers is ambiguous. 
+Producer surplus rises, but the effect on consumers is ambiguous. 
 Long-run non-sharers are made strictly worse-off, as they now face a higher price in the product market. 
 All consumers that would not have purchased under the pre-sharing regime are better off, as they consumer some of the good.
 
@@ -739,60 +533,247 @@ In this case, the introduction of the sharing economy is Pareto improving with r
 Owners that do not rent out their good get a price reduction; former non-owners get to consume some of the good. 
 For owners that rent out the good, they could consumer their old $x$ (pre-sharing) at a now-lower purchase price and so are strictly better off. 
 
-\subsection{Welfare under sharing?} 
+Many goods have ``missing'' rental markets despite generating usage far below $x = 1$ because the rental rate $r$ required to cover the added transaction costs of renting would be too high to create a viable rental market. 
 
-\begin{eqnarray*}
-\Delta U = \theta u(x(\theta, c+r)) - \theta u((x(\theta, c))  &=& \theta \int_0^r \frac{\partial u'(x(\theta, c + \tau))}{\partial z} \frac{\partial x}{\partial \tau} \, d\tau  \\ 
-                                      &=& \theta \int_0^r \left(c + \tau\right) \frac{\partial x}{\partial \tau} \, d\tau \\   
-                                      &=& \int_0^r \left(\frac{c + \tau}{u''(x(\theta, c + \tau))}\right)\,d\tau \\   
-\end{eqnarray*} 
-Which implies that the change in consumption utility from a small increase in $r$ is 
-\begin{equation}
-\frac{\partial \Delta U}{\partial r} = \frac{c + r}{u''(x(\theta, c + r))} 
-\end{equation} 
-When the marginal utility of more consumption is not changing very much (u'' is small), 
-there is a larger consumption utility loss, since it takes a more dramatic change in consumption (i.e., a large change in $x$) to satisfy the new first order condition.  
+Suppose it costs the firm $\gamma$ to full rent-out an owned product and suppose rental goods have to be purchased in the product market. 
+No arbitrage would mean that $p + \gamma = r$. 
 
+\begin{prop}
+Higher prices in the product market make the maximum transaction cost that would still permit a rental market to be lower. 
+\end{prop} 
 
+When opportunity costs are greater, people want to consumer less of each particular good, making renting relatively more attractive, meaning that a rental market can still exist with higher transaction costs. 
 
 \subsection{What determines the fixed costs of renting?} 
 Technology can reduce some of the fixed costs of renting. 
-The thicker the market, the easier it is to fully make use of the $1-x$, such as by finding an consumer that wants exactly $1-x$.  
-Goods with predictable or easily adjustable usage patterns are more likely to be shareable. 
+The thicker the market, the easier it is to fully make use of the excess supply. 
+Goods with predictable or easily adjustable usage patterns are more likely to be P2P rental. 
 Owners of vacation homes can schedule their own usage easily. 
 
 Some goods are used infrequently, but all consumers will likely want to use them at the same time. 
-A back-up generator---while infrequently used---is unlikely to make a good sharing candidate, as demand spikes are likely to be correlated within an area, such as following a national disaster. 
+A back-up generator---while infrequently used---is unlikely to make a
+good P2P rental candidate, as demand spikes are likely to be correlated in both space and time. 
 
 Reset costs presumably differ by good. 
-Most things---apartments, cars, clothes etc., need to be cleaned and or serviced. 
-However, goods like jewelry presumably have little to no reset cost.
+Most things---apartments, cars, clothes etc., need to be cleaned and or serviced before they can be rented again. 
+However, other goods like jewelry presumably have little reset cost.
 
-Goods that have a high novelty value---very steep $u(x)$ that flattens off well before $x = 1$---are particularly amenable to sharing. 
+Goods that have a high novelty value are particularly amenable to renting: 
 This explains why rentals or lending of videos and books are/were commonplace.  
 
 Goods that are difficult to transport but need to be used in a different locations will be hard to share. 
-However, goods that can be used on-site by different people are more likely to work. 
-For example, yachts are relatively difficult to transport long distances, but there is a thriving sharing economy in boats where many want to sail on vacation: 
-In the British Virgin islands charter yachts are owned by individuals. 
+However, goods that can be used on-site by different people are more shareable. 
+For example, yachts are relatively difficult to transport long distances, but there is a thriving P2P rental market in boats where many want to sail on vacation: 
+in the British Virgin islands charter yachts are owned by individuals. 
 
-If $x$ is very close to $1$ for all owners, then there is little shareable supply available. 
-Goods for which fractional consumption offers value will be candidates. 
-
-If $\gamma$ is sufficiently high, then $r$ is so high that 
-$\frac{c + r}{u'(0)} > \underline{\theta}_B$, there is no owner that would want to rent. 
 If transaction costs are sufficiently high, then the rental rate would be too high to support a market (even though the high rental rate would tend to stimulate supply). 
 
-\subsection{Elasticity of demand} 
+\section{Empirical investigation} 
+In conventional consumer theory, preferences over goods are assumed---the theory focuses on how those preferences are translated into purchases in light of the consumer's budget and market prices. 
 
-For the marginal buyer in the long-run, 
-\begin{equation}
-\theta u(x) - c x + (1-x)r - \gamma + p = 0 
-\end{equation} 
-and so diferentiating with respect to $p$ gives us
-\begin{equation}
-u'(x)\frac{\partial x}{\partial p} 
-\end{equation} 
+\begin{figure}
+\centering 
+\caption{Fraction of respondents owning various quasi-durable goods}
+\begin{minipage}{0.90 \linewidth}
+\includegraphics[width = \linewidth]{./plots/ownership_fractions.pdf} 
+\end{minipage} 
+\end{figure} 
+
+Table~\ref{tab:ownership} shows that TK. 
+
+\input{./tables/ownership.tex}
+
+Table~\ref{tab:ownership_attr} explores how the perceived usage attributes of the good are related to the ownership decision.
+My hypothesis was that goods with an unpredictable usage pattern and/or whose usage was spread out over many small chunks would necessitate ownership. 
+In Column~(1), we see that the less predictable perceived usage, the more likely the good is to be owned. 
+In Column~(2), the more granular usage is, the more likely the good it to be owned. 
+
+\input{./tables/ownership_attr.tex} 
+
+In this model presented in this paper, preferences are still primitives of the model, but they are modeled as differences in planned \emph{usage} of the good.  
+
+\cite{kuziemko2013elastic} 
+
+I asked a sample of respondents on Mechanical Turk various questions about a particular good: 
+\begin{itemize} 
+\item Does your household own a $\{$ good $\}$? (yes, no) 
+\item Have you ever lent your $\{$ good $\}$ to someone else? (yes, no, n/a)
+\item Have you ever rented a $\{$ good $\}$? (yes, no, n/a)
+\end{itemize}  
+
+Does planned low-usage predict non-ownership? 
+If demand is not predictable, is it difficult to borrow the good? 
+If a good is not owned but amenable to sharing, it is more likely to be rented? 
+Do income effects matter? 
+
+Figure~\ref{fig:usage_by_own} shows the 
+
+\begin{figure}
+\centering 
+\caption{Distribution of usage indexes by ownership}
+\label{fig:usage_by_own}
+\begin{minipage}{0.90 \linewidth}
+\includegraphics[width = \linewidth]{./plots/usage_by_own.pdf} 
+\\
+{\footnotesize
+\emph{Notes:} Here are some notes. 
+}
+\end{minipage} 
+\end{figure} 
+
+
+
+\subsection{Reasons for non-ownership} 
+
+
+\begin{figure}
+\centering 
+\caption{Reasons given for non-ownership}
+\begin{minipage}{0.90 \linewidth}
+\includegraphics[width = \linewidth]{./plots/reasons.pdf} 
+\end{minipage} 
+\end{figure} 
+
+
+\begin{figure}
+\centering 
+\caption{Ownership fractions by family income quartiles}
+\begin{minipage}{0.90 \linewidth}
+\includegraphics[width = \linewidth]{./plots/ownership_fractions_inc.pdf} 
+\end{minipage} 
+\end{figure} 
+
+
+% <!--Lending --> 
+% <b><p>Have you ever lent your ${good} to someone else?<p></b>
+% <p>
+% <input name="lent" type="radio" value="yes" />Yes</br>
+% <input name="lent" type="radio" value="no" />No</br>
+% <input name="lent" type="radio" value="na" />NA - we do not own one.</br>
+% </p>
+
+% <b><p>Have you ever borrowed a ${good} from someone else?<p></b>
+% <p>
+% <input name="borrowed" type="radio" value="yes" />Yes</br>
+% <input name="borrowed" type="radio" value="no" />No</br>
+% <input name="borrowed" type="radio" value="na" />NA - we own one.</br>
+% </p>
+
+% <b><p>Have you ever rented a ${good}?<p></b>
+% <p>
+% <input name="rent" type="radio" value="yes" />Yes</br>
+% <input name="rent" type="radio" value="no" />No</br>
+% <input name="rent" type="radio" value="na" />NA - we own one.</br>
+% </p>
+
+% <!-- Usage --> 
+% <b><p>Regardless of whether your household owns a ${good}, if you did
+%   own one, how much do you estimate it would be used by members of your household on average?</p></b> 
+% <select name="usage"  size="1">
+%   <option value="">Select one...</option>
+%   <option value="0">We would not use this at all</option>
+%   <option value="1" >1 minute a week (about 1 hour a year) </option>
+%   <option value="2" >5 minutes a week (about 4 hours a year)</option>
+%   <option value="3" >1/2 an hour a week</option>
+%   <option value="4" >1 hour a week</option>
+%   <option value="5" >1/2 an hour a day</option>
+%   <option value="6" >1 hour a day</option>
+%   <option value="7" >2 hours a day</option>
+%   <option value="8" >4 hours a day</option>
+%   <option value="9" >8 hours a day</option>
+%   <option value="10" >16 hours a day</option>
+%   <option value="11" >24 hours a day (I would continuously be using
+%   this good)</option>
+% </select>
+
+% <!--Usage pattern---granularity--> 
+
+%   <table id="likert">
+%      <tr>
+%          <td><input id="granularity" type="radio" name="Granularity" value="1" /></td>
+%          <td><input type="radio" name="Granularity" value="2" /></td>
+%          <td><input type="radio" name="Granularity" value="3" /></td>
+%          <td><input type="radio" name="Granularity" value="4" /></td>
+%          <td><input id="granularityEnd" type="radio" name="Granularity" value="5" /></td>
+%      </tr>
+%      <tr>
+%          <td>Used in one big block of time</td>
+%          <td></td>
+%          <td>Used in a mixture of large and small blocks of time</td>
+%          <td></td>
+%          <td>Used in many small blocks of time</td>
+%      </tr>
+%   </table>
+
+
+% <!-- Granularity --> 
+% <b><p>
+% Regardless of whether you actually own a ${good}, how do you imagine
+% it would be used if it was owned by your household (on a scale of 1 to
+% 5): 
+% </p>
+% </b>
+% <select name="granularity"  size="1">
+%   <option value="">Select one...</option>
+%   <option value="1">1 - Used in one big block of time </option>
+%   <option value="2" >2  </option>
+%   <option value="3" >3 -Used in a mixture of large and small blocks
+%   of time</option>
+%   <option value="4" >4 </option>
+%   <option value="5" >5 - Used in many small blocks of time</option>
+% </select>
+
+
+
+% <!--Usage pattern---predictibility--> 
+
+% <b><p>
+% Regardless of whether you actually own a ${good}, how predictable
+% would your usage of it be if you did own it: 
+% </p>
+% </b>
+% <select name="predictability"  size="1">
+%   <option value="">Select one...</option>
+%   <option value="1">1 - Very predictable---I can plan usage many weeks in advance</option>
+%   <option value="2" >2  </option>
+%   <option value="3" >3 -Somewhat predictable 
+%   of time</option>
+%   <option value="4" >4 </option>
+%   <option value="5" >5 - Very unpredictable---I would never know exactly when I
+%          would need to use it until right beforehand. </option>
+% </select>
+
+
+% <!--- Why no own --> 
+% <p><b>If you do not own a ${good}, what is the primary reason?</p></b> 
+% <p>
+% <input name="no_own_reason" type="radio" value="na" />NA - we own one.</br>
+% <input name="no_own_reason" type="radio" value="little_use" />We wouldn't use it enough to justify the purchase price</br>
+% <input name="no_own_reason" type="radio" value="expensive" />We would use it, but we simply do not have the money.</br>
+% <input name="no_own_reason" type="radio" value="space" />I don't have
+% the space for this item</br>
+% </p>
+
+
+% <b><p>What is your total household income?</b>
+% <select name="own_income">
+%   <option value="">Select one...</option>
+%   <option value="0" >Less than $10,000</option>
+%   <option value="1" >$10,000-$19,999</option>
+%   <option value="2" >$20,000-$29,999</option>
+%   <option value="3" >$30,000-$39,999</option>
+%   <option value="4" >$40,000-$49,999</option>
+%   <option value="5" >$50,000-$59,999</option>
+%   <option value="6" >$60,000-$69,999</option>
+%   <option value="7" >$70,000-$79,999</option>
+%   <option value="8" >$80,000-$89,999</option>
+%   <option value="9" >$90,000-$99,999</option>
+%   <option value="10" >$100,000-$149,000</option>
+%   <option value="11" >More than $150,000</option>
+% </select>
+% </p> 
+
+
 
 \section{Conclusion}
 In the very long-run, product differentiation could move towards making sharing more attractive. 
