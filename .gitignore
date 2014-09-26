@@ -1,0 +1,14 @@
+writeup/plots/*pdf
+writeup/plots/*svg
+code/R/.Rhistory
+*unused*
+*aux
+*bbl
+*ttt
+*blg
+*log
+*out
+data/
+presentations/
+literature/
+submit/
