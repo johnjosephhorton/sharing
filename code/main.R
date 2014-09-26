@@ -19,11 +19,11 @@ gc(reset = T)
 set.seed(12345)
 
 # Libraries
-require(tidyr)
+library(tidyr)
 library(plyr)
-require(dplyr)
-require(ggplot2)
-require(stringr)
+library(dplyr)
+library(ggplot2)
+library(stringr)
 library(data.table)
 library(lme4)
 library(stargazer)
@@ -354,7 +354,19 @@ m <- lm(I(answer.own == "yes") ~ scale(as.numeric(answer.granularity)), data = d
 
 m <- lm(I(answer.lent == "yes") ~ as.numeric(answer.predictability), data = subset(df, answer.own == "yes"))
 
+# Are owners of 'input.good' ever borrowed or rent it?
+df.own_rent_borrowed <- df %>%
+  select(input.good, answer.own, answer.borrowed, answer.rent) %>% 
+  gather(action, answer, -input.good, -answer.own) %>%
+  rowwise() %>%
+  mutate(answer = sum(answer == "yes", na.rm = T)) %>%
+  group_by(input.good, answer.own, action) %>%
+  summarise(answer = sum(answer))
 
+ggplot(df.own_rent_borrowed, aes(x = as.factor(answer), fill = action)) + 
+  geom_bar() + 
+  facet_wrap(~input.good) + 
+  xlab("") + theme_bw()
 
 
 # # Number of owners of 'input.good'
@@ -365,21 +377,11 @@ m <- lm(I(answer.lent == "yes") ~ as.numeric(answer.predictability), data = subs
 #   spread(answer.own, count, fill = 0) %>%
 #   mutate(total = no + yes + `NA`)
 # 
-# # Reasons for not owning 'input.good'
+# Reasons for not owning 'input.good'
 # df %>% 
 #   select(input.good, answer.no_own_reason) %>% 
 #   group_by(input.good, answer.no_own_reason) %>% 
 #   summarise(count = n()) %>%
 #   spread(answer.no_own_reason, count, fill = 0) %>%
 #   mutate(total = expensive + little_use + space + `NA`)
-# 
-# # Are owners of 'input.good' ever borrowed or rent it?
-# df %>%
-#   select(input.good, answer.own, answer.borrowed, answer.rent) %>% 
-#   unite(answer.rent_or_borrowed, answer.borrowed, answer.rent, remove = T) %>%
-#   mutate(answer.rent_or_borrowed = str_detect(answer.rent_or_borrowed, "yes")) %>%
-#   group_by(input.good, answer.own, answer.rent_or_borrowed) %>%
-#   summarise(count = n()) %>%
-#   spread(answer.rent_or_borrowed, count, fill = 0) %>%
-#   mutate(total = `TRUE` + `FALSE`)
 
