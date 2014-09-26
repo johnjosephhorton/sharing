@@ -373,6 +373,7 @@ g.owned.borrowed
 writeImage(g.owned.borrowed, "rents_borrows", width = 9, height = 10, path = "../writeup/plots/")
 
 
+
 # # Number of owners of 'input.good'
 # df %>% 
 #   select(input.good, answer.own) %>% 
