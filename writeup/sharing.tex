@@ -15,6 +15,7 @@
 \usepackage{natbib}
 \usepackage{rotating}
 \usepackage{tabularx}
+\usepackage{tikz} 
 
 \hypersetup{
   colorlinks = TRUE,
@@ -244,6 +245,7 @@ The good costs $p$ to own, and so a forward-looking consumer will buy if
 \end{equation} 
 Note that for all $\alpha^2 > p \wedge \alpha < 1$, the consumer will have an amount of time $1 - x^*$ when they are not using the good.
 
+
 \subsection{Three consumption possibilities with two consumer types} 
 Consider a marketplace with two consumer types that are equally common: $\alpha_H$ and $\alpha_L$ with $\alpha_H > \alpha_L$. 
 For a given price $p$, there are three market possibilities: 
@@ -264,13 +266,42 @@ the cross-hatched rectangle shows the area where high-types buy but low-types do
 In the cross-hatched rectangle where high-types buy and low-types do not, there is a possibility of mutually beneficial trade:
 the low-types here have $\alpha_L > 0$ and hence value the good and the high-types have $x^* < 1$, which gives them some excess capacity to rent out. 
 
+
+\newcommand*{\p}{0.20}%
+\pgfmathsetmacro{\alphaMin}{sqrt{\p}}%
+\pgfmathsetmacro{\neitherY}{(\p + 1.3*sqrt(\p))/2}%
+\pgfmathsetmacro{\neitherX}{\p}%
+\pgfmathsetmacro{\highY}{(1 + sqrt(\p))/2}%
+\pgfmathsetmacro{\highX}{\p}%
+\pgfmathsetmacro{\bothY}{(\alphaMin + 1.4)/2}%
+\pgfmathsetmacro{\bothX}{(\alphaMin + 0.9)/2}%
+
 \begin{figure}
-\centering 
 \caption{Three consumer market possibilities in the absence of P2P rental with two consumer types}
 \label{fig:three_types} 
-\begin{minipage}{0.8 \textwidth} 
-\includegraphics{./images/three_parts.pdf} 
-\end{minipage}  
+\begin{center}
+\begin{tikzpicture}[scale=5]
+\draw[||] (1,0) node[below]{$\alpha_L$} -- (0,0) --(0,1) node[left]{$\alpha_H$};
+\draw[dotted, domain=0:1] plot (\x, {\x * \x});
+\draw[dotted, domain=0:1] plot (\x, {sqrt{\x}});
+\draw[ultra thick] (0,0) to (1,1) node[right] {$\alpha_H = \alpha_L$};  
+\path [fill=yellow, opacity=0.2] (0,\alphaMin) -- (1,\alphaMin) to (1,1) -- (0,1) -- (0,\alphaMin);
+\path [fill=blue, opacity=0.2] (\alphaMin,0) -- (\alphaMin,1) to (1,1) -- (1,0) -- (\alphaMin,0); % Low types
+\draw[dotted] (\p, 0) node[below] {$p$} to (\p, \alphaMin); 
+\draw[dotted] (0, \p) node[left] {$p$} to (\alphaMin,\p);
+\draw[thick] (0, \alphaMin) node[left]{$\underline{\alpha}_H$} to (\alphaMin, \alphaMin); 
+\draw[dotted] (\alphaMin,0) node[below]{$\underline{\alpha}_L$} to (\alphaMin,\alphaMin);
+\draw[thick] (\alphaMin,\alphaMin) to (\alphaMin,1);
+
+\draw[ultra thick] (0,0) -- (\alphaMin, \alphaMin) -- (0, \alphaMin) -- (0,0);  % Neither
+\draw[ultra thick] (0,\alphaMin) -- (\alphaMin, \alphaMin) -- (\alphaMin, 1) -- (0,1) -- (0,\alphaMin);  % high-types
+\draw[ultra thick] (\alphaMin,\alphaMin) -- (\alphaMin, 1) -- (1, 1) --  (\alphaMin,\alphaMin);  % both
+
+\node[align=left, below] at (\neitherX, \neitherY){Neither\\own};
+\node[align=left, below] at (\highX, \highY){High-types\\own};
+\node[align=left, below] at (\bothX, \bothY){Both\\own};
+\end{tikzpicture}
+\end{center}
 \end{figure} 
 
 \subsection{Short-run P2P rental equilibrium} 
@@ -315,14 +346,24 @@ For short-run market clearing, the high-types economize on usage (heavy line) un
 If all consumers were allocated the good, if their cumulative usage would exceed the full utilization capacity of the actual stock of purchased goods, then a positive rental rate is needed to clear the market. 
 \end{prop} 
 
-\begin{figure}
+
+\newcommand*{\alphaH}{0.80}%
+\newcommand*{\alphaL}{0.70}%
+\pgfmathsetmacro{\r}{-1 + \alphaH + \alphaL}%
+\pgfmathsetmacro{\Q}{\alphaL - \r/2}
+\begin{figure} 
 \caption{Market clearing with two consumer types in a P2P rental market} 
-\centering
 \label{fig:market_clearing} 
-\begin{minipage}{0.90 \linewidth}
-\includegraphics{./diagrams/market_clearing.pdf}
-\end{minipage} 
-\end{figure}
+\begin{center}
+\begin{tikzpicture}[scale = 6]
+\draw[<->] (1,0) node[below]{$Q$} -- (0,0) --(0,1) node[left]{$r$};
+\draw[very thick] (1.0 - \alphaH, 0) to (1 - \alphaH + 0.5, 1) node [right] {$S = 1 - \alpha_H + r/2$};  
+\draw[very thick] (\alphaL,     0) to (\alphaL - 1/2, 1) node [right] {$D = \alpha_L - r/2$}; 
+\draw [dashed] (0, \r) node[left]{$r^*$} -- (\Q,\r) -- (\Q, r) node[below]{$\alpha_L - r^*/2$}; % -- (\Q, 0); 
+\end{tikzpicture}
+\end{center}
+\end{figure} 
+
 
 \begin{prop}
 If the marginal utility of either type goes up ($\alpha_H$ or $\alpha_L$ increase), short-run rental rates increase. 
