@@ -362,7 +362,9 @@ df.own_rent_borrowed <- df %>%
   mutate(answer = sum(answer == "yes", na.rm = T)) %>%
   group_by(input.good, answer.own, action) %>%
   summarise(answer = sum(answer)) %>%
-  na.omit
+  na.omit %>% ungroup() %>%
+  mutate(answer.own = factor(answer.own, levels = c("no", "yes"), 
+                             labels = c("not owner", "owner")))
 
 g.owned.borrowed <- ggplot(df.own_rent_borrowed, aes(x = answer.own, y = answer, fill = action)) + 
   geom_bar(stat = "identity") + 
