@@ -364,12 +364,13 @@ df.own_rent_borrowed <- df %>%
   summarise(answer = sum(answer)) %>%
   na.omit %>% ungroup() %>%
   mutate(answer.own = factor(answer.own, levels = c("no", "yes"), 
-                             labels = c("not owner", "owner")))
+                             labels = c("Does not own", "Owns")))
 
 g.owned.borrowed <- ggplot(df.own_rent_borrowed, aes(x = answer.own, y = answer, fill = action)) + 
   geom_bar(stat = "identity") + 
   facet_wrap(~ input.good, ncol = 4) + 
-  xlab("") + ggtitle("Rents & borrows anong owners/non-owners") + theme_bw()
+  xlab("") + ggtitle("Rents & borrows anong owners/non-owners") + 
+  theme_bw() + coord_flip()
 g.owned.borrowed
 
 writeImage(g.owned.borrowed, "rents_borrows", width = 9, height = 10, path = "../writeup/plots/")
