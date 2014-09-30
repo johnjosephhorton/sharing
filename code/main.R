@@ -1,3 +1,4 @@
+#!/usr/bin/Rscript
 ###############################################################################
 #
 # Sharing / John Horton
@@ -138,13 +139,64 @@ df.by.good$input.good <- with(df.by.good, reorder(input.good, frac.own, mean))
 g.own <- ggplot(data = df.by.good,
                 aes(x = input.good, y = frac.own)) +
     geom_point() +
-    coord_flip() +
     theme_bw() +
     xlab("") +
     ylab("Fraction of respondents") +
-    scale_y_continuous(label = percent)
+    scale_y_continuous(label = percent) +
+    theme(axis.text.x=element_text(angle = -75, hjust = 0))
 
-writeImage(g.own, "ownership_fractions", width = 4, height = 4, path = "../writeup/plots/")
+if (interactive()){
+    print(g.own)
+}
+    
+writeImage(g.own, "ownership_fractions", width = 6, height = 4, path = "../writeup/plots/")
+
+
+#--------
+# Renting 
+#--------
+
+df.by.good.rent <- data.table(df)[, list(frac.rent = mean(answer.rent == "yes", na.rm = TRUE)), by = input.good]
+df.by.good.rent$input.good <- with(df.by.good.rent, reorder(input.good, frac.rent, mean))
+
+
+g.rent <- ggplot(data = df.by.good.rent,
+                aes(x = input.good, y = frac.rent)) +
+    geom_point() +
+    theme_bw() +
+    xlab("") +
+    ylab("Fraction of respondents") +
+    scale_y_continuous(label = percent) +
+    theme(axis.text.x=element_text(angle = -75, hjust = 0))
+
+writeImage(g.rent, "rental_fractions", width = 6, height = 4, path = "../writeup/plots/")
+
+#--------
+# Lending
+#--------
+
+df.by.good.lent <- data.table(df)[, list(frac.lent = mean(answer.lent == "yes", na.rm = TRUE)), by = input.good]
+df.by.good.lent$input.good <- with(df.by.good.lent, reorder(input.good, frac.lent, mean))
+
+
+g.lent <- ggplot(data = df.by.good.lent,
+                aes(x = input.good, y = frac.lent)) +
+    geom_point() +
+    theme_bw() +
+    xlab("") +
+    ylab("Fraction of respondents") +
+    scale_y_continuous(label = percent) +
+    theme(axis.text.x=element_text(angle = -75, hjust = 0))
+
+writeImage(g.lent, "lent_fractions", width = 6, height = 4, path = "../writeup/plots/")
+
+
+
+
+
+
+
+
 
 #---------------------------
 #  Ownership by oncome bands
@@ -341,7 +393,7 @@ g.reasons <- ggplot(data = subset(df, !is.na(answer.no_own_reason)),
        aes(x = answer.no_own_reason)) +
     geom_histogram() +
     facet_wrap(~input.good, ncol = 4) +
-    coord_flip()
+    coord_flip() + theme_bw()
 
 writeImage(g.reasons, "reasons", width = 9, height = 10, path = "../writeup/plots/")
 
