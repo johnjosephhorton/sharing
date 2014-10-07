@@ -32,15 +32,13 @@
 
 \newif\ifdraft
 
-% \drafttrue % or 
-\draftfalse
+\drafttrue % or 
+%\draftfalse
 
 \ifdraft
 \newcommand{\important}[1]{\textcolor{orange}{\textbf{#1}}}
 \usepackage{setspace}
-\doublespacing
-%\usepackage{lineno}
-%\linenumbers
+%\doublespacing
 \else
 \newcommand{\important}[1]{#1}
 \fi
@@ -73,7 +71,8 @@ They might also reduce ownership and therefore offer environmental benefits.
 Aside from the business interest in these platforms---Airbnb alone has attracted nearly \$800 million in venture capital investment\footnote{\href{http://www.crunchbase.com/organization/airbnb}{http://www.crunchbase.com/organization/airbnb}}---these companies have also attracted policy interest---much of it negative. 
 Critics charge that their primary competitive advantage of these platforms is the ability to duck costly regulations---regulations that often are intended to keep costs from being imposed on third-parties.\footnote{See \cite{horton2014tragedy} for a discussion of the externalities imposed by Airbnb-style subletting is rented apartments.}   
 
-The somewhat obvious economic rationale for P2P rental markets is that most durable goods are used by their owners far less than 100\% of the time: the excess capacity this under-utilization generates can be ``shared'' (i.e., rented to) non-owners that still value the good but whose planned usage (or income, storage space, credit rating etc.) prevents them from owning the good. 
+The somewhat obvious economic rationale for P2P rental markets is that most durable goods are used by their owners far less than 100\% of the time: 
+the excess capacity this under-utilization generates can be ``shared'' (i.e., rented to) non-owners that still value the good but whose planned usage (or income, storage space, credit rating etc.) prevents them from owning the good. 
 These kinds of trades between consumers have always been possible, but they often have substantial transaction costs.
 It is perhaps for this reason that much of the sharing of consumer goods historically has been between family members and neighbors rather than strangers. 
 The emergence of platform-mediated reputation systems and other trust-building socio-economic technologies (plus in many cases, platform-provided insurance) presumably allow the platforms to reduce the otherwise market-preventing transaction costs inherent in P2P rental. 
@@ -87,9 +86,11 @@ What is effect of total product market demand---both in terms of market-clearing
 Can non-consuming firm owners compete in the P2P rental market? 
 What goods are particularly amenable to sharing and why?
   
-This paper addresses these questions using a simple consumer-theory type model augmented with a survey of consumers about their ownership decisions about various goods and their hypothetical (or actual) usage of such goods. 
+This paper addresses these questions using a simple consumer theory model augmented with a survey of consumers about their ownership decisions about various goods and their hypothetical (or actual) usage of such goods. 
 In the model, all consumers consider purchasing some durable good before the possibility of rental.   
-The would-be owner's utility depends on how much the good would be ``used'' if purchased.
+The would-be owner's utility depends on how much the good would be ``used'' if purchased. 
+This assumption that consumers must consider the time required to use a good in making their consumption plan is similar in spirit to \cite{becker1965theory}; the possibility of sharing a good is similar in spirit to \cite{varian2000}.
+\cite{varian2000} in particular discusses---in the context of information goods---how planned usage affects the rent versus own decision.  
 I assume that goods offer declining---and eventually negative---marginal utility from use.\footnote{Even in the absence of any direct marginal usage cost, individuals will generally not use a good 100\% of the time. 
 For example, a hobbyist guitar owner might play 5 hours a week, but few would play 50 voluntarily and 100 hours a week would hellish for nearly everyone.} 
 If the utility from the optimal level of usage is greater than the purchase price, the consumer buys the good. 
@@ -113,7 +114,7 @@ However, if the rental rate is above the purchase price plus the cost of renting
 In the long-run, the purchase price must equal the rental rate.  
 
 In the long-run P2P rental market, both high- and low-types receive the same utility from owning or renting, decoupling individual preference from ownership. 
-In practice, consumer risk-aversion would likely still cause higher-value consumers to be the owners, since a fall-off in market demand can be better absorbed by them though own-consumption. 
+In practice, consumer risk-aversion would likely still cause higher-value consumers to be the owners, since a fall-off in market demand can be better absorbed by them though own-consumption \citep{sinai2005}. 
 The revision in the ownership decision in the long-run potentially affects product market demand. 
 
 I show that the existence of a P2P rental market allows for a higher maximum price in a market. 
@@ -129,7 +130,7 @@ Self-reported income affects the purchase decision, but so does planned usage.
 For only a small number of goods (e.g., vacation homes) does income seem to be the limiting factor. 
 For other goods, planned usage was primary.  
 
-To keep the analysis simple, I initially ignore transaction costs, reset costs and depreciation. 
+To keep the analysis simple, I initially ignore transaction costs. 
 I modify the basic framework to include these costs and consider how it changes the results. 
 One of the main findings is that when transactions costs are sufficiently high, the P2P rental market cannot exist. 
 This finding suggests that the technological changes---namely the maturation and increasing penetration of the Internet and web-based technologies---were the technological shock that made these P2P rental markets feasible. 
@@ -409,12 +410,17 @@ which simplifies to
 f = \frac{x_H(p) + x_L(p)}{2}.  
 \end{align} 
 \important{The fraction of consumers owning in the long-run is the average usage rate in the population.}  
+In this long-run P2P rental equilibrium, even though both types own, we might expect in practice for higher-valuation types to be the ones to own, as they can better bear the risk in the rental rate, ala \cite{sinai2005}.
 
 In the long-run P2P rental market equilibrium, there are no profits from owning to simply rent-out. 
 However, owners and non-owners alike get a surplus. 
-\important{This suggests that firms that derive no consumption value from the good can not compete in a competitive: 
+\important{This suggests that firms that derive no consumption value from the good can not compete in a competitive market: 
 because the consumer has excess capacity after satisfying their own consumption, they can ``profitably'' sell their excess capacity at any price and still have positive utility.} 
 A firm owning simply to rent would make zero profit. 
+There is already perhaps some evidence that P2P rental markets are adversely affecting traditional firms: 
+\cite{byers2013rise} find that Airbnb is already winning customers from hotels catering to the lower-end of the market. 
+
+%\cite{varian2000} 
 
 \subsection{Product market demand in the long-run P2P rental market equilibrium} 
 Most commentators considering the sharing economy have often implicitly assumed that ownership would be reduced under full sharing, the intuition being that there is some fixed amount of demand for some good and that when idle goods are pulled into the market, demand can be met with a smaller total number of goods. 
@@ -493,85 +499,65 @@ From the requirement that $\alpha_L^2 < p < \alpha_H^2$ and the assumption that 
 \important{For the high-types, $\Delta S'(\alpha_H) = -p < 0$, and so the social surplus from sharing is 
 reduced when the high-types have a higher valuation.}
 
-\subsection{Transaction costs and depreciation}
-Note that in the short-run, $r$ did not depend directly on $p$, but in the long-run they are linked. 
-Let $r_{SR}$ be the short-run rental rate and let $r_{LR}$ be the long-run rental rate. 
-Let $p_{SR}$ and $p_{LR}$ be the short- and long-run product prices, respectively.  
+\subsection{Transaction costs}
+In practice, the utilization of a good---even with an efficient P2P rental market---will be far less than 100\%.
+Setting up trades, making repairs, transporting goods and so on all take time.  
+Furthermore, even durable goods are consumed more quickly when used more intensively. 
 
-If $r_{SR} > p_{SR} + \gamma$, there were excess profits available to being an owner. 
-As such, in the long-run, demand in the product market will go up, raising $p_{LR}$ and lowering $r_{SR}$. 
-In this case, the emergence of the sharing economy causes a Jevon's paradox of increased usage. 
-Producer surplus rises, but the effect on consumers is ambiguous. 
-Long-run non-sharers are made strictly worse-off, as they now face a higher price in the product market. 
-All consumers that would not have purchased under the pre-sharing regime are better off, as they consumer some of the good.
+There are several ways one could model these kinds of costs. 
+For utilization, one approach is to simply re-define what is the unit of time available and the corresponding $\alpha$. 
+For example, we might think of a the unit of time for a vacation home on a ski slope to be 4 months, with high-types wanting to take three week vacations and low-types one week vacations and one week in total lost to cleaning and maintenance.      
+For transaction costs, we could think of owners in the P2P rental market has facing a cost of $c$ that captures both the transaction costs of listing on a market, finding trading partners and so on, as well as the cost from increased usage that leads to either more extensive or more frequent repairs or faster replacement.
+In the short-run P2P equilibrium, $c$ provides a price-floor in the rental market.  
+In the long-run P2P equilibrium, the rental rate ``includes'' these costs, with $r_{LR} = p + c$. 
 
-On the contrary, if $r_{SR} < p_{SR} + \gamma$, ownership is less attractive and in the long-run, fewer goods will be purchased, lowering prices. 
-In this case, the introduction of the sharing economy is Pareto improving with respect to consumers. 
-Owners that do not rent out their good get a price reduction; former non-owners get to consume some of the good. 
-For owners that rent out the good, they could consumer their old $x$ (pre-sharing) at a now-lower purchase price and so are strictly better off. 
-
-Many goods have ``missing'' rental markets despite generating usage far below $x = 1$ because the rental rate $r$ required to cover the added transaction costs of renting would be too high to create a viable rental market. 
-
-Suppose it costs the firm $\gamma$ to full rent-out an owned product and suppose rental goods have to be purchased in the product market. 
-No arbitrage would mean that $p + \gamma = r$. 
+If $c$ is sufficiently high, then no P2P rental market will exist in either the short- or long-run: 
+many goods have ``missing'' rental markets despite generating usage far below 100\% because the rental rate $r$ required to cover the added transaction costs of renting would be too high to create a viable market.
+Goods that have unpredictable usage patterns would be particularly poor rental candidates.  
+It is only with the emergence of computer-mediate platforms that seem to dramatically reduce transaction costs that a P2P rental market has emerged for some of these goods. 
+Before these markets sprung up, simply finding an appropriate trading partner would be difficult, to say nothing of coming to terms, writing a contract, monitoring compliance, handling disputes, making payment and so on. 
 
 \section{The attributes of goods and the feasibility of renting} 
+The model abstracts away from the nature of the good, but it is described by several parameters that characterize the nature of the good: the purchase price, $p$, the usage valuation, $\alpha$, and the transaction cost of renting, $c$.  
+If we look to what goods are currently commonly rented now, we get a sense of what makes something amenable to renting: 
+relatively low $\alpha$, high $p$ and low $c$, or expensive goods that are used infrequently but predictably and are not wholly consumed by usage. 
+Examples include cars and hotels in distant cities, tuxedos, certain kinds of specialty tools (e.g., rototillers, carpet shampoers) and so on. 
+The conditions necessary for the P2P rental market are similar, except that we also need some stock of owners and non-owners. 
 
-The model deliberately abstracts away from the nature of the good being transacted, but presumably some attributes of the good determine how ``rentable''  or ``shareable'' it actually is. 
-If we look to what is currently commonly rented, we get some sense of what makes something amenable to renting:  
-goods that are used infrequently but are expensive and/or are difficult to transport: 
-cars and hotels in distant cities, tuxedos, certain kinds of specialty tools (e.g., rototillers, carpet shampoers) and so on. 
-
-As discussed earlier, it is only with the emergence of computer-mediate platforms that seem to dramatically reduce transaction costs that a P2P rental market has emerged for some of these goods. 
-Before these markets sprung up, simply finding an appropriate trading partner would be difficult, to say nothing of coming to terms, writing a contract, monitoring compliance, handling disputes, making payment and so on. 
-If transaction costs were sufficiently high, then the rental rate would be too high to support a market (even though the high rental rate would tend to stimulate supply). 
-
-The model predicts that goods with high purchase prices but low per-consumer usage are ideal for P2P rental markets in the short-run: 
-the purchase price is high enough that there are lots of would-be consumers with high willingness to pay and enough owners with excess capacity that the market-clearing rental rate is not prohibitively high. 
-When produce market prices are low, there is no excess demand so nearly everyone buys the product, so even if the good is used infrequently, no rental market can exist.  
-For example, there is no rental market in kitchen timers---although they are used infrequently and quite durable, there is neither supply (no one owning finds it worth the trouble to rent them out) nor demand (if one wants one, they go to the product market). 
-Other goods are expensive but there is no excess capacity, as they are used more or less continuously. 
-For example, there is and can be no P2P rental market in dentures. 
-Other goods are used infrequently and are expensive but make poor sharing candidates because demand is so unpredictable. 
-For example, a gas-powered back-up electrical generator is used infrequently but would be difficult to rent in a P2P market, as demand is likely to be correlated in space and time. 
-
-Goods that are difficult to transport but need to be used in a different locations will be hard to rent. 
-However, goods that can be used on-site by different people are more shareable. 
-For example, yachts are relatively difficult to transport long distances, but there is a thriving P2P rental market in boats where many want to sail on vacation: 
-in the British Virgin islands charter yachts are owned by individuals. 
-
-Nearly all goods, even if classified as ``durable'' do get used up through consumption. 
-Depreciation can partially be offset through careful use and monitoring as well as maintenance.  
-Most things---apartments, cars, clothes etc., need to be cleaned and or serviced before they can be rented again. 
-However, other goods like jewelry presumably have little ``reset'' cost.
-
-In the model, if a good is used $x$, $1-x$ is available to rent, with would-be renters indifferent over which ``piece'' of the $1$ unit they get. 
-Several practical considerations might this assumption problematic. 
-The usage of some goods cannot be cleanly divided into large chunks of time: 
-some goods, even if used rarely in total, are used intermittently. 
+The usage of some goods cannot be cleanly divided into large chunks of time.  
+Some goods, even if used rarely in total, are used intermittently. 
 For example, a fly-swatter generally is not used very often (giving lots of $1-x$), but when it will be used is highly unpredictable. 
+For a high-priced example, a gas-powered back-up generator is used infrequently but would be difficult to rent in a P2P market, as demand is likely to be correlated in space and time. 
 Other goods can be nicely divided: it is easy for one family to use a vacation home one week while another family uses it another week. 
-Goods with predictable or easily adjustable usage patterns are more likely to be P2P rental. 
+Goods with predictable or easily adjustable usage patterns are more amenable to be P2P rental. 
+
+When product market prices are so low that nearly everyone buys the product, no P2P rental market can exist even when usage is low.  
+For example, there is no rental market in kitchen timers---although they are used infrequently and quite durable, there is neither supply (no one owning finds it worth the trouble to rent them out) nor demand (if one wants one, they go to the product market and buy one). 
+Other goods are expensive but there is no excess capacity, as they are used more or less continuously. 
+This is why there is no P2P rental market in dentures. 
+
+To move beyond the casual empiricism of considering what rental markets might be like for various goods, I conducted a consumer survey on Amazon Mechanical Turk. 
+The survey focused on questions about consumer decision-making and usage patterns for a variety of goods. 
+While far from being nationally representative, this MTurk population is useful for two reasons. 
+First, because it is easy to pay for small amounts of work, it easy to keep incentives high for even a very long survey. 
+Second, because the MTurk population is willing---and has incentives to---carefully answer a tedious set of questions, they are less likely to ``pencil whip'' the survey. 
+Workers on MTurk who have their work ``rejected'' by dissatisfied employers become ineligible for the best, highest-paying kinds of work on the marketplace and as such show a high level of diligence.    
+This respondent diligence makes it useful for certain kinds of questions (c.f., \cite{kuziemko2013elastic}).  
+Finally, although MTurk is a convenience sample, there is no strong reason to think they would have highly idiosyncratic consumption patterns. 
 
 \subsection{Design and administration of the survey}
-
-Using Amazon Mechanical Turk, I hired US-based workers to answer a questions about a consumer good, e.g., BBQ grill, pick-up truck, men's suit, toothbrush etc.
+I hired US-based ``Master'' workers to answer a questions about a consumer good, e.g., BBQ grill, pick-up truck, men's suit, toothbrush etc.
 I asked them: whether they owned the good; whether they had ever rented or lent out the good; how much they would use the good \emph{regardless} of whether they actually owned the good; their reasons for not owning the good; whether they would use the good in one large chunk or many small chunks; whether usage was predictable; why they did not own the good; and finally, what was their household income. 
 See Appendix~\ref{sec:survey} for the full list of goods as well as the actual survey questions and answers.  
 Each ``human intelligence task'' or HIT was about one particular good. 
 Workers were allowed to answer for each of the 20 goods.  
-
-The MTurk is a convenience sample, but there is no strong reason to think they would have highly idiosyncratic consumption patterns. 
-
-but it has been used effectively by other researchers in a variety of settings. 
-For example, \cite{kuziemko2013elastic} uses it to elicit TK. 
-
+ 
 \subsection{Ownership and renting patterns} 
-
+For each good, the respondent was asked whether their household owns such a good. 
 Figure~\ref{fig:frac_owning} shows the fraction of respondents reporting owning various goods.  
 There are few surprises: nearly everyone owns a toothbrush, a hammer and a blender; no one reported owning a jet ski and only one reported owning a vacation home.
 Figure~\ref{fig:frac_renting} shows the fraction of respondents reporting having rented the various goods. 
-Generally, ownership and renting appear to be gross substitutes, with the notable exception of cars (presumably because people rent cars when traveling). 
+\important{Generally, ownership and renting appear to be gross substitutes, with the notable exception of cars (presumably because people rent cars when traveling).}
 
 \begin{figure}
 \centering 
@@ -602,7 +588,8 @@ To confirm the visual pattern of renting declining in ownership, I report the re
 \end{align} 
 where $\mbox{FracOwn}$ is the fraction of respondents claiming to own the good and $\mbox{FracRent}$ as the faction claiming to have rented the good. 
 Table~\ref{tab:own_vs_rent} reports the estimated regression of this equation, with cars included in Column~(1) and cars excluded in Column~(2). 
-We can clearly see the importance of cars in the overall pattern: while both regression estimates have a negative slope, the effects are much stronger when cars are excluded. 
+\important{We can clearly see the importance of cars in the overall pattern: while both regression estimates have a negative slope, the effects are much stronger when cars are excluded.}
+
 
 \begin{figure}
 \centering 
@@ -614,105 +601,69 @@ We can clearly see the importance of cars in the overall pattern: while both reg
 
 \input{./tables/own_vs_rent.tex}
 
-\subsection{Lending} 
-Even in the absence of P2P rental markets, individuals can still lend goods to each other. 
-Figure~\ref{fig:lending} shows the fraction of owners reporting having lent an item to someone else.  
-
-Goods that had the highest fraction of individuals reporting renting are not frequently lent out. 
-This is not surprising, as they are not widely owned: 
-no one lends out bouncy castles, jet skis, canoes, vacation homes etc. because almost no one in the sampled owns them. 
-Further, goods that are nearly universally owned in the sample are not very likely to be lent out: 
-for example, blenders are infrequently lent out despite being owned by all respondents---but there presumably is not much demand since this ``owned by everyone'' is generally true in the population. 
-The ``sweet spot'' for lending appears to be goods with middling rates of ownership:  
-
-
-\begin{figure}
-\centering 
-\caption{Fraction of respondents reporting having lent-out various goods \label{fig:lending}}
-\begin{minipage}{0.90 \linewidth}
-\includegraphics[width = \linewidth]{./plots/lent_fractions.pdf} 
-\end{minipage} 
-\end{figure} 
-
-Figure~\ref{fig:scatter_lending} shows the scatter plot of fraction of respondents lending out a good versus the fraction owning a good. 
-
-\begin{figure}
-\centering 
-\caption{Fraction lending versus fraction owning \label{fig:scatter_lending} }
-\begin{minipage}{0.60 \linewidth}
-\includegraphics[width = \linewidth]{./plots/lent_v_own.pdf} 
-\end{minipage} 
-\end{figure} 
-
-
-\subsection{Predictability and granularity of usage by good} 
-
-Figure~\ref{fig:predict_index} shows the mean prediction index per good. 
-Figure~\ref{fig:granularity} shows the mean granularity index per good. 
-
-\begin{figure}
-\centering 
-\caption{Mean predictability index \label{fig:predict_index} }
-\begin{minipage}{0.90 \linewidth}
-\includegraphics[width = \linewidth]{./plots/predictability.pdf} 
-\end{minipage} 
-\end{figure} 
-
-\begin{figure}
-\centering 
-\caption{Mean granularity index \label{fig:granularity}}
-\begin{minipage}{0.90 \linewidth}
-\includegraphics[width = \linewidth]{./plots/granularity.pdf} 
-\end{minipage} 
-\end{figure} 
-
-\subsection{Ownership and income}
-
-Figure~\ref{fig:ownership_fractions_income} shows the fraction owning various goods by income level.  
-
-\begin{figure}
-\centering 
-\caption{Variation in ownership by income \label{fig:ownership_fractions_income}}
-\begin{minipage}{0.90 \linewidth}
-\includegraphics[width = \linewidth]{./plots/ownership_fractions_inc.pdf} 
-\end{minipage} 
-\end{figure} 
-
 \subsection{Ownership and usage} 
+In the model, consumers considered how much they would use some good and compared the utility this level of usage would bring them against the purchase price. 
+The model predicts increasing ownership in estimated usage. 
+To elicit usage, I asked respondents to select how often they would use a good in time units, using familiar measures of time e.g., 1 hour a week, 1 hour a day and so on.
+I framed the time units as being approximately on a logarithmic scale, with each increase in usage being about a doubling of the fraction of time.  
 
-Table~\ref{tab:ownership} shows that TK. 
+In Figure~\ref{fig:ownership_distro}, I plot the kernel density estimates of log usage (as fractions of time) for owners and non-owners, with those saying no usage at all excluded. 
+Because ownership fractions differ substantially across goods, a density estimate is not always possible for both owners and non-owners. 
+Even when it is, one is often far less precise than the other. 
+For some goods with both, there does seem to be a right-shifted usage distribution among owners: 
+the power drill, the diamond necklace, the high-end headphones, the mountain bike, the pick-up truck and perhaps the sewing machine. 
+However, the food processor and perhaps the tablet and the push lawn-mowers show an alternate pattern. 
+A limitation of this graphical approach is that it fails to account for any income effects. 
+
+\begin{figure}
+\centering 
+\caption{Usage by ownership, by good \label{fig:ownership_distro}}
+\begin{minipage}{0.90 \linewidth}
+\includegraphics[width = \linewidth]{./plots/ownership_distro.pdf} 
+\end{minipage} 
+\end{figure} 
+
+I examine the graphical relationship shown in Figure~\ref{fig:ownership_distro} by regressing the ownership indicator on usage. 
+In Column~(1) of Table~\ref{tab:ownership}, I report a regression where an ownership indicator is simply regressed upon log fraction of usage,  
+\begin{align} \label{eq:base_own}
+\mbox{own}_{ig} = \beta_0 + \beta_1 \log x_{ig} + \beta_2 1\cdot\{x_{ig} = 0\} + \mu_{g} + \epsilon_{ig}.
+\end{align} 
+where and indicator is included for the cases when $x_{ig}$ is exactly zero (a dummy value replaces $\log x_{ig}$ in the design matrix) and $\mu_g$ is a good-specific effect (random in Column~(1) and fixed in Column~(2)).
+Aside from the difficulty in transforming a highly-skewed $x$ distribution that contains zero, treating the $x = 0$ case separately with its own indicator seems sensible in our context, as this response is qualitatively different from the other answers, which have some positive amount of usage.  
+
+We can potentially get a more precise estimate of the effects of usage differences on ownership by controlling for some other sources of variation in ownership. 
+First, the nature of the good being affects the probability of ownership independent of the respondent's estimated usage. 
+Second, different goods presumably have different income effects.  
+To capture these sources of variation, in Column~(3) I estimate  
+\begin{align} \label{eq:usage_and_income}
+\mbox{own}_{ig} = \beta_0 + \beta_1 \log x_{ig} + \beta_2 1\cdot\{x_{ig} = 0\} + \mu_g + \beta_g \mbox{IncomeIndex}_i + \epsilon_{ij}  
+\end{align} 
+where $\mu_g$ is a good-specific random effect and $\beta_g$ is a good-specific slope on the respondent's income index (the standardized mean of their income response---see Appendix~\ref{sec:survey} for the bins). 
+Column~(3) of Table~\ref{tab:ownership} reports the estimate of Equation~\ref{eq:usage_and_income}. 
 
 \input{./tables/ownership.tex}
 
-Table~\ref{tab:ownership_attr} explores how the perceived usage attributes of the good are related to the ownership decision.
-My hypothesis was that goods with an unpredictable usage pattern and/or whose usage was spread out over many small chunks would necessitate ownership. 
-In Column~(1), we see that the less predictable perceived usage, the more likely the good is to be owned. 
-In Column~(2), the more granular usage is, the more likely the good it to be owned. 
+important{As the model predicts, higher estimate usage predicts ownership, even when we exclude individuals who said they would have no usage the good at all.} 
+The coefficient on log usage is approximately the same across specifications, with somewhat more precise estimates offered when controlling for income effects. 
+As we would expect, individuals claiming they would not use the good at all are far less likely to own the good. 
+While it increases precision, accounting for income effects as in Column~(3) seems to have little effect on the estimates. 
+The absence of strong income effects is puzzling, as some of the goods in question are clearly normal goods (e.g., high-end audio headphones). 
+We can partially investigate this finding by examining by-good the reasons give for non-ownership. 
 
-\input{./tables/ownership_attr.tex} 
-
-In this model presented in this paper, preferences are still primitives of the model, but they are modeled as differences in planned \emph{usage} of the good.  
-
-Figure~\ref{fig:usage_by_own} the boxplot distributions of reported usage by ownership. 
-
-\begin{figure}
-\centering 
-\caption{Distribution of usage indexes by ownership}
-\label{fig:usage_by_own}
-\begin{minipage}{0.90 \linewidth}
-\includegraphics[width = \linewidth]{./plots/usage_by_own.pdf} 
-\\
-{\footnotesize
-\emph{Notes:} Here are some notes. 
-}
-\end{minipage} 
-\end{figure} 
-
-\subsection{Lending and attributes}
-
-\subsection{Reasons for non-ownership} 
-
-Figure~\ref{fig:reasons} are the reasons for not owning, per good. 
+In the survey, non-owners were asked for there reasons for not owning the good:
+``If you do not own a {\bf good}, what is the primary reason?''
+\begin{itemize} 
+\item NA - we own one.
+\item We wouldn't use it enough to justify the purchase price
+\item We would use it, but we simply do not have the money.
+\item I don't have the space for this item
+\end{itemize} 
+Figure~\ref{fig:reasons} shows the fraction of respondents selecting among the reasons given for non-ownership of a good. 
+For each point estimate, a 95\% confidence interval is shown (when possible) using the Wilson method. 
+Given that some items are nearly universally owned, presenting uncertainty using standard confidence intervals would regularly exceed 1 or go below 0 otherwise. 
+The only goods where income-effects are the primary explanation (and non-ownership is not trivial) are the car, the audio headphones, and the vacation home (strongly so). 
+In nearly all the other goods, the response about too little usage to justify the purchase was paramount. 
+Interestingly, the goods that to date have seen the most successful P2P rental markets merge are those for cars (e.g., RelayRides, UberX) and housing (Airbnb). 
 
 \begin{figure}
 \centering 
@@ -723,65 +674,91 @@ Figure~\ref{fig:reasons} are the reasons for not owning, per good.
 \end{minipage} 
 \end{figure} 
 
+\subsection{Good attributes and usage patterns} 
+In addition to price and planned usage, goods differ in the predictability and granularity of that usage.
+Goods with highly predictable usage patterns might be easier to rent (or lend out), whereas goods that have unpredictable usage patterns would be difficult to lent without substantial utility loss to the owner.
+Similarly, for goods that are used in numerous small sessions, renting
+or lending out the good to others would create high transaction costs.
+Respondents were asked to rate the unpredictability of usage on a 1-5 scale (1 was highly predictable and 5 was highly unpredictable) as well as granularity (1 was low granularity---one big chunk--- and 5 was high granularity---lots of little chunks).  
+
+The mean scores by good seem reasonable and intuitive: 
+Figure~\ref{fig:predict_index} shows the mean unpredictability index per good. 
+The most predictable goods are either those associated with planned recreation (e.g., vacation home, canoe, jet ski, tuxedo) or predictable chores (e.g., toothbrush, the two kinds of lawnmowers). 
+The most unpredictable goods are associated with either food preparation (e.g., blender, food processor) or repairs (e.g., hammer, sewing machine, cordless power drill). 
+Back-up electric generator is a clear (and unsurprising) outlier---you are in a sense always surprised when you need to use it. 
 
 \begin{figure}
 \centering 
-\caption{Ownership fractions by family income quartiles}
+\caption{Mean unpredictability index by good \label{fig:predict_index} }
 \begin{minipage}{0.90 \linewidth}
-\includegraphics[width = \linewidth]{./plots/ownership_fractions_inc.pdf} 
+\includegraphics[width = \linewidth]{./plots/predictability.pdf} 
 \end{minipage} 
 \end{figure} 
 
-\section{Discussion} 
- 
-\subsection{Taste for diversity} 
-In some formulations of the consumer problem, consumers consume some positive amount of every good offered.
-For example, a Cobb-Douglas utility function has no corner solutions---every good is consumed at least a little bit.
+Figure~\ref{fig:granularity} shows the mean granularity index per good. 
+There appears to be some similarity in high predictable usage, but some goods with very granular usage also appear to have highly predictable usage---namely the toothbrush. 
+To make this relationship explicit, in Figure~\ref{fig:granularity_v_predictability} the granularity and unpredictability indices are plotted against each other. 
+\important{With the exception of two goods---the toothbrush and back-up generator---unpredictability and granularity are strongly positively correlated.}
+
+\begin{figure}
+\centering 
+\caption{Mean granularity index by good \label{fig:granularity}}
+\begin{minipage}{0.90 \linewidth}
+\includegraphics[width = \linewidth]{./plots/granularity.pdf} 
+\end{minipage} 
+\end{figure} 
+
+\begin{figure}
+\centering 
+\caption{Usage predictability versus granularity \label{fig:granularity_v_predictability}}
+\begin{minipage}{0.90 \linewidth}
+\includegraphics[width = \linewidth]{./plots/granularity_versus_predictability.pdf} 
+\end{minipage} 
+\end{figure} 
+
+To test whether these unpredictability/granularity measures are related to ownership, in Table~\ref{tab:ownership_attr}, I report regressions of the ownership decision on the respondent's granularity and unpredictability scores. 
+I include worker-specific random-effects in each regression. 
+\important{Goods with unpredictable and highly granular usage are substantially more likely to be owned.}
+In Column~(1), we see that the less predictable perceived usage, the more likely the good is to be owned. 
+In Column~(2), the more granular usage is, the more likely the good it to be owned. 
+Column~(3) shows that both measures still have a positive relationship with ownership but that there is no strong interaction effect between the two measures. 
+
+\input{./tables/ownership_attr.tex} 
+
+\section{Discussion and conclusions} 
+
+The model and the survey complement are designed to complement each other in two ways. 
+First, the survey provides justification for some of the modeling conventions, such as making planned usage the primary explanation for the pattern of ownership rather than ``taste'' or income. 
+This is not to say that income effects do not matter when explaining purchases, but rather that they give an incomplete picture---particularly for relatively inexpensive goods.
+Second, the survey offers a partial decomposition of the non-specific ``transaction costs'' that would make a good difficult or easy to share.  
+P2P rental markets are now possible in part because technology has reduced transaction costs, but such markets have not emerged for all goods. 
+The survey results suggest that those goods with unpredictable and highly granular usage might not support a P2P rental market even if too total usage is small. 
+However, it also suggests that innovations that make usage more predictable might change this calculus. 
+As with all models, much was left out. 
+However, there are ``predictions'' that follow from the logic of the model, if not the formal set-up. 
+
+One area where P2P rental markets could have a long-term effect is on the diversity of goods consumed. 
+For example, they might ``convexify'' consumption, with consumers renting a variety of goods that are horizontally differentiated.   
+Consider that in some formulations of the consumer problem, consumers consume some positive amount of every good offered.
 This is obviously a large departure from empirical reality if we draw find-grained distinctions between ``goods.'' 
-For example, Amazon.com currently lists 6,238 results for "blender" in the Home \& Kitchen category: 
-presumably most households own far fewer than this, with most owning 1 or 0.
+For example, Amazon.com currently lists 6,238 results for ``blender'' in the Home \& Kitchen category: 
+presumably most households own far fewer than this, with most owning one or none.
 The reason for this pattern in the language of this model is clear: 
-a consumer's $\alpha$ for Blender 2 \emph{conditional} upon owning Blender 1 is quite low and so another blender is not purchased.   
-There are numerous goods that have highly negative cross price elasticities but that would not in a world of perfectly competitive rental markets in all goods.  
-Very few people rent the same car they drive or vacation in their home towns. 
-   
+a consumer's $\alpha$ for Blender 2 \emph{conditional} upon owning Blender 1 is quite low and so another blender is not purchased.
+However, if a rental market existed for both blender types, consumers could act upon their taste for diversity without owning a dozen blenders. 
+Even if the blender example seems implausible, we should consider that very few consumers try to rent the car they normally drive or vacation in their hometown. 
+Presumably they diversify consumption in these cases precisely because they can. 
 
-Goods that have a high novelty value are particularly amenable to renting: 
-This explains why rentals or lending of videos and books are/were commonplace.  
-
-\subsection{Product market changes to facilitate rentals} 
-
-\section{Conclusion}
-In the very long-run, product differentiation could move towards making sharing more attractive. 
-Individuals will purchase more durable goods to reduce the frequency of replacement. 
-Goods with broad appeal will see an increase in demand compared to more idiosyncratic goods that cater to the owner's taste (similar to how re-sale value enters into some consumers decisions now). 
-There will be a shift towards products that are more easily shareable. 
+As P2P rental markets become commonplace, presumably manufacturers will begin designing products more attractive for this additional purpose. 
 For example, locks on cars and houses that allow remote entry will be more appealing. 
+The Internet-of-Things revolution will make it easier to identify goods that are not being used at a moment in time and perhaps facilitate trade automatically. 
+Similarly, technologies that make it easier to monitor usage (GPS, embedded sensors, streaming video of how they are being used and so on) should make contracting easier and reduce some of the informational asymmetries that contribute to sharing costs. 
+As more of economic and social life are computer-mediated, platforms will use this information to verify the identify and reputation of buyers and sellers, further mitigating moral hazard and adverse selection.  
+Even without these changes, individuals will purchase more durable goods to reduce the frequency of replacement. 
+Advertisers will trumpet the rental stream income from a purchase and highlight the advantages of residual control rights. 
 
-On-going technological developments should reduce the costs of sharing. 
-The Internet-of-Things will make it easier to identify goods that are not being used at a moment in time. 
-It will also permit more instrumentation which in turn should facilitate contracting. 
-For example, many goods might make a high resolution video, with precise time-tracked location of how they are being used, reducing concerns about moral hazard. 
-As more of economic and social life are computer-mediated, platforms will use this information to verify the identify and reputation of buyers and sellers, mitigating moral hazard and adverse selection.  
+% \cite{ikkala2014defining}
 
-Product market producers will subsidize sharing of experience goods, say by offering them at a discount to known-sharers.\footnote{GM is already doing this with RelayRides}.  
-
-For goods for which Jevon's paradox does not hold, marketing will be re-directed towards encouraging ownership.
-Barring that, advertisers will trumpet the rental stream income from a purchase and highlight the advantages of residual control rights. 
-We might see more B2B rentals, particular among companies that have similar inputs but are not competitors in the product market. 
-Goods with declining real prices are unattractive for sharing businesses, as the trend will be towards ownership. 
-
-Digital goods are incredibly attractive for P2P ``rental'' but since a single owner can meet all the demand among non-owners, the rental rate is zero.
-The reason is that even if the owner uses $x$, $1$ is still available to the person ``rented'' to.  
-Of course, this is just piracy. 
-
-%IP-multiplexing 
-
-\cite{sinai2005}
-\cite{ikkala2014defining}
-\cite{varian2000} 
-\cite{byers2013rise} 
-\cite{becker1965theory} 
 
 \bibliographystyle{aer}
 \bibliography{sharing.bib}
