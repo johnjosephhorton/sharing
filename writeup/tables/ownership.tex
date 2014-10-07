@@ -1,6 +1,6 @@
 
 % Table created by stargazer v.5.0 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Thu, Sep 25, 2014 - 09:59:07 PM
+% Date and time: Mon, Oct 06, 2014 - 12:42:55 PM
 \begin{table}[!htbp] \centering 
   \caption{Estimated product usage and ownership} 
   \label{tab:ownership} 
@@ -10,35 +10,36 @@
  & \multicolumn{3}{c}{\textit{Dependent variable:}} \\ 
 \cline{2-4} 
 \\[-1.8ex] & \multicolumn{3}{c}{Item is owned} \\ 
-\\[-1.8ex] & \multicolumn{2}{c}{\textit{OLS}} & \textit{linear} \\ 
- & \multicolumn{2}{c}{\textit{}} & \textit{mixed-effects} \\ 
+\\[-1.8ex] & \textit{linear} & \textit{felm} & \textit{linear} \\ 
+ & \textit{mixed-effects} & \textit{} & \textit{mixed-effects} \\ 
+ & Good and Consumer REs & Good FEs & (1) + Good-specific income slope \\ 
 \\[-1.8ex] & (1) & (2) & (3)\\ 
 \hline \\[-1.8ex] 
- Usage index & 0.112$^{***}$ & 0.111$^{***}$ & 0.110$^{***}$ \\ 
-  & (0.021) & (0.021) & (0.021) \\ 
+ Log frac. usage, $\log x$ & 0.019$^{**}$ & 0.022$^{**}$ & 0.020$^{**}$ \\ 
+  & (0.009) & (0.011) & (0.008) \\ 
   & & & \\ 
- Income index &  & 0.060$^{***}$ & 0.061$^{**}$ \\ 
-  &  & (0.021) & (0.025) \\ 
+ No Use indicator, $1\cdot\{x = 0\}$ & $-$0.582$^{***}$ & $-$0.592$^{***}$ & $-$0.605$^{***}$ \\ 
+  & (0.096) & (0.128) & (0.095) \\ 
   & & & \\ 
- Constant & 0.461$^{***}$ & 0.465$^{***}$ & 0.467$^{***}$ \\ 
-  & (0.021) & (0.021) & (0.024) \\ 
+ Constant & 0.663$^{***}$ &  & 0.663$^{***}$ \\ 
+  & (0.084) &  & (0.086) \\ 
   & & & \\ 
 \hline \\[-1.8ex] 
-Observations & 532 & 527 & 527 \\ 
-R$^{2}$ & 0.050 & 0.064 &  \\ 
-Adjusted R$^{2}$ & 0.049 & 0.061 &  \\ 
-Log Likelihood &  &  & $-$371.983 \\ 
-Akaike Inf. Crit. &  &  & 753.966 \\ 
-Bayesian Inf. Crit. &  &  & 775.302 \\ 
-Residual Std. Error & 0.487 (df = 530) & 0.484 (df = 524) &  \\ 
-F Statistic & 28.121$^{***}$ (df = 1; 530) & 17.947$^{***}$ (df = 2; 524) &  \\ 
+Observations & 524 & 524 & 519 \\ 
+R$^{2}$ &  & 0.510 &  \\ 
+Adjusted R$^{2}$ &  & 0.482 &  \\ 
+Log Likelihood & $-$245.829 &  & $-$233.007 \\ 
+Akaike Inf. Crit. & 501.657 &  & 482.014 \\ 
+Bayesian Inf. Crit. & 522.964 &  & 516.029 \\ 
+Residual Std. Error &  & 0.359 (df = 496) &  \\ 
 \hline 
 \hline \\[-1.8ex] 
 \end{tabular}
-\\
-{\footnotesize 
-\begin{minipage}{0.90 \linewidth}
- \emph{Notes:} Here are some notes.
-\end{minipage}
-}
+\\{\footnotesize \begin{minipage}{0.90 \linewidth} \emph{Notes:}
+This table reports regressions of an indicator for whether a respondent reported owning a good on that same respondent's estimate of how much they would use that good.
+In Column~(1), I estimate a multi-level model with good-specific random effects.
+In Column~(2), I instead use good-specific fixed effects and cluster at the good level.
+Equation~\ref{eq:base_own} shows the estimated equation for Columns~(1) and (2). 
+In Column~(3), I re-run the estimate from Column~(1) but also allow for random slope on the respondendent's income index, as per Equation~\ref{eq:usage_and_income} shows the estimated equation for Column~(3). 
+\starlanguage \end{minipage} }
 \end{table}
