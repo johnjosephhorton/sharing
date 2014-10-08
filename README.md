@@ -2,12 +2,15 @@
 
 - Ask questions about re-set costs 
 - Ask questions about moral hazard and adverse selection 
+- Phrase usage as "How much did you think you would buy" 
+- Rule out gifts 
 
 # Model Notes 
 
 - Add section on a purely income-effect based sharing model. 
 - Incidence of transaction costs 
-
+- Add section on continuum of alpha's 
+- Pecentage of aL/aH space that yields a sharing economy 
 
 % <b><p>What is your total household income?</b>
 % <select name="own_income">
