@@ -1,5 +1,4 @@
-writeup/plots/*pdf
-writeup/plots/*svg
+writeup/probable_junk
 code/R/.Rhistory
 *unused*
 *aux
@@ -12,3 +11,4 @@ data/
 presentations/
 literature/
 submit/
+old/

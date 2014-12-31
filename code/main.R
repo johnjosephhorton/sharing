@@ -244,7 +244,7 @@ s <- stargazer(m.1, m.2,
                )
 AddTableNote(s, out.file, note = "\\\\{\\footnotesize \\begin{minipage}{0.75 \\linewidth} \\emph{Notes:}
 The unit of observation for the regressions in this table is the individual good.
-The dependent variable is the graction of respondents reporting having rented that good, while the indendent variable is the fraction reporting owning that good. 
+The dependent variable is the fraction of respondents reporting having rented that good, while the indendent variable is the fraction reporting owning that good. 
 Column~(1) includes all goods surveyed, while Column~(2) excludes cars.
 For the full list of goods and the survey langugage, see Appendix~\\ref{sec:survey}. 
 \\starlanguage \\end{minipage} }")
