@@ -1,37 +1,32 @@
 
-% Table created by stargazer v.5.0 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Tue, Oct 07, 2014 - 02:29:02 PM
+% Table created by stargazer v.5.1 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: Sun, May 10, 2015 - 07:10:02 AM
+% Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Estimated product usage and ownership} 
   \label{tab:ownership} 
-\begin{tabular}{@{\extracolsep{5pt}}lccc} 
+\footnotesize 
+\begin{tabular}{@{\extracolsep{5pt}}lD{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} } 
 \\[-1.8ex]\hline 
 \hline \\[-1.8ex] 
  & \multicolumn{3}{c}{\textit{Dependent variable:}} \\ 
 \cline{2-4} 
 \\[-1.8ex] & \multicolumn{3}{c}{Item is owned} \\ 
-\\[-1.8ex] & \textit{linear} & \textit{felm} & \textit{linear} \\ 
- & \textit{mixed-effects} & \textit{} & \textit{mixed-effects} \\ 
- & Good and Consumer REs & Good FEs & (1)+RE slope on income \\ 
-\\[-1.8ex] & (1) & (2) & (3)\\ 
+\\[-1.8ex] & \multicolumn{1}{c}{\textit{linear}} & \multicolumn{1}{c}{\textit{felm}} & \multicolumn{1}{c}{\textit{linear}} \\ 
+ & \multicolumn{1}{c}{\textit{mixed-effects}} & \multicolumn{1}{c}{\textit{}} & \multicolumn{1}{c}{\textit{mixed-effects}} \\ 
+\\[-1.8ex] & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} & \multicolumn{1}{c}{(3)}\\ 
 \hline \\[-1.8ex] 
- Log frac. usage, $\log x$ & 0.019$^{**}$ & 0.022$^{**}$ & 0.020$^{**}$ \\ 
+ Log frac. usage, $\log x$ & 0.019^{**} & 0.022^{**} & 0.020^{**} \\ 
   & (0.009) & (0.011) & (0.008) \\ 
-  & & & \\ 
- No Use indicator, $1\cdot\{x = 0\}$ & $-$0.582$^{***}$ & $-$0.592$^{***}$ & $-$0.605$^{***}$ \\ 
+  No Use indicator, $1\cdot\{x = 0\}$ & -0.582^{***} & -0.592^{***} & -0.605^{***} \\ 
   & (0.096) & (0.128) & (0.095) \\ 
-  & & & \\ 
- Constant & 0.663$^{***}$ &  & 0.663$^{***}$ \\ 
+  Constant & 0.663^{***} &  & 0.663^{***} \\ 
   & (0.084) &  & (0.086) \\ 
-  & & & \\ 
-\hline \\[-1.8ex] 
-Observations & 524 & 524 & 519 \\ 
-R$^{2}$ &  & 0.510 &  \\ 
-Adjusted R$^{2}$ &  & 0.482 &  \\ 
-Log Likelihood & $-$245.829 &  & $-$233.007 \\ 
-Akaike Inf. Crit. & 501.657 &  & 482.014 \\ 
-Bayesian Inf. Crit. & 522.964 &  & 516.029 \\ 
-Residual Std. Error &  & 0.359 (df = 496) &  \\ 
+ \hline \\[-1.8ex] 
+Model & \multicolumn{1}{c}{Good and Consumer REs} & \multicolumn{1}{c}{Good FEs} & \multicolumn{1}{c}{Good, Consum and Income Slope REs} \\ 
+Observations & \multicolumn{1}{c}{524} & \multicolumn{1}{c}{524} & \multicolumn{1}{c}{519} \\ 
+R$^{2}$ &  & \multicolumn{1}{c}{0.510} &  \\ 
+Log Likelihood & \multicolumn{1}{c}{-245.829} &  & \multicolumn{1}{c}{-233.007} \\ 
 \hline 
 \hline \\[-1.8ex] 
 \end{tabular}
