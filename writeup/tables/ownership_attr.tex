@@ -1,36 +1,40 @@
 
 % Table created by stargazer v.5.1 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Sun, May 10, 2015 - 07:10:02 AM
+% Date and time: Thu, May 14, 2015 - 09:49:56 AM
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
-  \caption{Good attributes and ownership---usage predictibility and granularity (toothbrush and electric generator excluded)} 
+  \caption{Good usage unpredictibility and granularity and their association with good ownership.} 
   \label{tab:ownership_attr} 
 \footnotesize 
-\begin{tabular}{@{\extracolsep{5pt}}lD{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} } 
+\begin{tabular}{@{\extracolsep{5pt}}lD{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} } 
 \\[-1.8ex]\hline 
 \hline \\[-1.8ex] 
- & \multicolumn{3}{c}{\textit{Dependent variable:}} \\ 
-\cline{2-4} 
-\\[-1.8ex] & \multicolumn{3}{c}{Item is owned} \\ 
-\\[-1.8ex] & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} & \multicolumn{1}{c}{(3)}\\ 
+ & \multicolumn{4}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-5} 
+\\[-1.8ex] & \multicolumn{4}{c}{Item is owned} \\ 
+\\[-1.8ex] & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} & \multicolumn{1}{c}{(3)} & \multicolumn{1}{c}{(4)}\\ 
 \hline \\[-1.8ex] 
- Unpredictability index (UI) & 0.123^{***} &  & 0.090^{***} \\ 
-  & (0.023) &  & (0.026) \\ 
-  UI x GI &  &  & -0.008 \\ 
-  &  &  & (0.021) \\ 
-  Granularity index (GI) &  & 0.121^{***} & 0.080^{***} \\ 
-  &  & (0.023) & (0.025) \\ 
-  Constant & 0.453^{***} & 0.450^{***} & 0.454^{***} \\ 
-  & (0.031) & (0.032) & (0.033) \\ 
+ Unpredictability index (UI) & 0.139^{***} &  & 0.095^{***} & 0.003 \\ 
+  & (0.030) &  & (0.034) & (0.034) \\ 
+  Granularity index (GI) &  & 0.135^{***} & 0.091^{***} & -0.018 \\ 
+  &  & (0.025) & (0.029) & (0.025) \\ 
+  UI x GI &  &  & -0.009 & 0.006 \\ 
+  &  &  & (0.018) & (0.018) \\ 
  \hline \\[-1.8ex] 
-Observations & \multicolumn{1}{c}{491} & \multicolumn{1}{c}{494} & \multicolumn{1}{c}{489} \\ 
-Log Likelihood & \multicolumn{1}{c}{-343.392} & \multicolumn{1}{c}{-346.230} & \multicolumn{1}{c}{-342.063} \\ 
+Respondent FE & \multicolumn{1}{c}{Y} & \multicolumn{1}{c}{Y} & \multicolumn{1}{c}{Y} & \multicolumn{1}{c}{Y} \\ 
+Good FE & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Y} \\ 
+Observations & \multicolumn{1}{c}{489} & \multicolumn{1}{c}{489} & \multicolumn{1}{c}{489} & \multicolumn{1}{c}{489} \\ 
+R$^{2}$ & \multicolumn{1}{c}{0.170} & \multicolumn{1}{c}{0.169} & \multicolumn{1}{c}{0.191} & \multicolumn{1}{c}{0.500} \\ 
 \hline 
 \hline \\[-1.8ex] 
 \end{tabular}
-\\ {\footnotesize  \begin{minipage}{0.75 \linewidth} \emph{Notes:} This table reports regressions of an indicator for whether the respondent owns a good on that same respondent's estimates of the unpredictability and granularity of usage for that good.
-The two indices are just standardized (mean 0, standard deviation 1) of the 1-5 scale on granularity and predictability.
+\\ {\footnotesize  \begin{minipage}{0.85 \linewidth} \emph{Notes:}
+This table reports regressions of an indicator for whether the respondent owns a good on that same respondent's estimates of the unpredictability and granularity of usage for that good.
+The two indices are normalized responses to the 1-5 scale questions on granularity and unpredictability, pooled over all respondents and goods.
+Toothbrushes and backup generators are excluded from the sample. 
 See Appendix~\ref{sec:survey} for the actual survey language and responses.
-In each regression, worker-specific random effect is included. 
+In each regression a respondent-specific fixed effect is included.
+Standard errors are clustered at the level of the individual respondent.
+\starlanguage
 \end{minipage} }
 \end{table}

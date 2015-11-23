@@ -1,9 +1,9 @@
 
 % Table created by stargazer v.5.1 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Sun, May 10, 2015 - 07:10:02 AM
+% Date and time: Thu, May 14, 2015 - 07:55:45 AM
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
-  \caption{Estimated product usage and ownership} 
+  \caption{Respondent estimates of the fraction of time spent using a good and whether they own that good} 
   \label{tab:ownership} 
 \footnotesize 
 \begin{tabular}{@{\extracolsep{5pt}}lD{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} } 
@@ -11,30 +11,27 @@
 \hline \\[-1.8ex] 
  & \multicolumn{3}{c}{\textit{Dependent variable:}} \\ 
 \cline{2-4} 
-\\[-1.8ex] & \multicolumn{3}{c}{Item is owned} \\ 
-\\[-1.8ex] & \multicolumn{1}{c}{\textit{linear}} & \multicolumn{1}{c}{\textit{felm}} & \multicolumn{1}{c}{\textit{linear}} \\ 
- & \multicolumn{1}{c}{\textit{mixed-effects}} & \multicolumn{1}{c}{\textit{}} & \multicolumn{1}{c}{\textit{mixed-effects}} \\ 
+\\[-1.8ex] & \multicolumn{3}{c}{Respondent owns the item?, ($\textsc{Own}_{ig}=1$)} \\ 
 \\[-1.8ex] & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} & \multicolumn{1}{c}{(3)}\\ 
 \hline \\[-1.8ex] 
- Log frac. usage, $\log x$ & 0.019^{**} & 0.022^{**} & 0.020^{**} \\ 
-  & (0.009) & (0.011) & (0.008) \\ 
-  No Use indicator, $1\cdot\{x = 0\}$ & -0.582^{***} & -0.592^{***} & -0.605^{***} \\ 
-  & (0.096) & (0.128) & (0.095) \\ 
-  Constant & 0.663^{***} &  & 0.663^{***} \\ 
-  & (0.084) &  & (0.086) \\ 
+ Log estimated usage, $\log x_{ig}$ & 0.026^{**} & 0.026^{**} & 0.026^{**} \\ 
+  & (0.011) & (0.011) & (0.011) \\ 
+  Log household income, $\log y_i$ &  & 0.102^{***} &  \\ 
+  &  & (0.025) &  \\ 
  \hline \\[-1.8ex] 
-Model & \multicolumn{1}{c}{Good and Consumer REs} & \multicolumn{1}{c}{Good FEs} & \multicolumn{1}{c}{Good, Consum and Income Slope REs} \\ 
-Observations & \multicolumn{1}{c}{524} & \multicolumn{1}{c}{524} & \multicolumn{1}{c}{519} \\ 
-R$^{2}$ &  & \multicolumn{1}{c}{0.510} &  \\ 
-Log Likelihood & \multicolumn{1}{c}{-245.829} &  & \multicolumn{1}{c}{-233.007} \\ 
+Good FE & \multicolumn{1}{c}{Y} & \multicolumn{1}{c}{Y} & \multicolumn{1}{c}{Y} \\ 
+Respondent FE & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Y} \\ 
+Observations & \multicolumn{1}{c}{411} & \multicolumn{1}{c}{411} & \multicolumn{1}{c}{411} \\ 
+R$^{2}$ & \multicolumn{1}{c}{0.445} & \multicolumn{1}{c}{0.465} & \multicolumn{1}{c}{0.567} \\ 
 \hline 
 \hline \\[-1.8ex] 
 \end{tabular}
-\\{\footnotesize \begin{minipage}{0.90 \linewidth} \emph{Notes:}
-This table reports regressions of an indicator for whether a respondent reported owning a good on that same respondent's estimate of how much they would use that good.
-In Column~(1), I estimate a multi-level model with good-specific random effects.
-In Column~(2), I instead use good-specific fixed effects and cluster at the good level.
-Equation~\ref{eq:base_own} shows the estimated equation for Columns~(1) and (2). 
-In Column~(3), I re-run the estimate from Column~(1) but also allow for random slope on the respondendent's income index, as per Equation~\ref{eq:usage_and_income} shows the estimated equation for Column~(3). 
+\\{\footnotesize \begin{minipage}{0.75 \linewidth} \emph{Notes:}
+This table reports OLS regressions where the dependent variable is an indicator for whether a respondent reported owning a particular good.
+In Column~(1) the independent variable is that respondent's estimate of what fraction of their time they would spend using that good (in logs).
+In Column~(2) a regressor for the log of the respondent's self-reported household income is added to the Column~(1) specification.
+Column~(3) uses the same specification as Column~(1), but a respondent specific fixed effect is added. 
+The sample is restricted to respondents who reports some positive amount of predicted usage of the good and reported their household income.
+All regressions include good-specific fixed effects and standard errors are clustered at the good level. 
 \starlanguage \end{minipage} }
 \end{table}

@@ -140,6 +140,10 @@ df <- within(df, {
     rent = answer.rent == "yes"
 })
 
+# imput family household income 
+y.levels <- c(10/2, 15, 25, 35, 45, 55, 65, 75, 85, 95, 125, 200)
+df$y <- with(df, as.numeric(sapply(answer.own_income, function (x) as.numeric(y.levels[x + 1]) )))
+
 # fix typo
 levels(df$input.good)[16] <- "kid's bouncy castle"
 
@@ -255,10 +259,10 @@ s <- stargazer(m.1, m.2,
                no.space = TRUE,
                align = TRUE, 
                add.lines = list(c("Sample", "\\multicolumn{1}{c}{All Goods}", "\\multicolumn{1}{c}{Cars Excluded}")),
-               dep.var.labels = c("Rental Fraction"),
-               covariate.labels = c("Ownership Fraction")
+               dep.var.labels = c("Fraction reporting renting the good (\\textsc{FracRental})"),
+               covariate.labels = c("Fraction reporting owning the good")
                )
-AddTableNote(s, out.file, note = "\\\\{\\footnotesize \\begin{minipage}{0.75 \\linewidth} \\emph{Notes:}
+AddTableNote(s, out.file, note = "\\\\{\\footnotesize \\begin{minipage}{0.85 \\linewidth} \\emph{Notes:}
 The unit of observation for the regressions in this table is the individual good.
 The dependent variable is the fraction of respondents reporting having rented that good, while the indendent variable is the fraction reporting owning that good. 
 Column~(1) includes all goods surveyed, while Column~(2) excludes cars.
@@ -362,63 +366,101 @@ writeImage(g.own.distro, "ownership_distro",
 
 df$x.t <- df$x
 df$x.t[df$x == 0] <- 10
-df.realistic <- subset(df, x < 0.50)
-m.1 <- lmer(own ~ log(x.t) + as.numeric(x == 0) + (1|input.good),
-            data = df.realistic)
-m.1.fe <- felm(own ~ log(x.t) + as.numeric(x == 0) + G(input.good), clustervar = "input.good",
-                           data = df.realistic)
-m.2 <- lmer(own ~ log(x.t) + as.numeric(x == 0) +  (1 + income.index | input.good) + (1 |worker.id),
-            data = df.realistic)
+df.realistic <- subset(df, x < 0.50 & x != 0 & !is.na(y))
+
+## m.1 <- lmer(own ~ log(x.t) + (1|input.good),
+##             data = df.realistic)
+
+m.1 <- felm(own ~  log(x.t) | input.good | 0 | input.good, data = df.realistic)
+m.2 <- felm(own ~  log(x.t) + log(y) | input.good | 0 | input.good, data = df.realistic)
+m.3 <- felm(own ~  log(x.t) | input.good + worker.id | 0 | input.good, data = df.realistic)
+
 out.file <- "../../writeup/tables/ownership.tex"
-s <- stargazer(m.1, m.1.fe, m.2,
-               title = "Estimated product usage and ownership",
+s <- stargazer(m.1,  m.2, m.3, 
+               title = "Respondent estimates of the fraction of time spent using a good and whether they own that good",
                label = "tab:ownership",
                align = TRUE,
                font.size = "footnotesize",
                omit.stat = c("aic", "f", "adj.rsq", "bic", "ser"),
                no.space = TRUE,
-               add.lines = list(c("Model", "\\multicolumn{1}{c}{Good and Consumer REs}",
-                                           "\\multicolumn{1}{c}{Good FEs}",
-                                           "\\multicolumn{1}{c}{Good, Consum and Income Slope REs}")),  
-               dep.var.labels = c("Item is owned"),
-               covariate.labels = c("Log frac. usage, $\\log x$", "No Use indicator, $1\\cdot\\{x = 0\\}$")
+               add.lines = list(c(
+                   "Good FE",
+                   "\\multicolumn{1}{c}{Y}",
+                   "\\multicolumn{1}{c}{Y}",
+                   "\\multicolumn{1}{c}{Y}"),
+                   c("Respondent FE",
+                     "\\multicolumn{1}{c}{N}",
+                     "\\multicolumn{1}{c}{N}",
+                     "\\multicolumn{1}{c}{Y}")
+                   ),            
+               dep.var.labels = c("Respondent owns the item?, ($\\textsc{Own}_{ig}=1$)"),
+               covariate.labels = c("Log estimated usage, $\\log x_{ig}$", "Log household income, $\\log y_i$")
                )
-AddTableNote(s, out.file, note = "\\\\{\\footnotesize \\begin{minipage}{0.90 \\linewidth} \\emph{Notes:}
-This table reports regressions of an indicator for whether a respondent reported owning a good on that same respondent's estimate of how much they would use that good.
-In Column~(1), I estimate a multi-level model with good-specific random effects.
-In Column~(2), I instead use good-specific fixed effects and cluster at the good level.
-Equation~\\ref{eq:base_own} shows the estimated equation for Columns~(1) and (2). 
-In Column~(3), I re-run the estimate from Column~(1) but also allow for random slope on the respondendent's income index, as per Equation~\\ref{eq:usage_and_income} shows the estimated equation for Column~(3). 
+AddTableNote(s, out.file, note = "\\\\{\\footnotesize \\begin{minipage}{0.75 \\linewidth} \\emph{Notes:}
+This table reports OLS regressions where the dependent variable is an indicator for whether a respondent reported owning a particular good.
+In Column~(1) the independent variable is that respondent's estimate of what fraction of their time they would spend using that good (in logs).
+In Column~(2) a regressor for the log of the respondent's self-reported household income is added to the Column~(1) specification.
+Column~(3) uses the same specification as Column~(1), but a respondent specific fixed effect is added. 
+The sample is restricted to respondents who reports some positive amount of predicted usage of the good and reported their household income.
+All regressions include good-specific fixed effects and standard errors are clustered at the good level. 
 \\starlanguage \\end{minipage} }")
-                   
+
+###############
+# Normal Goods? 
+###############
+
+m <- lm(own ~ log(y) * input.good, data = df.realistic)
+
+
 #############################
 # Good attributes & ownership
 #############################
 
-df.no.brush <- subset(df, !(input.good %in% c("toothbrush", "back-up electric generator")))
+df.no.brush <- subset(df, !is.na(predict.index)
+                      & !is.na(granular.index)
+                      & !(input.good %in% c("toothbrush", "back-up electric generator")))
+
 m.1.re <- lmer(own ~ predict.index + (1|worker.id), data = df.no.brush)
 m.2.re <- lmer(own ~ granular.index + (1|worker.id), data = df.no.brush)
 m.3.re <- lmer(own ~ granular.index*predict.index + (1|worker.id),
                data = df.no.brush)
+
+m.1 <- felm(own ~  predict.index | worker.id | 0 | worker.id, data = df.no.brush)
+m.2 <- felm(own ~  granular.index | worker.id | 0 | worker.id, data = df.no.brush)
+m.3 <- felm(own ~  predict.index * granular.index | worker.id | 0 | worker.id, data = df.no.brush)
+m.4 <- felm(own ~  predict.index * granular.index | worker.id + input.good | 0 | worker.id, data = df.no.brush)
+
+
 out.file <- "../../writeup/tables/ownership_attr.tex"
-s <- stargazer(m.1.re, m.2.re, m.3.re, 
+s <- stargazer(m.1, m.2, m.3, m.4, 
                dep.var.labels = c("Item is owned"),
-               covariate.labels = c("Unpredictability index (UI)", "UI x GI", "Granularity index (GI)"),
-               title = "Good attributes and ownership---usage predictibility and granularity (toothbrush and electric generator excluded)",
+               covariate.labels = c("Unpredictability index (UI)", "Granularity index (GI)", "UI x GI"),
+               title = "Good usage unpredictibility and granularity and their association with good ownership.",
                label = "tab:ownership_attr",
                               align = TRUE,
                font.size = "footnotesize",
                omit.stat = c("aic", "f", "adj.rsq", "bic", "ser"),
-               no.space = TRUE
-               ## add.lines = list(c("Model", "\\multicolumn{1}{c}{Good and Consumer REs}",
-               ##                             "\\multicolumn{1}{c}{Good FEs}",
-               ##                             "\\multicolumn{1}{c}{Good, Consum and Income Slope REs}")),  
-
-               )
-AddTableNote(s, out.file, note = "\\\\ {\\footnotesize  \\begin{minipage}{0.75 \\linewidth} \\emph{Notes:} This table reports regressions of an indicator for whether the respondent owns a good on that same respondent's estimates of the unpredictability and granularity of usage for that good.
-The two indices are just standardized (mean 0, standard deviation 1) of the 1-5 scale on granularity and predictability.
+               no.space = TRUE,
+               add.lines = list(
+                   c("Respondent FE",
+                     "\\multicolumn{1}{c}{Y}",
+                     "\\multicolumn{1}{c}{Y}",
+                     "\\multicolumn{1}{c}{Y}",
+                     "\\multicolumn{1}{c}{Y}"),
+                   c("Good FE",
+                     "\\multicolumn{1}{c}{N}",
+                     "\\multicolumn{1}{c}{N}",
+                     "\\multicolumn{1}{c}{N}",
+                     "\\multicolumn{1}{c}{Y}")
+                  )) 
+AddTableNote(s, out.file, note = "\\\\ {\\footnotesize  \\begin{minipage}{0.85 \\linewidth} \\emph{Notes:}
+This table reports regressions of an indicator for whether the respondent owns a good on that same respondent's estimates of the unpredictability and granularity of usage for that good.
+The two indices are normalized responses to the 1-5 scale questions on granularity and unpredictability, pooled over all respondents and goods.
+Toothbrushes and backup generators are excluded from the sample. 
 See Appendix~\\ref{sec:survey} for the actual survey language and responses.
-In each regression, worker-specific random effect is included. 
+In each regression a respondent-specific fixed effect is included.
+Standard errors are clustered at the level of the individual respondent.
+\\starlanguage
 \\end{minipage} }")
 
 # Granularity verus unpredictability--------------------------------------------
@@ -440,6 +482,8 @@ g.scatter <- ggplot(data = df.gran,
         xlab("Mean granularity index") +
         ylab("Mean unpredictability index") +
         theme_bw()
+
+print(g.scatter)
 
 if (interactive() && SHOW.PLOTS){
     print(g.scatter)
@@ -499,6 +543,7 @@ df.no.own.summary[, reason.upper := Hmisc::binconf(num.by.reason, total)[3],
 levels(df.no.own.summary$answer.no_own_reason) <- c("Don't have the money",
                                                     "Too little use to justify the purchase",
                                                     "No space")
+
 g.reasons <- ggplot(data = df.no.own.summary,
                     aes(x = answer.no_own_reason, y = reason.pct)) +
            geom_point() +
@@ -510,10 +555,38 @@ g.reasons <- ggplot(data = df.no.own.summary,
            ylab("Percentange of Respondents") +
            xlab("Reason given")
 
+
 if (interactive() & SHOW.PLOTS) {
     print(g.reasons)
 }
-writeImage(g.reasons, "reasons", width = 9, height = 10)
+
+writeImage(g.reasons, "reasons_raw", width = 4.5, height = 5)
+
+
+#' Modified version
+
+
+df.no.own <- data.table(subset(df, !is.na(answer.no_own_reason) & answer.no_own_reason != "space"))
+
+df.no.own.summary <- df.no.own[, list(
+    num.obs = .N, 
+    frac.income = mean(answer.no_own_reason == "expensive"),
+    frac.use = mean(answer.no_own_reason == "little_use")), by = list(input.good)]
+
+g.reasons <- ggplot(data = subset(df.no.own.summary, num.obs > 7),  aes(x = frac.income, y = frac.use)) +
+    geom_point() +
+        geom_text(aes(label = input.good)) + 
+            theme_bw() +
+                xlab("Fraction non-owners citing income") +
+                    ylab("Fraction non-owners citing usage") + geom_abline(intercept = 1, slope = -1)
+
+
+print(g.reasons)
+
+#print(g.reasons)
+
+writeImage(g.reasons, "reasons_raw_2", width = 8, height = 8)
+
 
 
 
