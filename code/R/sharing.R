@@ -418,12 +418,13 @@ m <- lm(own ~ log(y) * input.good, data = df.realistic)
 
 df.no.brush <- subset(df, !is.na(predict.index)
                       & !is.na(granular.index)
+                      & !is.na(own)
                       & !(input.good %in% c("toothbrush", "back-up electric generator")))
 
-m.1.re <- lmer(own ~ predict.index + (1|worker.id), data = df.no.brush)
-m.2.re <- lmer(own ~ granular.index + (1|worker.id), data = df.no.brush)
-m.3.re <- lmer(own ~ granular.index*predict.index + (1|worker.id),
-               data = df.no.brush)
+#m.1.re <- lmer(own ~ predict.index + (1|worker.id), data = df.no.brush)
+#m.2.re <- lmer(own ~ granular.index + (1|worker.id), data = df.no.brush)
+#m.3.re <- lmer(own ~ granular.index*predict.index + (1|worker.id),
+#               data = df.no.brush)
 
 m.1 <- felm(own ~  predict.index | worker.id | 0 | worker.id, data = df.no.brush)
 m.2 <- felm(own ~  granular.index | worker.id | 0 | worker.id, data = df.no.brush)
