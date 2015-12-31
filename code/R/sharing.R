@@ -6,14 +6,24 @@
 # Project: sharing 
 ###################################################
 
-library(ggplot2)
-library(scales)
-library(testthat)
+rm(list = ls(all = T))
+gc(reset = T)
+set.seed(12345)
+
+library(devtools)
+
+devtools::install("../shaRing")
+library(shaRing)
+
+df <- shaRing::GetDF()
+SHOW.PLOTS <- FALSE 
+#library(ggplot2)
+#library(scales)
+#library(testthat)
 
 ###############################################################################
 #
 # Sharing / John Horton
-# oDesk Contract #13552832
 #
 # Code for import & basic analysis
 #
@@ -27,9 +37,6 @@ library(testthat)
 ###############################################################################
 
 # Clears the workspace
-rm(list = ls(all = T))
-gc(reset = T)
-set.seed(12345)
 
 # Libraries
 library(tidyr)
@@ -49,113 +56,117 @@ library(JJHmisc) # non-cran resource
 
 # Settings----------------------------------------------------------------------
 
-SHOW.PLOTS <- FALSE 
+#SHOW.PLOTS <- FALSE 
 #PLOTS.DIR <- "../../writeup/plots/" 
 
-ConvertFactor <- function(x) {
-  # Converts factors with "na" levels to factor with missing values
-  # 
-  # Args:
-  #   x: factor vector
-  #
-  # Returns:
-  #   Factor with missing values
+## ConvertFactor <- function(x) {
+##   # Converts factors with "na" levels to factor with missing values
+##   # 
+##   # Args:
+##   #   x: factor vector
+##   #
+##   # Returns:
+##   #   Factor with missing values
   
-  lev <- levels(x)
-  lev <- lev[!lev %in% c("", "na")]
+##   lev <- levels(x)
+##   lev <- lev[!lev %in% c("", "na")]
   
-  x <- as.character(x) %>% tolower()
-  x[!x %in% lev] <- NA
+##   x <- as.character(x) %>% tolower()
+##   x[!x %in% lev] <- NA
     
-  factor(x)
-}
+##   factor(x)
+## }
 
-#######################################
-# Read and clean data from MTurk Survey
-#######################################
+## #######################################
+## # Read and clean data from MTurk Survey
+## #######################################
 
-.data.file <- "../../data/sharing_survey_results_pilot.csv"
+## .data.file <- "../../data/sharing_survey_results_pilot.csv"
 
-df.raw <- read.table(.data.file, header = T, sep = ",", fill = NA) %>%
-  select(worker.id = WorkerId,
-         assignment.id = AssignmentId,         
-         assignment.status = AssignmentStatus,
-         work.time = WorkTimeInSeconds,
-         input.good = Input.good,
-         answer.own = Answer.own,
-         answer.lent = Answer.lent,
-         answer.borrowed = Answer.borrowed,
-         answer.rent = Answer.rent,
-         answer.usage = Answer.usage,
-         answer.granularity = Answer.granularity,
-         answer.predictability = Answer.predictability,
-         answer.no_own_reason = Answer.no_own_reason,
-         answer.own_income = Answer.own_income) %>% tbl_df()
+## df.raw <- read.table(.data.file, header = T, sep = ",", fill = NA) %>%
+##   select(worker.id = WorkerId,
+##          assignment.id = AssignmentId,         
+##          assignment.status = AssignmentStatus,
+##          work.time = WorkTimeInSeconds,
+##          input.good = Input.good,
+##          answer.own = Answer.own,
+##          answer.lent = Answer.lent,
+##          answer.borrowed = Answer.borrowed,
+##          answer.rent = Answer.rent,
+##          answer.usage = Answer.usage,
+##          answer.granularity = Answer.granularity,
+##          answer.predictability = Answer.predictability,
+##          answer.no_own_reason = Answer.no_own_reason,
+##          answer.own_income = Answer.own_income) %>% tbl_df()
 
-# Converts factors-------------------------------------------------------------- 
-df <- df.raw %>% mutate_each(funs(ConvertFactor), answer.own, answer.lent,
-                         answer.borrowed, answer.rent, answer.no_own_reason)
+## # Converts factors-------------------------------------------------------------- 
+## df <- df.raw %>%
+##     mutate_each(funs(ConvertFactor),
+##                 answer.own,
+##                 answer.lent,
+##                 answer.borrowed,
+##                 answer.rent,
+##                 answer.no_own_reason)
 
+## # ecode usage levels------------------------------------------------------------- 
+## usage.levels <- 0:11
+## usage.labels <- c(
+##     "We would not use this at all",
+##     "1 minute a week (about 1 hour a year)",
+##     "5 minutes a week (about 4 hours a year)",
+##     "1/2 an hour a week",
+##     "1 hour a week",
+##     "1/2 an hour a day",
+##     "1 hour a day",
+##     "2 hours a day",
+##     "4 hours a day",
+##     "8 hours a day",
+##     "16 hours a day",
+##     "24 hours a day (I would continuously be using this good")
+## minute.per.week <- (60/7)/(24*60*60*7)
+## hour.per.day <- 1.0/24.0
+## day.frac <- c(0,
+##               minute.per.week, 
+##               5 * minute.per.week,
+##               30 * minute.per.week, 
+##               60 * minute.per.week,
+##               0.5 * hour.per.day,
+##               hour.per.day,
+##               2 * hour.per.day,
+##               4 * hour.per.day,
+##               8 * hour.per.day,
+##               15 * hour.per.day,
+##               24 * hour.per.day)
 
-# ecode usage levels------------------------------------------------------------- 
-usage.levels <- 0:11
-usage.labels <- c(
-    "We would not use this at all",
-    "1 minute a week (about 1 hour a year)",
-    "5 minutes a week (about 4 hours a year)",
-    "1/2 an hour a week",
-    "1 hour a week",
-    "1/2 an hour a day",
-    "1 hour a day",
-    "2 hours a day",
-    "4 hours a day",
-    "8 hours a day",
-    "16 hours a day",
-    "24 hours a day (I would continuously be using this good")
-minute.per.week <- (60/7)/(24*60*60*7)
-hour.per.day <- 1.0/24.0
-day.frac <- c(0,
-              minute.per.week, 
-              5 * minute.per.week,
-              30 * minute.per.week, 
-              60 * minute.per.week,
-              0.5 * hour.per.day,
-              hour.per.day,
-              2 * hour.per.day,
-              4 * hour.per.day,
-              8 * hour.per.day,
-              15 * hour.per.day,
-              24 * hour.per.day)
+## df <- within(df, {
+##     usage = factor(answer.usage, levels = usage.levels, labels = usage.labels)
+##     x = as.numeric(as.character(factor(answer.usage, levels = usage.levels, labels = day.frac)))
+##     own = answer.own == "yes"
+##     borrowed = answer.borrowed == "yes"
+##     lent = answer.lent == "yes"
+##     usage.index = scale(as.numeric(answer.usage))
+##     income.index = scale(as.numeric(answer.own_income))
+##     predict.index = scale(as.numeric(answer.predictability))
+##     granular.index = scale(as.numeric(answer.granularity))
+##     rent = answer.rent == "yes"
+## })
 
-df <- within(df, {
-    usage = factor(answer.usage, levels = usage.levels, labels = usage.labels)
-    x = as.numeric(as.character(factor(answer.usage, levels = usage.levels, labels = day.frac)))
-    own = answer.own == "yes"
-    borrowed = answer.borrowed == "yes"
-    lent = answer.lent == "yes"
-    usage.index = scale(as.numeric(answer.usage))
-    income.index = scale(as.numeric(answer.own_income))
-    predict.index = scale(as.numeric(answer.predictability))
-    granular.index = scale(as.numeric(answer.granularity))
-    rent = answer.rent == "yes"
-})
+## # imput family household income 
+## y.levels <- c(10/2, 15, 25, 35, 45, 55, 65, 75, 85, 95, 125, 200)
+## df$y <- with(df, as.numeric(sapply(answer.own_income, function (x) as.numeric(y.levels[x + 1]) )))
 
-# imput family household income 
-y.levels <- c(10/2, 15, 25, 35, 45, 55, 65, 75, 85, 95, 125, 200)
-df$y <- with(df, as.numeric(sapply(answer.own_income, function (x) as.numeric(y.levels[x + 1]) )))
+## # fix typo
+## levels(df$input.good)[16] <- "kid's bouncy castle"
 
-# fix typo
-levels(df$input.good)[16] <- "kid's bouncy castle"
+## df <- data.table(df)
 
-df <- data.table(df)
-
-df$input.good.short <- revalue(df$input.good, c("high-end digitial camera"="high-end\ndigitial camera",
-                                          "kitchen timer (or egg timer)" = "kitchen timer\n(or egg timer)",
-                                          "portable air conditioner" = "portable\nair conditioner",
-                                          "cat carrier (for transporting cats)" = "cat carrier\n(for transporting cats)",
-                                          "back-up electric generator" = "back-up\nelectric generator",
-                                          "high-end audio headphones" = "high-end\naudio headphones")
-                               )
+## df$input.good.short <- revalue(df$input.good, c("high-end digitial camera"="high-end\ndigitial camera",
+##                                           "kitchen timer (or egg timer)" = "kitchen timer\n(or egg timer)",
+##                                           "portable air conditioner" = "portable\nair conditioner",
+##                                           "cat carrier (for transporting cats)" = "cat carrier\n(for transporting cats)",
+##                                           "back-up electric generator" = "back-up\nelectric generator",
+##                                           "high-end audio headphones" = "high-end\naudio headphones")
+##                               )
 
 ##################################################
 # Fractions owning, renting, lending and borrowing
@@ -168,9 +179,24 @@ df.by.good <- subset(df, !is.na(answer.own))[,
                                   upper = Hmisc::binconf(sum(own), .N)[3],
                                   frac.own = mean(own)),
                              by = input.good]
-df.by.good$input.good <- with(df.by.good, reorder(input.good, frac.own, mean))
+
+library(dplyr)
+
+df.by.good <- df %>% filter(!is.na(answer.own)) %>%
+    group_by(input.good) %>%
+    dplyr::summarise(
+        lower = Hmisc::binconf(sum(own), n())[2],
+        upper = Hmisc::binconf(sum(own), n())[3],
+        frac.own = mean(own)
+    ) %>%
+    ungroup %>%
+    mutate(input.good = reorder(input.good, frac.own, mean))
 
 
+#df.by.good$input.good <- with(df.by.good, reorder(input.good, frac.own, mean))
+
+library(ggplot2)
+library(scales)
 
 g.own <- ggplot(data = df.by.good, aes(x = input.good, y = frac.own)) +
     geom_point() +
@@ -178,8 +204,10 @@ g.own <- ggplot(data = df.by.good, aes(x = input.good, y = frac.own)) +
     theme_bw() +
     xlab("") +
     ylab("Fraction of respondents") +
-    scale_y_continuous(label = percent) +
+    scale_y_continuous(label = scales::percent) +
     theme(axis.text.x = element_text(angle = -75, hjust = 0))
+
+print(g.own)
 
 if (interactive() && SHOW.PLOTS){
     print(g.own)
@@ -199,15 +227,29 @@ df.by.good.rent <- subset(df, !is.na(answer.rent))[,
                                   by = input.good]
 df.by.good.rent$input.good <- with(df.by.good.rent, reorder(input.good, frac.rent, mean))
 
+g.rent
 
-g.rent <- ggplot(data = df.by.good.rent, aes(x = input.good, y = frac.rent)) +
+library(JJHmisc)
+
+g.rent <- df %>% filter(!is.na(answer.rent)) %>%
+    group_by(input.good) %>%
+    dplyr::summarise(
+        lower = Hmisc::binconf(sum(rent), n())[2],
+        upper = Hmisc::binconf(sum(rent), n())[3],
+        frac.rent = mean(rent)
+    ) %>%
+    ungroup %>%
+    mutate(input.good = reorder(input.good, frac.rent, mean)) %>%
+    ggplot(aes(x = input.good, y = frac.rent)) +
     geom_point() +
     geom_linerange(aes(ymin = lower, ymax = upper)) + 
     theme_bw() +
     xlab("") +
     ylab("Fraction of respondents") +
     scale_y_continuous(label = percent) +
-    theme(axis.text.x = element_text(angle = -75, hjust = 0))
+        theme(axis.text.x = element_text(angle = -75, hjust = 0))
+
+writeImage(g.rent, "rental_fractions", width = 6, height = 4)
 
 if (interactive() && SHOW.PLOTS){
     print(g.rent)
@@ -226,6 +268,17 @@ df.by.good.lent <- subset(df, !is.na(answer.lent))[,
                                   by = input.good]
 df.by.good.lent$input.good <- with(df.by.good.lent, reorder(input.good, frac.lent, mean))
 
+df.by.good.lent <- df %>%
+    filter(!is.na(answer.lent)) %>%
+    group_by(input.good) %>%
+    dplyr::summarise(
+        lower = Hmisc::binconf(sum(lent), n())[2],
+        upper = Hmisc::binconf(sum(lent), n())[3],
+        frac.lent = mean(rent)
+    ) %>%
+    ungroup %>%
+    mutate(input.good = reorder(input.good, frac.lent, mean))
+
 g.lent <- ggplot(data = df.by.good.lent, aes(x = input.good, y = frac.lent)) +
     geom_point() +
     geom_linerange(aes(ymin = lower, ymax = upper)) + 
@@ -234,6 +287,8 @@ g.lent <- ggplot(data = df.by.good.lent, aes(x = input.good, y = frac.lent)) +
     ylab("Fraction of respondents") +
     scale_y_continuous(label = percent) +
     theme(axis.text.x = element_text(angle = -75, hjust = 0))
+
+print(g.lent)
 
 if (interactive() && SHOW.PLOTS){
     print(g.lent)
@@ -566,7 +621,6 @@ writeImage(g.reasons, "reasons_raw", width = 4.5, height = 5)
 
 #' Modified version
 
-
 df.no.own <- data.table(subset(df, !is.na(answer.no_own_reason) & answer.no_own_reason != "space"))
 
 df.no.own.summary <- df.no.own[, list(
@@ -581,10 +635,7 @@ g.reasons <- ggplot(data = subset(df.no.own.summary, num.obs > 7),  aes(x = frac
                 xlab("Fraction non-owners citing income") +
                     ylab("Fraction non-owners citing usage") + geom_abline(intercept = 1, slope = -1)
 
-
 print(g.reasons)
-
-#print(g.reasons)
 
 writeImage(g.reasons, "reasons_raw_2", width = 8, height = 8)
 
