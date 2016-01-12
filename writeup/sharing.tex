@@ -43,8 +43,8 @@
 
 \begin{document} 
 
-\title{Peer-to-Peer Rental Markets and the ``Sharing Economy'': \\
-  What will be traded, at What Terms and by Whom?} 
+\title{Peer-to-Peer Rental Markets:\\
+Some Thoughts on the ``Sharing Economy''}
 
 \date{\today}
 
@@ -52,9 +52,9 @@
   York University\footnote{Author contact information, datasets and
     code are currently or will be available at
     \href{http://www.john-joseph-horton.com/}{http://www.john-joseph-horton.com/
-    Thanks to Andrey Fradkin, Ramesh Johari, Arun Sundararajan, Samuel Fraiberger and Joe Golden for helpful discussions and comments.}}
+    Thanks to Andrey Fradkin, Ramesh Johari, Arun Sundararajan, Samuel Fraiberger, Hal Varian and Joe Golden for helpful discussions and comments.}}
   \and 
-  Richard Zeckhauser \\ Harvard Kennedy School \\ Harvard University
+  Richard J. Zeckhauser \\ Harvard Kennedy School \\ Harvard University
 }
 \maketitle
 
@@ -74,35 +74,14 @@ We also explore the factors that are permitting these new markets to flourish.
 \noindent JEL J01, J24, J3 
 \end{abstract} 
 
-% \begin{abstract}
-% \noindent  
-
-% where these costs are presumably far lower. 
-% In this paper, we consider the emergence of a peer-to-peer rental market for a category of goods where a rental market previously did not exist. 
-% We examine both the short-run, before consumers can revise their ownership decisions, and the long-run when they can.  
-% When the rental market emerges, both owners and non-owners economize on their usage until the market clears. 
-% Rental rates are increasing in consumer valuations, as a higher valuation increases demand or reduces supply among non-owners and owners, respectively. 
-% If the pre-rental market excess capacity of owners exceeds the capacity demanded by non-owners, a glut is possible. 
-% In the long-run, all consumers can revise their ownership decisions and when this occurs, the rental rate equals the product market purchase price and ownership does not depend on consumer valuation.  
-% If the market-clearing short-run rental rate is above the purchase price, ownership will increase in the long-run.
-% The fraction of consumers owning in the long-run is the population average usage rate.
-% In the long-run and short-run rental markets, the unlocked social surplus is increasing in the valuation of former non-owners and decreasing in the valuation of owners, though both groups see welfare increase in both the long- and short-runs. 
-% In the long-run P2P rental market a higher product market price is supportable, as owners can partially offset the purchase price through rental income. 
-% Because long-run rental rates equal the purchase price and consumers derive consumption value from the good even without rental, firms are not competitive in the long-run rental market.  
-% A survey of consumers finds broad support for the modeling conventions used---namely that ownership is determined by a forward-looking evaluation of planned usage and that ownership and rental are gross substitutes. 
-% The survey also highlights the importance of usage predictability and granularity in determining ownership. 
-% \newline \newline 
-% \noindent JEL J01, J24, J3
-% \end{abstract} 
-
-\doublespacing
+\onehalfspacing
 
 \section{Introduction}
 Owners in rental markets have traditionally been firms that own assets for the specific purpose of renting them out.
 Some renting out by consumer-owners occurred, but it was confined largely to expensive, infrequently used goods, such as vacation homes and pleasure boats. 
 More often, consumer-owned goods were shared among family and friends, usually without explicit payment. 
 This characterization of rental markets has changed dramatically, as new technology focused companies create peer-to-peer (P2P) rental markets for a much wider class of goods. 
-These so-called ``sharing economy'' start-ups have created rental markets for houses, cars, boats, bicycles, tools, office space, cameras, parking spaces, and even clothes. 
+These so-called ``sharing economy'' companies have created rental markets for houses, cars, boats, bicycles, tools, office space, cameras, parking spaces, and even clothes. 
 
 The most prominent example of this new kind of rental market is Airbnb, which allows individuals to rent out spare bedrooms, apartments or even entire homes. 
 Airbnb and platforms like it have been heralded by many, as they they promise to expand access to goods, diversify individual consumption, increase efficiency by increasing asset utilization and provide income to owners \citep{sundararajan2013zipcar}.
@@ -162,6 +141,7 @@ In the model, we consider a single stylized, infinitely divisible, infinitely du
 Actual goods have radically different patterns of usage that would strongly affect how amenable they are to ``division'' and hence renting.
 For example, goods with predictable usage are far easier to rent out with little lost utility to the owner. 
 Similarly, goods that are used in large chunks of time---with no use in between---are more amenable to rental to goods that have usage broken up into many small chunks of time.
+We call goods with large usage periods ``chunky.'' 
 Further, goods differ in their durability which should have a strong affect on what is rented and at what rate. 
 In the last part of the paper, we rely on survey evidence to explore what kinds of goods are particularly amenable to P2P rental as well as assess some of the assumptions of the model. 
 
@@ -183,7 +163,7 @@ One issue we have largely set aside, but which is potentially important, is that
 We discuss how this might be modeled and what the implications might be. 
 We conclude by sketching out some promising areas for future research. 
  
-\section{Factors in explaining the rise of peer-to-peer rental markets}
+\section{Factors explaining the rise of peer-to-peer rental markets}
 
 The somewhat obvious economic rationale for P2P rental markets is that most durable goods are used by their owners far less than 100\% of the time, and the excess capacity this under-utilization generates could be rented out.
 The demand side in such a market would be non-owners that still value usage of the good, but not enough to purchase it.\footnote{
@@ -451,7 +431,7 @@ We add a supply curve with a lower $\alpha_H$ value (which moves out the supply 
 \draw[ultra thick] (1.0 - \alphaH, 0) to (1 - \alphaH + 0.5, 1.05) node [above] {$S(r) = 1 - x_H(r) = \alpha_H + r/2$};  
 \draw[ultra thick, red] (1.0 - \alphaHp, 0) to (1 - \alphaHp + 0.50, 1.0) node [right] {$S_1(r) = 1 - \alpha_H' + r/2$};  
 \draw[ultra thick] (\alphaL,     0) to (\alphaL - 1/2, 1) node [right]
-{$D(r) = x_L(r) \alpha_L - r/2$}; 
+{$D(r) = x_L(r) = \alpha_L - r/2$}; 
 \draw [dotted] (0, \r) node[left]{$r^*$} -- (\Q,\r) -- (\Q, 0) node[below]{$\alpha_L - r^*/2$}; % -- (\Q, 0);
 \node[align=left, above, red] at (1, .15){Glut:\\ $S_1(0) > D(0)$; \\ $(1 - \alpha_H') > \alpha_L$}; 
 \end{tikzpicture}
@@ -680,11 +660,11 @@ When product market prices are so low that nearly everyone buys the product, no 
 For example, there is no rental market in kitchen timers---although they are used infrequently and quite durable, there is neither supply (owning consumers would not find it worth the hassle to rent them out) nor demand (if a consumer wants one, they go to the product market and buy one). 
 Other goods are expensive, but there is no excess capacity, as they are used more or less continuously, giving no spare capacity: this is why there is no P2P rental market in prescription eyeglasses. 
 
-Even at constant total amounts of usage, goods differ in the granularity of typical usage: 
+Even at constant total amounts of usage, goods differ in how large typical usage sessions are: 
 a person might use their vacation home in week-long chunks of time, their lawn-mower in hour-long chunks and their tooth brush in minute-long chunks. 
 These usage chunks also differ in their predictability. 
 Some goods have a highly predictable usage pattern---a family might arrange to rent a vacation home months in advance---whereas other goods are much less predictable in their normal pattern of usage---the need for a back-up electric generator is almost always a surprise.  
-It seems likely that goods with predictable (and easily adjustable), ``large chunk'' usage patterns should be more amenable to P2P rental markets than goods with unpredictable, granular usage patterns. 
+It seems likely that goods with predictable (and easily adjustable), ``large chunk'' usage patterns should be more amenable to P2P rental markets. 
 
 Predicting what goods are profitably amenable to P2P rental is a task best left to entrepreneurs. 
 However, it is still useful to get a sense of where these markets might evolve by surveying consumers. 
@@ -713,7 +693,7 @@ The model and the survey are designed to complement each other in two ways.
 First, the survey provides justification for some of the modeling conventions, such as making planned usage the primary explanation for the pattern of ownership rather than ``taste'' or income. 
 Second, the survey offers a partial decomposition of the non-specific ``costs'' that would make a good difficult or easy to share.  
 P2P rental markets are now possible in part because technology has reduced transaction costs, but such markets have not emerged for all goods. 
-The survey results suggest that those goods with unpredictable and highly granular usage might not support a P2P rental market even if the total usage is small. 
+The survey results suggest that those goods with unpredictable and ``small chunk'' usage might not support a P2P rental market even if the total usage is small. 
 However, it also suggests that innovations that make usage more predictable might change this characterization.  
 
 \subsection{Main empirical results}
@@ -722,8 +702,10 @@ Increasing household income is associated with greater ownership, but even when 
 Among non-owners, planned usage was cited more often than a lack of income as the reason for non-ownership, with the exception of certain high-end goods like vacation homes.
 It may be the case that P2P rental markets might have larger welfare effects in countries were more goods are not owned because of income.
 
-We find strong evidence that the predictability and granularity of usage for a good tend to be positively correlated and that goods with unpredictable and more granular usage patterns are more likely to be owned.
-When we inspect goods that are the ``opposite''---predictable usage that occurss in large chunks---we see goods that are very often already rented in conventional markets.
+We find strong evidence that the predictability of usage and the size of usage ``sessions'' for a good tend to be positively correlated.
+In other words, goods that are used unpredictably tend to be used for relatively short periods.
+These kinds of goods are more likely to be owned. 
+When we inspect goods that are the ``opposite''---predictable usage that ocurs in large chunks---we see goods that are very often already rented in conventional markets.
 Not surprisingly, these are also the goods where P2P rental markets are emergent.
 Overall, we find that ownership and renting are gross substitutes, though there are notable outliers, such as the car, which is both widely owned and widely rented, presumably because of long-distance travel. 
 
@@ -737,7 +719,7 @@ workers on MTurk who have their work ``rejected'' by dissatisfied employers beco
 This respondent diligence makes it useful for certain kinds of questions (for example, \cite{kuziemko2013elastic} used the MTurk population to study elasticities of demand for redistribution).  
 
 We hired US-based ``Master'' workers to answer a questions about a consumer good, e.g., BBQ grill, pick-up truck, men's suit, canoe, etc.
-We asked questions about a total of 26 goods that we selected because we thought they would yield interesting answers and had some variation in purpose (e.g., recreation, home improvement, cooking and so on), purchase price, predictability and granularity. 
+We asked questions about a total of 26 goods that we selected because we thought they would yield interesting answers and had some variation in purpose (e.g., recreation, home improvement, cooking and so on), purchase price, predictability and usage size. 
 We asked them: whether they owned the good; whether they had ever rented or lent out the good; how much they would use the good \emph{regardless} of whether they actually owned the good; whether they would use the good in one large chunk or many small chunks; whether usage was predictable; why they did not own the good; and finally, what was their household income. 
 See Appendix~\ref{sec:survey} for the full list of goods as well as the actual survey questions and answers.  
 Each ``human intelligence task'' or HIT was a total of eight questions about one particular good, with one question about family income. 
@@ -796,40 +778,41 @@ Space was not frequently cited and so in Figure~\ref{fig:reasons} we plot the pe
 There are some goods for which income was not cited at all (e.g., sewing machine, tuxedo, canoe), and several others where usage was overwhelming more likely to be cited.
 The only goods where a larger fraction of respondents cited income than cited usage was high-end headphones and vacation homes. 
 
-\subsection{Aggregate usage granularity and predictability} 
-A large practical determinant of how feasible a rental market is for a good is how predictable usage is and how granular it is. 
+\subsection{Aggregate usage chunkiness and predictability} 
+A large practical determinant of how feasible a rental market is for a good is how predictable usage is and how chunky it is. 
 Goods with highly predictable usage patterns would be easier to rent (or lend out), whereas goods that have unpredictable usage patterns would be difficult to rent out without substantial utility loss to the owner.
 Similarly, for goods that are used in numerous small sessions, renting or lending out the good to others would create high transaction costs.
 
-We asked subjects about the predictability and granularity of usage for the goods and found that they strongly covary, with some notable exceptions:
+We asked subjects about the predictability and chunkiness of usage for the goods and found that they strongly covary, with some notable exceptions:
 the smaller chunk of typical usage, the more unpredictable the usage is.
-For example, respondents rated a hammer as having high granularity (it is used for a short amount of time, say when hanging a picture) and high unpredictability (it is difficult to predict when it will be needed).
-In contrast, a tuxedo scores low on both measures---it is used for a substantial amount of time (say when attenting a wedding) and that usage can be predicted far in advance.  
+For example, respondents rated a hammer as being used in small chunks of time (say when hanging a picture) and this usage is unpredictable. 
+In contrast, a tuxedo scores low on both measures---it is used for a substantial amount of time (say when attending a wedding) and that usage can be predicted far in advance.  
 
 \begin{figure}
 \centering 
-\caption{Usage predictability versus granularity \label{fig:granularity_v_predictability}}
+\caption{Usage predictability versus chunkiness \label{fig:granularity_v_predictability}}
 \begin{minipage}{0.60 \linewidth}
 \includegraphics[width = \linewidth]{./plots/granularity_versus_predictability.pdf} 
+\emph{Notes:} Scatter plot showing mean predictability versus chunkiness. 
 \end{minipage} 
 \end{figure} 
 
-For each good, respondents were asked to rate the unpredictability of usage on a 1-5 scale (1 was highly predictable and 5 was highly unpredictable) as well as granularity (1 was low granularity---one big chunk--- and 5 was high granularity---lots of little chunks).  
-Figure~\ref{fig:granularity_v_predictability} plots the mean unpredictability score against the mean granularity score. 
-We can see a strong positive relationship between granularity and unpredictability, with two notable outliers: the toothbrush and the generator. 
-A toothbrush has a highly granular usage pattern (2 minutes according to the ADA) and its usage is highly predictable (after every meal, according to the ADA).
+For each good, respondents were asked to rate the unpredictability of usage on a 1-5 scale (1 was highly predictable and 5 was highly unpredictable) as well as chunkiness (1 was one big chunk--- and 5 was low chunkiness---lots of little chunks).  
+Figure~\ref{fig:granularity_v_predictability} plots the mean unpredictability score against the mean chunkiness score. 
+We can see a strong relationship between chunkiness and predictability, with two notable outliers: the toothbrush and the generator. 
+A toothbrush is used in small chunks (2 minutes according to the ADA) and its usage is highly predictable (after every meal, according to the ADA).
 The back-up electric generator is the toothbrush's opposite---power can go out for days or even weeks during a disaster and this event is rarely predictable. 
 These common-sense answers are not particularly illuminating but they do show subjects were paying attention and offering reasonable answers. 
 
 If we examine goods near the origin (shaded green in the figure), we see goods highly amenable to rental, in that they have predictable usage that occurs in large chunks. 
 Not surprisingly, these are often goods for which conventional rental markets already exist---formal wear (tuxedos), vacation homes, sporting equipment (canoes and jet skis for rent at lakes) and so on.
-As we move a bit further, from the origin, we see goods that there is not much of a rental market (bikes, lawnmowers, jewlrey) but would seem to have the attributes necessary to support such a market, assuming there are in fact enough non-owners to support such a market.  
+As we move a bit further, from the origin, we see goods that there is not much of a rental market (bikes, lawnmowers, jewlry) but would seem to have the attributes necessary to support such a market, assuming there are in fact enough non-owners to support such a market.  
 
-\subsection{Granularity, predictability and ownership} 
+\subsection{Chunkiness, predictability and ownership} 
 
-We test whether the unpredictability and granularity measures are related to individual ownership. 
+We test whether the predictability and chunkiness measures are related to individual ownership. 
 Table~\ref{tab:ownership_attr} shows that they are, in the expected direction:
-\important{goods with unpredictable and highly granular usage are substantially more likely to be owned.}
+\important{goods with unpredicatable usage that occurs in small chunks are substantially more likely to be owned.}
 Furthermore, it is not the case that these two measures are simply capturing some single latent ``rentability'' measure, as both seem to have an independent effect on the probability of ownership. 
 
 \input{./tables/ownership_attr.tex} 
@@ -839,17 +822,18 @@ Column~(1) of Table~\ref{tab:ownership_attr} reports an estimate of
   \text{Own}_{ig} = \beta_0 + \beta_1 \textsc{UnpredictabilityScore}_{ig} + c_i + \epsilon_i
 \end{align} 
 where $\textsc{UnpredictabilityScore}_{ig}$ is the normalized predictability score for good $g$ by respondent $i$.
-The coefficient on the unpredictability score is positive and highly significant, with a one standard deviation increase in unpredicability increasing the probability of ownership by about 14 percentage points. 
-In Column~(2) we instead use granularity as the predictor and also find a positive and highly significant effect of about the same magnitude. 
-In Column~(3) we interact the the granularity and predictability measures.
-Each measure has a slighly smaller effect (though a formal hypothesis test would fail to reject a difference relative to the estimate when each measure appeared alone) and while the interaction term is negative, it is small and far from significant.
+The coefficient on the unpredictability score is positive and highly significant, with a one standard deviation decrease in predictability increasing the probability of ownership by about 14 percentage points. 
+In Column~(2) we instead use the chunkiness measure as the predictor and also find a positive and highly significant effect of about the same magnitude. 
+In Column~(3) we interact the the chunkiness and predictability measures.
+Each measure has a slightly smaller effect (though a formal hypothesis test would fail to reject a difference relative to the estimate when each measure appeared alone) and while the interaction term is negative, it is small and far from significant.
 
-One concern with our approach might be that respondents prone to reporting high or low granularity and unpredictability measures might be idiosyncratically more or less likely to own the good.
+One concern with our approach might be that respondents prone to reporting high or low chunkiness and predictability scores might be idiosyncratically more or less likely to own the good.
 In other words, the patterns from Columns~(1) through (3) reflect individual differences rather than general attributes about the good.
 In Column~(4) we use the same specification as Column~(3) but include a good-specific effect.
 With this effect, the coefficients on all regressors become close to zero, which supports the notion that the patterns in the previous regressions really are driven by the nature of the good. 
 
 \subsection{Aggregate ownership and renting patterns at the level of the good}
+
 This paper was motivated by the fact that P2P rental markets are \emph{begining} to flourish.
 As such, asking respondents whether they have rented a particular good in a P2P rental market would likely yield uninteresting results, given how new they are.
 However, the existing P2P rental markets seem to be focusing on sectors whether rental markets already existed, and so asking respondents if they have ever rented a good at all might be a reasonably proxy for whether they would eventually rent such a good in a P2P rental market. 
@@ -898,7 +882,8 @@ Even if the blender example seems implausible, we should consider that very few 
 One long-term reaction to the rising of P2P rental markets is that firms might change the goods that they offer. 
 As P2P rental markets become commonplace, manufacturers will begin designing products more attractive for this additional purpose. 
 For example, locks on cars and houses that allow remote entry will be more appealing. 
-The emerging Internet-of-Things will make it easier to identify goods that are not being used at a moment in time and perhaps facilitate trade automatically. 
+The emerging Internet-of-Things will make it easier to identify goods that are not being used at a moment in time and perhaps facilitate trade automatically.
+If autonomous vehicles and drones become commonplace, even the seemingly unavoidable transaction costs associated with moving goods to where they are needed might be substantiall diminished.\footnote{Thanks to Jonathan Hall for making this point.}
 Similarly, technologies that make it easier to monitor usage (GPS, embedded sensors, streaming video of how they are being used and so on) should make contracting easier and reduce some of the informational asymmetries that contribute to transaction costs. 
 As more of economic and social life are computer-mediated, platforms will use this information to verify the identify and reputation of buyers and sellers, further mitigating moral hazard and adverse selection.  
 
@@ -1082,14 +1067,14 @@ Back-up electric generator is a clear (and unsurprising) outlier---you are in a 
 \end{minipage} 
 \end{figure} 
 
-Figure~\ref{fig:granularity} shows the mean granularity index per good. 
-There appears to be some similarity in high predictable usage, but some goods with very granular usage also appear to have highly predictable usage---namely the toothbrush. 
-To make this relationship explicit, in Figure~\ref{fig:granularity_v_predictability} the granularity and unpredictability indices are plotted against each other. 
-\important{With the exception of two goods---the toothbrush and back-up generator---unpredictability and granularity are strongly positively correlated.}
+Figure~\ref{fig:granularity} shows the mean chunkiness index per good. 
+There appears to be some similarity in high predictable usage, but some goods used in small chunks of time also appear to have highly predictable usage---namely the toothbrush. 
+To make this relationship explicit, in Figure~\ref{fig:granularity_v_predictability} the chunkiness and predictability indices are plotted against each other. 
+\important{With the exception of two goods---the toothbrush and back-up generator---predictability and chunkiness are strongly positively correlated.}
 
 \begin{figure}
 \centering 
-\caption{Mean granularity index by good \label{fig:granularity}}
+\caption{Mean chunkiness index by good \label{fig:granularity}}
 \begin{minipage}{0.90 \linewidth}
 \includegraphics[width = \linewidth]{./plots/granularity.pdf} 
 \end{minipage} 
