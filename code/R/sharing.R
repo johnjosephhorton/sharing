@@ -227,7 +227,6 @@ df.by.good.rent <- subset(df, !is.na(answer.rent))[,
                                   by = input.good]
 df.by.good.rent$input.good <- with(df.by.good.rent, reorder(input.good, frac.rent, mean))
 
-g.rent
 
 library(JJHmisc)
 
@@ -326,14 +325,21 @@ For the full list of goods and the survey langugage, see Appendix~\\ref{sec:surv
 
 # Scatter plot showing rental versus ownership fractions------------------------
 
+#install.packages("ggrepel")
+
+library(ggrepel)
+
 g.scatter <- ggplot(data = df.cs, aes(own.frac, rent.frac)) +
     geom_point() +
-    geom_text(aes(label = input.good)) +
+    #geom_text(aes(label = input.good)) +
+    geom_text_repel(aes(label = input.good)) + 
     scale_x_sqrt(label = percent) +
     scale_y_sqrt(label = percent) +
     theme_bw() +
     xlab("Fraction Owning") +
     ylab("Fraction Renting")
+
+print(g.scatter)
 
 if (interactive() && SHOW.PLOTS){
     print(g.scatter)
@@ -534,7 +540,7 @@ g.scatter <- ggplot(data = df.gran,
                     aes(x = mean.gran.index,
                         y = mean.predict.index)
                     ) + geom_point() +
-    geom_text(aes(label = input.good), size = 4,vjust = 1.5) +
+    geom_text_repel(aes(label = input.good)) +
         xlab("Mean granularity index") +
         ylab("Mean unpredictability index") +
         theme_bw()
@@ -630,10 +636,11 @@ df.no.own.summary <- df.no.own[, list(
 
 g.reasons <- ggplot(data = subset(df.no.own.summary, num.obs > 7),  aes(x = frac.income, y = frac.use)) +
     geom_point() +
-        geom_text(aes(label = input.good)) + 
+        geom_text_repel(aes(label = input.good)) + 
             theme_bw() +
                 xlab("Fraction non-owners citing income") +
-                    ylab("Fraction non-owners citing usage") + geom_abline(intercept = 1, slope = -1)
+    ylab("Fraction non-owners citing usage") +
+    geom_abline(intercept = 1, slope = -1)
 
 print(g.reasons)
 
