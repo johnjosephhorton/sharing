@@ -1,0 +1,38 @@
+
+Now we assume that to bring any amount of supply to the market, the owner has to pay some cost.
+This could be the cost of labor (as in the case of Uber) for a good that requires a labor input or it could just be the time cost of finding a renter for the offered good and the time it takes to facilitate a transaction.  
+We assume that this cost for an individual $i$ is $\gamma_i$ and that it does not depend on the amount brought to the market.
+This cost is independent and indentically distributed across owners, with $\gamma \sim F$.
+
+If an owner stays out of the market, they get $\alpha^2$ in consumption utility.
+If they rent, they lose $r^2/4$ in foregone consumption, get $r (1 - (\alpha_H - r/2))$ in rental income and pay the transaction cost, $\gamma$.
+The owner just indifferent between renting out and not renting has a $\hat{\gamma}$ such that
+\begin{align} \label{eq:indiff}
+  \hat{\gamma} & = r (1 - (\alpha_H - r/2)) - r^2/4 \\
+               & =  (1-\alpha_H)r - r^2/2 
+\end{align}
+All owners will a $\gamma > \gamma_i$ will stay out of the market, while those with a $\gamma < \gamma_i$ will rent out.
+Market clearing now requires that
+\begin{align}
+  \theta F(\hat{\gamma})(1 - x_H(r)) = (1-\theta)x_L(r), 
+\end{align} 
+with the marginal owner being indifferent condition from Equation~\ref{eq:indiff}. 
+$F(\hat{\gamma})$ is the fraction of owners with transaction costs lower than that of the indifferent owner. 
+
+When $r$ is higher, two forces bring more supply into the market:
+(1) greater economization by owners already providing the good in the market
+(2) more owners willing to participate.
+
+Lower transaction costs bring more supply into the market, as more owners find it profitable to participate.
+However, this increased in supply on the extensive margin also lowers rental rates, which will reduce economization of owner-usage but increase usage by non-owners.
+In the long-run, the ideal owners are those with low transaction costs rather than those with a high valuation of the good.
+
+What are some questions/thoughts?
+\begin{itemize}
+\item Does an equilibrium always exist? Presumably if transaction costs are too high, the only the supportable equilibium would be one with a high $r$, but if $r > \alpha_L$, there is no demand. This would work nicely with out ``tech lowered transaction costs'' story. 
+\item How should shocks to transaction costs be modeled? I tried assuming uniformly distributed transaction costs with a multiplier parameter. However, even with this extreme simplification, the equilibrium $\gamma$ and $r$ are very, very complex. I imagine we could still do comparative statics, but it would be a bit tricker than what we have now, where the equilibrium is a nice closed form solution obtained through simple algebra. Perhaps there is some easier way to model transaction costs that gets us back to that world. 
+\item In keeping with the theme of extreme simplicity, I could just assume two transaction cost types, $\gamma_H$ and $\gamma_L = 0$ that are orthogonal to valuation and then look at the resulting equilibria.
+\item What is the deadweight loss of transaction costs?
+  \item What is the incidence of transaction costs? Taxation? 
+\end{itemize} 
+
