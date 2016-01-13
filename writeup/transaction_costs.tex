@@ -1,27 +1,41 @@
 
-Now we assume that to bring any amount of supply to the market, the owner has to pay some cost.
-This could be the cost of labor (as in the case of Uber) for a good that requires a labor input or it could just be the time cost of finding a renter for the offered good and the time it takes to facilitate a transaction.  
-We assume that this cost for an individual $i$ is $\gamma_i$ and that it does not depend on the amount brought to the market.
-This cost is independent and indentically distributed across owners, with $\gamma \sim F$.
+Now we assume that to bring any amount of supply to the market, the owner has to pay a cost.
+This could be the cost of labor for a good that requires a labor input, such as in the case of driving with Uber or cleaning up an apartment when hosting on Airbnb.
+It could alo consists of conventional transaction costs, such as finding a counter-party, coming to terms, monitoring the contract and so on. 
+We assume that these costs differ by individual.
+For example, some people enjoy driving, talking to strangers and have a full-time job with fixed and inflexible hours.
+For them, driving for Uber is very low cost and may be something close to a hobby (though they still bear gas and depreciation costs).
 
+We assume that the cost of bringing any supply to the P2P rental market for an individual $i$ is $\gamma_i$.
+This cost is independent and indentically distributed across the population, with $\gamma \sim F$.
+
+As we would expect, owners with particularly low value for $\gamma$ are the ones that supply to the rental market. 
 If an owner stays out of the market, they get $\alpha^2$ in consumption utility.
-If they rent, they lose $r^2/4$ in foregone consumption, get $r (1 - (\alpha_H - r/2))$ in rental income and pay the transaction cost, $\gamma$.
+If they rent, they lose $r^2/4$ in foregone consumption, get $r (1 - (\alpha_H - r/2))$ in rental income and pay the cost, $\gamma$.
 The owner just indifferent between renting out and not renting has a $\hat{\gamma}$ such that
 \begin{align} \label{eq:indiff}
-  \hat{\gamma} & = r (1 - (\alpha_H - r/2)) - r^2/4 \\
+  \hat{\gamma} & = r (1 - (\alpha_H - r/2)) - r^2/4 \nonumber \\
                & =  (1-\alpha_H)r - r^2/2 
 \end{align}
-All owners will a $\gamma > \gamma_i$ will stay out of the market, while those with a $\gamma < \gamma_i$ will rent out.
-Market clearing now requires that
-\begin{align}
-  \theta F(\hat{\gamma})(1 - x_H(r)) = (1-\theta)x_L(r), 
-\end{align} 
-with the marginal owner being indifferent condition from Equation~\ref{eq:indiff}. 
-$F(\hat{\gamma})$ is the fraction of owners with transaction costs lower than that of the indifferent owner. 
 
+All owners will a $\gamma > \gamma_i$ will stay out of the market, while those with a $\gamma < \gamma_i$ will rent out.
+Market clearing in quantities now requires that
+\begin{align}
+  \theta F(\hat{\gamma})(1 - x_H(r)) = (1-\theta)x_L(r). 
+\end{align} 
+This condition, combined with the definition of the transaction cost for the marginal owner, defines an equilibrium with $r$ and $\hat{\gamma}$.
+
+\subsection{How do transaction costs affect the short-run equilibrium?}
 When $r$ is higher, two forces bring more supply into the market:
 (1) greater economization by owners already providing the good in the market
-(2) more owners willing to participate.
+(2) more owners willing to participate in the P2P rental market.
+
+\subsection{The indcidence of transaction costs} 
+If transaction costs are lowered, who benefits?
+Owners have lower costs, but some of this gets passed back to non-owners in the form of a lower rental rate. 
+
+\subsection{How do transaction costs affect the long-run equilibrium?} 
+With the existence of transacton costs,
 
 Lower transaction costs bring more supply into the market, as more owners find it profitable to participate.
 However, this increased in supply on the extensive margin also lowers rental rates, which will reduce economization of owner-usage but increase usage by non-owners.
