@@ -416,11 +416,11 @@ The market clearing rental rate is
 \begin{align} \label{eq:strr} 
 r = 2\left[ (1-\theta)\alpha_L - (1-\alpha_H) \theta \right]. 
 \end{align}
-Note that the short-run equilibrium rental rate is proportional to the difference between what low-types would consume if they owned, $(1-\theta)\alpha_L$ and how much high-types would leave unused in the absence of the P2P rental market, $\theta (1-\alpha_H)$. 
+Note that the short-run equilibrium rental rate is proportional to the difference between what low-types would consume if they owned, $(1-\theta)\alpha_L$, and how much high-types would leave unused in the absence of the P2P rental market, $\theta (1-\alpha_H)$. 
 
 The rental rates increases in the valuations of either type (since higher valuation from low types increases demand while higher valuation from high types reduces supply) and decline with the fraction of high types, as they provide the market supply. 
 The quantity of the good exchanged is 
-\begin{align}
+\begin{align} \label{eq:qty}
   Q = \theta (1-\theta) \left(1 - \alpha_H + \alpha_L\right).
 \end{align} 
 All else equal, the quantity exchanged is largest when there are equal numbers of both types.
@@ -476,45 +476,167 @@ The total change in surplus from the introduction of the P2P rental market is th
 \Delta V &= \theta \Delta v_H + (1-\theta) \Delta v_L \notag \\ 
          & = (1-\theta) \alpha_L^2 - r^2/4.
 \end{align}
-\important{This equation implies that the gains from the P2P rental market is the maximum surplus obtained by the low-types consuming at their preferred usage point, minus a term capturing the amount of reduction in consumption required of both types for the market to clear.}  
+This equation implies that the gains from the P2P rental market is the maximum surplus obtained by the low-types consuming at their preferred usage point, minus a term capturing the amount of reduction in consumption required of both types for the market to clear.
 The ideal short-run P2P rental market is one where the excess capacity of the high-types when they own equals the total demand of low-types if they were to own the good.
 Under this scenario, the market clears with zero rental rate and both the low and high-types get their preferred level of usage. 
 
-Figure~\ref{fig:welfare} shows a contour plot of change in social surplus from the emergence of the P2P rental market for the space of possible valuation parameters.
-The figure shows that higher values of $\alpha_L$ increase the gain in social surplus.
-Indeed, $\partial \Delta S/\partial \alpha_L = 1 - \alpha_H + \alpha_L > 0$ since $\alpha_H < 1$ and $\alpha_L > 0$. 
-\important{The more the non-owners value the good, the greater the increase in social surplus from the emergence of P2P rental markets.} 
-The case of $\alpha_H$ is more complex. 
-Recall that a positive rental rate only occurs when $\alpha_H + \alpha_L > 1$.
-\important{As such, an increase in the valuation of the high-types reduces social surplus from P2P rental markets in non-glut P2P rental scenarios:   
+As we know the equilibrium rental rate, we can write the total surplus as
+\begin{align}
+  V & = \theta \alpha_H^2 + (1-\theta)\alpha_L^2 - r^2/4 \\
+    & = \theta \alpha_H^2 + (1-\theta)\alpha_L^2 - \left[(1-\theta) \alpha_L - \theta (1-\alpha_H) \right]^2
+\end{align} 
+which means the total surplus is equal to surplus obtainable when everyone consumes their preferred amount of the good when facing no marginal cost, minus the square of the difference in how much is demanded when there is no rental rate, $(1-\theta)\alpha_L$, and how much would be supplied when there is no rental rate, $\theta (1-\alpha_H)$.
+The greatest social surplus is ``unlocked'' by the emergence of the P2P rental market when non-owners are numerous and have a relatively high valuation, but not so high as to own. 
+
+%% Figure~\ref{fig:welfare} shows a contour plot of change in social surplus from the emergence of the P2P rental market for the space of possible valuation parameters.
+%% The figure shows that higher values of $\alpha_L$ increase the gain in social surplus.
+%% Indeed, $\partial \Delta S/\partial \alpha_L = 1 - \alpha_H + \alpha_L > 0$ since $\alpha_H < 1$ and $\alpha_L > 0$. 
+%% \important{The more the non-owners value the good, the greater the increase in social surplus from the emergence of P2P rental markets.} 
+%% The case of $\alpha_H$ is more complex. 
+%% Recall that a positive rental rate only occurs when $\alpha_H + \alpha_L > 1$.
+%% \important{As such, an increase in the valuation of the high-types reduces social surplus from P2P rental markets in non-glut P2P rental scenarios:   
+%% \begin{align} 
+%% \frac{\partial \Delta S}{\partial \alpha_H} =  1 - (\alpha_H + \alpha_L) < 0.
+%% \end{align}} 
+%% In Figure~\ref{fig:welfare} the line stretching from $(1,0)$ to $(1/2, 1/2)$ indicates the glut/non-glut boundary. 
+%% For all points to the right of that line, a higher $\alpha_H$ valuation reduces social surplus.  
+%% As, such the greatest social surplus is ``unlocked'' by the emergence of the P2P rental market when both purchasers and non-purchasers have similar, high valuations. 
+%% In terms of the figure, the highest obtainable social surplus values for a fixed $\alpha_H + \alpha_L$ run along the 45 degree line that indicates $\alpha_H \approx \alpha_L$. 
+
+%% For simplicity, we have ignored income effects as a cause of the pattern of ownership. 
+%% However, for goods where income effects are important in the consumer's ownership decision problem, the $\alpha_H > \alpha_L$ requirement would no longer hold and potentially larger gains in social surplus would be unlocked by the P2P rental market emergence. 
+
+%% \begin{figure}
+%% \centering 
+%% \caption{Consumer welfare as a function of high- and low-type consumer valuations}
+%% \label{fig:welfare}
+%% \begin{minipage}{0.50 \linewidth}
+%% \includegraphics[width = \linewidth]{./plots/welfare.pdf} \\
+%% \emph{Notes}: This contour plot shows the level of social surplus created by a P2P rental market at different valuation parameters for the low-type (on the x-axis) and the high-type (on the y-axis).
+%% Lighter shading indicates a higher value. 
+%% \end{minipage} 
+%% \end{figure} 
+
+\subsection{Bringing-to-market costs: labor, capital depreciation and transaction costs}
+
+Now we assume that the owner of the good must pay a cost to bring their excess of the good to the P2P rental market. 
+This could be the cost of labor for a good that requires a labor input, such as in the case of driving with Uber or cleaning up an apartment when hosting on Airbnb.
+It also is meant to capture the increased wear-and-tear from additional usage as well as the conventional transaction costs inherent in finding trading partners, coming to terms, handing off the good and so on.  
+We will assume that the cost is proportional to the amount brought to the market and is the same magnitude for all owners.
+Let that cost on a per-unit basis be $\gamma$. 
+The owner's return is to renting on the P2P rental market is now just $r - \gamma$ and so $x_H(r) = \alpha_H - (r - \gamma)/2$.
+This will lead owners to supply less of the good to the market, raising the rental rate.
+
+Market clearing with bringing-to-market costs (BMC) now requires that 
+\begin{align}
+  \theta (1 - (\alpha_H - (r-\gamma)/2)) = (1-\theta)(\alpha_L - r/2)
+\end{align}
+and so the new market-clearing rental rate is simply the rental rate when there are no transaction costs (from Equation~\ref{eq:strr}) plus the per-unit transaction cost scaled by the the size of demand side of the market, or  
+\begin{align}
+  r_{BMC} = r_{\gamma = 0} + \gamma \theta. 
+\end{align} 
+The quantity of the good exchange is
+\begin{align} \label{eq:qty_gamma}
+  Q_{BMC} = Q_{\gamma = 0} - \frac{1}{2} \gamma \theta (1-\theta)
+\end{align} 
+where $Q_{\gamma = 0}$, which is the equilibrium quantity when there are not transaction costs and is defined in Equation~\ref{eq:qty}. 
+
+\subsection{Bringing-to-market costs and existence of the P2P rental market}
+If transaction costs are sufficiently high, then no P2P rental market will exist. 
+Recall that there is no demand if $r > 2 \alpha_L$, as the cost of consuming any of the good for a non-owner exceeds the marginal utility. 
+The highest possibility bringing-to-market cost that will still support a P2P rental market, which is 
 \begin{align} 
-\frac{\partial \Delta S}{\partial \alpha_H} =  1 - (\alpha_H + \alpha_L) < 0.
-\end{align}} 
-In Figure~\ref{fig:welfare} the line stretching from $(1,0)$ to $(1/2, 1/2)$ indicates the glut/non-glut boundary. 
-For all points to the right of that line, a higher $\alpha_H$ valuation reduces social surplus.  
-As, such the greatest social surplus is ``unlocked'' by the emergence of the P2P rental market when both purchasers and non-purchasers have similar, high valuations. 
-In terms of the figure, the highest obtainable social surplus values for a fixed $\alpha_H + \alpha_L$ run along the 45 degree line that indicates $\alpha_H \approx \alpha_L$. 
+  \bar{\gamma} = 2(1-\alpha_H + \alpha_L). 
+\end{align}
+Note that when $\gamma = \bar{\gamma}$, from Equation~\ref{eq:qty_gamma}, $Q_{EMC} = 0$.
+In other words, there is no P2P rental market when the reduced transaction volume from the BMC equals the amount that would be supplied in equilibrium in the absence of transaction costs. 
 
-For simplicity, we have ignored income effects as a cause of the pattern of ownership. 
-However, for goods where income effects are important in the consumer's ownership decision problem, the $\alpha_H > \alpha_L$ requirement would no longer hold and potentially larger gains in social surplus would be unlocked by the P2P rental market emergence. 
+\subsection{Platform's incentive to reduce transaction costs}
+The total transaction volume in the P2P rental market is $Q_{BMC} r_{BMC}$.
+If the platform creating the P2P rental market takes revenue proportional to this market volume, what is their incentive to reduce BMC costs?
+On the one hand, lowering these costs raises the quantity transacted, but it also lowers the price.
+If we assume that profits are proportional to the total transaction volume, then 
+\begin{align}
+  \frac{\partial \pi}{\partial \gamma} \propto \theta(1-\theta)(\alpha_L + \gamma \theta) > 0. 
+\end{align}
+For any equilibrium, slightly raising BMC costs \emph{raise} profits, assuming the P2P rental market still exists.
+However, if the firm instead has revenue proportional to the total social surplus it generates, then incentives change. 
+The surplus of owners is now
+\begin{align}
+  v_H = \alpha_H^2 - \frac{(r-\gamma)^2}{4} - (1 - \alpha_H)\gamma - (r-\gamma)\gamma/2
+\end{align}
+while the surplus for the non-owners is still $\alpha_L^2 - r^2/4$. 
 
-\begin{figure}
-\centering 
-\caption{Consumer welfare as a function of high- and low-type consumer valuations}
-\label{fig:welfare}
-\begin{minipage}{0.50 \linewidth}
-\includegraphics[width = \linewidth]{./plots/welfare.pdf} \\
-\emph{Notes}: This contour plot shows the level of social surplus created by a P2P rental market at different valuation parameters for the low-type (on the x-axis) and the high-type (on the y-axis).
-Lighter shading indicates a higher value. 
-\end{minipage} 
-\end{figure} 
+The total surplus is
+\begin{align}
+  S = (1 - \theta)\alpha_L^2 - \frac{(r - \gamma)^2}{4}
+\end{align} 
+an
+\begin{align}
+  \frac{\partial S}{\partial \gamma} = (1 - \theta)\alpha_L^2 - \frac{(r - \gamma)^2}{4}
+\end{align} 
 
-\subsection{Considering transaction costs}
+\subsection{The incidence of transaction costs}
+The per-unit cost $\gamma$ effectively functions like an ad valorem tax in the P2P rental market.
+The natural question is the incidence of these bringing-to-market costs.\footnote{
+ This issue has become a matter of public policy interest, as Uber faces a class action lawsuit by drivers seeking reimbursement for some of their costs such as car depreciation and fuel. 
+}
+The elasticity of demand is
+\begin{align}
+4 
+\end{align}
 
-\input{transaction_costs.tex} 
+
+While we assume that costs are homogeneous across individuals, in practice they surely differ and these differences will likely matter greatly in the low-run in explaining who owns. 
+For example, some people enjoy driving, talking to strangers and have a full-time job with fixed and inflexible hours.
+For them, driving for Uber is very low cost and may be something close to a hobby (though they still bear gas and depreciation costs).
+
+%% As we would expect, owners with particularly low value for $\gamma$ are the ones that supply to the rental market. 
+%% If an owner stays out of the market, they get $\alpha^2$ in consumption utility.
+%% If they rent, they lose $r^2/4$ in foregone consumption, get $r (1 - (\alpha_H - r/2))$ in rental income and pay the cost, $\gamma$.
+%% The owner just indifferent between renting out and not renting has a $\hat{\gamma}$ such that
+%% \begin{align} \label{eq:indiff}
+%%   \hat{\gamma} & = r (1 - (\alpha_H - r/2)) - r^2/4 \nonumber \\
+%%                & =  (1-\alpha_H)r - r^2/2 
+%% \end{align}
+
+%% All owners will a $\gamma > \gamma_i$ will stay out of the market, while those with a $\gamma < \gamma_i$ will rent out.
+%% Market clearing in quantities now requires that
+%% \begin{align}
+%%   \theta F(\hat{\gamma})(1 - x_H(r)) = (1-\theta)x_L(r). 
+%% \end{align} 
+%% This condition, combined with the definition of the transaction cost for the marginal owner, defines an equilibrium with $r$ and $\hat{\gamma}$.
+
+%% \subsection{How do transaction costs affect the short-run equilibrium?}
+%% When $r$ is higher, two forces bring more supply into the market:
+%% (1) greater economization by owners already providing the good in the market
+%% (2) more owners willing to participate in the P2P rental market.
+
+%% \subsection{The indcidence of transaction costs} 
+%% If transaction costs are lowered, who benefits?
+%% Owners have lower costs, but some of this gets passed back to non-owners in the form of a lower rental rate. 
+
+%% \subsection{How do transaction costs affect the long-run equilibrium?} 
+%% With the existence of transacton costs,
+
+%% Lower transaction costs bring more supply into the market, as more owners find it profitable to participate.
+%% However, this increased in supply on the extensive margin also lowers rental rates, which will reduce economization of owner-usage but increase usage by non-owners.
+%% In the long-run, the ideal owners are those with low transaction costs rather than those with a high valuation of the good.
+
+%% What are some questions/thoughts?
+%% \begin{itemize}
+%% \item Does an equilibrium always exist? Presumably if transaction costs are too high, the only the supportable equilibium would be one with a high $r$, but if $r > \alpha_L$, there is no demand. This would work nicely with out ``tech lowered transaction costs'' story. 
+%% \item How should shocks to transaction costs be modeled? I tried assuming uniformly distributed transaction costs with a multiplier parameter. However, even with this extreme simplification, the equilibrium $\gamma$ and $r$ are very, very complex. I imagine we could still do comparative statics, but it would be a bit tricker than what we have now, where the equilibrium is a nice closed form solution obtained through simple algebra. Perhaps there is some easier way to model transaction costs that gets us back to that world. 
+%% \item In keeping with the theme of extreme simplicity, I could just assume two transaction cost types, $\gamma_H$ and $\gamma_L = 0$ that are orthogonal to valuation and then look at the resulting equilibria.
+%% \item What is the deadweight loss of transaction costs?
+%%   \item What is the incidence of transaction costs? Taxation? 
+%% \end{itemize} 
+
+%\input{transaction_costs.tex} 
 
 \subsection{Long-run P2P rental equilibrium} 
 In the long-run equilibrium, all parties can revise their ownership decisions. 
+First we consider the case when there are no bringing-to-market costs.
 The utility from owning is 
 \begin{align}
 v^{OWN}_i = 2\alpha_i x_i - x_i^2 + (1-x_i)r_{LR} - p,   
@@ -533,7 +655,7 @@ Setting $v^{OWN} = v^{RENT}$ to find the conditions under which a user would be 
 \begin{align}
 p = r_{LR}. 
 \end{align}
- \important{In the long-run P2P rental equilibrium, the rental rate equals the product market purchase price and ownership does not depend on usage patterns or valuation.}  
+In the long-run P2P rental equilibrium, the rental rate equals the product market purchase price and ownership does not depend on usage patterns or valuation.  
 
 For this new market to clear, we have to determine what fraction of consumers choose to own. 
 Let $f_{OWN}$ be the fraction of consumers that purchase the good in equilibrium. 
@@ -546,8 +668,7 @@ which simplifies to
 \begin{align}
 f_{OWN} = \frac{x_H(p) + x_L(p)}{2}.  
 \end{align} 
-\important{The fraction of consumers owning in the long-run is the average usage rate in the population.}  
-In this long-run P2P rental equilibrium, even though both types own, we might expect in that even with the indifference condition,  higher-valuation types to be the ones to own, as they can better bear the risk in the rental rate, ala \cite{sinai2005}.
+The fraction of consumers owning in the long-run is the average usage rate in the population.  
 
 In the long-run P2P rental market equilibrium, there are no profits from owning to simply rent-out, as the purchase price is $p$ and rental income from renting out all of the capacity is also $p$.  
 In contrast, owners and non-owners that rent get a surplus from their own consumption. 
@@ -565,9 +686,39 @@ However, this firm-level expertise might simply be offered to consumers without 
   A recently launched start-up called \href{https://www.guesty.com/}{Guesty} aims to be a kind of property management company for Airbnb rentals.
 } 
 
+\subsection{Long-run P2P rental market equilibrium with bringing-to-market costs}
+Now we consider the same situation, but assume non-zero bringing-to-market costs.
+When we do this,
+\begin{align}
+  v^{OWN} - v^{RENT} = r - p - \frac{r\gamma}{2} + \gamma \left( \frac{\alpha_i - 1 - \gamma}{4} \right). 
+\end{align}
+As we would expect,$v^{OWN} - v^{RENT} = r - p$ if $\gamma = 0$. 
+Unlike in the case with no bringing-to-market costs, $v^{OWN} - v^{RENT}$ is larger for the high-types than the low-types because of the $\alpha_i$ term appearing in the difference.
+This suggests that high-types would find ownership relatively more attractive.
+The economic intuition is that because a high-type wants to use the good more than a low-type, it is more attractive to use you own good rather than a rented good, which has some of the bringing-to-market costs ``baked in'' to the rental rate. 
+
+There are two possible equilibria with when we include bringing-to-market costs:
+(1) some of the high-types choose to rent 
+(2) some of the low-type choose to own. 
+
+For the the first equilibria, total ownership goes down relative to the pre-P2P rental market case (as some owners are now renting), and vice versa for the second equilibrium. 
+
+For the first case, high-types have to be indifferent between owning and renting.
+With bringing-to-market costs, high-type owners have more consumption than high-type owners, as owners face a marginal cost of $r-\gamma$, while non-owners face the full $r$.
+As high-type renters are renting from high-type owners, for the renters to stay indifferent, they have to get passed a transfer equal to the cost of foregone consumption.
+
+High-type owners get $\alpha_H^2 - (r-\gamma)^2/4$ in consumption utility, while renters get $\alpha_H^2 - r^2/4$.
+
+$\Delta U = \frac{1}{4}(2r - \gamma)\gamma$.
+Owners bear a cost equal to $p + (1 - (\alpha - (r - \gamma)/2))\gamma$. 
+
+
+%In this long-run P2P rental equilibrium, even though both types own, we might expect in that even with the indifference condition, higher-valuation types to be the ones to own, as they can better bear the risk in the rental rate, ala \cite{sinai2005}.
+
+
 \subsection{Product market demand in the long-run P2P rental market equilibrium} 
 Most commentators considering the sharing economy assume that sharing economy platforms reduce ownership. 
-The intuitive idea is that there is a fixed amount demand for some good---a ``lump of consumption''---and that when idle goods are pulled into the market, demand can be met with a smaller total number of goods.
+The intuitive idea is that there is a fixed amount demand for some good, a ``lump of consumption'' to borrow the analogous fallacy from labor economics, and that when idle goods are pulled into the market, demand can be met with a smaller total number of goods.
 \important{This is not the case:  
 ownership increases if the product market price is below the short-run rental rate.} 
 Intuitively, when the short-run rental rate is greater than the purchase price, a consumer could buy the good at $p$ and rent out the entire capacity for $r$ and since $r > p$, earn a profit. 
