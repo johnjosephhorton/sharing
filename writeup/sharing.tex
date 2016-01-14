@@ -581,60 +581,16 @@ The per-unit cost $\gamma$ effectively functions like an ad valorem tax in the P
 The natural question is the incidence of these bringing-to-market costs.\footnote{
  This issue has become a matter of public policy interest, as Uber faces a class action lawsuit by drivers seeking reimbursement for some of their costs such as car depreciation and fuel. 
 }
-The elasticity of demand is
+The short-run elasticity of demand is
 \begin{align}
-4 
-\end{align}
 
+\end{align}
 
 While we assume that costs are homogeneous across individuals, in practice they surely differ and these differences will likely matter greatly in the low-run in explaining who owns. 
 For example, some people enjoy driving, talking to strangers and have a full-time job with fixed and inflexible hours.
 For them, driving for Uber is very low cost and may be something close to a hobby (though they still bear gas and depreciation costs).
 
-%% As we would expect, owners with particularly low value for $\gamma$ are the ones that supply to the rental market. 
-%% If an owner stays out of the market, they get $\alpha^2$ in consumption utility.
-%% If they rent, they lose $r^2/4$ in foregone consumption, get $r (1 - (\alpha_H - r/2))$ in rental income and pay the cost, $\gamma$.
-%% The owner just indifferent between renting out and not renting has a $\hat{\gamma}$ such that
-%% \begin{align} \label{eq:indiff}
-%%   \hat{\gamma} & = r (1 - (\alpha_H - r/2)) - r^2/4 \nonumber \\
-%%                & =  (1-\alpha_H)r - r^2/2 
-%% \end{align}
-
-%% All owners will a $\gamma > \gamma_i$ will stay out of the market, while those with a $\gamma < \gamma_i$ will rent out.
-%% Market clearing in quantities now requires that
-%% \begin{align}
-%%   \theta F(\hat{\gamma})(1 - x_H(r)) = (1-\theta)x_L(r). 
-%% \end{align} 
-%% This condition, combined with the definition of the transaction cost for the marginal owner, defines an equilibrium with $r$ and $\hat{\gamma}$.
-
-%% \subsection{How do transaction costs affect the short-run equilibrium?}
-%% When $r$ is higher, two forces bring more supply into the market:
-%% (1) greater economization by owners already providing the good in the market
-%% (2) more owners willing to participate in the P2P rental market.
-
-%% \subsection{The indcidence of transaction costs} 
-%% If transaction costs are lowered, who benefits?
-%% Owners have lower costs, but some of this gets passed back to non-owners in the form of a lower rental rate. 
-
-%% \subsection{How do transaction costs affect the long-run equilibrium?} 
-%% With the existence of transacton costs,
-
-%% Lower transaction costs bring more supply into the market, as more owners find it profitable to participate.
-%% However, this increased in supply on the extensive margin also lowers rental rates, which will reduce economization of owner-usage but increase usage by non-owners.
-%% In the long-run, the ideal owners are those with low transaction costs rather than those with a high valuation of the good.
-
-%% What are some questions/thoughts?
-%% \begin{itemize}
-%% \item Does an equilibrium always exist? Presumably if transaction costs are too high, the only the supportable equilibium would be one with a high $r$, but if $r > \alpha_L$, there is no demand. This would work nicely with out ``tech lowered transaction costs'' story. 
-%% \item How should shocks to transaction costs be modeled? I tried assuming uniformly distributed transaction costs with a multiplier parameter. However, even with this extreme simplification, the equilibrium $\gamma$ and $r$ are very, very complex. I imagine we could still do comparative statics, but it would be a bit tricker than what we have now, where the equilibrium is a nice closed form solution obtained through simple algebra. Perhaps there is some easier way to model transaction costs that gets us back to that world. 
-%% \item In keeping with the theme of extreme simplicity, I could just assume two transaction cost types, $\gamma_H$ and $\gamma_L = 0$ that are orthogonal to valuation and then look at the resulting equilibria.
-%% \item What is the deadweight loss of transaction costs?
-%%   \item What is the incidence of transaction costs? Taxation? 
-%% \end{itemize} 
-
-%\input{transaction_costs.tex} 
-
-\subsection{Long-run P2P rental equilibrium} 
+\subsection{Long-run P2P rental equilibrium without bringing-to-market costs} 
 In the long-run equilibrium, all parties can revise their ownership decisions. 
 First we consider the case when there are no bringing-to-market costs.
 The utility from owning is 
@@ -687,21 +643,25 @@ However, this firm-level expertise might simply be offered to consumers without 
 } 
 
 \subsection{Long-run P2P rental market equilibrium with bringing-to-market costs}
-Now we consider the same situation, but assume non-zero bringing-to-market costs.
+Now we consider the same long-run outcome, but assume non-zero bringing-to-market costs.
 When we do this,
 \begin{align}
   v^{OWN} - v^{RENT} = r - p - \frac{r\gamma}{2} + \gamma \left( \frac{\alpha_i - 1 - \gamma}{4} \right). 
 \end{align}
 As we would expect,$v^{OWN} - v^{RENT} = r - p$ if $\gamma = 0$. 
 Unlike in the case with no bringing-to-market costs, $v^{OWN} - v^{RENT}$ is larger for the high-types than the low-types because of the $\alpha_i$ term appearing in the difference.
-This suggests that high-types would find ownership relatively more attractive.
+This implies that high-types would find ownership relatively more attractive.
 The economic intuition is that because a high-type wants to use the good more than a low-type, it is more attractive to use you own good rather than a rented good, which has some of the bringing-to-market costs ``baked in'' to the rental rate. 
 
 There are two possible equilibria with when we include bringing-to-market costs:
 (1) some of the high-types choose to rent 
 (2) some of the low-type choose to own. 
-
 For the the first equilibria, total ownership goes down relative to the pre-P2P rental market case (as some owners are now renting), and vice versa for the second equilibrium. 
+
+First, we note the $r - \gamma \le p$, as otherwise someone could buy a good and then profitably sell it.
+Is $r_{LR} = p + \gamma$? 
+This seems intuitively appealing.
+If it were the case and equilibrium (1) prevailed, then high-type owners would choose $x = \alpha_H - p/2$ and high-type renters would choose $\alpha_H - (p + \gamma)/2$.
 
 For the first case, high-types have to be indifferent between owning and renting.
 With bringing-to-market costs, high-type owners have more consumption than high-type owners, as owners face a marginal cost of $r-\gamma$, while non-owners face the full $r$.
@@ -709,18 +669,25 @@ As high-type renters are renting from high-type owners, for the renters to stay 
 
 High-type owners get $\alpha_H^2 - (r-\gamma)^2/4$ in consumption utility, while renters get $\alpha_H^2 - r^2/4$.
 
+We know that $r_{LR} - \gamma \le p$, otherwise an individual could buy the good, rent it all out and make a profit. 
+
+Is $r_{LR} = p + \gamma$?
+If it is, high-type owner consumes $\alpha_H - r/2 = \alpha_H - (p + \gamma)/2$, while a high-type consumes $\alpha_H - p/2$. 
+The total utility for high-types owning would then be $\alpha_H^2 - p^2/4 + (1 - (\alpha_H - p/2))p - p$.
+
+The total utility for high-types renting would then be $\alpha_H^2 - (p - \gamma)^2/4 - (\alpha_H - (p + \gamma)/2)(p + \gamma)$.
+
 $\Delta U = \frac{1}{4}(2r - \gamma)\gamma$.
 Owners bear a cost equal to $p + (1 - (\alpha - (r - \gamma)/2))\gamma$. 
 
-
 %In this long-run P2P rental equilibrium, even though both types own, we might expect in that even with the indifference condition, higher-valuation types to be the ones to own, as they can better bear the risk in the rental rate, ala \cite{sinai2005}.
-
 
 \subsection{Product market demand in the long-run P2P rental market equilibrium} 
 Most commentators considering the sharing economy assume that sharing economy platforms reduce ownership. 
-The intuitive idea is that there is a fixed amount demand for some good, a ``lump of consumption'' to borrow the analogous fallacy from labor economics, and that when idle goods are pulled into the market, demand can be met with a smaller total number of goods.
-\important{This is not the case:  
-ownership increases if the product market price is below the short-run rental rate.} 
+The intuitive idea is that there is a fixed amount demand for some good, a ``lump of consumption,'' and that when idle goods are pulled into the market, demand can be met with a smaller total number of goods.
+
+This is not the case:  
+ownership increases if the product market price is below the short-run rental rate.
 Intuitively, when the short-run rental rate is greater than the purchase price, a consumer could buy the good at $p$ and rent out the entire capacity for $r$ and since $r > p$, earn a profit. 
 
 To see this algebraically, first consider that in the long-run P2P equilibrium, the new product market demand curve, $D_1$, is
