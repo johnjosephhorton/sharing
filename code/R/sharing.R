@@ -496,8 +496,8 @@ m.4 <- felm(own ~  predict.index * granular.index | worker.id + input.good | 0 |
 out.file <- "../../writeup/tables/ownership_attr.tex"
 s <- stargazer(m.1, m.2, m.3, m.4, 
                dep.var.labels = c("Item is owned"),
-               covariate.labels = c("Unpredictability index (UI)", "Granularity index (GI)", "UI x GI"),
-               title = "Good usage unpredictibility and granularity and their association with good ownership.",
+               covariate.labels = c("Unpredictability Score (US)", "Chunkiness Score (CS)", "US x CS"),
+               title = "Good usage unpredictibility and chunkiness and their association with good ownership.",
                label = "tab:ownership_attr",
                               align = TRUE,
                font.size = "footnotesize",
@@ -517,7 +517,7 @@ s <- stargazer(m.1, m.2, m.3, m.4,
                   )) 
 AddTableNote(s, out.file, note = "\\\\ {\\footnotesize  \\begin{minipage}{0.85 \\linewidth} \\emph{Notes:}
 This table reports regressions of an indicator for whether the respondent owns a good on that same respondent's estimates of the unpredictability and granularity of usage for that good.
-The two indices are normalized responses to the 1-5 scale questions on granularity and unpredictability, pooled over all respondents and goods.
+The two indices are normalized responses to the 1-5 scale questions on usage chunkiness and unpredictability, pooled over all respondents and goods.
 Toothbrushes and backup generators are excluded from the sample. 
 See Appendix~\\ref{sec:survey} for the actual survey language and responses.
 In each regression a respondent-specific fixed effect is included.
@@ -541,8 +541,8 @@ g.scatter <- ggplot(data = df.gran,
                         y = mean.predict.index)
                     ) + geom_point() +
     geom_text_repel(aes(label = input.good)) +
-        xlab("Mean granularity index") +
-        ylab("Mean unpredictability index") +
+        xlab("Mean chunkiness score") +
+        ylab("Mean chunkiness index") +
         theme_bw()
 
 print(g.scatter)
@@ -564,7 +564,7 @@ g.gran <- ggplot(data = df.gran, aes(x = input.good, y = mean.gran.index)) +
     geom_linerange(aes(ymin = mean.gran.index - 2*gran.index.se, ymax = mean.gran.index + 2*gran.index.se)) + 
     theme(axis.text.x=element_text(angle = -75, hjust = 0)) +
     xlab("") +
-    ylab("Mean granularity index") +
+    ylab("Mean chunkiness score") +
 if (interactive() & SHOW.PLOTS){
     print(g.gran)
 }
