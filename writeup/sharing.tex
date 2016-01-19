@@ -83,31 +83,7 @@ We also explore the factors that are permitting these new markets to flourish.
 % TODO: Pass through in the BMC short-run - can we say anything about incidence? 
 % D[2\left[ (1-\theta)\alpha_L - (1-\alpha_H) \theta \right], \theta] = 2 [1 - (alpha_H - \alpha_L)] + \gamma
 
-\section{To Cite}
-
-\cite{belk2014you}
-\cite{bolton2013engineering}
-\cite{cabral2010dynamics}
-\cite{cannon2014uber}
-\cite{chang2015growing}
-\cite{cullen2014outsourcing}
-\cite{dellarocas2003digitization}
-\cite{dinerstein2014consumer}
-\cite{edelman2015efficiencies}
-\cite{einav2015peer}
-\cite{fradkin2012online}
-\cite{fradkin2013search}
-\cite{fradkin2015}
-\cite{fradkin2015bias}
-\cite{gata2015sharing}
-\cite{hagiu2014strategic}
-\cite{hampshire2011peer}
-\cite{heinrichs2013sharing}
-\cite{hui2014lemon}
-\cite{koopman2014sharing}
-\cite{neeser2015does}
-\cite{resnick2000reputation}
-\cite{resnick2002trust}
+%\section{To Cite}
 
 \section{Introduction}
 In traditional rental markets, owners hold assets to rent them out.
@@ -118,19 +94,25 @@ More often, consumer-owner goods were shared among family and friends, without e
 In contrast, these P2P rental markets are open markets and the good is ``shared'' for payment. 
 
 Perhaps the most prominent example of a P2P rental market is Airbnb, which allows individuals to rent out spare bedrooms, apartments or even entire homes. 
-Airbnb and platforms like it have been heralded by many, as they they promise to expand access to goods, diversify individual consumption, bolster efficiency by increasing asset utilization and provide income to owners \citep{sundararajan2013zipcar}.
+Airbnb and platforms like it have been heralded by many, as they they promise to expand access to goods, diversify individual consumption, bolster efficiency by increasing asset utilization and provide income to owners \citep{sundararajan2013zipcar, edelman2015efficiencies, botsman2010s}.
 The business interest in these platforms has been intense; Airbnb alone has attracted nearly \$800 million in venture capital investment\footnote{\href{http://www.crunchbase.com/organization/airbnb}{http://www.crunchbase.com/organization/airbnb}}
-These companies have also attracted policy interest, much of it negative. 
+These companies have also attracted policy interest, much of it negative \citep{slee2015, malhotra2014dark}. 
 Critics charge that the primary competitive advantage of these platforms is their ability to duck costly regulations---regulations that often are intended to keep costs from being imposed on third-parties.\footnote{
+  For example, Dean Baker, in an opinion piece for the Guardian characterizes Airbnb and Uber as being primarily based on ``evading regulations and breaking the law.''
+  ``Dont' buy the sharing economy hype: Airbnb and Uber are facilitating rip-offs.'', The Guardian, May 27th, 2014. Access online on January 19th, 2016.
+  \url{http://www.theguardian.com/commentisfree/2014/may/27/airbnb-uber-taxes-regulation}. 
   See \cite{horton2014tragedy} for a discussion of the externalities imposed by Airbnb-style subletting in rented apartments.
+  \cite{edelman2015efficiencies} discusses both the promised efficiencies of ``sharing economy'' platforms as well as the regulatory issues they raise.
+  \cite{cannon2014uber} offer a playbook for sharing economy companies to win over regulators, as well as contains some facts about the size and scope of the relevant firms.
 }   
+However, the counter-argument is often made that existing regulations were designed to solve market problems that these sharing economy platforms solve with better information provision and reputation systems \citep{koopman2014sharing}, making top-down regulation unnecessary.  
 A better understanding of these markets, and progress in resolving this policy debate requires an elucidation of what economic problem these markets address, why they are emerging and what their properties are likely to be in both the short- and long-runs. 
 Providing this elucidation is the goal this paper. 
 
 Our first major question is why P2P rental markets are flourishing now.
 The economic problem P2P rental markets are attempting to solve---under-utilization of durable goods---is hardly new.  
 We argue that although technological advances, such as the mass adoption of smart-phones and the falling cost of developing and running large web sites, while clearly important, only provide part of the story. 
-P2P rental markets rely heavily on the hard-won industry experience in the design and management of online marketplaces.
+P2P rental markets rely heavily on the hard-won industry and academic experience in the design and management of online marketplaces.
 In particular, recommender systems and reputation systems, which emerged during the early days of electronic commerce, are relied on extensively in P2P rental markets.  
 This knowledge allows P2P rental platforms to overcome---or at least substantially ameliorate---market problems such as moral hazard and adverse selection.  
 We develop this argument in more depth and point out relevant works from the literature. 
@@ -204,7 +186,69 @@ We conclude with some thoughts on how P2P rental markets might evolve.
 Our analysis focuses on a single homogeneous good, but a key advantage of P2P rental markets might be in facilitating greater diversity in goods offered and consumed. 
 In addition to whatever direct utility this diversification provides, it might also increase the stock of people with direct experience with a particular good, which combined with the continued proliferation of consumer-generated reviews and ratings might stimulate quality improvements. 
 In that same vein, we also discuss how the producers of goods might do more than simply improve quality, but also explictly modify the goods to make them more or less amenable to rental, depending on their own market power. 
+
+\section{Related work on modeling and quantifying the sharing economy}
+
+The most closely related paper to ours is \cite{benjaafar2015peer}, who also consider the ownership choice with and without the possibility of peer-to-peer rental, with participants differing in their expected usage. 
+They find several results similar to our own.
+For example, they also find that total ownership could increase following sharing, for more or less the same economic reasons we identify.
+There are are least two important differences.
+One difference \cite{benjaafar2015peer} explicitly consider the matching aspect of these markets, considering how a participant's utility from being an owner or renter can depend on the possibility of finding the appropriate counter-party.
+For some questions, explicitly modeling these considerations is likely to be important, though for others---say in the case of market like Uber where platform pricing choices clear the market---explicitly modeling matching is less useful. 
+Another difference is that in our model, we model owners and renters as deciding how intensively to use a good in light of the rental rate (or in the case of owners, the opportunity cost created by the rental market).
+For some kinds of markets, such as for rental housing, this economization is likely to be important, though for other goods with very low usage rates, this factor is likely to be less important. 
+
+Another closely related paper (in part) is \cite{einav2015peer}, which covers some of the same ground in explaining why peer-to-peer markets are flourishing now.
+They emphasize the role played by platforms in matching buyers and sellers, maintaining a reputation system and using prices to clear the market.
+They also provide a model of the economy, though the focus is on peer-to-peer sellers competing with traditional firms. 
+
+\cite{frailberger2015} offers a calibrated model of the peer-to-peer rental market, focusing on automobiles.
+They also model consumers choosing between ownership, rental and non-participation.
+They find that the introduction of sharing would decrease ownership but increase utilization. 
+
+Other work on the ``sharing economy'' has discussed its features and implications qualitatively. 
+For example, \cite{belk2014you} offers a number of examples of these different platforms and identifies their commonalities: use of temporary, non-ownership models of using consumer goods and (2) a relative on the Internet to bring this about. 
+Another example in this vein is \cite{edelman2015efficiencies}, which enumerates the efficiency gains, such as reducing transaction costs, improved allocative efficiency and discusses how newly designed systems can be used to unlock even more gains (e.g., the UberPool example). 
+\cite{edelman2015efficiencies} is distinctive in that it discusses the regulatory policy implications of sharing economy companies from the traditional ``market failure'' frame that motivates much of public economics.  
+Other work has been more practically oriented, similar in spirit to the empirical portion of our paper.
+For example, \cite{hampshire2011peer} analyzes the feasibility of P2P car-sharing in Pittsburgh.
+
+%\cite{heinrichs2013sharing} claims potential sustainability.
+% \cite{botsman2010s} general purpose happy-talk citation. 
+%TODO: Waldman 2003 - secondary market having affecting purchase demand.
+%Much of the existing literature has focused on highlighting the public policy issues raised by ``sharing economy'' platforms. 
+% Another cite to the regulatory work 
+%\cite{chang2015growing} also considers the regulatory challenges faced by these so-called sharing economy companies. 
+
+% TODO: Add to the transaction cost portion 
+% 
+%\cite{dellarocas2003digitization} provides a survey of the progress in understanding these systems. 
+
+%% \cite{edelman2015efficiencies} enumerates the efficiency gains, such as reducing transaction costs, improve allocative efficiency (discusses the same idea of sufficient size needed to make rental worthwhile)
+%% discussion how software can be used to unlock even more gains (e.g., the UberPool example)
+%% Information and reputation
+%% Availability information (cite my own paper here)
+%% Pricing efficiencies - helping the market clear.
+%% Formulates an economic basis for regulation 
+% TODO: Cite in the section of recommender systems 
+
+%% What is Surge Pricing?, U BER , https://help.uber.com/h/6c8065cf-5535-4a8b-9940-d292ffdce119 (last visited
+%% Nov. 19, 2015); Jonathan Hall, Cory Kendrick, & Chris Nosko, The Effects of Uber’s Surge Pricing: A Case
+%% Study, C HI . B OOTH (Sept. 2015),
+%% http://faculty.chicagobooth.edu/chris.nosko/research/effects_of_uber's_surge_pricing.pdf.
  
+% Conclusion 
+%% \cite{hagiu2014marketplace} offers a model of a platform's choose between being a marketplace or a re-seller.
+%% The core of the model is about who has better information about the optimal
+%% Almost the trivial case: Owner of the capital knows when the good (and her time) can be offered to the market most cheaply. 
+
+%% \cite{fradkin2012online}
+%% \cite{fradkin2013search}
+%% \cite{fradkin2015}
+%% \cite{gata2015sharing}
+%% Practioner level - example of the industrial experience we are talking about. 
+
+
 \section{Factors explaining the rise of peer-to-peer rental markets}
 
 The somewhat obvious economic rationale for P2P rental markets is that the owners of most durable goods use them far less than 100\% of the time.
@@ -219,6 +263,8 @@ It is useful to consider what problems the creator of a potential rental market 
 As with any market, there are the typical search costs, such as finding and evaluating trading partners and the Internet certainly dramatically reduces these costs \citep{bakos1997reducing}.
 Furthermore, there is now nearly 20 years of industrial experience in building online marketplaces and solving their characteristic problems. 
 However, informational problems are but one obstacle in creating rental markets; the other is resources. 
+
+% TODO: Add to parts about hard-won industrial experience. 
 
 Individuals lack the resources of firms that have historically dominated rental markets. 
 For example, individuals lack marketing budgets and expertise, ways of accepting payments that are convenient for customers, standard contracts and procedures to draw upon, well-adapted insurance products, procedures and facilities for re-setting goods after use, and so on.\footnote{
@@ -249,7 +295,12 @@ Online markets in general lack many of the market-thickening coordination mechan
 }
 To compensate for the lack of geography and time as a coordinating mechanism, online marketplaces to create taxonomies and extensive classification of goods.
 A complementary approach is to make extensive use of search algorithms and recommendation systems \citep{resnick1997recommender, adomavicius2005toward}.
-These kids of approaches are particularly important in P2P rental markets because the goods being rented are often highly differentiated, as are consumer preferences, making matching more important. 
+These kinds of approaches are particularly important in P2P rental markets because the goods being rented are often highly differentiated, as are consumer preferences, making matching more important.\footnote{
+  \cite{dinerstein2014consumer} uses data from eBay to highlight the difficulties in creating search and ranking algorithms for differentiated products where price is only one dimension.
+  They show examples where limiting choice might be pro-competitive.
+}
+P2P rental market platforms continue to invest heavily in research designed to improve matching, some of it in collaboration with researchers. 
+For example, \cite{fradkin2013search} shows how personalized recommendations could improve match rates by 10\%. 
 
 In addition to simply finding each other, would-be trading partners must asses each other and the goods being traded. 
 These assessments are aided by verifiable measurements made by the platform on a number of dimensions, including past market history. 
@@ -258,11 +309,28 @@ Consider that Uber is only possible because both sides of the market now carry w
 a smart-phone with GPS technology allows for the precise measures of distance traveled.
 In fact, this computer-mediated approach works even better than the traditional taximeter in that both parties can verify that the best route was taken. 
 The proliferation of high-resolution digital cameras built into smart-phones have similarly made it easier for parties to inspect goods ex ante (Airbnb in particular benefits from this innovation).  
- 
+
+One important platform innovation has been in recommendation systems which essentially digitize word-of-mouth information about product and service quality \cite{dellarocas2003digitization}. 
+A substantial literature characterizes their practical importance \cite{cabral2010dynamics, resnick2000reputation, resnick2002trust} to the functioning of the market.
+Other papers in this literature document on-going efforts by platforms to fix common problems with the reputation systems.
+Topics include: reducing the role of reciprocity \citep{bolton2013engineering};
+incentivizing the provision of feedback \cite{fradkin2015bias}; 
+introducing new signals of quality, such as badges or other constructed measures \citep{hui2014lemon, nosko2015limits}; 
+and dealing with the tendency towards inflated reputations \citep{horton2015reputation}.  
+
+The reputation system is one particularly important example of an aspect of the market that individual participants would find too costly (or even impossible) to build and maintain. 
 Platforms enjoy scale economies for many things that individual owners would find costly. 
 For example, they handle credit card payments. 
 They create tools for ``self-serve'' marketing (such as through attractive profile pages) and through general platform marketing to bring renters to the platform. 
-They also create software tools that let owners manage their availability, learn about the attributes of potential renters and so on. 
+They also create software tools that let owners manage their availability, learn about the attributes of potential renters and so on.\footnote{
+  Both \cite{horton2014misdirected} and \cite{fradkin2013search} consider the role played by platforms in over-coming search frictions related to buyer trying to match with unavailable sellers;
+  Fradkin in the case of Airbnb and Horton in the case of oDesk/Upwork. 
+}
+
+In addition to the nuts-and-bolts issues of running online marketplaces, there have also been considerable advances in the understanding of the business models used by two-sided marketplaces more generally. 
+This literature initially focused on traditional two-sided markets (with motivating examples drawn from the credit card, video game and  newspaper industries) \cite{rochet2003platform, rochet2006two}, 
+But in recent years it has seems to be increasingly motivated by electronic commerce examples and focused on the key decisions faced by would-be platforms.
+For example, \cite{hagiu2014marketplace} analyses whether it is better to be a marketplace or a re-seller (with the eBay versus Amazon question being a clear motivation), and \cite{hagiu2014strategic} discusses the strategic decisions faced by a would-be platform and is close to a ``how to'' for would be platform-builders; similarly \cite{eisenmann2006strategies} offers strategic advice for businesses in markets with a two-sided component.  
 
 % \begin{table} 
 % \begin{tabular}{lll}
@@ -652,13 +720,22 @@ In contrast, owners and non-owners that rent get a surplus from their own consum
 This suggests that firms will only be able to compete in a competitive P2P rental market if they derive consumption value from owning the good or if they have some cost advantage.
 Otherwise, any consumer with excess capacity after satisfying their own consumption can ``profitably'' sell their excess capacity at any price and still have positive utility; a firm owning simply to rent would make zero profit.
 
-There is already some evidence that P2P rental markets are harming traditional rental firms: 
-\cite{byers2013rise} find that Airbnb is already winning customers from hotels catering to the lower-end of the market.
-There are several signs that Uber is gaining market share at the expense of existing taxi firms, such as falling medallion prices and notable bankruptcies. 
+There is already some evidence that P2P rental markets are affecting traditional rental firms: 
+\cite{byers2013rise} find that Airbnb is already winning customers from hotels catering to the lower-end of the market, with the introduction of Airbnb lowering revenues by as much as 10\% in some market segments;
+it also seems to be lowering prices. 
+\cite{neeser2015does} does not find the same revenue effects, but does offer some evidence that Airbnb may have pushed down prices in Nordic countries.
+There are several signs that Uber is gaining market share at the expense of existing taxi firms, such as falling medallion prices and notable bankruptcies.
+The effects of competition are also potentially showing up in service quality:
+\cite{wallsten2015} presents suggestive evidence from Chicago that consumer complaints for traditional taxis fell following the entry of Uber. 
+
 Firms do have advantages over consumer-owners, such as economies of scale or expertise in minimizing transaction costs. 
 However, this firm-level expertise might simply be offered to consumers without the firm taking ownership.\footnote{
   A recently launched start-up called \href{https://www.guesty.com/}{Guesty} aims to be a kind of property management company for Airbnb rentals.
-} 
+}
+\cite{edelman2015efficiencies} gives the example of how a conventional hotel can, with a front-desk, handle the exchange of keys for hundreds of guests---a common source of friction for Airbnb rentals.
+However, they also point out that, unsurprisingly, P2P rental platforms invest heavily in trying to solve these kinds of problems. 
+Indeed, \cite{fradkin2012online} finds that in the case of Airbnb, matching probability increased 18\% over a two year span, even when controlling for search intensity.
+A contributing factor was Airbnb reducing transaction costs by, for example, minimizing the amount of information that had to be exchanged before completing a booking. 
 
 \subsection{Product market demand in the long-run P2P rental market equilibrium} 
 
@@ -680,7 +757,8 @@ Recall that in the pre-sharing product market, $D_0(p) = \theta$ (for the range 
 This is likely to occur in situations where there are high valuations from both consumer types (making demand high and supply limited).\footnote{ 
   One example of this kind of sharing-increases-demand phenomena can be seen with the market for season tickets to professional sports teams.
   Many teams now facilitate a resale market for their season ticket holders, charging a modest fee to enable resales over the Internet.
-  Presumably these teams find that this quasi-secondary market does not decrease the demand for season tickets. 
+  Presumably these teams find that this quasi-secondary market does not decrease the demand for season tickets.
+  \cite{belk2014you} also points out the possibility that sharing could expand rather than contract the market, giving the example of time-sharing condominiums expanding the second home vacation market. 
 }
 
 %% Let $r_{SR}$ be the short-run rental rate, which we recall from Equation~\ref{eq:strr} is $2[(1- \theta) \alpha_L - \theta(1 - \alpha_H)]$. 
@@ -749,6 +827,8 @@ Then $2\alpha_L > p + \gamma$ and thus $2\alpha_L > p$.
 If $r = p + \gamma$, then the utility of low-type owners would be $v_L^{OWN} = \frac{1}{4}(p - 2\alpha_L)^2$ and $v_L^{RENT} = \frac{1}{4}(p - 2\alpha_L + \gamma)^2$, and by the same argument from the Equilibrium (1) case, $v_L^{OWN} > v_L^{RENT}$. 
 
 The argument that the long-run P2P rental market rate does not full pass through the bringing-to-market costs becomes more intuitive if we consider $\gamma$ to be a kind of ``tax'' and so long as neither side is completely elastic, the incidence of the tax will not be wholly on the demand side (as would be the case if $r = p + \gamma$). 
+On the question of elasticity, \cite{cullen2014outsourcing} uses data from TaskRabbit to show that workers in these platforms are highly elastic, with demand shocks met by large increases in hours-worked.
+Although TaskRabbit is more of a pure labor platform than, say, UberX or Airbnb, if the suppliers in other P2P rental markets are similar, it suggests that the supply side of the market would be able to pass through much of their costs. 
 
 \subsection{Additional thoughts on cost structure}
 
@@ -793,6 +873,12 @@ the time of use is often related to value.
 Goods that are used in small sessions are likely to make poor rental candidates.
 Goods surely differ on this dimension: 
 a person might use their vacation home in week-long chunks of time, their lawn-mower in hour-long chunks and their tooth brush in minute-long chunks. 
+
+The attributes that make a good ``shareable'' is partially the focus on \cite{benkler2004sharing}.
+He makes the point that that some goods are ``lumpy'' in that you cannot buy less than some threshold amount, but once you have own it, it invariably has excess capacity. 
+Benkler gives the example of a PC, which cannot be purchased in fractional amounts, but once purchased, offers a certain amount of computation per unit of time, whether you want it or not. 
+Benkler is looking for goods with ``relatively wide-spread private ownership and will systematically exhibit slack capacity relative to the demands of their owners.''
+This notion of sharability as being related to the patterns of how goods are characteristically used is also our focus (though we differ from Benkler in that our approach, the ownership decision and the amount of slack capacity are not ``givens'' but rather themselves being economic decisions). 
 
 Predicting what goods are profitable candidates for P2P rental is a task best left to entrepreneurs who will ultimately be judged by the market. 
 However, it is still useful to get a sense of where these markets might evolve by surveying consumers. 
