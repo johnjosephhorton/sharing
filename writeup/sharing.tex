@@ -43,8 +43,12 @@
 
 \begin{document} 
 
-\title{Peer-to-Peer Rental Markets:\\
-Some Thoughts on the ``Sharing Economy''}
+
+% \title{Peer-to-Peer Rental Markets:\\ Some Thoughts on the ``Sharing Economy''}
+\title{The Sharing Economy: \\ Emerging Rental Markets}
+\title{The Sharing Economy: Innovative Rental Markets}
+\title{The Sharing Economy:\\ 21st Century Rental Markets}
+
 
 \date{\today}
 
@@ -64,12 +68,12 @@ Some Thoughts on the ``Sharing Economy''}
 % http://blogs.hbr.org/2013/01/from-zipcar-to-the-sharing-eco/
 
 \begin{abstract} 
-Recent technological advances and entrepreneurial efforts have created a number of new peer-to-peer rental markets in which owners can rent out their durable goods. 
-We consider the emergence of such a market and determine the market clearing rental rate, the patterns of trade and the surplus unlocked for different types of consumers. 
-Our analysis considers both a short-run, before consumers can revise their ownership decisions and a long-run, in which they can.
-We also compare how bringing-to-market costs to affects the analysis. 
-A survey of consumers finds broad support for the modeling conventions used---namely that ownership is determined by a forward-looking evaluation of planned usage.
-We also explore the factors that are permitting these new markets to flourish. 
+%% Recent technological advances and entrepreneurial efforts have created a number of new peer-to-peer rental markets in which owners can rent out their durable goods. 
+%% We consider the emergence of such a market and determine the market clearing rental rate, the patterns of trade and the surplus unlocked for different types of consumers. 
+%% Our analysis considers both a short-run, before consumers can revise their ownership decisions and a long-run, in which they can.
+%% We also compare how BTM costs to affects the analysis. 
+%% A survey of consumers finds broad support for the modeling conventions used---namely that ownership is determined by a forward-looking evaluation of planned usage.
+%% We also explore the factors that are permitting these new markets to flourish. 
 \newline \newline 
 \noindent JEL J01, J24, J3 
 \end{abstract} 
@@ -87,17 +91,17 @@ We also explore the factors that are permitting these new markets to flourish.
 
 \section{Introduction}
 In traditional rental markets, owners hold assets to rent them out.
-In recent years, a new kind of rental market has emerged, with the markets created by technology startups firms 
+In recent years, a new kind of rental market has emerged, with the markets created by technology startups firms.
 In these ``sharing economy'' markets, owners sometimes use their assets for personal consumption, and sometimes rent them out.
-To be sure, some renting by consumer-owners has long existed, but it was largely confined to expensive, infrequently used goods, such as vacation homes and pleasure boats.
-More often, consumer-owner goods were shared among family and friends, without explicit payment.
+To be sure, some renting by consumer-owners has long existed, but it was largely confined to expensive, infrequently used goods, such as vacation homes and pleasure boats, with longer duration rental periods.
+More often, consumer-owner goods were shared among family and friends, usually without explicit payment.
 In contrast, these P2P rental markets are open markets and the good is ``shared'' for payment. 
 
-Perhaps the most prominent example of a P2P rental market is Airbnb, which allows individuals to rent out spare bedrooms, apartments or even entire homes. 
+Perhaps the most prominent example of a P2P rental market is Airbnb, which enables individuals to rent out spare bedrooms, apartments or even entire homes. 
 Airbnb and platforms like it have been heralded by many, as they they promise to expand access to goods, diversify individual consumption, bolster efficiency by increasing asset utilization and provide income to owners \citep{sundararajan2013zipcar, edelman2015efficiencies, botsman2010s}.
 The business interest in these platforms has been intense; Airbnb alone has attracted nearly \$800 million in venture capital investment\footnote{\href{http://www.crunchbase.com/organization/airbnb}{http://www.crunchbase.com/organization/airbnb}}
-These companies have also attracted policy interest, much of it negative \citep{slee2015, malhotra2014dark}. 
-Critics charge that the primary competitive advantage of these platforms is their ability to duck costly regulations---regulations that often are intended to keep costs from being imposed on third-parties.\footnote{
+Companies organizing sharing markets have also attracted policy interest, much of it negative \citep{slee2015, malhotra2014dark}. 
+Critics charge that the primary competitive advantage of these platforms is their ability to duck costly regulations---regulations that protect third-parties.\footnote{
   For example, Dean Baker, in an opinion piece for the Guardian characterizes Airbnb and Uber as being primarily based on ``evading regulations and breaking the law.''
   ``Dont' buy the sharing economy hype: Airbnb and Uber are facilitating rip-offs.'', The Guardian, May 27th, 2014. Access online on January 19th, 2016.
   \url{http://www.theguardian.com/commentisfree/2014/may/27/airbnb-uber-taxes-regulation}. 
@@ -106,69 +110,74 @@ Critics charge that the primary competitive advantage of these platforms is thei
   \cite{cannon2014uber} offer a playbook for sharing economy companies to win over regulators, as well as contains some facts about the size and scope of the relevant firms.
 }   
 However, the counter-argument is often made that existing regulations were designed to solve market problems that these sharing economy platforms solve with better information provision and reputation systems \citep{koopman2014sharing}, making top-down regulation unnecessary.  
-A better understanding of these markets, and progress in resolving this policy debate requires an elucidation of what economic problem these markets address, why they are emerging and what their properties are likely to be in both the short- and long-runs. 
-Providing this elucidation is the goal this paper. 
+A better understanding of these markets, and progress in resolving this policy debate requires elucidating what economic problem these markets address, why they are emerging now and what their properties are likely to be in both the short- and long-runs. 
+This paper seeks to provide that elucidation. 
 
-Our first major question is why P2P rental markets are flourishing now.
+Our first major question is why P2P rental markets are a 21st century phenomena.
 The economic problem P2P rental markets are attempting to solve---under-utilization of durable goods---is hardly new.  
-We argue that although technological advances, such as the mass adoption of smart-phones and the falling cost of developing and running large web sites, while clearly important, only provide part of the story. 
+We argue that although technological advances, such as the mass adoption of smart-phones and the falling cost and rising capabilities of the Internet, while clearly important, only provide part of the story. 
 P2P rental markets rely heavily on the hard-won industry and academic experience in the design and management of online marketplaces.
-In particular, recommender systems and reputation systems, which emerged during the early days of electronic commerce, are relied on extensively in P2P rental markets.  
-This knowledge allows P2P rental platforms to overcome---or at least substantially ameliorate---market problems such as moral hazard and adverse selection.  
+In particular, recommender systems and reputation systems, which emerged during the early days of electronic commerce, are central to the function of P2P rental markets. 
+The knowledge so conveyed allows P2P rental platforms to overcome---or at least substantially ameliorate---market problems such as moral hazard and adverse selection.  
 We develop this argument in more depth and point out relevant works from the literature. 
 
 Our second major question is what are the economic properties of P2P rental markets. 
 For example, what determines the rental rate and the quantity exchanged in a P2P rental market? 
 How much total surplus is ``unlocked'' by the P2P rental market and how is it distributed? 
-How does the short-run rental rate---where existing owners rent to non-owners---differ from the long-run in which owners and non-owners alike can revise their ownership decision in light of the existence of a P2P rental market?
-Does overall ownership increase or decrease and who owns in the new equilibrium?
-When there are substantial bringing-to-market costs (such as labor, depreciation and transaction costs), who bears them and how does it affect the short- and long-run equilibria? 
+How does the short-run rental rate---where existing owners rent to non-owners---differ from the long-run in which owners and non-owners alike can revise their ownership decision in light of the presence of a P2P rental market?
+Does overall ownership increase or decrease and who owns what goods in the new equilibrium?
+When there are substantial BTM costs (such as labor, depreciation and transaction costs), who bears them and how does it affect the short- and long-run equilibria? 
 
 % Model description
 To address these questions, we develop a simple model in which consumers initialy decide whether to purchase a good based on their expected usage.
-We consider a case where there are owners and non-owners, with the owners using the good less than 100\% of the time and non-owners, while not purchasing the good, would use it some of the time if they owned the good. 
+We consider a case where there are owners and non-owners, with the owners using the good less than 100\% of the time and non-owners, while not purchasing the good, would use it some of the time if they did own it. 
 These owners and non-owners then trade with each other after some technological/entrepreneurial shock that creates a P2P rental market.
-The owners rent their unused capacity to non-owners, plus however much of the good becomes available because economize on their own usage to make more the good available for the rental market.
+The owners rent their unused capacity to non-owners.
+They also economize on their own usage to make more the good available for the rental market.
 
 While we assume a purchase price that splits consumers into owners and non-owners, other equilibria are possible, such as one where everyone owns the good.
 For a given set of consumer valuations, there is a range of product market prices that can support a short-run P2P rental market.
-The price has to be low enough that the high-types own (i.e., there is a product market in the good) in order to provide the supply, but not so low that everyone simply owns the good, in which case there is no demand.\footnote{
+The price has to be low enough that the high-types own (i.e., there is a product market in the good) in order to provide the supply, but not so low that everyone simply owns the good, in which case there is no rental demand.\footnote{
   Of course, in the long-run ownership decisions can be revised.
 }   
 
 After the P2P rental market emerges, owners and non-owners use the good as if they were renting the good at the market-clearing rental rate. 
 Renters do face the rental rate, while for owners, the possibility of rental creates a new opportunity cost for their own usage. 
 The rental rate is increasing in the valuation of the owners, which reduces supply, and the valuation of the renters, which increases demand. 
-The short-run rental market does not necessarily clear: if pre-P2P rental excess capacity exceeds demand, there is a glut. 
-In practice, the inherent transaction cost of bringing excess capacity to the market provides a price floor.     
+The short-run rental market does not necessarily clear: if pre-P2P rental unused capacity exceeds demand, there is a glut. 
+In practice, the inherent transaction cost of bringing excess capacity to the market provides an above zero price floor.
 
 In addition to the short-run, we consider a long-run where owners and renters alike can revise their ownership decisions. 
 If the short-run cost to rent the good 100\% of the time is below the purchase price, then ownership is less attractive, which will reduce \emph{purchase} demand for product, and vice versa. 
-In the long-run P2P rental market equilibrium in the absence of bringing-to-market costs, the purchase price equals the rental rate and owners and renters receive the same utility, decoupling individual preferences from ownership. 
+In the long-run P2P rental market equilibrium in the absence of BTM costs, the purchase price equals the rental rate (when normalizing the life of the good to 1).
+Owners and renters receive the same utility at the margin, decoupling individual preferences from ownership. 
 The model offers an intuitive test for whether total ownership will decrease in the long-run:
 ownership decreases if the short-run rental rate is below the purchase price. 
 
 Surplus increases in both the short and long-run P2P rental market equilibria.
 Although owners have less consumption, they are compensated with rental income that exceeds the utility loss. 
-The greatest gains in surplus are obtained when original non-owners value the good nearly as much as owners, suggesting that good where income explains ownership could offer the greatest increase in surplus. 
+The greatest gains in surplus are obtained when original non-owners value the good nearly as highly as owners, suggesting that goods where income (rather than taste or planned usage) explains ownership could offer the greatest increase in surplus. 
 The existence of a P2P rental market allows for a higher maximum price in the product market, as it can generate positive demand for a good at prices for which even high-types would not buy without the possibility of rental. 
 
-We also consider bringing-to-market costs.
+We also consider BTM (BTM) costs.
 These costs change the model outcomes is several important ways.
-First, if these costs are sufficiently high, no P2P rental market can exist.
-If the market can exist, the bringing-to-market costs raise the rental rate and lower the quantity of the good transacted in the market.
-However, bringing-to-market costs are not fully passed through in the rental rate.
-The presence of bringing-to-market costs changes the predictions about long-run ownership, in that consumers with a higher valuation of the good have a preference for owning.
-As in the short-run case, in the long-run there is incomplete pass through of the bringing-to-market costs, which implies that no party without consumption value from owning the good would find it profitable to compete in the rental market (though this result depends on there being no scale economy in renting). 
+First, if BTM costs are sufficiently high, no P2P rental market can exist.
+If the market can exist, the BTM costs raise the rental rate and lower the quantity of the good transacted in the market.
+However, BTM costs---being the equivalent of a per-unit sales tax---are not fully passed through in the rental rate.
+The presence of BTM costs changes the predictions about long-run ownership, in that consumers with a higher valuation now tilt towards ownership.
+Owners using the good for their own consumption still face normal depreciation, but they avoid some of the BTM costs such as extra cleaning, handing off keys, dealing with disputes and so on. 
+As in the short-run case, in the long-run there is incomplete pass through of the BTM costs.
+An implication of this finding is that the rental rate is lower than than purchase price (when the life of the good is 1).
+As such, a firm would find it unprofitable to buy the good solely to rent it out (though this result depends on there being no scale economy in renting). 
 
-In the model, we consider the possibility that different goods might differ in the cost required to bring them to market and how this affects the P2P rental market. 
-Some of these bringing-to-market costs are straightforward, such as labor, depreciation and complementary consumables.
+Of course, goods will differ in the cost of bringing them to market, and this affects the P2P rental market. 
+Some of these BTM costs are straightforward, such as labor, depreciation and complementary consumables.
 For example, driving with Uber requires your labor, puts additional miles on your car and consumes gas.
-However, another aspect that is relevant to bringing-to-market costs is how amenable a good is to ``temporal division'' and hence renting.
-For example, goods where usage can be planned for and easily adjusted are easier to rent out with little lost utility to the owner. 
+However, another aspect that is relevant to BTM costs is how amenable a good is to ``temporal division'' and hence renting.
+For example, goods where usage can be planned for and easily adjusted are easier to rent out with little loss in utility to the owner. 
 Similarly, goods that are used in large chunks of time---with no use in between---are more amenable to rental than goods that have usage broken up into many small chunks of time.
 
-Our third and final question is how the usage patterns for different goods is likely to affect bringing-to-market costs.
+Our third and final question is how the usage patterns for different goods is likely to affect BTM costs.
 To do this, a convenience sample of consumers were asked a series of questions about a good (e.g., a BBQ grill) such as whether they own one, whether they have lent it out or borrowed it and, how much they do or would use it (depending on ownership). 
 If they do not own it, they were asked why. 
 We also asked questions about how the good in question is characteristically used, focusing on how predictable that usage is and the typical size of usage ``chunks.'' . 
@@ -178,14 +187,15 @@ We selected a number of goods and encouraged respondents to answer our questions
 Our main findings are that for only a small number of goods (e.g., vacation homes) is income important in determining ownership. 
 For other goods, planned usage was the primary driver, supporting our basic modeling framework.  
 Looking across the population, goods that are owned more frequently are rented less frequently, with the notable exception of cars.
-There is also a strong correlation between goods have predictable usage (``you know when you are going to use it'') and the good being used in large chunks of time.
-This is useful for a P2P rental market, as it means a larger class of goods is likely to have lower bringing-to-market costs.  
-The survey results suggest that an important component of bringing-to-market costs are the ease with which usage can be shifted around in time and the size of typical usage sessions.
+There is also a strong correlation between goods that have predictable usage (``you know when you are going to use it'') and the good being used in large chunks of time.
+This is useful for a P2P rental market, because it implies that a larger class of goods are likely to have lower BTM costs for rental.  
+The survey results suggest that important components of BTM costs are the ease with which usage can be shifted around in time and the size of typical usage sessions.
 
-We conclude with some thoughts on how P2P rental markets might evolve.
+The sharing economy is a relatively recent phenomena.
+Thus we conclude with some thoughts on how P2P rental markets might evolve.
 Our analysis focuses on a single homogeneous good, but a key advantage of P2P rental markets might be in facilitating greater diversity in goods offered and consumed. 
-In addition to whatever direct utility this diversification provides, it might also increase the stock of people with direct experience with a particular good, which combined with the continued proliferation of consumer-generated reviews and ratings might stimulate quality improvements. 
-In that same vein, we also discuss how the producers of goods might do more than simply improve quality, but also explictly modify the goods to make them more or less amenable to rental, depending on their own market power. 
+Beyond the direct utility this diversification provides, it might also increase the stock of people with direct experience with a particular good, which combined with the continued proliferation of consumer-generated reviews and ratings might stimulate quality improvements. 
+In that same vein, we also discuss how the producers of goods might do more than simply improve quality, but also explictly modify the goods to make them more or less amenable to rental.
 
 \section{Related work on modeling and quantifying the sharing economy}
 
@@ -351,13 +361,13 @@ The possibility of sharing a good is similar in spirit to \cite{varian2000}.
 Varian in particular discusses---in the context of information goods---how planned usage affects the rent-versus-own decision. 
 
 We first consider what happens when the possibility of P2P rental emerges, which allows the existing pool of owners to rent to non-owners. 
-First, we assume that there are no bringing-to-market costs (such as labor and transaction costs).
+First, we assume that there are no BTM costs (such as labor and transaction costs).
 We determine the equilibrium rental rate, the quantity transacted and the change in consumer surplus. 
-Next we introduce bringing-to-market costs and see how this changes the short-run equilibrium and whether a P2P rental market can emerge. 
+Next we introduce BTM costs and see how this changes the short-run equilibrium and whether a P2P rental market can emerge. 
 
 We then turn our attention to the long-run case, where owners and non-owners can revise their ownership decisions.
-First we derive the equilibrium without any bringing-to-market costs and derive who owns in equilibrium and what happens to total ownership.
-Then we perform the same analysis but assume non-zero bringing-to-market costs. 
+First we derive the equilibrium without any BTM costs and derive who owns in equilibrium and what happens to total ownership.
+Then we perform the same analysis but assume non-zero BTM costs. 
 
 \subsection{Consumer decision about ownership based on expected usage}  
 Every consumer has a unit of time to allocate to various activities, some of which involve using a good.  
@@ -607,10 +617,10 @@ As we know the equilibrium rental rate from Equation~\ref{eq:strr}, we can write
 which means the total surplus is equal to surplus obtainable when everyone consumes their preferred amount of the good when facing no marginal cost, minus the square of the difference in how much is demanded when there is no rental rate, $(1-\theta)\alpha_L$, and how much would be supplied when there is no rental rate, $\theta (1-\alpha_H)$.
 The greatest social surplus is ``unlocked'' by the emergence of the P2P rental market when non-owners are numerous and have a relatively high valuation. 
 
-\subsection{Bringing-to-market costs: labor, capital depreciation and transaction costs}
+\subsection{BTM costs: labor, capital depreciation and transaction costs}
 
 So far, we have assumed that owners can provide their unused capacity to the market at now cost. 
-Now we assume that the owner of the good must pay a bringing-to-market cost. 
+Now we assume that the owner of the good must pay a BTM cost. 
 This could be the cost of labor for a good that requires a labor input, such as in the case of driving with Uber or cleaning up an apartment when hosting on Airbnb;
 it also includes depreciation from additional usage as well as the conventional transaction costs inherent in finding trading partners, coming to terms, handing off the good and so on.  
 
@@ -619,11 +629,11 @@ Let that cost on a per-unit basis be $\gamma$.
 The owner's return is to renting on the P2P rental market is now just $r - \gamma$ and so $x_H(r) = \alpha_H - (r - \gamma)/2$.
 As we might intuit, this cost raises the rental rate and lowers the transaction volume. 
 
-Market clearing with bringing-to-market costs (BMC) now requires that 
+Market clearing with BTM costs now requires that 
 \begin{align}
   \theta (1 - (\alpha_H - (r-\gamma)/2)) = (1-\theta)(\alpha_L - r/2).
 \end{align}
-The new market-clearing rental rate is simply the rental rate when there are no bringing-to-market costs (from Equation~\ref{eq:strr}) plus the per-unit transaction cost scaled by the the size of supply side of the market, or  
+The new market-clearing rental rate is simply the rental rate when there are no BTM costs (from Equation~\ref{eq:strr}) plus the per-unit transaction cost scaled by the the size of supply side of the market, or  
 \begin{align} \label{eq:rental_rate_sr_bmc}
   r_{BMC} = r_{\gamma = 0} + \gamma \theta. 
 \end{align}
@@ -634,18 +644,18 @@ The quantity of the good exchanged is
 \begin{align} \label{eq:qty_gamma}
   Q_{BMC} = Q_{\gamma = 0} - \frac{1}{2} \gamma \theta (1-\theta)
 \end{align} 
-where $Q_{\gamma = 0}$, which is the equilibrium quantity when there are no bringing-to-market costs.
+where $Q_{\gamma = 0}$, which is the equilibrium quantity when there are no BTM costs.
 This quantity is defined in Equation~\ref{eq:qty}. 
 
-\subsection{Bringing-to-market costs and existence of the P2P rental market}
-If bringing-to-market costs are sufficiently high, then no P2P rental market will exist. 
-The highest possibility bringing-to-market cost that will still support a P2P rental market is 
+\subsection{BTM costs and existence of the P2P rental market}
+If BTM costs are sufficiently high, then no P2P rental market will exist. 
+The highest possibility BTM cost that will still support a P2P rental market is 
 \begin{align} 
   \bar{\gamma} = 2(1-\alpha_H + \alpha_L). 
 \end{align}
 This condition comes from the requirement that  $r < 2 \alpha_L$, otherwise the cost of consuming any of the good for a non-owner exceeds the marginal utility. 
 As a check, note that when $\gamma = \bar{\gamma}$, from Equation~\ref{eq:qty_gamma} implies that $Q_{BMC} = 0$.
-There is no P2P rental market when the reduced transaction volume from the bringing-to-market costs equals the amount that would be supplied in equilibrium in the absence of those costs. 
+There is no P2P rental market when the reduced transaction volume from the BTM costs equals the amount that would be supplied in equilibrium in the absence of those costs. 
 
 %% \subsection{Platform's incentive to reduce transaction costs}
 %% The total transaction volume in the P2P rental market is $Q_{BMC} r_{BMC}$.
@@ -671,8 +681,8 @@ There is no P2P rental market when the reduced transaction volume from the bring
 %%   \frac{\partial S}{\partial \gamma} = (1 - \theta)\alpha_L^2 - \frac{(r - \gamma)^2}{4}
 %% \end{align} 
 
-\subsection{Long-run P2P rental equilibrium without bringing-to-market costs} 
-Returning to the case where we assume bringing-to-market costs are zero, we now consider what happens in the long-run, when can revise their ownership decisions. 
+\subsection{Long-run P2P rental equilibrium without BTM costs} 
+Returning to the case where we assume BTM costs are zero, we now consider what happens in the long-run, when can revise their ownership decisions. 
 In the long-run, the utility from owning is 
 \begin{align}
 v^{OWN}_i = 2\alpha_i x_i - x_i^2 + (1-x_i)r_{LR} - p,   
@@ -794,39 +804,39 @@ V_{LR} - V_{NS} = \frac{p\theta}{4}(4 + p - 4 \alpha_H) + \frac{1-\theta}{4}(p -
 \end{align}
 The second term is clearly positive and the first time is as well, since $alpha_H < 1$, and so the P2P rental market increases the social surplus in the long-run in the absence of product market price changes. 
 
-\subsection{Long-run P2P rental market equilibrium with bringing-to-market costs}
-Now we consider the same long-run outcome, but assume non-zero bringing-to-market costs.
+\subsection{Long-run P2P rental market equilibrium with BTM costs}
+Now we consider the same long-run outcome, but assume non-zero BTM costs.
 When we do this, the difference in the returns to owning verus renting for an individual with utility parameter $\alpha_i$  is 
 \begin{align}
   v^{OWN} - v^{RENT} = r - p - \frac{r\gamma}{2} + \gamma \left( \frac{\alpha_i - 1 - \gamma}{4} \right). 
 \end{align}
 As we would expect,$v^{OWN} - v^{RENT} = r - p$ if $\gamma = 0$. 
-Note, however, unlike in the case with no bringing-to-market costs, $v^{OWN} - v^{RENT}$ is larger for the high-types than the low-types because of the $\alpha_i$ term appearing in the difference.
+Note, however, unlike in the case with no BTM costs, $v^{OWN} - v^{RENT}$ is larger for the high-types than the low-types because of the $\alpha_i$ term appearing in the difference.
 This implies that high-types would find ownership relatively more attractive.
-The economic intuition is that because a high-type wants to use the good more than a low-type, it is more attractive to use you own good rather than a rented good, which has the bringing-to-market costs incorporated into the rental rate. 
+The economic intuition is that because a high-type wants to use the good more than a low-type, it is more attractive to use you own good rather than a rented good, which has the BTM costs incorporated into the rental rate. 
 
-There are two possible equilibria long-run with when we include bringing-to-market costs:
+There are two possible equilibria long-run with when we include BTM costs:
 (1) some of the high-types choose to rent 
 (2) some of the low-type choose to own. 
 For the the first equilibria, total ownership goes down relative to the pre-P2P rental market case (as some owners are now renting), and vice versa for the second equilibrium. 
 
 First, we note the $r \le p + \gamma$, as otherwise someone could buy a good and then profitably rent all of it in the rental market.
-A natural question is whether the long-run equilibria with the bringing-to-market-costs included is analogous to the $p = r_{LR}$ result from Equation~\ref{eq:lr_eq_r}, i.e., is $r_{LR} = p + \gamma$? 
-In other words, do the bringing-to-market costs get full incorporated into the rental rate?
-They do not, as was the case with the bringing-to-market costs in the short-run P2P rental market (recall Equation~\ref{eq:rental_rate_sr_bmc}). 
+A natural question is whether the long-run equilibria with the BTM-costs included is analogous to the $p = r_{LR}$ result from Equation~\ref{eq:lr_eq_r}, i.e., is $r_{LR} = p + \gamma$? 
+In other words, do the BTM costs get full incorporated into the rental rate?
+They do not, as was the case with the BTM costs in the short-run P2P rental market (recall Equation~\ref{eq:rental_rate_sr_bmc}). 
 
 In Equilibrium (1), if $r_{LR} = p + \gamma$,  then high-type owners would consume $x = \alpha_H - p/2$ and high-type renters would choose $\alpha_H - (p + \gamma)/2$.
 The utility of the high-type owners would be $v_H^{OWN} = \frac{1}{4}(p - 2\alpha_H)^2$, while the utility of the high-type non-owners would be $v_H^{RENT} = \frac{1}{4} \left(p - 2\alpha_H + \gamma \right)^2$.
 Note that by assumption, $\alpha_H^2 > p$, which implies that $2 \alpha > p$ (recall that $\alpha < 1$) and that $p - 2\alpha < 0$.
 As $\gamma > 0$, $(p - 2\alpha_H)^2 > (p - 2\alpha_H + \gamma)^2$ and so $v_H^{OWN} > v_H^{RENT}$ if $r = p + \gamma$, and so we conclude that for high-types to be indifferent, $r < p + \gamma$.
-In the presence of bringing-to-market costs, a firm that bought the good solely to rent would not just earn no profits (as in the no bringing-to-markets cost case) but would instead suffer a loss. 
+In the presence of BTM costs, a firm that bought the good solely to rent would not just earn no profits (as in the no BTMs cost case) but would instead suffer a loss. 
 
 Now consider Equilibrium (2) in which some of the low-types own.
 Recall for low-types to demand any of the good in the P2P rental market, $2\alpha_L > r$. 
 Then $2\alpha_L > p + \gamma$ and thus $2\alpha_L > p$.
 If $r = p + \gamma$, then the utility of low-type owners would be $v_L^{OWN} = \frac{1}{4}(p - 2\alpha_L)^2$ and $v_L^{RENT} = \frac{1}{4}(p - 2\alpha_L + \gamma)^2$, and by the same argument from the Equilibrium (1) case, $v_L^{OWN} > v_L^{RENT}$. 
 
-The argument that the long-run P2P rental market rate does not full pass through the bringing-to-market costs becomes more intuitive if we consider $\gamma$ to be a kind of ``tax'' and so long as neither side is completely elastic, the incidence of the tax will not be wholly on the demand side (as would be the case if $r = p + \gamma$). 
+The argument that the long-run P2P rental market rate does not full pass through the BTM costs becomes more intuitive if we consider $\gamma$ to be a kind of ``tax'' and so long as neither side is completely elastic, the incidence of the tax will not be wholly on the demand side (as would be the case if $r = p + \gamma$). 
 On the question of elasticity, \cite{cullen2014outsourcing} uses data from TaskRabbit to show that workers in these platforms are highly elastic, with demand shocks met by large increases in hours-worked.
 Although TaskRabbit is more of a pure labor platform than, say, UberX or Airbnb, if the suppliers in other P2P rental markets are similar, it suggests that the supply side of the market would be able to pass through much of their costs. 
 
@@ -835,8 +845,8 @@ Although TaskRabbit is more of a pure labor platform than, say, UberX or Airbnb,
 Although we have assumed that costs are proportional to the amount of the good rented and constant, other assumptions are quite plausible.
 While we do not pursue the implications of these assumptions formally, it is useful to consider the economic import of various types of cost structures.
 First, any fixed cost to renting would tend to create an economy of scale that would tend to favor those with lots of capacity to sell on the rental market.
-When there were no bringing-to-market costs, ownership did not matter;
-when we assumed bringing-to-market costs, ownership was tiled towards those placing a high value on their own consumption.
+When there were no BTM costs, ownership did not matter;
+when we assumed BTM costs, ownership was tiled towards those placing a high value on their own consumption.
 In the presence of fixed costs, ownership would tilt back towards those that do not value their own consumption i.e., traditional rental firms. 
 
 We have assumed costs are homogeneous for all sellers in the P2P rental market and homogeneous.
@@ -848,13 +858,13 @@ when rental rates go up, more owners of the good are pulled into the market.
 
 \section{The attributes of goods and the feasibility of renting}
 
-In the model, the purchase price, the valuation of non-owners and non-owners, the size of the pool of owners and non-owners, and the bringing-to-market costs of a good all affected whether a P2P rental market was possible.
+In the model, the purchase price, the valuation of non-owners and non-owners, the size of the pool of owners and non-owners, and the BTM costs of a good all affected whether a P2P rental market was possible.
 And if was possible, these parameters affected the markets characteristics in both the short- and long-runs. 
 In this section, we attempt to provide data on the attributes of some of these goods as a test of our modeling assumptions and predictions.  
 
 Goods that are commonly rented now are expensive, durable goods that are used infrequently but whose usage can be planned in advance.
 Examples include cars and hotels in distant cities, tuxedos, certain kinds of specialty tools (e.g., rototillers, carpet shampooers) and so on.
-In the language of our model, these are goods with high $p$, broad-based appeal (meaning a large pool of non-owners with a non-zero $\alpha$) and a sufficiently low bringing-to-market cost, or low $\gamma$.
+In the language of our model, these are goods with high $p$, broad-based appeal (meaning a large pool of non-owners with a non-zero $\alpha$) and a sufficiently low BTM cost, or low $\gamma$.
 
 The conditions necessary for the P2P rental market are similar, except that we also need a stock of owners and non-owners. 
 When product market prices are so low that nearly everyone buys the product, no P2P rental market can exist, even when total usage is low and the good is durable.
@@ -906,7 +916,7 @@ The phrase ``airbnb for dogs'' likely means kennel space and dog boarding, not r
 To move beyond the casual empiricism of considering what P2P rental markets might exist (or not) for various goods, we conducted a consumer survey on Amazon Mechanical Turk. 
 The model and the survey are designed to complement each other in two ways. 
 First, the survey helps justify some of the modeling conventions, such as making planned usage the primary explanation for the pattern of ownership rather than a taste for ownership or wealth. 
-Second, the survey offers a partial decomposition of the bringing-to-market costs. 
+Second, the survey offers a partial decomposition of the BTM costs. 
 
 \subsection{Main empirical results}
 We find strong evidence that respondents who predicted that they would use a good more are more likely to own that good.
@@ -1462,7 +1472,7 @@ U^{RENT}_H = q_h \mathbf{E}[v - r | v > r].
 
 
 For the first case, high-types have to be indifferent between owning and renting.
-With bringing-to-market costs, high-type owners have more consumption than high-type owners, as owners face a marginal cost of $r-\gamma$, while non-owners face the full $r$.
+With BTM costs, high-type owners have more consumption than high-type owners, as owners face a marginal cost of $r-\gamma$, while non-owners face the full $r$.
 As high-type renters are renting from high-type owners, for the renters to stay indifferent, they have to get passed a transfer equal to the cost of foregone consumption.
 
 High-type owners get $\alpha_H^2 - (r-\gamma)^2/4$ in consumption utility, while renters get $\alpha_H^2 - r^2/4$.
