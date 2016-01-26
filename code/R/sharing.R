@@ -29,7 +29,7 @@ SHOW.PLOTS <- FALSE
 #
 # Authors:
 # Date Clean-up/ETL/Summary Stats: Alexander Gedranovich
-# Statistical Analysis: John Horton 
+# Statistical Analysis: John Horton  
 # Created: 2014-09-25
 #
 # Code style follows 'Google R Style Guide'
@@ -40,8 +40,8 @@ SHOW.PLOTS <- FALSE
 
 # Libraries
 library(tidyr)
-library(plyr)
 library(dplyr)
+library(plyr)
 library(ggplot2)
 library(stringr)
 library(data.table)
@@ -51,6 +51,7 @@ library(scales)
 library(Hmisc)
 library(lfe)
 library(Hmisc)
+library(ggrepel)
 
 library(JJHmisc) # non-cran resource 
 
@@ -327,24 +328,58 @@ For the full list of goods and the survey language, see Appendix~\\ref{sec:surve
 
 #install.packages("ggrepel")
 
-library(ggrepel)
+
+
+
+short.list <- c("BBQ Grill" = "BBQ",
+                "a men's suit" = "suit",
+                "back-up electric generator" = "back-up gen",
+                "blender",
+                "canoe",
+                "car",
+                "cat carrier (for transporting cats)" = "cat carrier",
+                "cordless power drill" = "drill",
+                "diamond necklace" = "necklace",
+                "food processor" = "food processor", 
+                "hammer",
+                "high-end audio headphones" = "headphones",
+                "high-end digitial camera" = "camera", 
+                "iPad or tablet" = "iPad",
+                "jet ski",
+                "kid's bouncy castle" = "bouncy castle",
+                "kitchen timer (or egg timer)" = "egg timer", 
+                "mountain bike" = "mt. bike",
+                "pick-up truck" = "pick-up",
+                "portable air conditioner" = "AC", 
+                "push lawnmower",
+                "RO lawnmower",
+                "sewing machine",
+                "toothbrush", 
+                "tuxedo",
+                "vacation home")
+
+break.list <- c(0.0, 0.05, 0.10, 0.25, 0.50, 0.75, 1.0)
 
 g.scatter <- ggplot(data = df.cs, aes(own.frac, rent.frac)) +
     geom_point() +
-    #geom_text(aes(label = input.good)) +
-    geom_text_repel(aes(label = input.good)) + 
-    scale_x_sqrt(label = percent) +
-    scale_y_sqrt(label = percent) +
-    theme_bw() +
+        scale_x_sqrt(label = percent, breaks = break.list) +
+            scale_y_sqrt(label = percent, breaks = break.list) +
+                geom_label_repel(data = df.cs %>% mutate(input.good = revalue(input.good, short.list)),
+                                 aes(label = input.good), force = 4, max.iter = 1000) + 
+        theme_bw() + 
     xlab("Fraction Owning") +
     ylab("Fraction Renting")
+
+
+#with(df.cs, revalue(input.good, ))
 
 print(g.scatter)
 
 if (interactive() && SHOW.PLOTS){
     print(g.scatter)
 }
-writeImage(g.scatter, "raw_scatter_rent_v_own", width = 7, height = 7)
+
+writeImage(g.scatter, "scatter_rent_v_own", width = 9, height = 4)
 
 #---------------------------
 #  Ownership by income bands
@@ -436,6 +471,8 @@ m.1 <- felm(own ~  log(x.t) | input.good | 0 | input.good, data = df.realistic)
 m.2 <- felm(own ~  log(x.t) + log(y) | input.good | 0 | input.good, data = df.realistic)
 m.3 <- felm(own ~  log(x.t) | input.good + worker.id | 0 | input.good, data = df.realistic)
 
+ggplot(data = df.realistic, aes(x = log(x.t), colour = own, linetype = own)) + geom_density() + facet_wrap(~input.good)
+
 out.file <- "../../writeup/tables/ownership.tex"
 s <- stargazer(m.1,  m.2, m.3, 
                title = "Respondent estimates of the fraction of time spent using a good and whether they own that good",
@@ -444,6 +481,7 @@ s <- stargazer(m.1,  m.2, m.3,
                font.size = "footnotesize",
                omit.stat = c("aic", "f", "adj.rsq", "bic", "ser"),
                no.space = TRUE,
+               digits = 4, 
                add.lines = list(c(
                    "Good FE",
                    "\\multicolumn{1}{c}{Y}",
@@ -540,9 +578,9 @@ g.scatter <- ggplot(data = df.gran,
                     aes(x = mean.gran.index,
                         y = mean.predict.index)
                     ) + geom_point() +
-    geom_text_repel(aes(label = input.good)) +
+    geom_label_repel(aes(label = input.good), force = 2, max.iter = 10000) +
+        ylab("Mean unpredictability score") +
         xlab("Mean chunkiness score") +
-        ylab("Mean chunkiness index") +
         theme_bw()
 
 print(g.scatter)
@@ -550,9 +588,10 @@ print(g.scatter)
 if (interactive() && SHOW.PLOTS){
     print(g.scatter)
 }
-writeImage(g.scatter, "raw_granularity_versus_predictability",
-           width = 7,
-           height = 7)
+
+writeImage(g.scatter, "granularity_versus_predictability",
+           width = 8.0,
+           height = 6.0)
 
 # Granularity by item-----------------------------------------------------------
 
@@ -568,6 +607,7 @@ g.gran <- ggplot(data = df.gran, aes(x = input.good, y = mean.gran.index)) +
 if (interactive() & SHOW.PLOTS){
     print(g.gran)
 }
+
 writeImage(g.gran, "granularity", width = 7, height = 4)
 
 
@@ -626,11 +666,25 @@ writeImage(g.reasons, "reasons_raw", width = 4.5, height = 5)
 
 
 #' Modified version
-
 df.no.own <- data.table(subset(df, !is.na(answer.no_own_reason) & answer.no_own_reason != "space"))
 
+library(dplyr)
+
+## df.tmp <- df %>% group_by(input.good) %>%
+##     mutate(frac.not.owning = mean(!is.na(answer.no_own_reason))) %>%
+##     ungroup() %>% 
+##     filter(!is.na(answer.no_own_reason) & answer.no_own_reason != "space") %>%
+##     group_by(input.good) %>%
+##     summarise(frac.not.owning = frac.not.owning[1],
+##               num.obs = dplyr::n(),
+##               frac.income = mean(answer.no_own_reason = "expensive"),
+##               frac.use = mean(answer.no_own_reason = "little_use")
+##     ) %>% ungroup()
+
+                         
 df.no.own.summary <- df.no.own[, list(
-    num.obs = .N, 
+    num.obs = .N,
+    num.income = sum(answer.no_own_reason == "expensive"), 
     frac.income = mean(answer.no_own_reason == "expensive"),
     frac.use = mean(answer.no_own_reason == "little_use")), by = list(input.good)]
 
@@ -642,9 +696,31 @@ g.reasons <- ggplot(data = subset(df.no.own.summary, num.obs > 7),  aes(x = frac
     ylab("Fraction non-owners citing usage") +
     geom_abline(intercept = 1, slope = -1)
 
-print(g.reasons)
 
-writeImage(g.reasons, "reasons_raw_2", width = 8, height = 8)
+library(magrittr)
+
+df.tmp <- df.no.own.summary %>% filter(num.obs > 7) 
+df.tmp$input.good <- with(df.tmp, reorder(input.good, frac.income, mean))
+
+# lower = Hmisc::binconf(sum(own), .N)[2],
+
+df.tmp <- df.tmp %>% cbind(with(df.tmp, Hmisc::binconf(num.income, num.obs)) %>% as.data.frame)
+                
+
+g.reasons <- ggplot(data = df.tmp,
+       aes(y = input.good, x = frac.income)) +
+           geom_point() +
+               geom_errorbarh(aes(xmin = Lower, xmax = Upper), height = 0, colour = "grey") + 
+               theme_bw() +
+                   scale_x_continuous(label = scales::percent) +
+                       xlab("Fraction citing income = (1 - Fraction citing usage)") +
+                           ylab("")
+
+writeImage(g.reasons, "reasons", width = 6, height = 3)
+
+
+#print(g.reasons)
+#writeImage(g.reasons, "reasons_raw_2", width = 8, height = 4)
 
 
 

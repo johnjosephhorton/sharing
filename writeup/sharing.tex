@@ -100,7 +100,7 @@ In contrast, these peer-to-peer (P2P) rental markets are open markets, and the g
 Perhaps the most prominent example of a P2P rental market is Airbnb, which enables individuals to rent out spare bedrooms, apartments, or even entire homes. 
 Airbnb and platforms like it have been heralded by many, as they they promise to expand access to goods, diversify individual consumption, bolster efficiency by increasing asset utilization, and provide income to owners \citep{sundararajan2013zipcar, edelman2015efficiencies, botsman2010s}.
 The business interest in these platforms has been intense; Airbnb alone has attracted nearly \$800 million in venture capital investment\footnote{\href{http://www.crunchbase.com/organization/airbnb}{http://www.crunchbase.com/organization/airbnb}}
-Companies organizing sharing markets have also attracted policy interest, much of it negative \citep{slee2015, malhotra2014dark, avital2015sharing}. 
+Companies organizing sharing markets have also attracted policy interest, much of it negative \citep{slee2015, malhotra2014dark, avital2015}. 
 Critics charge that the primary competitive advantage of these platforms is their ability to duck costly regulations---regulations that protect third-parties.\footnote{
   For example, Dean Baker, in an opinion piece for the Guardian characterizes Airbnb and Uber as being primarily based on ``evading regulations and breaking the law.''
   ``Don't buy the sharing economy hype: Airbnb and Uber are facilitating rip-offs.'', The Guardian, May 27th, 2014. Access online on January 19th, 2016.
@@ -286,7 +286,8 @@ Individuals lack the resources of firms that have historically dominated rental 
 For example, individuals lack marketing budgets and expertise, ways of accepting payments that are convenient for customers, standard contracts and procedures to draw upon, well-adapted insurance products, procedures and facilities for re-setting goods after use, and so on.\footnote{
   As it is, even ostensibly ``peer'' platforms do seem to tilt towards quasi-firms that can reap economies of scale or enjoy other firm benefits.
   For example, there are Uber drivers that manage fleets of vehicles and Airbnb ``hosts'' with multiple properties. 
-  }
+}
+Individual sellers lack brands, which have proven highly relevant in cases even when quality differences are nonexistent \citep{bronnenberg2014pharmacists}; in cases where goods truly are heterogeneous, a lack of a market reputation might completely foreclose the possibility of trade.  
 For P2P rental markets to draw in individual owners, the platform must find ways to fill in these gaps and give owners firm-like resources. 
 Given both the lack of firm-like resources and the inherent information problems of rental markets, consumer-owned goods have historically just been shared only between family members, neighbors and friends rather than strangers, except when the potential gains from trade are quite large (such as in the example of vacation homes and boat rentals). 
 
@@ -312,8 +313,9 @@ Online markets in general lack many of the market-thickening coordination mechan
 To compensate for the lack of geography and time as a coordinating mechanism, online marketplaces create taxonomies and extensively classify goods.
 A complementary approach is to make extensive use of search algorithms and recommendation systems \citep{resnick1997recommender, adomavicius2005toward}.
 These kinds of approaches are particularly important in P2P rental markets because the goods being rented are often highly differentiated (such as apartments), as are consumer preferences, making matching more important.\footnote{
-  \cite{dinerstein2014consumer} uses data from eBay to highlight the difficulties in creating search and ranking algorithms for differentiated products where price is only one dimension.
-  They show examples where limiting choice might be pro-competitive.
+  \cite{dinerstein2014consumer} uses data from eBay to highlight the difficulties in creating search and ranking algorithms for differentiated products where price is only one dimension of interest; they show examples where limiting choice might be pro-competitive.
+  There is an increasing understanding of how individuals do search online: 
+  \cite{de2012testing} use detailed web browsing data to show that customers rely more on a fixed sample size search strategy rather than sequential search.  
 }
 P2P rental market platforms continue to invest heavily in research designed to improve matching, some of it in collaboration with researchers. 
 For example, \cite{fradkin2013search} shows how personalized recommendations could improve match rates by 10\%. 
@@ -339,7 +341,8 @@ Platforms enjoy scale economies for many costly tasks compared to individual own
 For example, they handle credit card payments. 
 They create tools for ``self-serve'' marketing (such as through attractive profile pages) and through general platform marketing to bring renters to the platform. 
 They also create software tools that let owners manage their availability, learn about the attributes of potential renters, and so on.\footnote{
-  Both \cite{horton2014misdirected} and \cite{fradkin2013search} consider the role played by platforms in overcoming search frictions related to buyers trying to match with unavailable sellers---Fradkin in the case of Airbnb and Horton in the case of oDesk/Upwork. 
+  Both \cite{horton2014misdirected} and \cite{fradkin2013search} consider the role played by platforms in overcoming search frictions related to buyers trying to match with unavailable sellers---Fradkin in the case of Airbnb and Horton in the case of oDesk/Upwork.
+  In the context of online dating sites, \cite{hitsch2010matching} present evidence that the realized matches are \emph{close} to what the Gale-Shapley algorithm would deliver, based on their estimates of underlying preferences.
 }
 
 In addition to the nuts-and-bolts issues of running online marketplaces, there have also been considerable advances in the understanding of the business models used by two-sided marketplaces more generally. 
@@ -662,7 +665,7 @@ The quantity of the good exchanged is
 where $Q_{\gamma = 0}$, which is the equilibrium quantity when there are no BTM costs.
 This quantity is defined in (~\ref{eq:qty}). 
 
-\subsection{BTM costs and existence of the P2P rental market}
+\subsection{Bringing-to-market costs and existence of the peer-to-peer rental market}
 If BTM costs are sufficiently high, then no P2P rental market will exist. 
 The highest possible BTM cost that will still support a P2P rental market is 
 \begin{align} 
@@ -696,7 +699,7 @@ There is no P2P rental market when the reduced transaction volume from the BTM c
 %%   \frac{\partial S}{\partial \gamma} = (1 - \theta)\alpha_L^2 - \frac{(r - \gamma)^2}{4}
 %% \end{align} 
 
-\subsection{Revised ownership without BTM costs}
+\subsection{Revised ownership without bringing-to-market costs}
 We now consider what happens in the longrun, when owners and non-owners can revise their ownership decisions.
 For expositional ease, we will posit once again that BTM costs are zero. 
 With this assumption, the long-run utility from owning is 
@@ -1008,15 +1011,22 @@ However, for the goods we surveyed, explanations for non-ownership are strongly 
 
 \begin{figure}
 \centering 
-\caption{Fraction of non-owners citing usage versus fraction citing income as the reason for ownership decision} 
+\caption{Fraction of non-owners citing income as the reason (rather than usage) for not owning a good} 
 \label{fig:reasons}
-\begin{minipage}{0.60 \linewidth}
-\includegraphics[width = \linewidth]{./plots/reasons_for_nonownership.pdf} 
+\begin{minipage}{0.9 \linewidth}
+    \includegraphics[width = \linewidth]{./plots/reasons.pdf} \\
+    {\footnotesize
+  \emph{Notes:} This figure plots the fraction of non-owners for each good citing income, among those that cited either income or usage as the reason for non-ownership.
+  Only good with seven or more non-owners are included.
+  Each point estimate is contained within a 95\% CI calculated using the Wilson method \citep{wilson1927}. 
+  }
 \end{minipage} 
 \end{figure} 
 
 Non-owners were asked for the primary reason for not owning a good and could cite usage (``We wouldn't use it enough to justify the purchase price''), income  (``We would use it, but we simply do not have the money'') or space (``We don't have space for this item.'').
-Space was not frequently cited, and so in Figure~\ref{fig:reasons}, we plot the per-good fractions citing usage versus income among those that cited either income or usage and for which the good in question had seven or more non-owners. 
+In Figure~\ref{fig:reasons}, we plot the per-good percentage of non-owners citing income as the reason for non-ownership (out of non-owners that cited either income or usage---very few cited space).
+By construction, the fraction citing income is 1 minus the fraction citing usage. 
+The sample is limited to goods that had seven or more non-owners. 
 There are some goods for which income was not cited at all (e.g., sewing machine, tuxedo, canoe), and several others where usage was overwhelmingly more likely to be cited.
 The only goods where a larger fraction of respondents cited income rather than usage were high-end headphones and vacation homes. 
 
@@ -1035,13 +1045,17 @@ In contrast, a tuxedo scores low on both measures---it is used for a substantial
 \begin{figure}
 \centering 
 \caption{Usage predictability versus chunkiness \label{fig:granularity_v_predictability}}
-\begin{minipage}{0.60 \linewidth}
-\includegraphics[width = \linewidth]{./plots/granularity_versus_predictability.pdf} 
-\emph{Notes:} Scatter plot showing mean predictability versus chunkiness. 
+\begin{minipage}{0.90 \linewidth}
+  \includegraphics[width = \linewidth]{./plots/granularity_versus_predictability.pdf} \\
+  {\footnotesize 
+    \emph{Notes:} This figure plots each good's mean unpredictability score versus that same good's mean chunkiness score.
+    These scores are calculated by normalizing the 1-5 scores across all goods and all respondents. 
+   }
 \end{minipage} 
 \end{figure} 
 
-For each good, respondents were asked to rate the unpredictability of usage on a 1-5 scale (1 was highly predictable and 5 was highly unpredictable) as well as chunkiness (1 was one big chunk--- and 5 was low chunkiness---lots of little chunks).  
+For each good, respondents were asked to rate the unpredictability of usage on a 1-5 scale (1 was highly predictable and 5 was highly unpredictable) as well as chunkiness (1 was one big chunk--- and 5 was low chunkiness---lots of little chunks).
+We then normalized responses across all goods to create unpredictability and chunkiness scores. 
 Figure~\ref{fig:granularity_v_predictability} plots the mean unpredictability score against the mean chunkiness score. 
 It shows a strong relationship between chunkiness and predictability, with two notable outliers: the toothbrush and the generator. 
 A toothbrush is used in small chunks (2 minutes according to the ADA) and its usage is highly predictable (after every meal, if ADA prescriptions are followed).
@@ -1088,18 +1102,21 @@ Cars show a high level of both ownership and rental.
 
 \begin{figure}
 \centering 
-\caption{Fraction renting versus fraction owning \label{fig:scatter} }
-\begin{minipage}{0.60 \linewidth}
+\caption{Fraction of respondents reporting have rented a good versus fraction reporting owning that good\label{fig:scatter} }
+\begin{minipage}{0.90 \linewidth}
 \includegraphics[width = \linewidth]{./plots/scatter_rent_v_own.pdf} 
-\end{minipage} 
+\end{minipage}
+    {\footnotesize
+    \emph{Notes}: This figure plots the fraction of respondents reporting ever having renting the good in question versus the fraction reporting owning the good. 
+    }
 \end{figure} 
 
 In Figure~\ref{fig:scatter}, the fraction owning is plotted on the x-axis and the fraction renting on the y-axis.
-Both axes are on a log scale. 
+Both axes are on a square root scale to better show the data. 
 Some notable goods are labeled---see Appendix~\ref{sec:additional_results} for the precise by-good fractions for every good.
 
 Unsurprisingly, goods that are nearly universally owned show little renting. 
-There are a number of goods (not all labeled) that show medium ownership levels (e.g., around 50\%) and yet zero recorded instances of renting, which could indicate potential P2P rental market candidates. 
+There are a number of goods that show medium ownership levels (e.g., around 50\%) and yet zero recorded instances of renting, which could indicate potential P2P rental market candidates. 
 Goods that are used during special occasions like weddings, celebrations, and vacations show the highest rates of rental and lowest rates of ownership, e.g., tuxedos, vacation homes, jet ski, tuxedos, canoes, and bouncy castles. 
 
 \input{./tables/own_vs_rent.tex}
