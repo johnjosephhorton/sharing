@@ -318,9 +318,9 @@ s <- stargazer(m.1, m.2,
                )
 AddTableNote(s, out.file, note = "\\\\{\\footnotesize \\begin{minipage}{0.85 \\linewidth} \\emph{Notes:}
 The unit of observation for the regressions in this table is the individual good.
-The dependent variable is the fraction of respondents reporting having rented that good, while the indendent variable is the fraction reporting owning that good. 
+The dependent variable is the fraction of respondents reporting having rented that good, while the independent variable is the fraction reporting owning that good. 
 Column~(1) includes all goods surveyed, while Column~(2) excludes cars.
-For the full list of goods and the survey langugage, see Appendix~\\ref{sec:survey}. 
+For the full list of goods and the survey language, see Appendix~\\ref{sec:survey}. 
 \\starlanguage \\end{minipage} }")
 
 # Scatter plot showing rental versus ownership fractions------------------------
@@ -459,11 +459,11 @@ s <- stargazer(m.1,  m.2, m.3,
                )
 AddTableNote(s, out.file, note = "\\\\{\\footnotesize \\begin{minipage}{0.75 \\linewidth} \\emph{Notes:}
 This table reports OLS regressions where the dependent variable is an indicator for whether a respondent reported owning a particular good.
-In Column~(1) the independent variable is that respondent's estimate of what fraction of their time they would spend using that good (in logs).
-In Column~(2) a regressor for the log of the respondent's self-reported household income is added to the Column~(1) specification.
-Column~(3) uses the same specification as Column~(1), but a respondent specific fixed effect is added. 
+In Column~(1), the independent variable is that respondent's estimate of what fraction of time he or she would spend using that good (in logs).
+In Column~(2), a regressor for the log of the respondent's self-reported household income is added to the Column~(1) specification.
+Column~(3) uses the same specification as Column~(1), but a respondent-specific fixed effect is added. 
 The sample is restricted to respondents who reports some positive amount of predicted usage of the good and reported their household income.
-All regressions include good-specific fixed effects and standard errors are clustered at the good level. 
+All regressions include good-specific fixed effects, and standard errors are clustered at the good level. 
 \\starlanguage \\end{minipage} }")
 
 ###############
@@ -497,7 +497,7 @@ out.file <- "../../writeup/tables/ownership_attr.tex"
 s <- stargazer(m.1, m.2, m.3, m.4, 
                dep.var.labels = c("Item is owned"),
                covariate.labels = c("Unpredictability Score (US)", "Chunkiness Score (CS)", "US x CS"),
-               title = "Good usage unpredictibility and chunkiness and their association with good ownership.",
+               title = "Good usage unpredictability and chunkiness and its association with good ownership.",
                label = "tab:ownership_attr",
                               align = TRUE,
                font.size = "footnotesize",
@@ -520,7 +520,7 @@ This table reports regressions of an indicator for whether the respondent owns a
 The two indices are normalized responses to the 1-5 scale questions on usage chunkiness and unpredictability, pooled over all respondents and goods.
 Toothbrushes and backup generators are excluded from the sample. 
 See Appendix~\\ref{sec:survey} for the actual survey language and responses.
-In each regression a respondent-specific fixed effect is included.
+In each regression, a respondent-specific fixed effect is included.
 Standard errors are clustered at the level of the individual respondent.
 \\starlanguage
 \\end{minipage} }")
