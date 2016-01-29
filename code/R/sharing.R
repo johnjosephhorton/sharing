@@ -1,4 +1,4 @@
-#! /usr/bin/Rscript --vanilla
+q#! /usr/bin/Rscript --vanilla
 
 ###############################################
 # Author: John J. Horton 
@@ -535,7 +535,7 @@ out.file <- "../../writeup/tables/ownership_attr.tex"
 s <- stargazer(m.1, m.2, m.3, m.4, 
                dep.var.labels = c("Item is owned"),
                covariate.labels = c("Unpredictability Score (US)", "Chunkiness Score (CS)", "US x CS"),
-               title = "Good usage unpredictability and chunkiness and its association with good ownership.",
+               title = "Unpredictability and chunkiness of good usage and their association with good ownership.",
                label = "tab:ownership_attr",
                               align = TRUE,
                font.size = "footnotesize",
