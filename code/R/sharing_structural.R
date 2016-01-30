@@ -16,7 +16,7 @@ group_by(input.good) %>%
     filter(any.borrowing & any.own) %$%
     input.good %>% as.character
 
-df$outcome <- with(df, ifelse(own, "own", ifelse(borrowed, "borrow", "nothing")))
+df$outcome <- with(df, ifelse(own, "own", ifelse(borrowed | rent, "borrow", "nothing")))
 
 df.shared <- droplevels(subset(df, as.character(input.good) %in% shared.goods))
 
@@ -35,7 +35,7 @@ library(mlogit)
 #library(dplyr)
 #library(plyr)
 
-m <- lm(own ~ x, data = df)
+m <- lm(own ~ I(x > 0), data = df.shared)
 summary(m)
 
 m <- felm(own ~ log(x)|input.good|0|0, data = subset(df, x > 0))
@@ -77,8 +77,8 @@ df$p <- with(df, unlist(price.list[input.good]))
 
 df.tmp <- df %>% filter(input.good %in% shared.goods) %>%
             select(input.good, granular.index, predict.index, income.index, x, outcome, p) %>%
-                mutate(p.own = p,         p.borrow = 0,                        p.nothing = 0,     
-                       benefit.own = as.numeric(I(x > 0)),  benefit.borrow = as.numeric(I(x > 0)),  benefit.nothing = 0,
+                mutate(p.own = p,          p.borrow = 0,                        p.nothing = 0,     
+                       benefit.own = x,    benefit.borrow = x,                  benefit.nothing = 0,
                        granular.own = 0,   granular.borrow = granular.index,    granular.nothing = 0,
                        predict.own = 0,    predict.borrow = predict.index,      predict.nothing = 0) %>%
                            select(outcome,
@@ -88,12 +88,20 @@ df.tmp <- df %>% filter(input.good %in% shared.goods) %>%
                                   predict.own,  predict.borrow,  predict.nothing, income.index, input.good) %>%
                                   mutate(outcome = factor(outcome)) %>% na.omit 
 
+
+results <- c()
 for(i in 1:length(shared.goods)){
-    print(i)
     H <- mlogit.data(df.tmp %>% filter(input.good == shared.goods[i]), shape = "wide", choice = "outcome", varying = c(2:13))
     m <- mlogit(outcome ~ benefit + predict + granular|0, data = H)
-    print(coef(m))
+    results <- rbind(results, c(coef(m), shared.goods[i]))
 }
+
+
+H <- mlogit.data(df.tmp %>% filter(input.good %in% shared.goods), shape = "wide", choice = "outcome", varying = c(2:13))
+
+m <- mlogit(outcome ~ benefit|0, data = H)
+
+summary(m)
 
 shared.goods[6]
 
