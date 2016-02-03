@@ -362,8 +362,8 @@ break.list <- c(0.0, 0.05, 0.10, 0.25, 0.50, 0.75, 1.0)
 
 g.scatter <- ggplot(data = df.cs, aes(own.frac, rent.frac)) +
     geom_point() +
-        scale_x_sqrt(label = percent, breaks = break.list) +
-            scale_y_sqrt(label = percent, breaks = break.list) +
+        scale_x_sqrt(label = percent, breaks = break.list, expand = c(0,0)) +
+            scale_y_sqrt(label = percent, breaks = break.list, expand = c(0,0)) +
                 geom_label_repel(data = df.cs %>% mutate(input.good = revalue(input.good, short.list)),
                                  aes(label = input.good), force = 4, max.iter = 1000) + 
         theme_bw() + 
@@ -574,6 +574,42 @@ df.gran <- subset(df, !is.na(granular.index)
                                                predict.index.se = sd(predict.index)/sqrt(.N)
                                            ), by = list(input.good)] 
 
+library(grid)
+
+chunky.right <- annotation_custom(
+    grob = textGrob(label = "Small usage chunks", hjust = 0,
+        gp = gpar(fontsize = 16, fontface = "bold", col = "red")),
+    ymin = -1.4,      
+    ymax = -1.1,
+    xmin = 0.2,         
+    xmax = 1)
+
+chunky.left <-  annotation_custom(
+    grob = textGrob(label = "Large usage chunks", hjust = 0,
+        gp = gpar(fontsize = 16, fontface = "bold", col = "red")),
+    ymin = -1.4,      
+    ymax = -1.1,
+    xmin = -1,         
+    xmax =  -0.8)
+
+predictable.upper <- annotation_custom(
+    grob = textGrob(label = "Unpredictable", hjust = 0,
+        gp = gpar(fontsize = 16, fontface = "bold", col = "blue")),
+    ymin = 1.2,      
+    ymax = 1.2,
+    xmin = -1.2,         
+    xmax = -1.2)
+
+predictable.lower <- annotation_custom(
+    grob = textGrob(label = "Predictable", hjust = 0,
+        gp = gpar(fontsize = 16, fontface = "bold", col = "blue")),
+    ymin = -.7,      
+    ymax = -.7,
+    xmin = -1.2,         
+    xmax = -1.2)
+    
+#predictable.lower <-
+
 g.scatter <- ggplot(data = df.gran,
                     aes(x = mean.gran.index,
                         y = mean.predict.index)
@@ -581,9 +617,18 @@ g.scatter <- ggplot(data = df.gran,
     geom_label_repel(aes(label = input.good), force = 2, max.iter = 10000) +
         ylab("Mean unpredictability score") +
         xlab("Mean chunkiness score") +
-        theme_bw()
+            theme_bw() +
+                chunky.right + chunky.left + predictable.upper + predictable.lower
+ 
+#print(g.scatter)
 
-print(g.scatter)
+gt <- ggplot_gtable(ggplot_build(g.scatter))
+gt$layout$clip[gt$layout$name == "panel"] <- "off"
+pdf("../../writeup/plots/granularity_versus_predictability.pdf", width = 8, height = 6)
+grid.draw(gt)
+dev.off()
+
+#print(g.scatter)
 
 if (interactive() && SHOW.PLOTS){
     print(g.scatter)
