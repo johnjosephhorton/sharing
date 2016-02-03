@@ -28,27 +28,8 @@
 
 \newcommand{\starlanguage}{Significance indicators: $p \le 0.05:*$, $p \le 0.01:**$, and $p \le .001:***$.}  
 
-\newif\ifdraft
-
-%\drafttrue % or 
-\draftfalse
-
-\ifdraft
-\newcommand{\important}[1]{\textcolor{red}{\textbf{#1}}}
-\usepackage{setspace}
-%\doublespacing
-\else
-\newcommand{\important}[1]{#1}
-\fi
-
 \begin{document} 
 
-
-% \title{Peer-to-Peer Rental Markets:\\ Some Thoughts on the ``Sharing Economy''}
-%\title{The Sharing Economy: \\ Emerging Rental Markets}
-%\title{The Sharing Economy: Innovative Rental Markets}
-%\title{The Sharing Economy:\\ 21st Century Rental Markets}
-%\title{The Sharing Economy:\\ Computer-Mediated Rental Markets}
 \title{Owning, Using and Renting: \\ Some Simple Economics of the ``Sharing Economy''} 
 \date{\today}
 
@@ -75,10 +56,8 @@
 %% A survey of consumers finds broad support for the modeling conventions used---namely that ownership is determined by a forward-looking evaluation of planned usage.
 %% We also explore the factors that are permitting these new markets to
 %% flourish.
-  Entrepreneurs have created a number of new Internet-based platforms where owners sometimes rent out their durable goods. 
-  Airbnb and Uber are salient examples of these ``sharing economy'' platforms.
-  We develop a model of these kinds of markets and analyze the
-  determinants of ownership, rental rates, quantities, and the surplus generated in these markets. 
+  Entrepreneurs have created a number of new Internet-based platforms where owners sometimes rent out their durable goods and sometimes use them for personal consumption. 
+  We develop a model of these kinds of markets and analyze the determinants of ownership, rental rates, quantities, and the surplus generated in these markets. 
   Our analysis considers both a short run, before consumers can revise their ownership decisions and a long run, in which they can.
   This allows us to explore how patterns of ownership and consumption might change as a result of these new markets. 
   We also examine the impact of bringing-to-market costs, such as depreciation, labor costs and transaction costs.
@@ -142,16 +121,14 @@ When there are substantial \emph{bringing-to-market} costs (such as labor, depre
 
 % Model description
 To address these questions, we develop a simple model in which consumers initially decide whether to purchase a good based on their expected usage.
-We consider a case where there are owners and non-owners, with the owners using the good less than 100\% of the time and non-owners, while not purchasing the good, would use it some of the time if they did own it. 
-These owners and non-owners then trade with each other after some technological/entrepreneurial innovation that creates a P2P rental market.
-Each owner rents their unused capacity to non-owners.
-Owners also economize on their own usage to make more of the good available for the rental market.
-
-While we assume a purchase price that splits consumers into owners and non-owners, other equilibria are possible, such as one where everyone owns the good.
-For a given set of consumer valuations, there is a range of product market prices that can support a short-run P2P rental market.
-To support a P2P rental market, the purchase price of the good must be low enough that there is a pool of owners, but not so low that everyone with any usage demand for the good already owns the good.\footnote{
+We consider a case where there are owners and non-owners, with the owners using the good less than 100\% of the time and non-owners, while not purchasing the good, would use it some of the time if they did own it.\footnote{
+  While we assume a purchase price that splits consumers into owners and non-owners, other equilibria are possible, such as one where everyone owns the good.
+  For a given set of consumer valuations, there is a range of product market prices that can support a short-run P2P rental market.
+  To support a P2P rental market, the purchase price of the good must be low enough that there is a pool of owners, but not so low that everyone with any usage demand for the good already owns the good.
   Of course, in the long-run ownership decisions can be revised.
-}   
+} 
+Some technological/entrepreneurial innovation that creates a P2P rental market that allows owners to rent their unused capacity to non-owners.
+For clarity, we first assume that owners face no bringing-to-market (BTM) costs (i.e., no depreciation, labor or transaction costs from rentals).
 
 After the P2P rental market emerges, owners and non-owners use the good as if they were renting the good at the market-clearing rental rate. 
 Renters do face the rental rate, while for owners, the possibility of rental creates a new opportunity cost for their own usage. 
@@ -159,16 +136,10 @@ The rental rate is increasing in the valuation of the owners, which reduces supp
 The short-run rental market does not necessarily clear: if pre-P2P rental unused capacity exceeds demand, a glut results. 
 In practice, the inherent costs of bringing excess capacity to the market assures an above zero price floor.
 
-For clarity, we first assume that owners face no bringing-to-market (BTM) costs (i.e., no depreciation, labor or transaction costs from rentals).
-When we assume that owners do face these costs, the model predictions change in several important ways.
-If BTM costs are sufficiently high, no P2P rental market can exist.
-If the market can exist, the BTM costs raise the rental rate and lower the quantity of the good transacted in the market.
-However, BTM costs---being the equivalent of a per-unit sales tax---are not fully passed through in the rental rate.
-
 In addition to the short run, we consider a long run where owners and renters alike can revise their ownership decisions.
-Returning back to the case with no BTM costs, we find that if the short-run cost to rent the good 100\% of the time is below the purchase price, then ownership is less attractive.
+We find that if the short-run cost to rent the good 100\% of the time is below the purchase price, then ownership is less attractive.
 This will reduce \emph{purchase} demand for product.
-In the long-run P2P rental market equilibrium, in the absence of BTM costs the purchase price equals the rental rate (when normalizing the life of the good to 1).
+In the long-run P2P rental market equilibrium, the purchase price equals the rental rate (when normalizing the life of the good to 1).
 Owners and renters receive the same utility at the margin, thereby decoupling individual preferences from ownership. 
 The model offers an intuitive test for whether total ownership will decrease in the long run:
 ownership decreases if the short-run rental rate is below the purchase price. 
@@ -178,9 +149,14 @@ Although owners have less consumption, they are compensated with rental income t
 The greatest gains in surplus are obtained when original non-owners value the good nearly as highly as owners, suggesting that goods where income (rather than taste or planned usage) explains ownership could offer the greatest increase in surplus. 
 The existence of a P2P rental market allows for a higher maximum price in the product market, as it can generate positive demand for a good at prices for which even high-types would not buy without the possibility of rental. 
 
+When we assume that owners do face BTM costs, the model predictions change in several important ways.
+If BTM costs are sufficiently high, no P2P rental market can exist in the short run.
+If the market can exist, the BTM costs raise the rental rate and lower the quantity of the good transacted in the market, in the both the long run and short run.
+However, BTM costs---being the equivalent of a per-unit sales tax---are not fully passed through in the rental rate, in either the short run or long-run.
+
 The presence of BTM costs changes the predictions about long-run ownership.
 Consumers with a higher valuation now tilt towards ownership.
-Owners using the good for their own consumption still face normal depreciation, but they avoid some of the BTM costs such as extra cleaning, handing off keys, dealing with disputes, and so on. 
+The reason for the tilt is that owners using the good for their own consumption avoid some of the BTM costs such as extra cleaning, handing off keys, dealing with disputes, and so on. 
 As in the short-run case, in the long run there is incomplete pass through of the BTM costs.
 An implication of this finding is that the rental rate is lower than the purchase price (when the life of the good is 1).
 As such, a firm would find it unprofitable to buy the good solely to rent it out (though this result depends on there being no scale economy in renting). 
@@ -217,18 +193,14 @@ In that same vein, producers of goods might do more than simply improve quality,
 Other work on the ``sharing economy'' has discussed its features and implications qualitatively. 
 For example, \cite{belk2014you} offers a number of examples of these different platforms and identifies their commonalities: (1) use of temporary, non-ownership models of using consumer goods and (2) a reliance on the Internet to bring this about. 
 \cite{edelman2015efficiencies} represents another example in this vein.
-It enumerates the efficiency gains from P2P rental markets, such as reducing transaction costs and improving allocative efficiency;
-it also discusses how newly designed systems can be used to unlock even more gains (e.g., the UberPool example). 
-\citeauthor{edelman2015efficiencies} is distinctive in that it discusses the regulatory policy implications of sharing economy companies, apart from the traditional ``market failure'' framework that motivates much of public economics.  
+It enumerates the efficiency gains from P2P rental markets, such as reducing transaction costs and improving allocative efficiency. 
+\citeauthor{edelman2015efficiencies} is distinctive in that it discusses the regulatory policy implications of sharing economy companies using the traditional ``market failure'' framework that motivates much of public economics.  
 Other work has been more practically oriented, similar in spirit to the empirical portion of our paper.
 For example, \cite{hampshire2011peer} analyzes the feasibility of P2P car-sharing in Pittsburgh.
 
 The paper most closely related to ours is \cite{benjaafar2015peer},
 who also consider the ownership choice with and without the possibility of P2P rental, with participants differing in their expected usage. 
-They find several results similar to our own.
-For example, they also find that total ownership could increase following sharing, for more or less the same economic reasons we identify.
-
-There are least two important differences.
+Although the finding several results similar to our own---for example, they also find that total ownership could increase following sharing, for more or less the same economic reasons we identify---there are at least two important differences.
 First, \citeauthor{benjaafar2015peer} explicitly consider the matching aspect of these markets, modeling how a participant's utility from being an owner or renter can depend on the possibility of finding the appropriate counter-party.
 For some questions, explicitly modeling these considerations is likely to be important, though for others---say in markets where platform pricing choices clear the market---explicitly modeling the matching aspect is likely to be less important. 
 Second, in our model, owners and renters decide how intensively to use a good in light of the rental rate (or in the case of owners, the opportunity cost created by the rental market).
@@ -240,43 +212,8 @@ They also provide a model of the economy, though the focus is on peer-to-peer se
 
 \cite{frailberger2015} offers a calibrated model of the peer-to-peer rental market, focusing on automobiles.
 They also model consumers choosing among ownership, rental and non-participation.
-They find that the introduction of sharing would decrease ownership but increase utilization. 
-
-%\cite{heinrichs2013sharing} claims potential sustainability.
-% \cite{botsman2010s} general purpose happy-talk citation. 
-%TODO: Waldman 2003 - secondary market having affecting purchase demand.
-%Much of the existing literature has focused on highlighting the public policy issues raised by ``sharing economy'' platforms. 
-% Another cite to the regulatory work 
-%\cite{chang2015growing} also considers the regulatory challenges faced by these so-called sharing economy companies. 
-
-% TODO: Add to the transaction cost portion 
-% 
-%\cite{dellarocas2003digitization} provides a survey of the progress in understanding these systems. 
-
-%% \cite{edelman2015efficiencies} enumerates the efficiency gains, such as reducing transaction costs, improve allocative efficiency (discusses the same idea of sufficient size needed to make rental worthwhile)
-%% discussion how software can be used to unlock even more gains (e.g., the UberPool example)
-%% Information and reputation
-%% Availability information (cite my own paper here)
-%% Pricing efficiencies - helping the market clear.
-%% Formulates an economic basis for regulation 
-% TODO: Cite in the section of recommender systems 
-
-%% What is Surge Pricing?, U BER , https://help.uber.com/h/6c8065cf-5535-4a8b-9940-d292ffdce119 (last visited
-%% Nov. 19, 2015); Jonathan Hall, Cory Kendrick, & Chris Nosko, The Effects of Uber’s Surge Pricing: A Case
-%% Study, C HI . B OOTH (Sept. 2015),
-%% http://faculty.chicagobooth.edu/chris.nosko/research/effects_of_uber's_surge_pricing.pdf.
- 
-% Conclusion 
-%% \cite{hagiu2014marketplace} offers a model of a platform's choose between being a marketplace or a re-seller.
-%% The core of the model is about who has better information about the optimal
-%% Almost the trivial case: Owner of the capital knows when the good (and her time) can be offered to the market most cheaply. 
-
-%% \cite{fradkin2012online}
-%% \cite{fradkin2013search}
-%% \cite{fradkin2015}
-%% \cite{gata2015sharing}
-%% Practioner level - example of the industrial experience we are talking about. 
-
+They find that the introduction of sharing would decrease ownership but increase utilization.
+As in our model, the biggest gains in surplus come to previous non-owners who gain access to the good. 
 
 \section{Factors explaining the rise of peer-to-peer rental markets}
 
@@ -306,12 +243,9 @@ Given both the lack of firm-like resources and the inherent information problems
 
 P2P rental markets have emerged as entrepreneurs have taken advantage of technological advances to build facilitating platforms. 
 The platforms dramatically lower transaction costs and provide individual owners tools previously only available to firms. 
-The maturation and increasing penetration of the Internet and the proliferation of smartphones (with high-resolution digital cameras) were the technological shocks that made these P2P rental markets feasible. 
-However, these P2P rental markets have also stood on the shoulders of their electronic commerce predecessors, such as eBay, that made strides towards solving some of the informational problems inherent to online marketplaces. 
-
-Like all software companies, platforms have benefited from the rise of the Internet, which has radically increased the supply of potential users on both sides of the markets. 
-They have also benefited from improving industrial knowledge about how to build and maintain large websites.
-The cost of creating such sites has plummeted. 
+The maturation and increasing penetration of the Internet and the proliferation of smartphones (with high-resolution digital cameras) were the technological shocks that made some of these P2P rental markets feasible.
+For example, Uber simply does not ``work'' in world where few consumers have GPS-enabled smartphones. 
+Although these technology advanced are important, these P2P rental markets have also stood on the shoulders of their electronic commerce predecessors, such as eBay, that made strides towards solving some of the informational problems inherent to online marketplaces. 
 
 A key challenge in all markets is facilitating trust among strangers, and this problem is acute in P2P rental markets, given the ``opportunity'' renters have to misuse or destroy the owner's capital.
 In most markets, the buyer's type matters little to the seller; in rental markets, the buyer's type can be critical. 
@@ -331,7 +265,7 @@ These kinds of approaches are particularly important in P2P rental markets becau
   \cite{de2012testing} use detailed web browsing data to show that customers rely more on a fixed sample size search strategy rather than sequential search.  
 }
 P2P rental market platforms continue to invest heavily in research designed to improve matching, some of it in collaboration with researchers. 
-For example, \cite{fradkin2013search} shows how personalized recommendations could improve match rates by 10\%. 
+For example, \cite{fradkin2013search} shows how personalized recommendations could improve match rates by 10\% on Airbnb. 
 
 In addition to simply finding each other, would-be trading partners must assess both each other and the goods being traded. 
 These assessments are aided by verifiable measurements made by the platform on a number of dimensions, including past market history. 
@@ -339,7 +273,7 @@ As \cite{varian2010computer} points out, advances in information technology are 
 Consider that Uber is only possible because both sides of the market now carry with them taximeters (when running the appropriate software) at all times: 
 a smartphone with GPS technology allows for the precise measures of distance traveled.
 In fact, this computer-mediated approach works even better than the traditional taximeter in that both parties can verify that the best route was taken. 
-The proliferation of high-resolution digital cameras built into smartphones has similarly made it easier for parties to inspect goods ex ante (Airbnb in particular benefits from this innovation).  
+The proliferation of high-resolution digital cameras has similarly made it easier for parties to inspect goods ex ante (Airbnb in particular benefits from this innovation).  
 
 One important platform innovation has been in reputation systems, which essentially digitize word-of-mouth information about product and service quality \cite{dellarocas2003digitization}. 
 A substantial literature characterizes their practical importance to the functioning of the market \citep{cabral2010dynamics, resnick2000reputation, resnick2002trust}.
@@ -452,7 +386,7 @@ The purchase price $p$ determines who purchases the good, with all those having 
 \end{figure} 
 
 Note that all owners have an amount of time, $1 - x^*$, when they are not using the good.
-This unused capacity is what they will be able to rent out, plus whatever amount of the good the rental opportunity will lead them to economize their own usage, thus providing more capacity.
+This unused capacity is what they will be able to rent out, plus whatever amount becomes available because the owner reduces their own usage. 
 
 \subsection{Three consumption possibilities with two consumer types but no rentals} 
 There are three important potential market configurations with respect to ownership:
@@ -477,7 +411,7 @@ The three market possibilities are shown in Figure~\ref{fig:three_types}, where 
 Since $\alpha_H > \alpha_L$ by definition, we only consider the space above the 45-degree line, which is partitioned into spaces where neither owns, both own, and only the high-types own. 
 The associated minimal-but-still-purchasing valuation parameter is shown as $\underline{\alpha}_H$ and $\underline{\alpha}_L$ for the high- and low-types, respectively. 
 
-We are particularly interested in the rectangle where high-types buy but low-types do not, because in this region the purchasing high-types have excess capacity, $\alpha_H < 1$, but the low-types still value usage of the good, $\alpha_L > 0$, despite their non-purchase. 
+We are particularly interested in the rectangle where high-types own but low-types do not, because in this region the purchasing high-types have excess capacity, $\alpha_H < 1$, but the low-types still value usage of the good, $\alpha_L > 0$, despite their non-purchase. 
 In this region, the immediate possibility of mutually beneficial rental exists between the two types (in the other market configurations a revision in the ownership decision is needed to support a P2P rental market). 
 
 \newcommand*{\p}{0.30}%
@@ -558,7 +492,7 @@ Recall that $\theta$ is the fraction of high-types (and hence owners).
 
 The market clearing rental rate is 
 \begin{align} \label{eq:strr} 
-r = 2\left[ (1-\theta)\alpha_L - (1-\alpha_H) \theta \right]. 
+r = 2\left[ (1-\theta)\alpha_L - \theta (1-\alpha_H) \right]. 
 \end{align}
 Note that the short-run equilibrium rental rate is proportional to the difference between what low-types would consume if they owned, $(1-\theta)\alpha_L$, and high-types would leave unused in the absence of the P2P rental market, $\theta (1-\alpha_H)$. 
 As (\ref{eq:strr}) shows, the rental rate increases in the valuation of either type (since higher valuation from low-types increases demand while higher valuation from high-types reduces supply) and declines with the fraction of high-types, as they provide the market supply. 
@@ -595,7 +529,7 @@ The quantity exchanged is increasing in the valuation of the low-types (since a 
 From (\ref{eq:strr}), we can see that it is possible for supply to exceed demand even when the rental rate is zero. 
 This can arise when the owner's excess capacity in the absence of a
 rental market exceeds the non-owner's usage if he or she were to own. 
-This glut condition occurs when the total usage if everyone owned the good, $\theta \alpha_H + (1-\theta)\alpha_L$ is lower than the actual stock of purchased goods. 
+This glut condition occurs when the total usage if everyone owned the good, $\theta \alpha_H + (1-\theta)\alpha_L$, is lower than the actual stock of purchased goods. 
 
 Figure~\ref{fig:market_clearing} illustrates market clearing with a positive rental rate, $r^*$, and the glut condition where the supply and demand curves do not intersect.
 When the valuation of the high-types goes down from $\alpha_H$ to $\alpha_H'$, with $\alpha_H' < \alpha_H$, the supply curve shifts out (the dashed curve labeled $S_1(r)$), such that even at $r = 0$, the available supply, which would be $\theta (1-\alpha_H')$, exceeds the demand from low-types, $(1-\theta)\alpha_L$, thereby creating a glut.  
@@ -674,32 +608,10 @@ The highest possible BTM cost that will still support a P2P rental market is
   \bar{\gamma} = 2(1-\alpha_H + \alpha_L). 
 \end{align}
 This condition comes from the requirement that  $r < 2 \alpha_L$; otherwise, the cost of consuming any of the good for a non-owner exceeds the marginal utility. 
-As a check, note that from (\ref{eq:qty_gamma}), we have that $\gamma = \bar{\gamma}$, which implies that $Q_{BTM} = 0$.
+As a check, note that from (\ref{eq:qty_gamma}), when BTM costs are the highest possible level, $\gamma = \bar{\gamma}$, $Q_{BTM} = 0$ (using the definition of $Q$ from (\ref{eq:qty})).
 There is no P2P rental market when the reduced transaction volume from the BTM costs equals the amount that would be supplied in equilibrium in the absence of those costs. 
 
-%% \subsection{Platform's incentive to reduce transaction costs}
-%% The total transaction volume in the P2P rental market is $Q_{BTM} r_{BTM}$.
-%% If the platform creating the P2P rental market takes revenue proportional to this market volume, what is their incentive to reduce BTM costs?
-%% On the one hand, lowering these costs raises the quantity transacted, but it also lowers the price.
-%% If we assume that profits are proportional to the total transaction volume, then 
-%% \begin{align}
-%%   \frac{\partial \pi}{\partial \gamma} \propto \theta(1-\theta)(\alpha_L + \gamma \theta) > 0. 
-%% \end{align}
-%% For any equilibrium, slightly raising BTM costs \emph{raise} profits, assuming the P2P rental market still exists.
-%% However, if the firm instead has revenue proportional to the total social surplus it generates, then incentives change. 
-%% The surplus of owners is now
-%% \begin{align}
-%%   v_H = \alpha_H^2 - \frac{(r-\gamma)^2}{4} - (1 - \alpha_H)\gamma - (r-\gamma)\gamma/2, 
-%% \end{align}
-%% while the surplus for the non-owners is still $\alpha_L^2 - r^2/4$. 
-%% The total surplus is
-%% \begin{align}
-%%   S = (1 - \theta)\alpha_L^2 - \frac{(r - \gamma)^2}{4}
-%% \end{align} 
-%% and
-%% \begin{align}
-%%   \frac{\partial S}{\partial \gamma} = (1 - \theta)\alpha_L^2 - \frac{(r - \gamma)^2}{4}
-%% \end{align} 
+% \input{platform_incentives.tex} 
 
 \subsection{Revised ownership without bringing-to-market costs}
 We now consider what happens in the long run, when owners and non-owners can revise their ownership decisions.
@@ -718,7 +630,7 @@ Computing the indirect utility for both decisions, we have
 \begin{align} 
 v^{OWN} = \alpha_i^2 - p + \frac{r_{LR}^2}{4} + (1 - \alpha_i) r_{LR} \quad  \mbox{and} \quad v^{RENT} = \frac{1}{4} (r_{LR}- 2\alpha )^2. 
 \end{align} 
-Setting $v^{OWN} = v^{RENT}$ to find the conditions under which a user would be indifferent between renting and owning, the $\alpha_i$ term drops out, and we are left with the familiar condition 
+Setting $v^{OWN} = v^{RENT}$ to find the conditions under which a user would be indifferent between renting and owning, the $\alpha_i$ term drops out, and we are left with the condition 
 \begin{align} \label{eq:lr_eq_r}
 p = r_{LR}. 
 \end{align}
@@ -733,7 +645,7 @@ For the market to clear,
 \end{align} 
 This expression simplifies to 
 \begin{align}
-  f_{OWN} &= \theta x_H(p) + (1-\theta)x_L(p) \\
+  f_{OWN} &= \theta x_H(p) + (1-\theta)x_L(p) \notag \\
          &= \theta \alpha_H + (1 - \theta) \alpha_L- p/2,
 \end{align} 
 thus indicating the intuitive condition that the fraction of consumers owning in the long run is the average usage rate in the population.  
@@ -748,23 +660,6 @@ In contrast, in the long-run P2P rental equilibrium, product demand varies conti
 
 One implication of $p = r_{LR}$ is that there are no profits from owning simply to rent out, as the purchase price is $p$ and rental income from renting out all of the capacity is also $p$.  
 In contrast, owners and non-owners that rent get an inframarginal surplus from their own consumption. 
-
-There is already some evidence that P2P rental markets are affecting traditional rental firms: 
-\cite{byers2013rise} find that Airbnb is already winning customers from hotels that cater to the lower end of the market, with the introduction of Airbnb lowering revenues by as much as 10\% in some market segments;
-it also seems to be lowering prices. 
-\cite{neeser2015does} do not find the same revenue effects but do offer some evidence that Airbnb may have pushed down prices in Nordic countries.
-There are several signs that Uber is gaining market share at the expense of existing taxi firms, such as falling medallion prices and notable bankruptcies.
-The effects of competition are also potentially showing up in service quality:
-\cite{wallsten2015} presents suggestive evidence from Chicago that consumer complaints for traditional taxis fell following the entry of Uber. 
-
-Firms do have advantages over consumer-owners, such as economies of scale or expertise in minimizing transaction costs. 
-However, this firm-level expertise might simply be offered to consumers without the firm taking ownership.\footnote{
-  A recently launched startup called \href{https://www.guesty.com/}{Guesty} aims to be a kind of property management company for Airbnb rentals.
-}
-\cite{edelman2015efficiencies} give the example of how a conventional hotel can, with a front-desk, handle the exchange of keys for hundreds of guests---a common source of friction for Airbnb rentals.
-However, they also point out that, unsurprisingly, P2P rental platforms invest heavily in trying to solve these kinds of problems. 
-Indeed, \cite{fradkin2012online} finds that in the case of Airbnb, matching probability increased 18\% over a two-year span, even when controlling for search intensity.
-A contributing factor was Airbnb reducing transaction costs by, for example, minimizing the amount of information that had to be exchanged before completing a booking. 
 
 \subsection{Product market demand in the long-run P2P rental market equilibrium} 
 
@@ -881,6 +776,27 @@ when rental rates go up, more owners of the good are pulled into the market.
 In the case of differential costs, and in the case of costs that rise with output, the equilibrium is effectively the same as we outlined above.
 At the equilibrium, every owner/supplier will be operating at the margin with BTM costs of $\gamma$.
 However, these owner/suppliers will be reaping inframarginal benefits over the range where their BTM costs are below those priced into the market. 
+
+\subsection{Competition with conventional rental firms}
+The model predicts that in the long run, owning a good purely to rent it out offers no profits when BTM costs are zero and a loss when BTM costs are greater than zero.
+This result is grim news for conventional rental firms, though if there are economies of scale in rental, the situation is improved.
+
+There is already some evidence that P2P rental markets are affecting traditional rental firms: 
+\cite{byers2013rise} find that Airbnb is already winning customers from hotels that cater to the lower end of the market, with the introduction of Airbnb lowering revenues by as much as 10\% in some market segments;
+it also seems to be lowering prices. 
+\cite{neeser2015does} do not find the same revenue effects but do offer some evidence that Airbnb may have pushed down prices in Nordic countries.
+On the ride-sharing side, there are several signs that Uber is gaining market share at the expense of existing taxi firms, such as falling medallion prices and notable bankruptcies.
+The effects of competition are also potentially showing up in service quality:
+\cite{wallsten2015} presents suggestive evidence from Chicago that consumer complaints for traditional taxis fell following the entry of Uber. 
+
+Firms do have advantages over consumer-owners, such as economies of scale or expertise in minimizing transaction costs. 
+However, this firm-level expertise might simply be offered to consumers without the firm taking ownership.\footnote{
+  A recently launched startup called \href{https://www.guesty.com/}{Guesty} aims to be a kind of property management company for Airbnb rentals.
+}
+\cite{edelman2015efficiencies} give the example of how a conventional hotel can, with a front-desk, handle the exchange of keys for hundreds of guests---a common source of friction for Airbnb rentals.
+However, they also point out that, unsurprisingly, P2P rental platforms invest heavily in trying to solve these kinds of problems. 
+Indeed, \cite{fradkin2012online} finds that in the case of Airbnb, matching probability increased 18\% over a two-year span, even when controlling for search intensity.
+A contributing factor was Airbnb reducing transaction costs by, for example, minimizing the amount of information that had to be exchanged before completing a booking. 
 
 \section{The attributes of goods and the feasibility of renting} \label{sec:empirics} 
 
@@ -1052,7 +968,9 @@ In contrast, a tuxedo scores low on both measures---it is used for a substantial
   \includegraphics[width = \linewidth]{./plots/granularity_versus_predictability.pdf} \\
   {\footnotesize 
     \emph{Notes:} This figure plots each good's mean unpredictability score versus that same good's mean chunkiness score.
-    These scores are calculated by normalizing the 1-5 scores across all goods and all respondents. 
+    These scores are calculated by normalizing the 1-5 scores across all goods and all respondents.
+    A lower chunkiness score (near the origin) implies that good is characteristically used in large chunks, whereas a higher chunkiness score indicates the opposite.
+    On the y-axis, goods with a high unpredictability score have unpredictable usage patterns (i.e., consumers do not know in advance when they will need the good). 
    }
 \end{minipage} 
 \end{figure} 
@@ -1072,7 +990,7 @@ As we move a bit further, from the origin, we see goods for which there is not m
 \subsection{Predictability, chunkiness, and ownership} 
 We test whether the predictability and chunkiness measures are related to individual ownership. 
 Table~\ref{tab:ownership_attr} shows that they are, in the expected direction:
-\important{goods with unpredictable usage that occurs in small chunks are substantially more likely to be owned.}
+goods with unpredictable usage that occurs in small chunks are substantially more likely to be owned.
 Furthermore, it is not the case that these two measures are simply capturing some single latent ``rentability'' measure, as each seems to have an independent effect on the probability of ownership. 
 
 \input{./tables/ownership_attr.tex} 
@@ -1301,7 +1219,7 @@ The actual goods were:
 Figure~\ref{fig:frac_owning} shows the fraction of respondents reporting owning various goods, as well as 95\% confidence intervals for that point estimate computing using the Wilson method for a binary proportion.    
 There are few surprises: nearly everyone owns a toothbrush, a hammer, and a blender; no one reported owning a jet ski, and only one respondent reported owning a vacation home.
 Figure~\ref{fig:frac_renting} shows the fraction of respondents reporting having rented the various goods. 
-\important{Generally, ownership and renting appear to be gross substitutes, with the notable exception of cars, presumably because people rent cars when traveling.}
+Generally, ownership and renting appear to be gross substitutes, with the notable exception of cars, presumably because people rent cars when traveling.
 
 \begin{figure}
 \centering 

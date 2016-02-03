@@ -1,4 +1,4 @@
-q#! /usr/bin/Rscript --vanilla
+#! /usr/bin/Rscript --vanilla
 
 ###############################################
 # Author: John J. Horton 
@@ -578,7 +578,7 @@ library(grid)
 
 chunky.right <- annotation_custom(
     grob = textGrob(label = "Small usage chunks", hjust = 0,
-        gp = gpar(fontsize = 16, fontface = "bold", col = "red")),
+        gp = gpar(fontsize = 16, fontface = "bold", col = "blue")),
     ymin = -1.4,      
     ymax = -1.1,
     xmin = 0.2,         
@@ -586,7 +586,7 @@ chunky.right <- annotation_custom(
 
 chunky.left <-  annotation_custom(
     grob = textGrob(label = "Large usage chunks", hjust = 0,
-        gp = gpar(fontsize = 16, fontface = "bold", col = "red")),
+        gp = gpar(fontsize = 16, fontface = "bold", col = "blue")),
     ymin = -1.4,      
     ymax = -1.1,
     xmin = -1,         
