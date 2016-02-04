@@ -634,9 +634,9 @@ if (interactive() && SHOW.PLOTS){
     print(g.scatter)
 }
 
-writeImage(g.scatter, "granularity_versus_predictability",
-           width = 8.0,
-           height = 6.0)
+#writeImage(g.scatter, "granularity_versus_predictability",
+#           width = 8.0,
+#           height = 6.0)
 
 # Granularity by item-----------------------------------------------------------
 

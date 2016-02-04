@@ -60,7 +60,7 @@
   We develop a model of these kinds of markets and analyze the determinants of ownership, rental rates, quantities, and the surplus generated in these markets. 
   Our analysis considers both a short run, before consumers can revise their ownership decisions and a long run, in which they can.
   This allows us to explore how patterns of ownership and consumption might change as a result of these new markets. 
-  We also examine the impact of bringing-to-market costs, such as depreciation, labor costs and transaction costs.
+  We also examine the impact of bringing-to-market costs, such as depreciation, labor costs and transaction costs and consider the platform's pricing problem.
   An online survey of consumers broadly supports the modeling assumptions employed.
   For example, ownership is determined by individuals' forward-looking assessments of planned usage.
   Factors enabling sharing markets to flourish are explored. \newline \newline 
@@ -160,6 +160,11 @@ The reason for the tilt is that owners using the good for their own consumption 
 As in the short-run case, in the long run there is incomplete pass through of the BTM costs.
 An implication of this finding is that the rental rate is lower than the purchase price (when the life of the good is 1).
 As such, a firm would find it unprofitable to buy the good solely to rent it out (though this result depends on there being no scale economy in renting). 
+
+One important BTM cost is the fee imposed by the platform.
+If the platform keeps the fee constant, the incentive for reducing BTM costs depends in part on the elasticity of demand in the P2P rental market, in that the platform finds it more attractive to lower BTM costs when demand is elastic since the increase in quantity transacted will offset the relatively small reduction in the rental price.
+However, the platform can always increase revenue by lowering BTM costs, as it can simply increase its own fee accordingly, keeping the rental rate and transaction volume unchanged (but making more revenue on each unit transacted).
+Whether this is optimal depends on the elasticity of BTM costs with respect to the platform's efforts. 
 
 Of course, goods will differ in the cost of bringing them to market, and this affects the P2P rental market. 
 Some of these BTM costs are straightforward, such as labor, depreciation, and complementary consumables.
@@ -776,6 +781,32 @@ when rental rates go up, more owners of the good are pulled into the market.
 In the case of differential costs, and in the case of costs that rise with output, the equilibrium is effectively the same as we outlined above.
 At the equilibrium, every owner/supplier will be operating at the margin with BTM costs of $\gamma$.
 However, these owner/suppliers will be reaping inframarginal benefits over the range where their BTM costs are below those priced into the market. 
+
+\subsection{The platform's incentives for reducing costs}
+One of the BTM costs faced by participants in P2P rental markets is fee imposed by the platform.
+While more complicated price structures are possible, the most common price structure seems to be an ad valorem charge (sometimes with minimum payment amounts and some fixed fees):
+this is the pricing structure of both Airbnb and Uber.
+
+At a fixed rental rate $r$, we can think of the ad valorem charge as just a quantity charge. 
+We can think of total BTM costs as $\gamma = \gamma_0 + \tau$, where $\tau$ is the platform's charge and $\gamma_0$ are the ``true'' BTM costs (such as depreciation, labor and so on). 
+An owner renting out $1 - x$ units of the good would receive $(1 - x)r$ in rental income, bear ``true'' BTM costs $(1 - x)\gamma_0$ and then remit $(1-x)\tau$ to the platform. 
+For any level of the BTM cost, the platform can obtain higher revenue by reducing $\gamma_0$ and raising $\tau$ by an offsetting amount.
+Of course, the attractiveness of doing so depends on the elasticity of $\gamma_0$ with respect to the platform's efforts. 
+
+Lowering $\gamma_0$ without increasing $\tau$ has an ambiguous effect on platform revenue, as it lowers the rental rate but increases the quantity transacted.
+This suggests that the platform has stronger incentives to lower BTM costs when demand is elastic, as the shifting out of the supply curve will mostly result in a large quantity transacted without much fall-off in prices.
+This incentive for BTM cost reduction when the platform demand is elastic suggests the usefulness of having competing platforms (which presumably make demand more elastic), as least in this simple treatment of the platform's pricing problem. 
+
+If we assume that the platform has removed all BTM costs and simply needs to set an optimal quantity charge, $\tau$, then in the short run case the platform's problem is 
+\begin{align}
+  \argmax_{\tau} \quad \tau \left[Q - \frac{1}{2}\tau (1-\theta)\theta \right]
+ \end{align}
+which gives us a first order condition of $\tau^* = 1 - (\alpha_H + \alpha_L)$, or
+\begin{align}
+  \tau^* = \frac{Q}{(1-\theta)\theta}.  
+\end{align}
+This optimal charge implies that the platform set its charge so that the realized transaction volume is half of what it would be in the absence of the its charge.
+With this formulation, the platform has the highest rates when the market is imbalanced with respect to owners and sellers, which is also where quantity transacted changes little with the imposition of the charge (i.e., the $\frac{1}{2} \tau (1-\theta)\theta$ term is small). 
 
 \subsection{Competition with conventional rental firms}
 The model predicts that in the long run, owning a good purely to rent it out offers no profits when BTM costs are zero and a loss when BTM costs are greater than zero.
