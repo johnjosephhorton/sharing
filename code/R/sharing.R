@@ -589,22 +589,22 @@ chunky.left <-  annotation_custom(
         gp = gpar(fontsize = 16, fontface = "bold", col = "blue")),
     ymin = -1.4,      
     ymax = -1.1,
-    xmin = -1,         
-    xmax =  -0.8)
+    xmin = -1.2,         
+    xmax =  -1.2)
 
 predictable.upper <- annotation_custom(
-    grob = textGrob(label = "Unpredictable", hjust = 0,
+    grob = textGrob(label = "Unpredictable", hjust = 0, rot = 90, 
         gp = gpar(fontsize = 16, fontface = "bold", col = "blue")),
-    ymin = 1.2,      
-    ymax = 1.2,
+    ymin = 0.8,      
+    ymax = 0.8,
     xmin = -1.2,         
     xmax = -1.2)
 
 predictable.lower <- annotation_custom(
-    grob = textGrob(label = "Predictable", hjust = 0,
+    grob = textGrob(label = "Predictable", hjust = 0, rot = 90, 
         gp = gpar(fontsize = 16, fontface = "bold", col = "blue")),
-    ymin = -.7,      
-    ymax = -.7,
+    ymin = -1.0,      
+    ymax = -1.0,
     xmin = -1.2,         
     xmax = -1.2)
     
@@ -614,18 +614,21 @@ g.scatter <- ggplot(data = df.gran,
                     aes(x = mean.gran.index,
                         y = mean.predict.index)
                     ) + geom_point() +
-    geom_label_repel(aes(label = input.good), force = 2, max.iter = 10000) +
-        ylab("Mean unpredictability score") +
-        xlab("Mean chunkiness score") +
-            theme_bw() +
-                chunky.right + chunky.left + predictable.upper + predictable.lower
+    geom_label_repel(aes(label = input.good), force = 3, max.iter = 100000) +
+        ylab("Predictable usage........Mean unpredictability score......Unpredictable usage") +
+        xlab("Large usage chunks....................Mean chunkiness score...................Small usage chunks") +
+            theme_bw()
+
+#+
+#                chunky.right + chunky.left + predictable.upper + predictable.lower
  
 #print(g.scatter)
 
-gt <- ggplot_gtable(ggplot_build(g.scatter))
-gt$layout$clip[gt$layout$name == "panel"] <- "off"
+#gt <- ggplot_gtable(ggplot_build(g.scatter))
+#gt$layout$clip[gt$layout$name == "panel"] <- "off"
 pdf("../../writeup/plots/granularity_versus_predictability.pdf", width = 8, height = 6)
-grid.draw(gt)
+                                        #grid.draw(gt)
+print(g.scatter)
 dev.off()
 
 #print(g.scatter)
