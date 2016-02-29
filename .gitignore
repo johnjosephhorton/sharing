@@ -16,3 +16,9 @@ old/
 onenote/
 sharing/
 writeup/ms_word_drafts
+writeup/plots/*pdf
+writeup/plots/*svg
+writeup/plots/*png
+writeup/plots/*tex
+writeup/tables/*tex
+../code/R/Rplots.pdf

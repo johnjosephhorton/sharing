@@ -10,6 +10,11 @@
 
 project_name = sharing
 
+tables = ./tables/ownership.tex ./tables/ownership_attr.tex ./tables/own_v_rent.tex 
+
+plots = ./plots/reasons.pdf ./plots/granularity_versus_predictability.pdf ./plots/scatter_rent_v_own.pdf ./plots/ownership_fractions.pdf ./plots/rental_fractions.pdf ./plots/predictability.pdf ./plots/granularity.pdf
+
+
 # $(data):
 # 	cd ../code/WageCutsR/data-raw; ./clean_data.R
 
@@ -19,7 +24,10 @@ project_name = sharing
 # $(figures): $(data)
 # 	cd ../code/R; ./$(project_name).R
 
-$(project_name).pdf : $(project_name).tex $(project_name).bib 
+$(tables) $(plots):
+	cd ../code/R && ./sharing.R
+
+$(project_name).pdf : $(project_name).tex $(project_name).bib $(tables) $(plots)
 	pdflatex $(project_name)
 	pdflatex $(project_name)
 	bibtex $(project_name) 
