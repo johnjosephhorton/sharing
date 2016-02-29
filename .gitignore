@@ -22,3 +22,6 @@ writeup/plots/*png
 writeup/plots/*tex
 writeup/tables/*tex
 ../code/R/Rplots.pdf
+writeup/sharing.pdf
+presentation/
+models/
