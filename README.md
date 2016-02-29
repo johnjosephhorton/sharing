@@ -28,6 +28,7 @@ The paper is available at:
 
 ## Replication
 
+The repository is set up to make it transparent how the final PDF is constructed from the raw data. 
 To replicate, you will need a Linux or Mac OX machine that has the following installed:
 
 1. `R`
@@ -37,12 +38,10 @@ To replicate, you will need a Linux or Mac OX machine that has the following ins
 1. `make`
 
 To replicate the data analysis, you will need several R packages.
-However, when you build the file it *should* obtain all these R-specific dependencies. 
+However, when you run the code below, it *should* obtain all these R-specific dependencies you need. 
 
-This repository does not contain the actual experimental data.
-To obtain the data, email me at `john.joseph.horton@gmail.com` and I will email you the two files.
-When I send you two small text files.
-Put them in the root of the repository i.e., in the `sharing/` folder.
+Note that this repository does not contain the actual experimental data.
+To obtain the data, email me at `john.joseph.horton@gmail.com` and I will email you two small text files.
 These files have the information you need to download (the URL) and unencrypt (the passphrase) the experimental data. 
 
 One you have the two files, the steps are:
