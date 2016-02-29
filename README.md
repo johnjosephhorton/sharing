@@ -32,13 +32,9 @@ The repository is set up to make it transparent how the final PDF is constructed
 To replicate, you will need a Linux or Mac OX machine that has the following installed:
 
 1. `R`
-
 1. `pdflatex`
-
 1. `make`
-
 1. `gpg`
-
 1. `curl`
 
 To replicate the data analysis, you will need several R packages.
@@ -50,16 +46,17 @@ These files have the information you need to download and unencrypt the experime
 
 One you have the two files, the steps are:
 
-###Download the repository from github:
+####Download the repository from github:
 ```
  git clone git@github.com:johnjosephhorton/sharing.git 
 ```
-###Move the two files I sent you into the `/sharing` directory. The two files are: 
+####Move the two files I sent you into the `/sharing` directory. The two files are: 
 ```
 data_passphrase.txt
 data_url.txt
 ```
-###From `/sharing`, run: 
+#### Build the PDF
+From `/sharing`, run: 
 ```
 cd writeup
 make sharing.pdf
