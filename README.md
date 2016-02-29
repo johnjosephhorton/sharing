@@ -36,6 +36,7 @@ To replicate, you will need a Linux or Mac OX machine that has the following ins
 1. `make`
 1. `gpg`
 1. `curl`
+1. `gs` (GhostScript)
 
 To replicate the data analysis, you will need several R packages.
 However, when you run the code below, it *should* obtain all these R-specific dependencies you need. 
