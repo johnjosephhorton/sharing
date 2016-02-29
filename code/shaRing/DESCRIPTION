@@ -1,0 +1,21 @@
+Package: shaRing
+Title: Statistical analysis for the paper "Owning, Using and Renting: Some Simple Economics of the Sharing Economy"
+Version: 1.0
+Authors@R: person("John", "Horton", email = "john.joseph.horton@gmail.com", role = c("aut", "cre"))
+Description: This package contains the data and the anlytic code for the paper http://www.john-joseph-horton.com/papers/sharing.pdf
+Depends: R (>= 3.2.3),
+	 magrittr (>= 0.0-0),
+	 dplyr (>= 0.0-0),
+	 data.table (>= 0.0-0),
+	 plyr (>= 0.0-0),
+	 tidyr (>= 0.0),
+	 plyr (>= 0.0),
+	 ggplot2 (>= 0.0), 
+	 lfe (>= 0.0),
+	 Hmisc (>= 0.0),
+	 scales (>= 0.0),
+	 ggrepel (>= 0.0),
+	 stargazer (>= 0.0),
+	 grid (>= 0.0), 
+License: MIT
+LazyData: true
