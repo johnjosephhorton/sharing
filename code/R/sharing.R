@@ -15,159 +15,10 @@ library(devtools)
 devtools::install("../shaRing")
 library(shaRing)
 
+devtools::install_github("johnjosephhorton/JJHmisc")
+library(JJHmisc)
+
 df <- shaRing::GetDF()
-SHOW.PLOTS <- FALSE 
-#library(ggplot2)
-#library(scales)
-#library(testthat)
-
-###############################################################################
-#
-# Sharing / John Horton
-#
-# Code for import & basic analysis
-#
-# Authors:
-# Date Clean-up/ETL/Summary Stats: Alexander Gedranovich
-# Statistical Analysis: John Horton  
-# Created: 2014-09-25
-#
-# Code style follows 'Google R Style Guide'
-# https://google-styleguide.googlecode.com/svn/trunk/Rguide.xml
-###############################################################################
-
-# Clears the workspace
-
-# Libraries
-library(tidyr)
-library(dplyr)
-library(plyr)
-library(ggplot2)
-library(stringr)
-library(data.table)
-library(lme4)
-library(stargazer)
-library(scales)
-library(Hmisc)
-library(lfe)
-library(Hmisc)
-library(ggrepel)
-
-library(JJHmisc) # non-cran resource 
-
-# Settings----------------------------------------------------------------------
-
-#SHOW.PLOTS <- FALSE 
-#PLOTS.DIR <- "../../writeup/plots/" 
-
-## ConvertFactor <- function(x) {
-##   # Converts factors with "na" levels to factor with missing values
-##   # 
-##   # Args:
-##   #   x: factor vector
-##   #
-##   # Returns:
-##   #   Factor with missing values
-  
-##   lev <- levels(x)
-##   lev <- lev[!lev %in% c("", "na")]
-  
-##   x <- as.character(x) %>% tolower()
-##   x[!x %in% lev] <- NA
-    
-##   factor(x)
-## }
-
-## #######################################
-## # Read and clean data from MTurk Survey
-## #######################################
-
-## .data.file <- "../../data/sharing_survey_results_pilot.csv"
-
-## df.raw <- read.table(.data.file, header = T, sep = ",", fill = NA) %>%
-##   select(worker.id = WorkerId,
-##          assignment.id = AssignmentId,         
-##          assignment.status = AssignmentStatus,
-##          work.time = WorkTimeInSeconds,
-##          input.good = Input.good,
-##          answer.own = Answer.own,
-##          answer.lent = Answer.lent,
-##          answer.borrowed = Answer.borrowed,
-##          answer.rent = Answer.rent,
-##          answer.usage = Answer.usage,
-##          answer.granularity = Answer.granularity,
-##          answer.predictability = Answer.predictability,
-##          answer.no_own_reason = Answer.no_own_reason,
-##          answer.own_income = Answer.own_income) %>% tbl_df()
-
-## # Converts factors-------------------------------------------------------------- 
-## df <- df.raw %>%
-##     mutate_each(funs(ConvertFactor),
-##                 answer.own,
-##                 answer.lent,
-##                 answer.borrowed,
-##                 answer.rent,
-##                 answer.no_own_reason)
-
-## # ecode usage levels------------------------------------------------------------- 
-## usage.levels <- 0:11
-## usage.labels <- c(
-##     "We would not use this at all",
-##     "1 minute a week (about 1 hour a year)",
-##     "5 minutes a week (about 4 hours a year)",
-##     "1/2 an hour a week",
-##     "1 hour a week",
-##     "1/2 an hour a day",
-##     "1 hour a day",
-##     "2 hours a day",
-##     "4 hours a day",
-##     "8 hours a day",
-##     "16 hours a day",
-##     "24 hours a day (I would continuously be using this good")
-## minute.per.week <- (60/7)/(24*60*60*7)
-## hour.per.day <- 1.0/24.0
-## day.frac <- c(0,
-##               minute.per.week, 
-##               5 * minute.per.week,
-##               30 * minute.per.week, 
-##               60 * minute.per.week,
-##               0.5 * hour.per.day,
-##               hour.per.day,
-##               2 * hour.per.day,
-##               4 * hour.per.day,
-##               8 * hour.per.day,
-##               15 * hour.per.day,
-##               24 * hour.per.day)
-
-## df <- within(df, {
-##     usage = factor(answer.usage, levels = usage.levels, labels = usage.labels)
-##     x = as.numeric(as.character(factor(answer.usage, levels = usage.levels, labels = day.frac)))
-##     own = answer.own == "yes"
-##     borrowed = answer.borrowed == "yes"
-##     lent = answer.lent == "yes"
-##     usage.index = scale(as.numeric(answer.usage))
-##     income.index = scale(as.numeric(answer.own_income))
-##     predict.index = scale(as.numeric(answer.predictability))
-##     granular.index = scale(as.numeric(answer.granularity))
-##     rent = answer.rent == "yes"
-## })
-
-## # imput family household income 
-## y.levels <- c(10/2, 15, 25, 35, 45, 55, 65, 75, 85, 95, 125, 200)
-## df$y <- with(df, as.numeric(sapply(answer.own_income, function (x) as.numeric(y.levels[x + 1]) )))
-
-## # fix typo
-## levels(df$input.good)[16] <- "kid's bouncy castle"
-
-## df <- data.table(df)
-
-## df$input.good.short <- revalue(df$input.good, c("high-end digitial camera"="high-end\ndigitial camera",
-##                                           "kitchen timer (or egg timer)" = "kitchen timer\n(or egg timer)",
-##                                           "portable air conditioner" = "portable\nair conditioner",
-##                                           "cat carrier (for transporting cats)" = "cat carrier\n(for transporting cats)",
-##                                           "back-up electric generator" = "back-up\nelectric generator",
-##                                           "high-end audio headphones" = "high-end\naudio headphones")
-##                               )
 
 ##################################################
 # Fractions owning, renting, lending and borrowing
@@ -181,8 +32,6 @@ df.by.good <- subset(df, !is.na(answer.own))[,
                                   frac.own = mean(own)),
                              by = input.good]
 
-library(dplyr)
-
 df.by.good <- df %>% filter(!is.na(answer.own)) %>%
     group_by(input.good) %>%
     dplyr::summarise(
@@ -194,11 +43,6 @@ df.by.good <- df %>% filter(!is.na(answer.own)) %>%
     mutate(input.good = reorder(input.good, frac.own, mean))
 
 
-#df.by.good$input.good <- with(df.by.good, reorder(input.good, frac.own, mean))
-
-library(ggplot2)
-library(scales)
-
 g.own <- ggplot(data = df.by.good, aes(x = input.good, y = frac.own)) +
     geom_point() +
     geom_linerange(aes(ymin = lower, ymax = upper)) + 
@@ -208,13 +52,7 @@ g.own <- ggplot(data = df.by.good, aes(x = input.good, y = frac.own)) +
     scale_y_continuous(label = scales::percent) +
     theme(axis.text.x = element_text(angle = -75, hjust = 0))
 
-print(g.own)
-
-if (interactive() && SHOW.PLOTS){
-    print(g.own)
-}
-
-writeImage(g.own, "ownership_fractions", width = 6, height = 4)
+JJHmisc::writeImage(g.own, "ownership_fractions", width = 6, height = 4)
 
 # Fraction of respondents renting various goods--------------------------------- 
 
@@ -227,9 +65,6 @@ df.by.good.rent <- subset(df, !is.na(answer.rent))[,
                                       frac.rent = mean(rent)),
                                   by = input.good]
 df.by.good.rent$input.good <- with(df.by.good.rent, reorder(input.good, frac.rent, mean))
-
-
-library(JJHmisc)
 
 g.rent <- df %>% filter(!is.na(answer.rent)) %>%
     group_by(input.good) %>%
@@ -249,12 +84,7 @@ g.rent <- df %>% filter(!is.na(answer.rent)) %>%
     scale_y_continuous(label = percent) +
         theme(axis.text.x = element_text(angle = -75, hjust = 0))
 
-writeImage(g.rent, "rental_fractions", width = 6, height = 4)
-
-if (interactive() && SHOW.PLOTS){
-    print(g.rent)
-}
-writeImage(g.rent, "rental_fractions", width = 6, height = 4)
+JJHmisc::writeImage(g.rent, "rental_fractions", width = 6, height = 4)
 
 # Fraction of respondents lending various goods----------------------------------
 
@@ -288,13 +118,7 @@ g.lent <- ggplot(data = df.by.good.lent, aes(x = input.good, y = frac.lent)) +
     scale_y_continuous(label = percent) +
     theme(axis.text.x = element_text(angle = -75, hjust = 0))
 
-print(g.lent)
-
-if (interactive() && SHOW.PLOTS){
-    print(g.lent)
-}
-writeImage(g.lent, "lent_fractions", width = 6, height = 4)
-
+JJHmisc::writeImage(g.lent, "lent_fractions", width = 6, height = 4)
 
 # Relationship between renting and ownership------------------------------------ 
 df.cs <- data.table(df)[, list(own.frac =  mean(own, na.rm = TRUE),
@@ -325,11 +149,6 @@ For the full list of goods and the survey language, see Appendix~\\ref{sec:surve
 \\starlanguage \\end{minipage} }")
 
 # Scatter plot showing rental versus ownership fractions------------------------
-
-#install.packages("ggrepel")
-
-
-
 
 short.list <- c("BBQ Grill" = "BBQ",
                 "a men's suit" = "suit",
@@ -370,16 +189,7 @@ g.scatter <- ggplot(data = df.cs, aes(own.frac, rent.frac)) +
     xlab("Fraction Owning") +
     ylab("Fraction Renting")
 
-
-#with(df.cs, revalue(input.good, ))
-
-print(g.scatter)
-
-if (interactive() && SHOW.PLOTS){
-    print(g.scatter)
-}
-
-writeImage(g.scatter, "scatter_rent_v_own", width = 9, height = 4)
+JJHmisc::writeImage(g.scatter, "scatter_rent_v_own", width = 9, height = 4)
 
 #---------------------------
 #  Ownership by income bands
@@ -424,9 +234,7 @@ g.own.inc <- ggplot(data = df.by.good.by.inc,
     ylab("Difference in ownership % from population mean ownership") +
     scale_y_continuous(label = percent)
 
-#print(g.own.inc)
-
-writeImage(g.own.inc, "ownership_fractions_inc", width = 8, height = 8)
+JJHmisc::writeImage(g.own.inc, "ownership_fractions_inc", width = 8, height = 8)
     
 #####################
 # Ownership and Usage 
@@ -448,12 +256,9 @@ g.own.distro <- ggplot(data = subset(df, input.good %in% middle.goods),
     scale_linetype_discrete("Own's the good") + 
     xlab("Fraction of available time used (log scale)") +
     theme(axis.text.x = element_text(angle = -75, hjust = 0))
-if (interactive() && SHOW.PLOTS){
-    print(g.own.distro)
-}
-writeImage(g.own.distro, "ownership_distro",
-           width = 8, height = 8)
 
+JJHmisc::writeImage(g.own.distro, "ownership_distro",
+           width = 8, height = 8)
 
 # Regression approach to usage and ownership------------------------------------
 
@@ -464,14 +269,9 @@ df$x.t <- df$x
 df$x.t[df$x == 0] <- 10
 df.realistic <- subset(df, x < 0.50 & x != 0 & !is.na(y))
 
-## m.1 <- lmer(own ~ log(x.t) + (1|input.good),
-##             data = df.realistic)
-
 m.1 <- felm(own ~  log(x.t) | input.good | 0 | input.good, data = df.realistic)
 m.2 <- felm(own ~  log(x.t) + log(y) | input.good | 0 | input.good, data = df.realistic)
 m.3 <- felm(own ~  log(x.t) | input.good + worker.id | 0 | input.good, data = df.realistic)
-
-ggplot(data = df.realistic, aes(x = log(x.t), colour = own, linetype = own)) + geom_density() + facet_wrap(~input.good)
 
 out.file <- "../../writeup/tables/ownership.tex"
 s <- stargazer(m.1,  m.2, m.3, 
@@ -504,13 +304,6 @@ The sample is restricted to respondents who report some positive amount of predi
 All regressions include good-specific fixed effects, and standard errors are clustered at the good level. 
 \\starlanguage \\end{minipage} }")
 
-###############
-# Normal Goods? 
-###############
-
-m <- lm(own ~ log(y) * input.good, data = df.realistic)
-
-
 #############################
 # Good attributes & ownership
 #############################
@@ -520,16 +313,10 @@ df.no.brush <- subset(df, !is.na(predict.index)
                       & !is.na(own)
                       & !(input.good %in% c("toothbrush", "back-up electric generator")))
 
-#m.1.re <- lmer(own ~ predict.index + (1|worker.id), data = df.no.brush)
-#m.2.re <- lmer(own ~ granular.index + (1|worker.id), data = df.no.brush)
-#m.3.re <- lmer(own ~ granular.index*predict.index + (1|worker.id),
-#               data = df.no.brush)
-
 m.1 <- felm(own ~  predict.index | worker.id | 0 | worker.id, data = df.no.brush)
 m.2 <- felm(own ~  granular.index | worker.id | 0 | worker.id, data = df.no.brush)
 m.3 <- felm(own ~  predict.index * granular.index | worker.id | 0 | worker.id, data = df.no.brush)
 m.4 <- felm(own ~  predict.index * granular.index | worker.id + input.good | 0 | worker.id, data = df.no.brush)
-
 
 out.file <- "../../writeup/tables/ownership_attr.tex"
 s <- stargazer(m.1, m.2, m.3, m.4, 
@@ -574,8 +361,6 @@ df.gran <- subset(df, !is.na(granular.index)
                                                predict.index.se = sd(predict.index)/sqrt(.N)
                                            ), by = list(input.good)] 
 
-library(grid)
-
 chunky.right <- annotation_custom(
     grob = textGrob(label = "Small usage chunks", hjust = 0,
         gp = gpar(fontsize = 16, fontface = "bold", col = "blue")),
@@ -607,8 +392,7 @@ predictable.lower <- annotation_custom(
     ymax = -1.0,
     xmin = -1.2,         
     xmax = -1.2)
-    
-#predictable.lower <-
+  
 
 g.scatter <- ggplot(data = df.gran,
                     aes(x = mean.gran.index,
@@ -619,27 +403,10 @@ g.scatter <- ggplot(data = df.gran,
         xlab("Large usage chunks....................Mean chunkiness score...................Small usage chunks") +
             theme_bw()
 
-#+
-#                chunky.right + chunky.left + predictable.upper + predictable.lower
- 
-#print(g.scatter)
-
-#gt <- ggplot_gtable(ggplot_build(g.scatter))
-#gt$layout$clip[gt$layout$name == "panel"] <- "off"
 pdf("../../writeup/plots/granularity_versus_predictability.pdf", width = 8, height = 6)
                                         #grid.draw(gt)
 print(g.scatter)
 dev.off()
-
-#print(g.scatter)
-
-if (interactive() && SHOW.PLOTS){
-    print(g.scatter)
-}
-
-#writeImage(g.scatter, "granularity_versus_predictability",
-#           width = 8.0,
-#           height = 6.0)
 
 # Granularity by item-----------------------------------------------------------
 
@@ -651,13 +418,9 @@ g.gran <- ggplot(data = df.gran, aes(x = input.good, y = mean.gran.index)) +
     geom_linerange(aes(ymin = mean.gran.index - 2*gran.index.se, ymax = mean.gran.index + 2*gran.index.se)) + 
     theme(axis.text.x=element_text(angle = -75, hjust = 0)) +
     xlab("") +
-    ylab("Mean chunkiness score") +
-if (interactive() & SHOW.PLOTS){
-    print(g.gran)
-}
-
-writeImage(g.gran, "granularity", width = 7, height = 4)
-
+    ylab("Mean chunkiness score") 
+        
+JJHmisc::writeImage(g.gran, "granularity", width = 7, height = 4)
 
 # Predictability by item--------------------------------------------------------
 
@@ -671,10 +434,8 @@ g.predict <- ggplot(data = df.predict, aes(x = input.good, y = mean.predict.inde
     theme(axis.text.x=element_text(angle = -75, hjust = 0)) +
     xlab("") +
     ylab("Mean unpredictability index") 
-if (interactive() & SHOW.PLOTS){
-    print(g.gran)
-}
-writeImage(g.predict, "predictability", width = 7, height = 4)
+
+JJHmisc::writeImage(g.predict, "predictability", width = 7, height = 4)
 
 #########################
 # Reasons for not owning
@@ -706,29 +467,10 @@ g.reasons <- ggplot(data = df.no.own.summary,
            xlab("Reason given")
 
 
-if (interactive() & SHOW.PLOTS) {
-    print(g.reasons)
-}
-
-writeImage(g.reasons, "reasons_raw", width = 4.5, height = 5)
-
+JJHmisc::writeImage(g.reasons, "reasons_raw", width = 4.5, height = 5)
 
 #' Modified version
 df.no.own <- data.table(subset(df, !is.na(answer.no_own_reason) & answer.no_own_reason != "space"))
-
-library(dplyr)
-
-## df.tmp <- df %>% group_by(input.good) %>%
-##     mutate(frac.not.owning = mean(!is.na(answer.no_own_reason))) %>%
-##     ungroup() %>% 
-##     filter(!is.na(answer.no_own_reason) & answer.no_own_reason != "space") %>%
-##     group_by(input.good) %>%
-##     summarise(frac.not.owning = frac.not.owning[1],
-##               num.obs = dplyr::n(),
-##               frac.income = mean(answer.no_own_reason = "expensive"),
-##               frac.use = mean(answer.no_own_reason = "little_use")
-##     ) %>% ungroup()
-
                          
 df.no.own.summary <- df.no.own[, list(
     num.obs = .N,
@@ -744,13 +486,8 @@ g.reasons <- ggplot(data = subset(df.no.own.summary, num.obs > 7),  aes(x = frac
     ylab("Fraction non-owners citing usage") +
     geom_abline(intercept = 1, slope = -1)
 
-
-library(magrittr)
-
 df.tmp <- df.no.own.summary %>% filter(num.obs > 7) 
 df.tmp$input.good <- with(df.tmp, reorder(input.good, frac.income, mean))
-
-# lower = Hmisc::binconf(sum(own), .N)[2],
 
 df.tmp <- df.tmp %>% cbind(with(df.tmp, Hmisc::binconf(num.income, num.obs)) %>% as.data.frame)
                 
@@ -764,11 +501,8 @@ g.reasons <- ggplot(data = df.tmp,
                        xlab("Fraction citing income = (1 - Fraction citing usage)") +
                            ylab("")
 
-writeImage(g.reasons, "reasons", width = 6, height = 3)
+JJHmisc::writeImage(g.reasons, "reasons", width = 6, height = 3)
 
-
-#print(g.reasons)
-#writeImage(g.reasons, "reasons_raw_2", width = 8, height = 4)
 
 
 
