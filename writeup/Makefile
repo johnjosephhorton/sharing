@@ -57,7 +57,6 @@ website: $(project_name).pdf
 
 backup:
 	tar --exclude='../backups' -zcvf ../backups/$(project_name)_$(ts).tar.gz ../
-	aws s3 cp employer_search_$(ts).tar.gz s3://john_horton_backups/
 
 snapshot:
 	@echo Timestamp is $(ts)
