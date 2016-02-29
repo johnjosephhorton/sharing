@@ -50,7 +50,13 @@ One you have the two files, the steps are:
 ```
  git clone git@github.com:johnjosephhorton/sharing.git 
 ```
-####Move the two files I sent you into the `/sharing` directory. The two files are: 
+#### Add the text files to the repository
+Move the two files I sent you into the `/sharing` directory.
+For example, if you download them to you downloads folder, you might run
+```
+cp ~/Downloads/*txt ~/sharing
+```
+The two files are: 
 ```
 data_passphrase.txt
 data_url.txt
@@ -63,7 +69,7 @@ make sharing.pdf
 ```
 This should download the necessary data files and decrypt them.
 It will also run the statistical analysis in R (downloading all needed packages) and then produce plots and tables (stored in `writeup/tables` and `writeup/plots`). 
-Finally, it will build the pdf file using `pdflatex`, leaving the resultant `sharing.pdf' in the `/writing` folder.
+Finally, it will build the pdf file using `pdflatex`, leaving the resultant `sharing.pdf` in the `/writing` folder.
 To see the actual steps that are being followed, you can inspect `writeup\Makefile`.
 
 If you run into any trouble replicating, please contact me at ``john.joseph.horton@gmail.com``. 
