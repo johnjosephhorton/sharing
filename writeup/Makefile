@@ -1,15 +1,6 @@
-# These are the data files that the R package depends upon.
-# If they are missing, then we need to run clean_data.R in the WageCutsR/data-raw folder.
-# data = ../code/WageCutsR/data/df.rda ../code/WageCutsR/data/df_no_1.rda ../code/WageCutsR/data/df_no_3.rda
-
-# # These are the tables used in the writeup 
-# tables =./tables/uptake_simple.tex ./tables/uptake_framing.tex ./tables/uptake_unframed.tex ./tables/error.tex ./tables/cor.tex ./tables/games.tex
-
-# # These are the figures used in the writup 
-# figures = ./plots/uptake.pdf
-
 project_name = sharing
 
+ts := $(shell /bin/date "+%Y-%m-%d---%H-%M-%S")
 
 # Get the data 
 data_url_file := ../data_url.txt
