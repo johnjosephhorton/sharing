@@ -1,10 +1,10 @@
-# "Owning, Using and Renting: Some Simple Economics of the Sharing Economy"
+# Notes
 
-This is the associated code for the paper (Owning, Using and Renting: Some Simple Economics of the "Sharing" Economy).
+This is the associated code for my paper  ``Owning, Using and Renting: Some Simple Economics of the "Sharing" Economy``.
 The paper is available at:
 
 1. My website: [http://www.john-joseph-horton.com/papers/sharing.pdf](http://www.john-joseph-horton.com/papers/sharing.pdf)
-1. SSRN: [http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2730850(http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2730850)
+1. SSRN: [http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2730850](http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2730850)
 1. NBER: [http://www.nber.org/papers/w22029](http://www.nber.org/papers/w22029)
 
 ## Citation Info
@@ -29,8 +29,11 @@ The paper is available at:
 ## Replication
 
 To replicate, you will need a Linux or Mac OX machine that has the following installed:
+
 1. `R`
+
 1. `pdflatex`
+
 1. `make`
 
 To replicate the data analysis, you will need several R packages.
@@ -38,19 +41,22 @@ However, when you build the file it *should* obtain all these R-specific depende
 
 This repository does not contain the actual experimental data.
 To obtain the data, email me at `john.joseph.horton@gmail.com` and I will email you the two files.
-When I send you the two files, put them in the root of the repository i.e., in the `sharing/` folder.
-These files have the information you need to download and unencrypt the experimental data. 
+When I send you two small text files.
+Put them in the root of the repository i.e., in the `sharing/` folder.
+These files have the information you need to download (the URL) and unencrypt (the passphrase) the experimental data. 
+
+One you have the two files, the steps are:
 
 1. Download the repository from github:
 ```
  git clone git@github.com:johnjosephhorton/sharing.git 
 ```
-1. Move the two files I sent you into the `/sharing` directory. The two files are: 
+2. Move the two files I sent you into the `/sharing` directory. The two files are: 
 ```
 data_passphrase.txt
 data_url.txt
 ```
-1. From `/sharing`, run: 
+3. From `/sharing`, run: 
 ```
 cd writeup
 make sharing.pdf
@@ -59,6 +65,5 @@ This should download the necessary data files and decrypt them.
 It will also run the statistical analysis in R (downloading all needed packages) and then produce plots and tables (stored in `writeup/tables` and `writeup/plots`). 
 Finally, it will build the pdf file using `pdflatex`, leaving the resultant `sharing.pdf' in the `/writing` folder.
 To see the actual steps that are being followed, you can inspect `writeup\Makefile`.
-
 
 If you run into any trouble replicating, please contact me at ``john.joseph.horton@gmail.com``. 
