@@ -42,7 +42,7 @@ However, when you run the code below, it *should* obtain all these R-specific de
 
 Note that this repository does not contain the actual experimental data.
 To obtain the data, email me at `john.joseph.horton@gmail.com` and I will email you two small text files.
-These files have the information you need to download and unencrypt the experimental data. 
+These files have the information you need to download and unencrypt the data. 
 
 One you have the two files, the steps are:
 
