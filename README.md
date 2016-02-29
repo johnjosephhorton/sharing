@@ -46,7 +46,7 @@ These files have the information you need to download and unencrypt the experime
 
 One you have the two files, the steps are:
 
-####Download the repository from github:
+####Download the repository from github
 ```
  git clone git@github.com:johnjosephhorton/sharing.git 
 ```
