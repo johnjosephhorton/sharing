@@ -2,24 +2,58 @@ project_name = sharing
 
 ts := $(shell /bin/date "+%Y-%m-%d---%H-%M-%S")
 
-# Get the data 
-data_url_file := ../data_url.txt
-data_url := $(shell cat ${data_url_file})
+# # Get the data 
+# data_url_file := ../data_url.txt
+# data_url := $(shell cat ${data_url_file})
 
-encrypted_data = ../code/shaRing/inst/extdata/sharing_survey_results_pilot.csv.gpg
-data = ../code/shaRing/inst/extdata/sharing_survey_results_pilot.csv
+# encrypted_data = ../code/shaRing/inst/extdata/sharing_survey_results_pilot.csv.gpg
+# data = ../code/shaRing/inst/extdata/sharing_survey_results_pilot.csv
 
-$(encrypted_data): ../data_url.txt
-	cd ../code/shaRing/inst/extdata && curl -o sharing_survey_results_pilot.csv.gpg $(data_url)  	
+# $(encrypted_data): ../data_url.txt
+# 	cd ../code/shaRing/inst/extdata && curl -o sharing_survey_results_pilot.csv.gpg $(data_url)  	
 
-$(data): $(encrypted_data)
-	cd ../code/shaRing/inst/extdata && gpg --passphrase-file ../../../../data_passphrase.txt --batch sharing_survey_results_pilot.csv.gpg
+# $(data): $(encrypted_data)
+# 	cd ../code/shaRing/inst/extdata && gpg --passphrase-file ../../../../data_passphrase.txt --batch sharing_survey_results_pilot.csv.gpg
 
-tables = ./tables/ownership.tex ./tables/ownership_attr.tex ./tables/own_v_rent.tex 
-plots = ./plots/reasons.pdf ./plots/granularity_versus_predictability.pdf ./plots/scatter_rent_v_own.pdf ./plots/ownership_fractions.pdf ./plots/rental_fractions.pdf ./plots/predictability.pdf ./plots/granularity.pdf
+tables = 
+tables += ./tables/ownership.tex 
+./tables/ownership.tex: ../analysis/ownership.R
+	cd ../analysis && ./ownership.R
+tables += ./tables/ownership_attr.tex 
+./tables/ownership_attr.tex: ../analysis/ownership_attr.R
+	cd ../analysis && ./ownership_attr.R
+tables += ./tables/own_v_rent.tex 
+./tables/own_v_rent.tex: ../analysis/own_v_rent.R
+	cd ../analysis && ./own_v_rent.R
 
-$(tables) $(plots): $(data)
-	cd ../code/R && ./sharing.R
+plots = 
+plots += ./plots/reasons.pdf 
+./plots/reasons.pdf: ../analysis/reasons.R
+	cd ../analysis && reasons.R
+
+plots += ./plots/granularity_versus_predictability.pdf 
+./plots/granularity_versus_predictability.pdf: ../analysis/granularity_versus_predictability.R
+	cd ../analysis && ./granularity_versus_predictability.R
+
+plots += ./plots/scatter_rent_v_own.pdf 
+./plots/scatter_rent_v_own.pdf: ../analysis/scatter_rent_v_own.R
+	cd ../analysis && ./scatter_rent_v_own.R
+
+plots += ./plots/ownership_fractions.pdf 
+./plots/ownership_fractions.pdf: ../analysis/ownership_fractions.R
+	cd ../analysis && ./ownership_fractions.R
+
+plots += ./plots/rental_fractions.pdf 
+./plots/rental_fractions.pdf: ../analysis/rental_fractions.R
+	cd ../analysis && ./rental_fractions.R
+
+plots += ./plots/predictability.pdf 
+./plots/predictability.pdf: ../analysis/predictability.R
+	cd ../analysis && ./predictability.R
+
+plots += ./plots/granularity.pdf
+./plots/granularity.pdf: ../analysis/granularity.pdf
+	cd ../analysis && ./granularity.R
 
 $(project_name).pdf : $(project_name).tex $(project_name).bib $(tables) $(plots)
 	pdflatex $(project_name)
