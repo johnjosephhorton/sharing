@@ -2,19 +2,6 @@ project_name = sharing
 
 ts := $(shell /bin/date "+%Y-%m-%d---%H-%M-%S")
 
-# # Get the data 
-# data_url_file := ../data_url.txt
-# data_url := $(shell cat ${data_url_file})
-
-# encrypted_data = ../code/shaRing/inst/extdata/sharing_survey_results_pilot.csv.gpg
-# data = ../code/shaRing/inst/extdata/sharing_survey_results_pilot.csv
-
-# $(encrypted_data): ../data_url.txt
-# 	cd ../code/shaRing/inst/extdata && curl -o sharing_survey_results_pilot.csv.gpg $(data_url)  	
-
-# $(data): $(encrypted_data)
-# 	cd ../code/shaRing/inst/extdata && gpg --passphrase-file ../../../../data_passphrase.txt --batch sharing_survey_results_pilot.csv.gpg
-
 tables = 
 tables += ./tables/ownership.tex 
 ./tables/ownership.tex: ../analysis/ownership.R
@@ -54,6 +41,9 @@ plots += ./plots/predictability.pdf
 plots += ./plots/granularity.pdf
 ./plots/granularity.pdf: ../analysis/granularity.R
 	cd ../analysis && ./granularity.R
+
+tables = ./tables/ownership.tex ./tables/ownership_attr.tex ./tables/own_v_rent.tex 
+plots = ./plots/reasons.pdf ./plots/granularity_versus_predictability.pdf ./plots/scatter_rent_v_own.pdf ./plots/ownership_fractions.pdf ./plots/rental_fractions.pdf ./plots/predictability.pdf ./plots/granularity.pdf
 
 $(project_name).pdf : $(project_name).tex $(project_name).bib $(tables) $(plots)
 	pdflatex $(project_name)
