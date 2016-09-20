@@ -29,7 +29,7 @@ tables += ./tables/own_v_rent.tex
 plots = 
 plots += ./plots/reasons.pdf 
 ./plots/reasons.pdf: ../analysis/reasons.R
-	cd ../analysis && reasons.R
+	cd ../analysis && ./reasons.R
 
 plots += ./plots/granularity_versus_predictability.pdf 
 ./plots/granularity_versus_predictability.pdf: ../analysis/granularity_versus_predictability.R
@@ -52,7 +52,7 @@ plots += ./plots/predictability.pdf
 	cd ../analysis && ./predictability.R
 
 plots += ./plots/granularity.pdf
-./plots/granularity.pdf: ../analysis/granularity.pdf
+./plots/granularity.pdf: ../analysis/granularity.R
 	cd ../analysis && ./granularity.R
 
 $(project_name).pdf : $(project_name).tex $(project_name).bib $(tables) $(plots)
