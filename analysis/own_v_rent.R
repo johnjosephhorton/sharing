@@ -16,11 +16,11 @@ df.cs <- data.table(df)[, list(own.frac =  mean(own, na.rm = TRUE),
 m.1 <- lm(rent.frac ~ own.frac, data = df.cs)
 m.2 <- lm(rent.frac ~ own.frac, data = subset(df.cs, input.good != "car"))
 
-out.file <- "../writeup/tables/own_vs_rent.tex"
+out.file <- "../writeup/tables/own_v_rent.tex"
 
 s <- stargazer(m.1, m.2,
                title = "Fraction of respondents owning a good versus fraction having rented a good",
-               label = "tab:own_vs_rent",
+               label = "tab:own_v_rent",
                omit.stat = c("aic", "f", "adj.rsq", "bic", "ser"),
                font.size = "footnotesize",
                no.space = TRUE,
@@ -29,6 +29,7 @@ s <- stargazer(m.1, m.2,
                dep.var.labels = c("Fraction reporting renting the good (\\textsc{FracRental})"),
                covariate.labels = c("Fraction reporting owning the good")
                )
+
 AddTableNote(s, out.file, note = "\\\\{\\footnotesize \\begin{minipage}{0.85 \\linewidth} \\emph{Notes:}
 The unit of observation for the regressions in this table is the individual good.
 The dependent variable is the fraction of respondents reporting having rented that good, while the independent variable is the fraction reporting owning that good. 
