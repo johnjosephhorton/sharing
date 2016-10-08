@@ -9,6 +9,7 @@ tables += ./tables/ownership.tex
 tables += ./tables/ownership_attr.tex 
 ./tables/ownership_attr.tex: ../analysis/ownership_attr.R
 	cd ../analysis && ./ownership_attr.R
+
 tables += ./tables/own_v_rent.tex 
 ./tables/own_v_rent.tex: ../analysis/own_v_rent.R
 	cd ../analysis && ./own_v_rent.R
