@@ -3,7 +3,7 @@ Title: Statistical analysis for the paper "Owning, Using and Renting: Some Simpl
 Version: 1.0
 Authors@R: person("John", "Horton", email = "john.joseph.horton@gmail.com", role = c("aut", "cre"))
 Description: This package contains the data and the anlytic code for the paper http://www.john-joseph-horton.com/papers/sharing.pdf
-Depends: R (>= 3.2.3),
+Depends: R (>= 3.2.2),
 	 magrittr (>= 0.0-0),
 	 dplyr (>= 0.0-0),
 	 data.table (>= 0.0-0),

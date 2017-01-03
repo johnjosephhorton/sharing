@@ -1,5 +1,8 @@
 project_name = sharing
 
+../analysis/shaRing_installed.txt:
+	cd ../analysis && ./install_shaRing.R
+
 ts := $(shell /bin/date "+%Y-%m-%d---%H-%M-%S")
 
 tables = 
@@ -46,7 +49,7 @@ plots += ./plots/granularity.pdf
 tables = ./tables/ownership.tex ./tables/ownership_attr.tex ./tables/own_v_rent.tex 
 plots = ./plots/reasons.pdf ./plots/granularity_versus_predictability.pdf ./plots/scatter_rent_v_own.pdf ./plots/ownership_fractions.pdf ./plots/rental_fractions.pdf ./plots/predictability.pdf ./plots/granularity.pdf
 
-$(project_name).pdf : $(project_name).tex $(project_name).bib $(tables) $(plots)
+$(project_name).pdf : $(project_name).tex $(project_name).bib ../analysis/shaRing_installed.txt $(tables) $(plots)
 	pdflatex $(project_name)
 	pdflatex $(project_name)
 	bibtex $(project_name) 

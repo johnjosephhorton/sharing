@@ -34,41 +34,23 @@ To replicate, you will need a Linux or Mac OX machine that has the following ins
 1. `R`
 1. `pdflatex`
 1. `make`
-1. `gpg`
-1. `curl`
 1. `gs` (GhostScript)
 
 To replicate the data analysis, you will need several R packages.
 However, when you run the code below, it *should* obtain all these R-specific dependencies you need. 
 
-Note that this repository does not contain the actual experimental data.
-To obtain the data, email me at `john.joseph.horton@gmail.com` and I will email you two small text files.
-These files have the information you need to download and unencrypt the data. 
-
-One you have the two files, the steps are:
-
 ####Download the repository from github
 ```
  git clone git@github.com:johnjosephhorton/sharing.git 
 ```
-#### Add the text files to the repository
-Move the two files I sent you into the `/sharing` directory.
-For example, if you download them to you downloads folder, you might run
-```
-cp ~/Downloads/*txt ~/sharing
-```
-The two files are: 
-```
-data_passphrase.txt
-data_url.txt
-```
+
 #### Build the PDF
 From `/sharing`, run: 
 ```
 cd writeup
 make sharing.pdf
 ```
-This should download the necessary data files and decrypt them.
+This should install all the necessary R packages.
 It will also run the statistical analysis in R (downloading all needed packages) and then produce plots and tables (stored in `writeup/tables` and `writeup/plots`). 
 
 Finally, it will build the pdf file using `pdflatex`, leaving the resultant `sharing.pdf` in the `/writeup` folder.
